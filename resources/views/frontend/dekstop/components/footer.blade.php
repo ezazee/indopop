@@ -38,19 +38,19 @@
         <div class="footer-menu-holder">
             <ul class="footer-menu">
                 <li class="footer-menu--item">
-                    <a href="?page=kebijakan-privasi">Kebijakan Privasi</a>
+                    <a href="/kebijakan-privasi">Kebijakan Privasi</a>
                 </li>
                 <li class="footer-menu--item">
-                    <a href="?page=kode-etik-journalistik">Kode Etik Journalistik</a>
+                    <a href="/kode-etik">Kode Etik Journalistik</a>
                 </li>
                 <li class="footer-menu--item">
-                    <a href="?page=redaksi">Redaksi</a>
+                    <a href="/redaksi">Redaksi</a>
                 </li>
                 <li class="footer-menu--item">
-                    <a href="?page=visi-misi">Visi & Misi Indopop.id</a>
+                    <a href="/visi-misi">Visi & Misi Indopop.id</a>
                 </li>
                 <li class="footer-menu--item">
-                    <a href="?page=sitemap">Sitemap</a>
+                    <a href="/site-map">Sitemap</a>
                 </li>
             </ul>
         </div>

@@ -20,3 +20,9 @@
         }
     })
 </script>
+
+<script>
+    document.getElementById("search-button").addEventListener("click", function () {
+        document.getElementById("search-form").classList.toggle("hidden");
+    });
+</script>

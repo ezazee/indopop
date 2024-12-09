@@ -24,9 +24,7 @@ $(document).ready(function () {
             gap: "5px",
         }).mount();
     }
-    $("#search-button").click(function () {
-        $("#search-form").slideToggle();
-    });
+
     if ($("#artist-list").length > 0) {
         let el = document.querySelector("#artist-list");
         let x = 0,
