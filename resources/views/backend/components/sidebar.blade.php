@@ -123,18 +123,12 @@
                                 <path d="M7 12h10" />
                                 <path d="M7 16h10" />
                             </svg> </span>
-
                         <span class="nav-link-title text-truncate">
                             Blog
-
                         </span>
                     </a>
-
-
                     <div class="dropdown-menu animate slideIn dropdown-menu-start">
-
-
-                        <a class="dropdown-item nav-priority-10" href="https://cms.botble.com/admin/blog/posts"
+                        <a class="dropdown-item nav-priority-10" href="{{ route('blog.post') }}"
                             id="cms-plugins-blog-post" title="Posts">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Posts">
                                 <svg class="icon  svg-icon-ti-ti-file-text" xmlns="http://www.w3.org/2000/svg"
@@ -148,15 +142,10 @@
                                     <path d="M9 13l6 0" />
                                     <path d="M9 17l6 0" />
                                 </svg> </span>
-
                             <span class="nav-link-title text-truncate">
                                 Posts
-
                             </span>
                         </a>
-
-
-
                         <a class="dropdown-item nav-priority-20" href="https://cms.botble.com/admin/blog/categories"
                             id="cms-plugins-blog-categories" title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">

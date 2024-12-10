@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,5 @@ Route::get('/search-result', [HomeController::class, 'searchResult'])->name('sea
 
 // Dashboard Route
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/blog/post', [BlogController::class, 'blogPost'])->name('blog.post');
+Route::get('/dashboard/blog/edit', [BlogController::class, 'editPost'])->name('blog.edit');
