@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,8 @@ Route::get('/site-map', [HomeController::class, 'siteMap'])->name('siteMap.deskt
 Route::get('/kanal', [HomeController::class, 'kanal'])->name('kanal.desktop');
 Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop');
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
+
+
+
+// Dashboard Route
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
