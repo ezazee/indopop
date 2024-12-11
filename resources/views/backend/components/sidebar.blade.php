@@ -358,7 +358,7 @@
 
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link nav-priority-999" href="https://cms.botble.com/admin/media"
+                    <a class="nav-link nav-priority-999" href="{{ route('media.index') }}"
                         id="cms-core-media" title="Media">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Media">
                             <svg class="icon  svg-icon-ti-ti-folder" xmlns="http://www.w3.org/2000/svg"
