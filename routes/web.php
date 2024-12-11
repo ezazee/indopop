@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,11 @@ Route::get('/search-result', [HomeController::class, 'searchResult'])->name('sea
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/blog/post', [BlogController::class, 'blogPost'])->name('blog.post');
 Route::get('/dashboard/blog/edit', [BlogController::class, 'editPost'])->name('blog.edit');
+
+
+
+// Media Page
+Route::get('/dashboard/media', [MediaController::class, 'index'])->name('media.index');
+Route::post('/dashboard/media', [MediaController::class, 'store'])->name('media.store');
+Route::delete('/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
+

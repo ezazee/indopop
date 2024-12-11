@@ -14,7 +14,12 @@
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/dataTable.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/responsiveBoostrap.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/table.css') }}">
-
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/adminGalery.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/revisionHistory.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/seoHelper.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/shortCode.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/slug.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/tagify.css') }}">
 
 <style>
     [v-cloak],

@@ -8,7 +8,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="https://cms.botble.com/admin">Dashboard</a>
+                                     <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <h1 class="mb-0 d-inline-block fs-6 lh-1">Blog</h1>
@@ -335,7 +335,7 @@
                                                 src="https://cms.botble.com/storage/news/1-150x150.jpg" width="50"
                                                 alt="Image"></td>
                                         <td class="  text-start  column-key-2 text-start  column-key-2  column-key-2"><a
-                                                href="https://cms.botble.com/admin/blog/posts/edit/1"
+                                                href="{{ route('blog.edit') }}"
                                                 title="Breakthrough in Quantum Computing: Computing Power Reaches Milestone">Breakthrough
                                                 in Quantum Computing: Computing Power Reaches Milestone</a></td>
                                         <td class="   column-key-3  column-key-3  column-key-3"><a
@@ -352,7 +352,7 @@
                                         </td>
                                         <td class="  text-center no-column-visibility text-nowrap">
                                             <div class="table-actions">
-                                                <a href="https://cms.botble.com/admin/blog/posts/edit/1"
+                                                <a href="{{ route('blog.edit') }}"
                                                     class="btn btn-sm btn-icon btn-primary">
                                                     <svg class="icon  svg-icon-ti-ti-edit" data-bs-toggle="tooltip"
                                                         data-bs-title="Edit" xmlns="http://www.w3.org/2000/svg"
