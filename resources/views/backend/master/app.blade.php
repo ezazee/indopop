@@ -11,7 +11,10 @@
         @include('backend.components.topbar')
         <div class="d-block d-lg-flex">
             @include('backend.components.sidebar')
-            @yield('content')
+            <div class="page-wrapper">
+                    @yield('content')
+                @include('backend.components.footer')
+            </div>
         </div>
     </div>
     @extends('backend.master.master-js')
