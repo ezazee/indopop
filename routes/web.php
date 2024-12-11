@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// {{ !! END-USER ROUTING !! }} //
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/detail', [HomeController::class, 'detail'])->name('detail.desktop');
@@ -31,12 +33,14 @@ Route::get('/search-result', [HomeController::class, 'searchResult'])->name('sea
 
 
 
-// Dashboard Route
+// {{ !! DASHBOARD ROUTING !! }} //
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+// Blog Page
 Route::get('/dashboard/blog/post', [BlogController::class, 'blogPost'])->name('blog.post');
 Route::get('/dashboard/blog/edit', [BlogController::class, 'editPost'])->name('blog.edit');
-
-
+Route::get('/dashboard/blog/create', [BlogController::class, 'createPost'])->name('blog.create');
 
 // Media Page
 Route::get('/dashboard/media', [MediaController::class, 'index'])->name('media.index');

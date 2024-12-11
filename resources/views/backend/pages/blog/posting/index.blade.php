@@ -8,7 +8,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                     <a href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <h1 class="mb-0 d-inline-block fs-6 lh-1">Blog</h1>
@@ -261,7 +261,7 @@
                                 <button class="btn action-item btn-primary " tabindex="0"
                                     aria-controls="botble-blog-tables-post-table" type="button" aria-haspopup="dialog"
                                     aria-expanded="false">
-                                    <span data-action="create" data-href="https://cms.botble.com/admin/blog/posts/create">
+                                    <span data-action="create" data-href="{{ route('blog.create') }}">
                                         <svg class="icon  svg-icon-ti-ti-plus" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -393,7 +393,6 @@
                                                     </svg>
                                                     <span class="sr-only">Delete</span>
                                                 </a>
-
                                             </div>
                                         </td>
                                     </tr>
