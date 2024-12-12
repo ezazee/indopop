@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MediaItem;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
@@ -10,6 +11,7 @@ class MediaController extends Controller
     public function index()
     {
         $mediaItems = MediaItem::all();
+        dd($mediaItems);
         return view('backend.pages.media.index', compact('mediaItems'));
     }
 

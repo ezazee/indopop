@@ -6,6 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\TagsController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,9 +57,20 @@ Route::get('/dashboard/blog/category', [CategoryController::class, 'categoryInde
 Route::get('/dashboard/blog/category/edit', [CategoryController::class, 'categoryEdit'])->name('category.edit');
 Route::get('/dashboard/blog/category/create', [CategoryController::class, 'categoryCreate'])->name('category.create');
 
+// Member
+Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
+Route::get('/dashboard/member/create', [MemberController::class, 'memberCreate'])->name('member.create');
+Route::post('/dashboard/member/create', [MemberController::class, 'memberPost'])->name('member.post');
+
+
 
 // === {{ !! Media Page !! }} === //
 // Media Page
 Route::get('/dashboard/media', [MediaController::class, 'index'])->name('media.index');
 Route::post('/dashboard/media', [MediaController::class, 'store'])->name('media.store');
 Route::delete('/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
+
+
+
+Route::get('/media', [PostController::class, 'index'])->name('media.index');
+Route::post('/media', [PostController::class, 'store'])->name('media.store');
