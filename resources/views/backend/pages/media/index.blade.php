@@ -1,31 +1,7 @@
 @extends('backend.master.app')
 
 @section('content')
-    <div class="page-header d-print-none">
-        <div class="container-xl">
-            <div class="row g-2 align-items-center">
-                <div class="col">
-                    <div class="page-pretitle">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="https://cms.botble.com/admin">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    <h1 class="mb-0 d-inline-block fs-6 lh-1">Media</h1>
-                                </li>
-                            </ol>
-                        </nav>
-
-                    </div>
-                </div>
-                <div class="col-auto ms-auto d-print-none">
-                    <div class="btn-list">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('backend.components.breadcrumb')
 
     <div class="page-body page-content">
         <div class="container-xl">
@@ -1096,8 +1072,7 @@
                                         <label class="form-colorinput form-colorinput-light">
                                             <input name="color" type="radio" value="#e74c3c"
                                                 class="form-colorinput-input">
-                                            <span class="form-colorinput-color"
-                                                style="background-color:#e74c3c;"></span>
+                                            <span class="form-colorinput-color" style="background-color:#e74c3c;"></span>
                                         </label>
                                     </div>
                                     <div class="col-auto">

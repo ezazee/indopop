@@ -146,7 +146,7 @@
                                 Posts
                             </span>
                         </a>
-                        <a class="dropdown-item nav-priority-20" href="https://cms.botble.com/admin/blog/categories"
+                        <a class="dropdown-item nav-priority-20" href="{{ route('category.create') }}"
                             id="cms-plugins-blog-categories" title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
                                 <svg class="icon  svg-icon-ti-ti-folder" xmlns="http://www.w3.org/2000/svg"

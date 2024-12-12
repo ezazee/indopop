@@ -53,7 +53,6 @@ Route::get('/dashboard/blog/tags/edit', [TagsController::class, 'tagsEdit'])->na
 Route::get('/dashboard/blog/tags/create', [TagsController::class, 'tagsCreate'])->name('tags.create');
 
 // Category
-Route::get('/dashboard/blog/category', [CategoryController::class, 'categoryIndex'])->name('category.index');
 Route::get('/dashboard/blog/category/edit', [CategoryController::class, 'categoryEdit'])->name('category.edit');
 Route::get('/dashboard/blog/category/create', [CategoryController::class, 'categoryCreate'])->name('category.create');
 
