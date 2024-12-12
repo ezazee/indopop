@@ -57,3 +57,5 @@
 <script src="{{ asset('backend/js/dropZone.js') }}"></script>
 <script src="{{ asset('backend/js/jqueryUi.js') }}"></script>
 <script src="{{ asset('backend/js/contextMenu.js') }}"></script>
+<script src="{{ asset('backend/js/treeCategory.js') }}"></script>
+<script src="{{ asset('backend/js/nestAble.js') }}"></script>
