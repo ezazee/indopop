@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Categories | Botble Technologies</title>
+    <title>Members | Botble Technologies</title>
     <meta name="csrf-token" content="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
 
     <link href="https://cms.botble.com/vendor/core/core/base/images/favicon.png" rel="icon shortcut">
@@ -373,17 +373,17 @@
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/jquery-nestable/jquery.nestable.min.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/css/dataTables.bootstrap.min.css?v=7.4.7">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/css/buttons.bootstrap.min.css?v=7.4.7">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/css/responsive.bootstrap.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/css/core.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/plugins/language/css/language.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/css/tree-category.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/packages/slug/css/slug.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/packages/seo-helper/css/seo-helper.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/core/table/css/table.css?v=7.4.7">
 
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/js/app.js?v=7.4.7"></script>
@@ -539,7 +539,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Raphaelle Upton">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -552,7 +552,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             530-529-3969 - <span class="__cf_email__"
-                                                                data-cfemail="90f1e2f5fefef5e2d0f5e8f1fde0fcf5beffe2f7">[email&#160;protected]</span>
+                                                                data-cfemail="88e9faede6e6edfac8edf0e9e5f8e4eda6e7faef">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -564,7 +564,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Gerry Larson">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -577,7 +577,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             814-376-5924 - <span class="__cf_email__"
-                                                                data-cfemail="96fffbf7f8ffa0a5d6f3eef7fbe6faf3b8f5f9fb">[email&#160;protected]</span>
+                                                                data-cfemail="3c55515d52550a0f7c59445d514c5059125f5351">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -589,7 +589,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Stephany Bode Jr.">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -602,7 +602,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             618-376-2147 - <span class="__cf_email__"
-                                                                data-cfemail="62070e0f0b10034c15031607101122071a030f120e074c0d1005">[email&#160;protected]</span>
+                                                                data-cfemail="bbded7d6d2c9da95ccdacfdec9c8fbdec3dad6cbd7de95d4c9dc">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -620,11 +620,11 @@
                             class="p-0 nav-link d-flex lh-1 text-reset" data-bs-toggle="dropdown"
                             aria-label="Open user menu">
                             <span class="crop-image-original avatar avatar-sm"
-                                style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAD6APoDASIAAhEBAxEB/8QAHAABAAMAAwEBAAAAAAAAAAAAAAYHCAMEBQEC/8QAQxABAAEDAgEHBgkKBwEAAAAAAAECAwQFEQYHEiExUWGBEyJBcZGhFEJSVXKisbLBFhcjMjZzgpOU0TM0Q1RidJLw/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAMFAgQGAf/EACkRAQACAQIFAgcBAQAAAAAAAAABAgMEEQUSITFBMnEiI0JRYYGxEzP/2gAMAwEAAhEDEQA/AIqA7FtgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPsRNUxERMzPRER6QfHt6JwlrXEExVg4dU2d9pv3PMtx4z1+G6f8ABnJpbt27eo6/a59ydqreHV1U99fbPd7eyLNoopt0U0UUxTRTG0U0xtEQqtTxKKTy4us/fwitk27KswOR2ebFWo6tEVemjHt7/Wq/s9i3yScPUR51/UK57Zu0x9lKeiutrtRb6kfPZAbvJHoFceZk6hRP7yiY+68XP5HbkUzVp2rU1T6KMi3zfrRv9i2ArrtRX6iL2Zw1rhPWtAmas/Crps77Reo86ifGOrx2eK1PXRTcoqorpiqmqNppqjeJhWPGfJpbrtXNR0C1zLlMc65h09VXfR2T3ezsmx03EovPLl6T9/CSuTfuqYfZiaZmJiYmOiYl8WqUAAAAAAAAAAAAAAAAAAAAWhyXcJU3pjiDOt7001TGJRVHRMx11+HVHfv2Qr3R9Nu6xrGJp9noryLkUb/Jj0z4RvPg0riYtnBw7OJj0RRZs0RRRT2REbQrOJaiaU/zr3n+I8lto2cwPK4i12xw7ol/Ub8c7mebbt77TXXPVH/3oiVHWs2mKx3lB3dnUdVwNIxvhGoZdrHteiblW2/dEdcz6kSyOVfhuzXNNuM2/EfGt2YiJ/8AUxKntX1jO1zUK83PvTcu1dUfFojspj0Q6C6xcLpEfMneU0Y48ryxuVXhq/XFNycvHj5V2zvH1ZlK9O1XA1bH8vp+XayLfpm3Vvt3THXE+tmJ39I1jN0PULebgXpt3aJ6Y+LXHZVHpgy8LpMfLnaScceGmh52havZ17RcbUrEbU3qd6qd/wBSqOiY8JeipLVmszE90KoeVHhSjEvRr2Fbim1eq5uTRTHRFc9Vfj6e/wBatGndV061q2lZWn3/APDyLc0TPZv1T4TtPgzNkWLmLk3ce7TzblquaK47Jidp+xf8Nzzkx8lu8fxPjtvGzjAWKQAAAAAAAAAAAAAAAAABYnJHp0ZGv5efVTvGLZ5tPdVXO2/sir2rlV5yQ40W+G8zJ2867lTT4U007e+ZWG5rX35s9vx0a95+IU9yu6rVe1bD0uir9Hj2/K1xHprq6t/VEfWXCzzx5kzlcb6rXM7827FuP4aYp/BLwynNm3nxD3HHVHAHQJwAFvcj2dVc03UsGqeizdou0x9KJifux7Vlsv4eo52n1V1YWZkY01xtVNm7VRzvXtPS7f5Sa9896l/VV/3VWo4dbLkm8Ttuitj3ndpVn3lBw4w+ONRppjam5VTdj+KmJn37vM/KTXvnvUv6qv8Au6OVmZWde8tl5N7Iu7bc+7XNdW3ZvKTSaK2C82md3tKcsuEBYpAAAAAAAAAAAAAAAAAAF68ltMU8E2p+VfuT79vwTRDOS79h7H76595M3K6r/vf3lrW7yM2cT1TVxZrEz/vb335aTZq4l/avWP8AvXvv1N7hXrt7M8Xd5YC8TAAAAAAAAAAAAAAAAAAAAAAAAAALw5KLsXODZpj/AE8qumfZTP4pyrLkdy4qwNUwpnpou0XYj6UTE/dhZrmNbXlz2hrX9UjN/FlubXF+sUz6cy7V7apn8WkFB8pOHOJxxm1bbU36aLtPfvTET74ls8KttlmPwyxd0SAXycAAEl4S4OyOLfhfkcq3jxjczea6Znnc7fs+ik35nc752x/5VTXvq8OO3La3VjNohWgsv8zud87Y/wDKqQniPRK+Hdau6bcv0X67dNMzXTG0dMb/AIvcepxZZ5aTvJFons8oBOyAAAAAAAAAAAAAAAAAATHkz1WNN4ws2q6treZRNifpTtNPvjbxXwyzauV2btF21VNFyiqKqao64mOqWjeF9dtcRaBj59Ex5SY5l6iPiXI64/GO6YUnFMO1oyx7IckeXsq05W9DryMHG1mzRvON+ivbR8SZ82fVE7x/Estx37FrKx7li/bpuWrlM010VRvFUT1wr8GWcOSLx4R1nad2WhYPE3JfqGDfuZGi0zl4kzvFrf8ASW+7/lHq6e5CL+mZ+LXNGRg5NqqOuLlqqmffDpcWfHljestiLRPZ1R3sbRtUza4pxtOy70z8izVP4J3wtyW5l/It5WvUxYx6Zir4NFW9dzumY/Vj3+oy6jHije0k2iEp5LtJr07hX4Tdpmm5m3PKxE9fMjop/GfFN35oopt0U0UUxTRTG1NMRtER2P05jLknJebz5a8zvO4zjxfnxqXF2p5VNXOom/NFM9tNPmxPshd/GWvU8PcNZOVFe2RXHksePTNc77T4dM+DOvWteFYp+LJPskxR5AFwmAAAAAAAAAAAAAAAAAAEm4L4su8Larz6+dXg39qb9uPdVHfHvRkYZKVyVmtu0vJjfo1HiZePn4lrKxbtN2xdp51FdM9Ew5meOGOMdS4XvzGPVF7Erne5jXJ82e+J+LPf7d1w6Hx5oOuUU00ZVOLkT0TYyJiid+6eqfDpc9qNDkwzvHWEFqTCTANJgA+VVU0UzVVMRTHTMzPRAPrgzc3G07Du5eXeps2LVPOrrqnoiEa1zlE0HRqaqKMiM3Jjoi1jzFUb99XVHvnuVBxLxdqfE+RFWXXFvHone3j2/wBSnvntnvn3N7T6HJlne3SGdaTLl4y4qu8U6v5WIqow7O9OPbn0R6ap75/tCOA6ClK46xWvaE8Rt0AGb0AAAAAAAAAAAAAAAAAAAAAB6OFr2r6bEU4WpZdiiPiUXZin2dT1qOUPiu3G1Or1z9Kzbq+2lGBHbDjt6qxP6ebQkt3j/im9G1Wr3Y+hbop+yHj5ur6lqP8Anc/JyI69rt2qqPZMukFcWOvprEfo2iABI9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q==)"></span>
+                                style="background-image: url(data:image/jpeg;base64,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)"></span>
                             <div class="d-none d-xl-block ps-2">
                                 <div>Conor Smith</div>
                                 <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                        data-cfemail="2056554c4c52494348604449434b494e534f4e0e434f4d">[email&#160;protected]</span>
+                                        data-cfemail="483e3d24243a212b20082c212b2321263b2726662b2725">[email&#160;protected]</span>
                                 </div>
                             </div>
                         </a>
@@ -695,11 +695,11 @@
                             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                                 aria-label="Open user menu">
                                 <span class="crop-image-original avatar avatar-sm"
-                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
+                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
                                 <div class="d-none d-xl-block ps-2">
                                     <div>Conor Smith</div>
                                     <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                            data-cfemail="6711120b0b150e040f27030e040c0e091408094904080a">[email&#160;protected]</span>
+                                            data-cfemail="4e383b22223c272d260e2a272d2527203d2120602d2123">[email&#160;protected]</span>
                                     </div>
                                 </div>
                             </a>
@@ -783,10 +783,10 @@
 
 
                             </li>
-                            <li class="nav-item active dropdown ">
-                                <a class="nav-link dropdown-toggle nav-priority-3 active show"
-                                    href="#cms-plugins-blog" id="cms-plugins-blog" data-bs-toggle="dropdown"
-                                    data-bs-auto-close="false" role="button" aria-expanded="true" title="Blog">
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog"
+                                    id="cms-plugins-blog" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                                    role="button" aria-expanded="false" title="Blog">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block" title="Blog">
                                         <svg class="icon  svg-icon-ti-ti-article" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -807,7 +807,7 @@
                                 </a>
 
 
-                                <div class="dropdown-menu animate slideIn dropdown-menu-start show">
+                                <div class="dropdown-menu animate slideIn dropdown-menu-start">
 
 
                                     <a class="dropdown-item nav-priority-10"
@@ -835,7 +835,7 @@
 
 
 
-                                    <a class="dropdown-item nav-priority-20 active show"
+                                    <a class="dropdown-item nav-priority-20"
                                         href="https://cms.botble.com/admin/blog/categories"
                                         id="cms-plugins-blog-categories" title="Categories">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
@@ -900,9 +900,9 @@
 
 
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link nav-priority-50" href="https://cms.botble.com/admin/members"
-                                    id="cms-core-member" title="Members">
+                            <li class="nav-item active ">
+                                <a class="nav-link nav-priority-50 active show"
+                                    href="https://cms.botble.com/admin/members" id="cms-core-member" title="Members">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block" title="Members">
                                         <svg class="icon  svg-icon-ti-ti-users" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1492,11 +1492,8 @@
                                             <li class="breadcrumb-item">
                                                 <a href="https://cms.botble.com/admin">Dashboard</a>
                                             </li>
-                                            <li class="breadcrumb-item">
-                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Blog</h1>
-                                            </li>
                                             <li class="breadcrumb-item active" aria-current="page">
-                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Categories</h1>
+                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Members</h1>
                                             </li>
                                         </ol>
                                     </nav>
@@ -1513,1131 +1510,347 @@
 
                 <div class="page-body page-content">
                     <div class="container-xl">
+                        <div class="table-wrapper">
+                            <div class="card mb-3 table-configuration-wrap" style="display: none;">
+                                <div class="card-body">
+                                    <button class="btn btn-icon  btn-sm btn-show-table-options rounded-pill"
+                                        type="button">
+                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M18 6l-12 12" />
+                                            <path d="M6 6l12 12" />
+                                        </svg>
 
+                                    </button>
 
+                                    <div class="wrapper-filter">
+                                        <p>Filters</p>
 
-                        <div class="row row-cards">
-                            <div class="col-12">
-                                <div class="my-2 text-end">
-                                </div>
-                            </div>
+                                        <input type="hidden" class="filter-data-url"
+                                            value="https://cms.botble.com/admin/tables/filters" />
 
-                            <div class="col-md-4">
-                                <div role="alert" class="alert alert-info">
-                                    <div class="d-flex">
-                                        <div>
-                                            <svg class="icon alert-icon svg-icon-ti-ti-info-circle"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                                                <path d="M12 9h.01" />
-                                                <path d="M11 12h1v4h1" />
-                                            </svg>
-                                        </div>
-                                        <div class="w-100">
+                                        <div class="sample-filter-item-wrap hidden">
+                                            <div class="row filter-item form-filter">
+                                                <div class="col-auto w-50 w-sm-auto">
+                                                    <div class="mb-3 position-relative">
+                                                        <select class="form-select filter-column-key"
+                                                            name="filter_columns[]" id="filter_columns[]">
+                                                            <option value="first_name">First Name</option>
+                                                            <option value="last_name">Last Name</option>
+                                                            <option value="email">Email</option>
+                                                            <option value="created_at">Created At</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
 
+                                                <div class="col-auto w-50 w-sm-auto">
+                                                    <div class="mb-3 position-relative">
+                                                        <select
+                                                            class="form-select filter-operator filter-column-operator"
+                                                            name="filter_operators[]" id="filter_operators[]">
+                                                            <option value="like">Contains</option>
+                                                            <option value="=">Is equal to</option>
+                                                            <option value="&gt;">Greater than</option>
+                                                            <option value="&lt;">Less than</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
 
-                                            Drag and drop on the left to change the order or parent of the categories.
+                                                <div class="col-auto w-100 w-sm-25">
+                                                    <span class="filter-column-value-wrap">
+                                                        <input class="form-control filter-column-value"
+                                                            type="text" placeholder="Value"
+                                                            name="filter_values[]">
+                                                    </span>
+                                                </div>
 
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-                                <div class="card tree-categories-container">
-                                    <div class="card-header">
-                                        <div class="card-actions"><a
-                                                class="btn btn-primary  tree-categories-create mx-2" type="button"
-                                                href="https://cms.botble.com/admin/blog/categories/create">
-                                                <svg class="icon icon-left svg-icon-ti-ti-plus"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M12 5l0 14" />
-                                                    <path d="M5 12l14 0" />
-                                                </svg>
-                                                Create
-
-                                            </a></div>
-                                    </div>
-                                    <div class="card-body tree-categories-body">
-                                        <div class="file-tree-wrapper" data-url=""
-                                            data-update-url="https://cms.botble.com/admin/blog/categories/update-tree">
-                                            <div class="dd" data-depth="0"
-                                                data-empty-text="No categories found.">
-                                                <ol class="list-group dd-list ">
-                                                    <li class="dd-item" data-id="1"
-                                                        data-name="Artificial Intelligence">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/1"
-                                                                    title="ID: 1" data-bs-toggle="tooltip">
-                                                                    Artificial Intelligence
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/artificial-intelligence"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 5"
-                                                                    target="_blank">(5)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/1"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="2" data-name="Cybersecurity">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/2"
-                                                                    title="ID: 2" data-bs-toggle="tooltip">
-                                                                    Cybersecurity
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/cybersecurity"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 3"
-                                                                    target="_blank">(3)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/2"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="3"
-                                                        data-name="Blockchain Technology">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/3"
-                                                                    title="ID: 3" data-bs-toggle="tooltip">
-                                                                    Blockchain Technology
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/blockchain-technology"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 2"
-                                                                    target="_blank">(2)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/3"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="4"
-                                                        data-name="5G and Connectivity">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/4"
-                                                                    title="ID: 4" data-bs-toggle="tooltip">
-                                                                    5G and Connectivity
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/5g-and-connectivity"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 8"
-                                                                    target="_blank">(8)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/4"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="5"
-                                                        data-name="Augmented Reality (AR)">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/5"
-                                                                    title="ID: 5" data-bs-toggle="tooltip">
-                                                                    Augmented Reality (AR)
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/augmented-reality-ar"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 3"
-                                                                    target="_blank">(3)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/5"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="6"
-                                                        data-name="Green Technology">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/6"
-                                                                    title="ID: 6" data-bs-toggle="tooltip">
-                                                                    Green Technology
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/green-technology"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 4"
-                                                                    target="_blank">(4)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/6"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="7"
-                                                        data-name="Quantum Computing">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/7"
-                                                                    title="ID: 7" data-bs-toggle="tooltip">
-                                                                    Quantum Computing
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/quantum-computing"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 5"
-                                                                    target="_blank">(5)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/7"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dd-item" data-id="8" data-name="Edge Computing">
-                                                        <div class="dd-handle dd3-handle"></div>
-                                                        <div class="dd3-content d-flex align-items-center gap-2">
-                                                            <div class="d-flex align-items-center gap-1"
-                                                                style="width: 90%;">
-                                                                <svg class="icon  svg-icon-ti-ti-file"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path stroke="none" d="M0 0h24v24H0z"
-                                                                        fill="none" />
-                                                                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                                                    <path
-                                                                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                                                </svg> <span class="fetch-data text-truncate"
-                                                                    role="button"
-                                                                    data-href="https://cms.botble.com/admin/blog/categories/edit/8"
-                                                                    title="ID: 8" data-bs-toggle="tooltip">
-                                                                    Edge Computing
-                                                                </span>
-
-                                                                <a href="https://cms.botble.com/edge-computing"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-bs-original-title="Total posts: 7"
-                                                                    target="_blank">(7)</a>
-
-                                                                <span data-bs-toggle="modal"
-                                                                    data-bs-target=".modal-confirm-delete"
-                                                                    data-url="https://cms.botble.com/admin/blog/categories/8"
-                                                                    class="ms-2">
-                                                                    <button
-                                                                        class="btn btn-icon btn-danger btn-sm delete-button"
-                                                                        type="button" data-bs-placement="right"
-                                                                        data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete">
-                                                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 7l16 0" />
-                                                                            <path d="M10 11l0 6" />
-                                                                            <path d="M14 11l0 6" />
-                                                                            <path
-                                                                                d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                                            <path
-                                                                                d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                                        </svg>
-
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-8">
-                                <div class="card tree-form-container">
-                                    <div class="card-body tree-form-body">
-                                        <form method="POST"
-                                            action="https://cms.botble.com/admin/blog/categories/create"
-                                            accept-charset="UTF-8" id="botble-blog-forms-category-form"
-                                            class="js-base-form dirty-check" createRoute="categories.create"
-                                            editRoute="categories.edit" deleteRoute="categories.destroy"
-                                            updateTreeRoute="categories.update-tree"><input name="_token"
-                                                type="hidden" value="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
-
-                                            <div role="alert" class="alert alert-info">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <svg class="icon alert-icon svg-icon-ti-ti-info-circle"
+                                                <div class="col">
+                                                    <button
+                                                        class="btn btn-icon   btn-remove-filter-item mb-3 text-danger"
+                                                        type="button" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Delete">
+                                                        <svg class="icon icon-left svg-icon-ti-ti-trash"
                                                             xmlns="http://www.w3.org/2000/svg" width="24"
                                                             height="24" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
                                                             stroke-linecap="round" stroke-linejoin="round">
                                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                                                            <path d="M12 9h.01" />
-                                                            <path d="M11 12h1v4h1" />
+                                                            <path d="M4 7l16 0" />
+                                                            <path d="M10 11l0 6" />
+                                                            <path d="M14 11l0 6" />
+                                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                         </svg>
-                                                    </div>
-                                                    <div class="w-100">
 
-
-                                                        You are editing "<strong
-                                                            class="current_language_text">English</strong>" version
-
-                                                    </div>
+                                                    </button>
                                                 </div>
-
-
-
                                             </div>
+                                        </div>
 
-
-
-
-                                            <input class="form-control" name="order" type="hidden"
-                                                value="1">
-
-
-
-
-
-
-
-                                            <div class="mb-3 position-relative">
-
-                                                <label for="name" class="form-label required">Name</label>
-
-
-                                                <input class="form-control" data-counter="250" placeholder="Name"
-                                                    required="required" name="name" type="text"
-                                                    id="name">
-
-
-
-
-                                            </div>
-
-
-
-
-                                            <input type="hidden" name="model"
-                                                value="Botble\Blog\Models\Category">
-
-                                            <div class="mb-3 ">
-                                                <div class="slug-field-wrapper" data-field-name="name">
-                                                    <div class="mb-3 position-relative">
-                                                        <label class="form-label required" for="slug">
-                                                            Permalink
-
-
-                                                        </label>
-
-                                                        <div class="input-group input-group-flat">
-
-                                                            <span class="input-group-text">
-                                                                https://cms.botble.com/
-                                                            </span>
-
-                                                            <input class="form-control ps-0" type="text"
-                                                                name="slug" id="slug"
-                                                                required="required" />
-
-
-                                                            <span class="input-group-text slug-actions">
-                                                                <a href="#" class="link-secondary d-none"
-                                                                    data-bs-toggle="tooltip"
-                                                                    aria-label="Generate URL"
-                                                                    data-bs-original-title="Generate URL"
-                                                                    data-bb-toggle="generate-slug">
-                                                                    <svg class="icon  svg-icon-ti-ti-wand"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        width="24" height="24"
-                                                                        viewBox="0 0 24 24" fill="none"
-                                                                        stroke="currentColor" stroke-width="2"
-                                                                        stroke-linecap="round"
-                                                                        stroke-linejoin="round">
-                                                                        <path stroke="none" d="M0 0h24v24H0z"
-                                                                            fill="none" />
-                                                                        <path d="M6 21l15 -15l-3 -3l-15 15l3 3" />
-                                                                        <path d="M15 6l3 3" />
-                                                                        <path
-                                                                            d="M9 3a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                                                        <path
-                                                                            d="M19 13a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                                                    </svg> </a>
-                                                            </span>
-
+                                        <form method="GET" action="https://cms.botble.com/admin/members"
+                                            accept-charset="UTF-8" class="filter-form">
+                                            <input type="hidden" name="filter_table_id"
+                                                class="filter-data-table-id"
+                                                value="botble-member-tables-member-table">
+                                            <input type="hidden" name="class" class="filter-data-class"
+                                                value="Botble\Member\Tables\MemberTable">
+                                            <div class="filter_list inline-block filter-items-wrap">
+                                                <div class="row filter-item form-filter filter-item-default">
+                                                    <div class="col-auto w-50 w-sm-auto">
+                                                        <div class="mb-3 position-relative">
+                                                            <select class="form-select filter-column-key"
+                                                                name="filter_columns[]" id="filter_columns[]">
+                                                                <option value="" selected>Select field</option>
+                                                                <option value="first_name">First Name</option>
+                                                                <option value="last_name">Last Name</option>
+                                                                <option value="email">Email</option>
+                                                                <option value="created_at">Created At</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <small class="form-hint mt-n2 text-truncate">Preview: <a
-                                                            href="https://cms.botble.com/"
-                                                            target="_blank">https://cms.botble.com/</a></small>
-                                                    <input class="slug-current" name="slug" type="hidden"
-                                                        value="">
-                                                    <div class="slug-data"
-                                                        data-url="https://cms.botble.com/ajax/slug/create"
-                                                        data-view="https://cms.botble.com/" data-id="0"></div>
-                                                    <input name="slug_id" type="hidden" value="0">
-                                                    <input name="is_slug_editable" type="hidden" value="1">
-                                                </div>
 
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-                                                <label for="parent_id" class="form-label">Parent</label>
-
-
-                                                <select class="select-search-full form-select"
-                                                    data-allow-clear="false" id="parent_id" name="parent_id">
-                                                    <option value="0">None</option>
-                                                    <option value="1"> Artificial Intelligence</option>
-                                                    <option value="2"> Cybersecurity</option>
-                                                    <option value="3"> Blockchain Technology</option>
-                                                    <option value="4"> 5G and Connectivity</option>
-                                                    <option value="5"> Augmented Reality (AR)</option>
-                                                    <option value="6"> Green Technology</option>
-                                                    <option value="7"> Quantum Computing</option>
-                                                    <option value="8"> Edge Computing</option>
-                                                </select>
-
-
-
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-                                                <label for="description" class="form-label">Description</label>
-
-
-                                                <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description"
-                                                    name="description" cols="50" id="description"></textarea>
-
-
-
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-
-
-                                                <label class="form-check form-switch ">
-                                                    <input name="is_default" type="hidden" value="0" />
-                                                    <input class="form-check-input" name="is_default"
-                                                        type="checkbox" value="1" id="is_default" />
-
-                                                    <span class="form-check-label">Is default?</span>
-                                                </label>
-
-
-
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-                                                <label for="icon" class="form-label">Icon</label>
-
-
-                                                <select name="icon" data-bb-core-icon
-                                                    data-url="https://cms.botble.com/admin/core-icons"
-                                                    data-placeholder="Ex: ti ti-home" class="form-control"
-                                                    data-counter="120" data-placeholder="Ex: ti ti-home"
-                                                    data-allow-clear="true">
-                                                </select>
-
-
-
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-
-
-                                                <label class="form-check form-switch ">
-                                                    <input name="is_featured" type="hidden" value="0" />
-                                                    <input class="form-check-input" name="is_featured"
-                                                        type="checkbox" value="1" id="is_featured" />
-
-                                                    <span class="form-check-label">Is featured?</span>
-                                                </label>
-
-
-
-
-                                            </div>
-
-
-
-                                            <div class="mb-3 position-relative">
-
-                                                <label for="status" class="form-label required">Status</label>
-
-
-                                                <select class="form-control form-select" required="required"
-                                                    id="status" name="status">
-                                                    <option value="published">Published</option>
-                                                    <option value="draft">Draft</option>
-                                                    <option value="pending">Pending</option>
-                                                </select>
-
-
-
-
-                                            </div>
-
-
-
-
-
-
-                                            <div id="advanced-sortables" class="meta-box-sortables">
-                                                <div class="card meta-boxes mb-3" id="seo_wrap">
-                                                    <div class="card-header">
-                                                        <h4 class="card-title">
-                                                            Search Engine Optimize
-                                                        </h4>
-
-                                                        <div class="card-actions"><a href="#"
-                                                                class="btn-trigger-show-seo-detail">
-                                                                Edit SEO meta
-                                                            </a></div>
-                                                    </div>
-
-                                                    <div class="card-body">
-                                                        <div class="seo-preview" v-pre>
-                                                            <p class="default-seo-description">
-                                                                Setup meta title &amp; description to make your site
-                                                                easy to discovered on search engines such as Google
-                                                            </p>
-
-                                                            <div class="existed-seo-meta hidden">
-
-                                                                <h4 class="page-title-seo text-truncate">
-
-                                                                </h4>
-
-                                                                <div class="page-url-seo">
-                                                                    <p>-</p>
-                                                                </div>
-
-                                                                <div>
-                                                                    <span style="color: #70757a;">Dec 12, 2024
-                                                                        - </span>
-                                                                    <span class="page-description-seo">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="hidden seo-edit-section" v-pre>
-                                                            <hr class="my-4">
-                                                            </hr>
-
-                                                            <div class="mb-3 position-relative">
-
-                                                                <label for="seo_meta[seo_title]"
-                                                                    class="form-label">SEO Title</label>
-
-
-                                                                <input class="form-control" data-counter="70"
-                                                                    placeholder="SEO Title" data-allow-over-limit
-                                                                    name="seo_meta[seo_title]" type="text"
-                                                                    id="seo_meta[seo_title]">
-
-
-
-
-                                                            </div>
-
-
-
-                                                            <div class="mb-3 position-relative">
-
-                                                                <label for="seo_meta[seo_description]"
-                                                                    class="form-label">SEO description</label>
-
-
-                                                                <textarea class="form-control" data-counter="160" rows="3" placeholder="SEO description"
-                                                                    data-allow-over-limit name="seo_meta[seo_description]" cols="50" id="seo_meta[seo_description]"></textarea>
-
-
-
-
-                                                            </div>
-
-
-
-                                                            <div class="mb-3 position-relative">
-
-                                                                <label for="seo_meta_image" class="form-label">SEO
-                                                                    image</label>
-
-
-                                                                <div class="image-box image-box-seo_meta_image"
-                                                                    action="select-image" data-counter="250">
-                                                                    <input class="image-data" name="seo_meta_image"
-                                                                        type="hidden" value=""
-                                                                        class="" data-counter="250" />
-
-
-                                                                    <div style="width: 8rem"
-                                                                        class="preview-image-wrapper mb-1">
-                                                                        <div class="preview-image-inner">
-                                                                            <a data-bb-toggle="image-picker-choose"
-                                                                                data-target="popup"
-                                                                                class="image-box-actions"
-                                                                                data-result="seo_meta_image"
-                                                                                data-action="select-image"
-                                                                                data-allow-thumb="1" href="#">
-                                                                                <img class="preview-image default-image"
-                                                                                    data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                                                    src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                                                    alt="Preview image" />
-                                                                                <span
-                                                                                    class="image-picker-backdrop"></span>
-                                                                            </a>
-                                                                            <button
-                                                                                class="btn btn-pill btn-icon  btn-sm image-picker-remove-button p-0"
-                                                                                style="display: none; --bb-btn-font-size: 0.5rem;"
-                                                                                type="button"
-                                                                                data-bb-toggle="image-picker-remove"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="Remove image">
-                                                                                <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    width="24" height="24"
-                                                                                    viewBox="0 0 24 24"
-                                                                                    fill="none"
-                                                                                    stroke="currentColor"
-                                                                                    stroke-width="2"
-                                                                                    stroke-linecap="round"
-                                                                                    stroke-linejoin="round">
-                                                                                    <path stroke="none"
-                                                                                        d="M0 0h24v24H0z"
-                                                                                        fill="none" />
-                                                                                    <path d="M18 6l-12 12" />
-                                                                                    <path d="M6 6l12 12" />
-                                                                                </svg>
-
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <a data-bb-toggle="image-picker-choose"
-                                                                        data-target="popup"
-                                                                        data-result="seo_meta_image"
-                                                                        data-action="select-image"
-                                                                        data-allow-thumb="1" href="#">
-                                                                        Choose image
-                                                                    </a>
-
-                                                                    <div data-bb-toggle="upload-from-url">
-                                                                        <span class="text-muted">or</span>
-                                                                        <a href="javascript:void(0)" class="mt-1"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#image-picker-add-from-url"
-                                                                            data-bb-target=".image-box-seo_meta_image">
-                                                                            Add from URL
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-
-
-
-
-                                                            </div>
-
-
-
-                                                            <div class="mb-3 position-relative">
-
-                                                                <label for="seo_meta[index]"
-                                                                    class="form-label">Index</label>
-
-
-                                                                <div class="position-relative form-check-group">
-                                                                    <label class="form-check form-check-inline">
-                                                                        <input class="form-check-input"
-                                                                            id="seo_meta[index]" type="radio"
-                                                                            name="seo_meta[index]" value="index"
-                                                                            checked>
-
-                                                                        <span class="form-check-label">Index</span>
-                                                                    </label>
-                                                                    <label class="form-check form-check-inline">
-                                                                        <input class="form-check-input"
-                                                                            id="seo_meta[index]" type="radio"
-                                                                            name="seo_meta[index]" value="noindex">
-
-                                                                        <span class="form-check-label">No index</span>
-                                                                    </label>
-                                                                </div>
-
-
-
-
-                                                            </div>
-
-
-
-
-
-
-
+                                                    <div class="col-auto w-50 w-sm-auto">
+                                                        <div class="mb-3 position-relative">
+                                                            <select
+                                                                class="form-select filter-operator filter-column-operator"
+                                                                name="filter_operators[]" id="filter_operators[]">
+                                                                <option value="like">Contains</option>
+                                                                <option value="=" selected>Is equal to</option>
+                                                                <option value="&gt;">Greater than</option>
+                                                                <option value="&lt;">Less than</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                            </div>
-
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h4 class="card-title">
-                                                        Publish
-                                                    </h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="btn-list">
-                                                        <button class="btn btn-primary" type="submit"
-                                                            value="apply" name="submitter">
-                                                            <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z"
-                                                                    fill="none" />
-                                                                <path
-                                                                    d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
-                                                                <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                                <path d="M14 4l0 4l-6 0l0 -4" />
-                                                            </svg>
-                                                            Save
-
-                                                        </button>
-
-                                                        <button class="btn" type="submit" name="submitter"
-                                                            value="save">
-                                                            <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z"
-                                                                    fill="none" />
-                                                                <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
-                                                                <path d="M4 14h9" />
-                                                                <path d="M10 11l3 3l-3 3" />
-                                                            </svg>
-                                                            Save &amp; Exit
-
-                                                        </button>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div data-bb-waypoint data-bb-target="#form-actions"></div>
-
-                                            <header class="top-0 w-100 position-fixed end-0 z-1000"
-                                                id="form-actions" style="display: none;">
-                                                <div class="navbar">
-                                                    <div class="container-xl">
-                                                        <div class="row g-2 align-items-center w-100">
-                                                            <div class="col">
-                                                                <div class="page-pretitle">
-                                                                    <nav aria-label="breadcrumb">
-                                                                        <ol class="breadcrumb">
-                                                                        </ol>
-                                                                    </nav>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-auto ms-auto d-print-none">
-                                                                <div class="btn-list">
-                                                                    <button class="btn btn-primary" type="submit"
-                                                                        value="apply" name="submitter">
-                                                                        <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path
-                                                                                d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
-                                                                            <path
-                                                                                d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                                            <path d="M14 4l0 4l-6 0l0 -4" />
-                                                                        </svg>
-                                                                        Save
-
-                                                                    </button>
-
-                                                                    <button class="btn" type="submit"
-                                                                        name="submitter" value="save">
-                                                                        <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            width="24" height="24"
-                                                                            viewBox="0 0 24 24" fill="none"
-                                                                            stroke="currentColor" stroke-width="2"
-                                                                            stroke-linecap="round"
-                                                                            stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z"
-                                                                                fill="none" />
-                                                                            <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
-                                                                            <path d="M4 14h9" />
-                                                                            <path d="M10 11l3 3l-3 3" />
-                                                                        </svg>
-                                                                        Save &amp; Exit
-
-                                                                    </button>
-
-
-                                                                </div>
-                                                            </div>
+                                                    <div class="col-auto w-100 w-sm-25">
+                                                        <div class="filter-column-value-wrap mb-3">
+                                                            <input class="form-control filter-column-value"
+                                                                type="text" placeholder="Value"
+                                                                name="filter_values[]" value="">
                                                         </div>
                                                     </div>
+
+                                                    <div class="col">
+                                                    </div>
                                                 </div>
-                                            </header>
+                                            </div>
+                                            <div class="btn-list">
+                                                <button class="btn   add-more-filter" type="button">
 
+                                                    Add additional filter
 
+                                                </button>
+                                                <button class="btn btn-primary  btn-apply" type="submit">
+
+                                                    Apply
+
+                                                </button>
+                                                <a class="btn btn-icon" style="display: none;" type="button"
+                                                    href="https://cms.botble.com/admin/members"
+                                                    data-bb-toggle="datatable-reset-filter">
+                                                    <svg class="icon icon-left svg-icon-ti-ti-refresh"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                                                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                                                    </svg>
+
+                                                </a>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="card has-actions has-filter">
+                                <div class="card-header">
+                                    <div
+                                        class="w-100 justify-content-between d-flex flex-wrap align-items-center gap-1">
+                                        <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-1">
+                                            <div class="dropdown d-inline-block">
+                                                <button class="btn   dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown">
+
+                                                    Bulk Actions
+
+                                                </button>
+
+                                                <div class="dropdown-menu">
+                                                    <div class="dropdown-submenu">
+                                                        <button class="dropdown-item">
+
+                                                            Bulk changes
+
+                                                            <svg class="icon dropdown-item-icon ms-auto me-0 svg-icon-ti-ti-chevron-right"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path stroke="none" d="M0 0h24v24H0z"
+                                                                    fill="none" />
+                                                                <path d="M9 6l6 6l-6 6" />
+                                                            </svg> </button>
+                                                        <div class="dropdown-menu">
+                                                            <button class="dropdown-item bulk-change-item"
+                                                                data-key="first_name"
+                                                                data-class-item="Botble\Member\Tables\MemberTable"
+                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
+
+                                                                First Name
+
+                                                            </button>
+                                                            <button class="dropdown-item bulk-change-item"
+                                                                data-key="last_name"
+                                                                data-class-item="Botble\Member\Tables\MemberTable"
+                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
+
+                                                                Last Name
+
+                                                            </button>
+                                                            <button class="dropdown-item bulk-change-item"
+                                                                data-key="email"
+                                                                data-class-item="Botble\Member\Tables\MemberTable"
+                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
+
+                                                                Email
+
+                                                            </button>
+                                                            <button class="dropdown-item bulk-change-item"
+                                                                data-key="created_at"
+                                                                data-class-item="Botble\Member\Tables\MemberTable"
+                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
+
+                                                                Created At
+
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class="dropdown-item"
+                                                        href="https://cms.botble.com/admin/tables/bulk-actions"
+                                                        data-trigger-bulk-action="data-trigger-bulk-action"
+                                                        data-method="POST"
+                                                        data-table-target="Botble\Member\Tables\MemberTable"
+                                                        data-target="Botble\Table\BulkActions\DeleteBulkAction"
+                                                        data-confirmation-modal-title="Confirm to perform this action"
+                                                        data-confirmation-modal-message="Are you sure you want to do this action? This cannot be undone."
+                                                        data-confirmation-modal-button="Delete"
+                                                        data-confirmation-modal-cancel-button="Cancel">
+
+                                                        Delete
+
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <button class="btn   btn-show-table-options" type="button">
+
+                                                Filters
+
+                                            </button>
+
+                                            <div class="table-search-input">
+                                                <label>
+                                                    <input type="search" class="form-control input-sm"
+                                                        placeholder="Search..." style="min-width: 120px">
+                                                    <button type="button" title="Search..."
+                                                        class="search-icon"><svg class="icon  svg-icon-ti-ti-search"
+                                                            xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                                            <path d="M21 21l-6 -6" />
+                                                        </svg></button>
+                                                    <button type="button" title="Clear"
+                                                        class="search-reset-icon"><svg
+                                                            class="icon  svg-icon-ti-ti-x"
+                                                            xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                            <path d="M18 6l-12 12" />
+                                                            <path d="M6 6l12 12" />
+                                                        </svg></button>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <button class="btn action-item btn-primary " tabindex="0"
+                                                aria-controls="botble-member-tables-member-table" type="button"
+                                                aria-haspopup="dialog" aria-expanded="false">
+                                                <span data-action="create"
+                                                    data-href="https://cms.botble.com/admin/members/create">
+                                                    <svg class="icon  svg-icon-ti-ti-plus"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M12 5l0 14" />
+                                                        <path d="M5 12l14 0" />
+                                                    </svg>
+                                                    Create
+                                                </span>
+
+                                            </button>
+
+                                            <button class="btn" type="button" data-bb-toggle="dt-buttons"
+                                                data-bb-target=".buttons-reload" tabindex="0"
+                                                aria-controls="botble-member-tables-member-table">
+                                                <svg class="icon icon-left svg-icon-ti-ti-refresh"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                                                    <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                                                </svg>
+                                                Reload
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-table">
+                                    <div class="table-responsive table-has-actions table-has-filter">
+                                        <table class="table card-table table-vcenter table-striped table-hover"
+                                            id="botble-member-tables-member-table">
+                                            <thead>
+                                                <tr>
+                                                    <th title="Checkbox"><input
+                                                            class="form-check-input m-0 align-middle table-check-all"
+                                                            data-set=".dataTable .checkboxes" name=""
+                                                            type="checkbox"></th>
+                                                    <th title="ID" width="20"
+                                                        class="text-center no-column-visibility  column-key-0">ID</th>
+                                                    <th title="Avatar" width="50" class=" column-key-1">Avatar
+                                                    </th>
+                                                    <th title="Name" class="text-start  column-key-2">Name</th>
+                                                    <th title="Email" class="text-start  column-key-3">Email</th>
+                                                    <th title="Created At" width="100" class=" column-key-4">
+                                                        Created At</th>
+                                                    <th title="Operations">Operations</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
+
 
 
                     </div>
@@ -2651,7 +1864,7 @@
                                     Copyright 2024 © Botble Technologies. Version <span class="fw-medium">7.4.7</span>
                                 </div>
                                 <div class="order-1 order-lg-2">
-                                    Page loaded in 0.59 seconds
+                                    Page loaded in 0.19 seconds
                                 </div>
                             </div>
                         </div>
@@ -2705,15 +1918,26 @@
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/spectrum/spectrum.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fslightbox.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/js-validation/js/js-validation.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.are-you-sure/jquery.are-you-sure.js?v=7.4.7">
+    <script
+        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/jquery.dataTables.min.js?v=7.4.7">
     </script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery-nestable/jquery.nestable.min.js?v=7.4.7">
+    <script
+        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/dataTables.bootstrap.min.js?v=7.4.7">
     </script>
+    <script
+        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/dataTables.buttons.min.js?v=7.4.7">
+    </script>
+    <script
+        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/buttons.bootstrap.min.js?v=7.4.7">
+    </script>
+    <script
+        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/js/dataTables.responsive.min.js?v=7.4.7">
+    </script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/moment-with-locales.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/plugins/language/js/language-global.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/base/js/tree-category.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/packages/slug/js/slug.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/packages/seo-helper/js/seo-helper.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/bootstrap3-typeahead.min.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/table/js/table.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/table/js/filter.js?v=7.4.7"></script>
 
 
 
@@ -2913,7 +2137,7 @@
             RV_MEDIA_CONFIG.translations.actions_list.other.properties = 'Properties';
         </script>
 
-        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1733990301"></script>
+        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1733991098"></script>
 
 
 
@@ -4714,14 +3938,6 @@
                         "uri": "{slug?}",
                         "methods": ["GET", "HEAD"],
                         "parameters": ["slug"]
-                    },
-                    "public.member.language-advanced.save": {
-                        "uri": "account\/language-advanced\/save\/{id}",
-                        "methods": ["POST"],
-                        "wheres": {
-                            "id": "[0-9]+"
-                        },
-                        "parameters": ["id"]
                     }
                 }
             };
@@ -5468,54 +4684,6 @@
                 }
             });
         </script>
-        <script>
-            jQuery(document).ready(function() {
-                'use strict';
-                $("#botble-blog-forms-category-form").each(function() {
-                    $(this).validate({
-                        errorElement: 'div',
-                        errorClass: 'invalid-feedback',
-
-                        errorPlacement: function(error, element) {
-                            if (element.closest('[data-bb-toggle="tree-checkboxes"]').length) {
-                                error.insertAfter(element.closest(
-                                    '[data-bb-toggle="tree-checkboxes"]'));
-                            } else if (element.parent('.input-group').length || element.prop(
-                                'type') === 'checkbox' || element.prop('type') === 'radio') {
-                                error.insertAfter(element.parent());
-                            } else if ($(element).data('select2')) {
-                                error.insertAfter(element.next('span'));
-                            } else {
-                                error.insertAfter(element);
-                            }
-                        },
-
-                        highlight: function(element) {
-                            $(element).closest('.form-control').removeClass('is-valid').addClass(
-                                'is-invalid');
-                        },
-
-
-                        unhighlight: function(element) {
-                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
-                                'is-valid');
-                        },
-
-                        success: function(element) {
-                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
-                                'is-valid');
-                        },
-
-                        focusInvalid: false,
-
-                        rules: JSON.parse(
-                            '{\u0022name\u0022:{\u0022laravelValidation\u0022:[[\u0022Required\u0022,[],\u0022The name field is required.\u0022,true],[\u0022String\u0022,[],\u0022The name must be a string.\u0022,false],[\u0022Max\u0022,[\u0022120\u0022],\u0022The name must not be greater than 120 characters.\u0022,false]]},\u0022description\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022String\u0022,[],\u0022The description must be a string.\u0022,false],[\u0022Max\u0022,[\u0022400\u0022],\u0022The description must not be greater than 400 characters.\u0022,false]]},\u0022status\u0022:{\u0022laravelValidation\u0022:[[\u0022In\u0022,[\u0022published\u0022,\u0022draft\u0022,\u0022pending\u0022],\u0022The selected status is invalid.\u0022,false]]},\u0022is_default\u0022:{\u0022laravelValidationRemote\u0022:[[{},[\u0022is_default\u0022,\u0022eyJpdiI6IktXMENhazcwZ29YYWlzaW9yUXUrZlE9PSIsInZhbHVlIjoiZWdQQnZqU0FTdVNhRENCZGJxczFQRHFOQ1B3WkN5VGthdGFpVHNXZGdqeFhuRVlvN1QrL3dTSWkxQzAwSCt5eWxsc1hycjhqZEpHTUZPakZZUEtFTkE9PSIsIm1hYyI6IjU1MWNjZmQzY2RhMjI3OTViNWYwMWM2NjAyMzhhMjczNDRjMzk5OWE1ZDQ2YTAyMDNmM2EzYmYzZDZhNzZjN2QiLCJ0YWciOiIifQ==\u0022,false],\u0022validation.illuminate\\\\_validation\\\\_invokable_validation_rule\u0022,false]]},\u0022is_featured\u0022:{\u0022laravelValidationRemote\u0022:[[{},[\u0022is_featured\u0022,\u0022eyJpdiI6IktXMENhazcwZ29YYWlzaW9yUXUrZlE9PSIsInZhbHVlIjoiZWdQQnZqU0FTdVNhRENCZGJxczFQRHFOQ1B3WkN5VGthdGFpVHNXZGdqeFhuRVlvN1QrL3dTSWkxQzAwSCt5eWxsc1hycjhqZEpHTUZPakZZUEtFTkE9PSIsIm1hYyI6IjU1MWNjZmQzY2RhMjI3OTViNWYwMWM2NjAyMzhhMjczNDRjMzk5OWE1ZDQ2YTAyMDNmM2EzYmYzZDZhNzZjN2QiLCJ0YWciOiIifQ==\u0022,false],\u0022validation.illuminate\\\\_validation\\\\_invokable_validation_rule\u0022,false]]},\u0022parent_id\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false]]},\u0022order\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022Integer\u0022,[],\u0022The order must be an integer.\u0022,false],[\u0022Min\u0022,[\u00220\u0022],\u0022The order must be at least 0.\u0022,false],[\u0022Max\u0022,[\u002210000\u0022],\u0022The order must not be greater than 10000.\u0022,false]]}}'
-                            )
-                    });
-                });
-            });
-        </script>
-
         <div class="modal fade modal-blur modal fade modal-blur modal-confirm-delete" tabindex="-1"
             role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
             <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
@@ -5541,10 +4709,10 @@
                             </svg>
                         </div>
 
-                        <h3>Delete Category</h3>
+                        <h3>Confirm delete</h3>
 
                         <div class="text-muted text-break">
-                            Are you sure you want to delete this category?
+                            Do you really want to delete this record?
                         </div>
                     </div>
 
@@ -5552,8 +4720,7 @@
                         <div class="w-100">
                             <div class="row">
                                 <div class="col">
-                                    <button type="button" class="w-100 btn btn-danger "
-                                        data-bb-toggle="modal-confirm-delete">
+                                    <button type="button" class="w-100 btn btn-danger delete-crud-entry">
                                         Delete
                                     </button>
                                 </div>
@@ -5569,6 +4736,393 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade modal-blur modal fade modal-blur delete-many-modal" tabindex="-1" role="dialog"
+            aria-hidden="true" data-select2-dropdown-parent="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+
+
+                    <div class="modal-status bg-danger"></div>
+
+                    <div class="modal-body text-center py-4">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+
+                        <div class="mb-2">
+                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 9v4" />
+                                <path
+                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+                                <path d="M12 16h.01" />
+                            </svg>
+                        </div>
+
+                        <h3>Confirm delete</h3>
+
+                        <div class="text-muted text-break">
+                            Do you really want to delete selected record(s)?
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="w-100 btn btn-danger delete-many-entry-button">
+                                        Delete
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-blur modal fade modal-blur modal-bulk-change-items" tabindex="-1"
+            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
+            <div class="modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bulk changes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+
+                    <div class="modal-body">
+                        <div class="modal-bulk-change-content"></div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-primary  confirm-bulk-change-button" type="button"
+                            data-load-url="https://cms.botble.com/admin/tables/filters">
+
+                            Save
+
+                        </button>
+
+                        <button class="btn" type="button" data-bs-dismiss="modal">
+
+                            Cancel
+
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-blur modal fade modal-blur bulk-action-confirm-modal" tabindex="-1"
+            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+
+
+                    <div class="modal-status bg-danger"></div>
+
+                    <div class="modal-body text-center py-4">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+
+                        <div class="mb-2">
+                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 9v4" />
+                                <path
+                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+                                <path d="M12 16h.01" />
+                            </svg>
+                        </div>
+
+                        <h3>''</h3>
+
+                        <div class="text-muted text-break">
+                            ''
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button"
+                                        class="w-100 btn btn-danger confirm-trigger-bulk-actions-button">
+
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-blur modal fade modal-blur single-action-confirm-modal" tabindex="-1"
+            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+
+
+                    <div class="modal-status bg-danger"></div>
+
+                    <div class="modal-body text-center py-4">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+
+                        <div class="mb-2">
+                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 9v4" />
+                                <path
+                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+                                <path d="M12 16h.01" />
+                            </svg>
+                        </div>
+
+                        <h3>''</h3>
+
+                        <div class="text-muted text-break">
+                            ''
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button"
+                                        class="w-100 btn btn-danger confirm-trigger-single-action-button">
+
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(function() {
+                    window.LaravelDataTables = window.LaravelDataTables || {};
+                    window.LaravelDataTables["botble-member-tables-member-table"] = $(
+                        "#botble-member-tables-member-table").DataTable({
+                        "serverSide": true,
+                        "processing": true,
+                        "ajax": {
+                            "url": "https:\/\/cms.botble.com\/admin\/members?",
+                            "method": "POST"
+                        },
+                        "columns": [{
+                            "data": "checkbox",
+                            "name": "checkbox",
+                            "title": "<input class=\"form-check-input m-0 align-middle table-check-all\" data-set=\".dataTable .checkboxes\" name=\"\" type=\"checkbox\">",
+                            "orderable": false,
+                            "searchable": false,
+                            "defaultContent": "",
+                            "className": "w-1 text-start no-column-visibility",
+                            "titleAttr": "Checkbox"
+                        }, {
+                            "data": "id",
+                            "name": "id",
+                            "title": "ID",
+                            "orderable": true,
+                            "searchable": true,
+                            "className": "text-center no-column-visibility  column-key-0",
+                            "width": 20,
+                            "class": "text-center no-column-visibility  column-key-0"
+                        }, {
+                            "data": "avatar_thumb_url",
+                            "name": "avatar_thumb_url",
+                            "title": "Avatar",
+                            "orderable": false,
+                            "searchable": false,
+                            "width": 50,
+                            "class": " column-key-1",
+                            "className": " column-key-1"
+                        }, {
+                            "data": "name",
+                            "name": "name",
+                            "title": "Name",
+                            "orderable": false,
+                            "searchable": true,
+                            "className": "text-start  column-key-2",
+                            "class": "text-start  column-key-2"
+                        }, {
+                            "data": "email",
+                            "name": "email",
+                            "title": "Email",
+                            "orderable": true,
+                            "searchable": true,
+                            "className": "text-start  column-key-3",
+                            "class": "text-start  column-key-3"
+                        }, {
+                            "data": "created_at",
+                            "name": "created_at",
+                            "title": "Created At",
+                            "orderable": true,
+                            "searchable": true,
+                            "type": "date",
+                            "width": 100,
+                            "class": " column-key-4",
+                            "className": " column-key-4"
+                        }, {
+                            "data": "row_actions",
+                            "name": "row_actions",
+                            "title": "Operations",
+                            "orderable": false,
+                            "searchable": false,
+                            "className": "text-center no-column-visibility text-nowrap",
+                            "responsivePriority": 99
+                        }],
+                        "dom": "fBrt<'card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2'<'d-flex justify-content-between align-items-center gap-3'l<'m-0 text-muted'i>><'d-flex justify-content-center'p>>",
+                        "buttons": {
+                            "stateSave": true,
+                            "buttons": [{
+                                "className": "action-item btn-primary ",
+                                "text": "<span data-action=\"create\" data-href=\"https:\/\/cms.botble.com\/admin\/members\/create\">\n            <svg class=\"icon  svg-icon-ti-ti-plus\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M12 5l0 14\" \/>\n  <path d=\"M5 12l14 0\" \/>\n<\/svg>    \n    Create\n<\/span>\n"
+                            }, "reload"]
+                        },
+                        "initComplete": function() {
+                            Botble.initResources();
+
+                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
+                                detail: {
+                                    table: this
+                                }
+                            }));
+                        },
+                        "drawCallback": function() {
+                            var tableWrapper = $(this).closest(".dataTables_wrapper");
+                            var dtDataCount = this.api().data().count();
+
+                            if (dtDataCount === 0) {
+                                tableWrapper.find(".card-footer").prop('style',
+                                    'display: none !important;');
+                            } else {
+                                tableWrapper.find(".card-footer").prop('style', null);
+                            }
+
+                            tableWrapper.find(".dataTables_paginate").toggle(this.api().page.info()
+                                .pages > 1);
+
+                            tableWrapper.find(".dataTables_length").toggle(dtDataCount >= 10);
+                            tableWrapper.find(".dataTables_info").toggle(dtDataCount > 0);
+
+                            setTimeout(function() {
+                                var searchInputWrapper = $(
+                                    ".table-wrapper .table-search-input input");
+                                if (!searchInputWrapper.val()) {
+                                    searchInputWrapper.val(tableWrapper.find(
+                                        ".dataTables_filter input").val());
+                                }
+
+                                if (searchInputWrapper.val()) {
+                                    searchInputWrapper.addClass(
+                                        'border-primary bg-info-subtle')
+
+                                    searchInputWrapper.closest('label').find(
+                                        '.search-reset-icon').show()
+                                    searchInputWrapper.closest('label').find('.search-icon')
+                                        .hide()
+                                } else {
+                                    searchInputWrapper.removeClass(
+                                        'border-primary bg-info-subtle')
+
+                                    searchInputWrapper.closest('label').find(
+                                        '.search-reset-icon').hide()
+                                    searchInputWrapper.closest('label').find('.search-icon')
+                                        .show()
+                                }
+                            }, 200);
+                            Botble.initResources();
+
+                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
+                                detail: {
+                                    table: this
+                                }
+                            }));
+                        },
+                        "paging": true,
+                        "searching": true,
+                        "info": true,
+                        "searchDelay": 350,
+                        "bStateSave": true,
+                        "lengthMenu": [
+                            [10, 30, 50, 100, 500, -1],
+                            [10, 30, 50, 100, 500, "All"]
+                        ],
+                        "pageLength": 10,
+                        "bServerSide": true,
+                        "bDeferRender": true,
+                        "bProcessing": true,
+                        "language": {
+                            "aria": {
+                                "sortAscending": "orderby asc",
+                                "sortDescending": "orderby desc",
+                                "paginate": {
+                                    "next": "Next &raquo;",
+                                    "previous": "&laquo; Previous"
+                                }
+                            },
+                            "emptyTable": "No data to display",
+                            "info": "<span class=\"dt-length-records\">\n    <svg class=\"icon  svg-icon-ti-ti-world\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\" \/>\n  <path d=\"M3.6 9h16.8\" \/>\n  <path d=\"M3.6 15h16.8\" \/>\n  <path d=\"M11.5 3a17 17 0 0 0 0 18\" \/>\n  <path d=\"M12.5 3a17 17 0 0 1 0 18\" \/>\n<\/svg>    <span class=\"d-none d-sm-inline\">Show from<\/span>\n    _START_\n    to _END_ in\n    <span class=\"badge bg-secondary text-secondary-fg\">\n    \n    _TOTAL_\n<\/span>\n    <span class=\"hidden-xs\">records<\/span>\n<\/span>\n",
+                            "infoEmpty": "No record",
+                            "lengthMenu": "<span class=\"dt-length-style\">_MENU_<\/span>",
+                            "search": "",
+                            "searchPlaceholder": "Search...",
+                            "zeroRecords": "No record",
+                            "processing": {},
+                            "paginate": {
+                                "next": "Next &raquo;",
+                                "previous": "&laquo; Previous"
+                            },
+                            "infoFiltered": "(filtered from _MAX_ total records)"
+                        },
+                        "order": [
+                            [1, "desc"]
+                        ],
+                        "responsive": true,
+                        "autoWidth": false
+                    });
+                });
+            });
+        </script>
+
+
+
     </div>
 
 
