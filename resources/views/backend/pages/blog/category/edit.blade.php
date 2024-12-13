@@ -959,27 +959,16 @@
                                                         </a>
                                                     </div>
                                                 </div>
-
-
-
-
                                             </div>
-
-
-
                                             <div class="mb-3 position-relative">
-
                                                 <label for="seo_meta[index]"
                                                     class="form-label">Index</label>
-
-
                                                 <div class="position-relative form-check-group">
                                                     <label class="form-check form-check-inline">
                                                         <input class="form-check-input"
                                                             id="seo_meta[index]" type="radio"
                                                             name="seo_meta[index]" value="index"
                                                             checked>
-
                                                         <span class="form-check-label">Index</span>
                                                     </label>
                                                     <label class="form-check form-check-inline">
@@ -990,24 +979,11 @@
                                                         <span class="form-check-label">No index</span>
                                                     </label>
                                                 </div>
-
-
-
-
                                             </div>
-
-
-
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">
@@ -1031,9 +1007,7 @@
                                                 <path d="M14 4l0 4l-6 0l0 -4" />
                                             </svg>
                                             Save
-
                                         </button>
-
                                         <button class="btn" type="submit" name="submitter"
                                             value="save">
                                             <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
@@ -1048,10 +1022,7 @@
                                                 <path d="M10 11l3 3l-3 3" />
                                             </svg>
                                             Save &amp; Exit
-
                                         </button>
-
-
                                     </div>
                                 </div>
                             </div>
