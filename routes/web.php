@@ -75,6 +75,7 @@ Route::post('/media', [PostController::class, 'store'])->name('media.store');
 Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
 Route::get('/dashboard/member/create', [MemberController::class, 'memberCreate'])->name('member.create');
 Route::post('/dashboard/member/create', [MemberController::class, 'memberPost'])->name('member.post');
+Route::get('/dashboard/member/edit', [MemberController::class, 'memberEdit'])->name('member.edit');
 
 
 // === {{ !! Export Data Page !! }} === //
@@ -93,3 +94,8 @@ Route::get('/dashboard/settings/google-tag', [SettingsController::class, 'google
 Route::get('/dashboard/settings/member-dashboard', [SettingsController::class, 'memberDashboard'])->name('settings.memberDashboard');
 Route::get('/dashboard/settings/member-dashboard/edit', [SettingsController::class, 'editMemberDashboard'])->name('settings.editMemberDashboard');
 Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'createMemberDashboard'])->name('settings.createMemberDashboard');
+
+// Roles And Permission
+Route::get('/dashboard/settings/roles-permission', [SettingsController::class, 'rolesPermission'])->name('settings.rolesPermission');
+Route::get('/dashboard/settings/roles-permission/edit', [SettingsController::class, 'editRolesPermission'])->name('settings.editRolesPermission');
+Route::get('/dashboard/settings/roles-permission/create', [SettingsController::class, 'createRolesPermission'])->name('settings.createRolesPermission');

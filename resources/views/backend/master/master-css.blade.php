@@ -26,6 +26,8 @@
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/showHint.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/crop-image.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/cropper.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/jqueryTreeView.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/jqueryUI.css') }}">
 <style>
     [v-cloak],
     [x-cloak] {

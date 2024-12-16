@@ -73,3 +73,6 @@
 <script src="{{ asset('backend/js/cropper.js') }}"></script>
 <script src="{{ asset('backend/js/javascript.js') }}"></script>
 <script src="{{ asset('backend/js/profile.js') }}"></script>
+<script src="{{ asset('backend/js/jqueryUI.min.js') }}"></script>
+<script src="{{ asset('backend/js/jqueryTreeView.js') }}"></script>
+<script src="{{ asset('backend/js/roles.js') }}"></script>
