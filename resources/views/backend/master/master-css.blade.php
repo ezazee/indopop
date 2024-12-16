@@ -22,6 +22,8 @@
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/tagify.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/nestAble.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/treeCategory.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/codeMirror.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/showHint.css') }}">
 <style>
     [v-cloak],
     [x-cloak] {

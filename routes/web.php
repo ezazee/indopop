@@ -8,6 +8,7 @@ use App\Http\Controllers\MediaController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,3 +73,16 @@ Route::post('/media', [PostController::class, 'store'])->name('media.store');
 Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
 Route::get('/dashboard/member/create', [MemberController::class, 'memberCreate'])->name('member.create');
 Route::post('/dashboard/member/create', [MemberController::class, 'memberPost'])->name('member.post');
+
+
+// === {{ !! Export Data Page !! }} === //
+// Export Data
+Route::get('/dashboard/export-data', [DashboardController::class, 'exportData'])->name('dashboard.export');
+
+
+// === {{ !! Settings Page !! }} === //
+// Google Annalytics
+Route::get('/dashboard/settings/annalyics', [SettingsController::class, 'annalytic'])->name('settings.annalytic');
+
+// Google Tag Manager
+Route::get('/dashboard/settings/google-tag', [SettingsController::class, 'googleTag'])->name('settings.googletag');

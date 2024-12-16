@@ -13,8 +13,8 @@
         </button>
         <h2 class="d-block d-lg-none navbar-brand navbar-brand-autodark">
             <a href="{{ route('dashboard') }}">
-                <img src="{{ asset('backend/images/logo/logo.svg') }}"
-                    style="max-height: 32px; height: auto;" alt="Botble Technologies" class="navbar-brand-image">
+                <img src="{{ asset('backend/images/logo/logo.svg') }}" style="max-height: 32px; height: auto;"
+                    alt="Botble Technologies" class="navbar-brand-image">
             </a>
         </h2>
         <div class="navbar-nav flex-row d-lg-none">
@@ -153,24 +153,6 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item {{ Request::is('dashboard/galleries') ? 'active' : '' }}">
-                    <a class="nav-link nav-priority-5" href="https://cms.botble.com/dashboard/galleries"
-                        id="cms-plugins-gallery" title="Galleries">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block" title="Galleries">
-                            <svg class="icon svg-icon-ti-ti-camera" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />
-                                <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                            </svg>
-                        </span>
-                        <span class="nav-link-title text-truncate">
-                            Galleries
-                        </span>
-                    </a>
-                </li>
                 <li class="nav-item {{ Request::is('dashboard/members') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-50" href="{{ route('member.index') }}" id="cms-core-member"
                         title="Members">
@@ -207,51 +189,32 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item dropdown {{ Request::is('dashboard/tools*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle nav-priority-9000" href="#cms-core-tools" id="cms-core-tools"
-                        data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
-                        title="Tools">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block" title="Tools">
-                            <svg class="icon svg-icon-ti-ti-tool" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <li class="nav-item {{ Request::is('dashboard/export-data') ? 'active' : '' }}">
+                    <a class="nav-link nav-priority-999" href="{{ route('dashboard.export') }}" id="cms-core-media"
+                        title="Media">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block" title="Media">
+                            <svg class="icon svg-icon-ti-ti-package-import" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
+                                <path d="M12 21l-8 -4.5v-9l8 -4.5l8 4.5v4.5" />
+                                <path d="M12 12l8 -4.5" />
+                                <path d="M12 12v9" />
+                                <path d="M12 12l-8 -4.5" />
+                                <path d="M22 18h-7" />
+                                <path d="M18 15l-3 3l3 3" />
                             </svg>
                         </span>
                         <span class="nav-link-title text-truncate">
-                            Tools
+                            Export Data
                         </span>
                     </a>
-                    <div
-                        class="dropdown-menu animate slideIn dropdown-menu-start {{ Request::is('dashboard/tools*') ? 'show' : '' }}">
-                        <a class="dropdown-item nav-priority-9000"
-                            href="https://cms.botble.com/dashboard/tools/data-synchronize"
-                            id="cms-packages-data-synchronize" title="Export/Import Data">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Export/Import Data">
-                                <svg class="icon svg-icon-ti-ti-package-import" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M12 21l-8 -4.5v-9l8 -4.5l8 4.5v4.5" />
-                                    <path d="M12 12l8 -4.5" />
-                                    <path d="M12 12v9" />
-                                    <path d="M12 12l-8 -4.5" />
-                                    <path d="M22 18h-7" />
-                                    <path d="M18 15l-3 3l3 3" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title text-truncate">
-                                Export/Import Data
-                            </span>
-                        </a>
-                    </div>
                 </li>
-                <li class="nav-item {{ Request::is('dashboard/settings') ? 'active' : '' }}">
-                    <a class="nav-link nav-priority-9999" href="https://cms.botble.com/dashboard/settings"
-                        id="cms-core-settings" title="Settings">
+                <li class="nav-item dropdown {{ Request::is('dashboard/settings*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog" id="cms-plugins-blog"
+                        data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
+                        title="Blog">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Settings">
                             <svg class="icon svg-icon-ti-ti-settings" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -267,6 +230,48 @@
                             Settings
                         </span>
                     </a>
+                    <div
+                        class="dropdown-menu animate slideIn dropdown-menu-start {{ Request::is('dashboard/settings*') ? 'show' : '' }}">
+                        <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/settings/google-tag*') ? 'active' : '' }}"
+                            href="{{ route('settings.googletag') }}" id="cms-plugins-blog-post" title="Posts">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Posts">
+                                <svg class="icon  svg-icon-ti-ti-world" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                    <path d="M3.6 9h16.8" />
+                                    <path d="M3.6 15h16.8" />
+                                    <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                    <path d="M12.5 3a17 17 0 0 1 0 18" />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title text-truncate">
+                                Google Tag
+                            </span>
+                        </a>
+                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/settings/annalyics*') ? 'active' : '' }}"
+                            href="{{ route('settings.annalytic') }}" id="cms-plugins-blog-categories"
+                            title="Categories">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
+                                <svg class="icon  svg-icon-ti-ti-brand-google-analytics"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M10 9m0 1.105a1.105 1.105 0 0 1 1.105 -1.105h1.79a1.105 1.105 0 0 1 1.105 1.105v9.79a1.105 1.105 0 0 1 -1.105 1.105h-1.79a1.105 1.105 0 0 1 -1.105 -1.105z" />
+                                    <path
+                                        d="M17 3m0 1.105a1.105 1.105 0 0 1 1.105 -1.105h1.79a1.105 1.105 0 0 1 1.105 1.105v15.79a1.105 1.105 0 0 1 -1.105 1.105h-1.79a1.105 1.105 0 0 1 -1.105 -1.105z" />
+                                    <path d="M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title text-truncate">
+                                Annalyics
+                            </span>
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item {{ Request::is('dashboard/system') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-10000" href="https://cms.botble.com/dashboard/system"

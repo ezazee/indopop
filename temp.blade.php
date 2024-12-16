@@ -6,8 +6,8 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Members | Botble Technologies</title>
-    <meta name="csrf-token" content="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
+    <title>Website Tracking | Botble Technologies</title>
+    <meta name="csrf-token" content="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
 
     <link href="https://cms.botble.com/vendor/core/core/base/images/favicon.png" rel="icon shortcut">
     <meta property="og:image" content="https://cms.botble.com/vendor/core/core/base/images/favicon.png">
@@ -373,17 +373,15 @@
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/css/dataTables.bootstrap.min.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/css/buttons.bootstrap.min.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/css/responsive.bootstrap.min.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/css/core.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/plugins/language/css/language.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/table/css/table.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/packages/slug/css/slug.css?v=7.4.7">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/lib/codemirror.css?v=7.4.7">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/show-hint.css?v=7.4.7">
 
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/js/app.js?v=7.4.7"></script>
@@ -539,7 +537,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAD6APoDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAcIBAUGAwEC/8QAQRABAAEDAgEHBgoKAgMAAAAAAAECAwQFEQYHEiE2QXSBEyIxUWGxFBdVZZGhpLLR4hUWIzJCUlRxk5Ri0qLBwv/EABoBAQEBAQEBAQAAAAAAAAAAAAAFBAYBAwL/xAAtEQEAAgEBBQgBBAMAAAAAAAAAAQMCBQQREjNxExUhMTJBUqEUI1FhsYHR8P/aAAwDAQACEQMRAD8A5kB1jqgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGdo2nfpbWcTT/K+S+EXYt+U5vO5u/btvG6Rfic+fvsf53EcHdcdJ7zR71iUvbtosqziMJ3Ju27RZVlEYTuRb8Tnz99j/OfE58/fY/zpSGL87aPl9Qw/m3/AC+oRb8Tnz99j/O+fE58/fY/zpTD87aPl9Qfm3/L6hFFzkevxH7LWrdU/wDLHmn/AOpajN5K+IcamarE4uXHZFu7zav/ACiI+tNw/WOoXx5zvfrHb7o853qy5+l5+lXvJZ+Hex6+yLlExv8A2nt8GIs9l4eNn49WPl2Ld+zV6aLlMVRKKOM+TidPtXNS0WK68anzruNPTVbj10z2x7PTHt7N+z7fjZPDn4S30bfjZPDn4SjgBQbwAAAAAAAAAAAAAAAAAAAG84O646T3mj3rEq7cHdcdJ7zR71iUXU+ZHRG1L1x0GBq2tafoWLRk6lkRYs11+TpqmiqreraZ26InsiWe4Dlc6r4nfafuVsVFcWWRhPux0YRZZGM+7b/GHwp8rR/guf8AU+MPhT5Wj/Bc/wCqAhW7tq/efr/Sr3bV+8/9/hYnD4w4dz7kUY+r401z0RTXVzJn+3O2bz0qtO/5POMsjA1KzpGdequYN+qLdqa538jXPo2n+WZ6NvH1s9+n8OM5YTv3Phfp/DjOWE79yZgExMQbyi8NUaFrkZOLRzcPM3rppiOiiuP3qY9nTEx/f2OMTpymYFOZwZfu7b14tyi7T9PNn6qvqQW6HYrZsqjf5x4L+xWzZVG/zjwAGtrAAAAAAAAAAAAAAAAAAbzg7rjpPeaPesSrtwd1x0nvNHvWJRdT5kdEbUvXHQcByudV8TvtP3K3fuA5XOq+J32n7lbLsnPxZtk52KGQHSOiH2iqqiumumZiqmd4mOyXxlaZgXdU1PGwbETNy/ciiNuzeemfCOl5MxEb5eTMRG+VlsW7N/Es3p6Jropqnxjd6vzboptW6bdMbU0xFMR7IfpykuWlo+MYirg3Von0fBqpV2T9yg5UYnBGoTM+ddim1THrmao3+rdAK1pkfpzP8rOmx+nM/wAgCkogAAAAAAAAAAAAAAAAAN5wd1x0nvNHvWJV24O646T3mj3rEoup8yOiNqXrjoOI5T9PzNR4cxbWFi38m5Tl01TRZtzXMRzK432js6YduMNVk15xnHsw1ZzXnGUeyuH6r8QfImo/61f4H6r8QfImo/61f4LHjf3nn8Yb+8s/jCvuFwJxLnXIpp0u9aifTVf2txH09P0JS4N4Fx+Gd8vIuU5Go1083nxHm247Yp/H3dvYD4XbbZbHD5Q+F222Wxw+UAOS4x43xOG8avHsVUXtTrjzLUTvFv8A5Vfh2/WzV15WZcOMeLPXXlZlw4x4uT5WdcovZGNolmvfyM+Wv7dlUxtTH0TM+MIzemRkXsvJuZF+5VcvXaprrrq9NUz6Zebo6KoqrjCHRU1RVhGEAD7PqAAAAAAAAAAAAAAAAAA3nB3XHSe80e9YlXbg7rjpPeaPesSi6nzI6I2peuOgDiOVDPzNP4cxbuFl38a5Vl00zXZuTRMxzK+jeJ9HRDDVXNmcYR7sVWHaZxhHu7cVv/WbX/lzUv8Abufi9MfizX8fJtXo1jPueTrirmXMmuqmrafRMTPTDf3Zn8obu7c/ksYMLSNTsazpONqGPP7O/RFW38s9sT7YnePBmpsxMTulOmJid0uJ5SNU1vSNHs39LuxasV1Tbv3KafPp3/d2nsienp9Po6UJV113LlVdyqquuqd6qqp3mZ9crManp1jVtLycDJje1fomifZ6pj2xO0+Ct+paff0rU8jAyadr1iuaKvb6pj2THT4rGm54zhOO7xhX07PGcJx3eMMUBTUgAAAAAAAAAAAAAAAAAAAG84O646T3mj3rEq7cHdcdJ7zR71iUXU+ZHRG1L1x0HAcrnVfE77T9yt37gOVzqvid9p+5Wy7Jz8WbZOdihkB0jokl8lPEHkcq9oeRX5l7e7j79lcR51PjEb+E+tLSsGJlXsHMs5WPXNF6zXFdFUdkxO8LHaFq1nXdFxtRs7RF6jeqn+WqOiqPCd0XUKeHLtI8p/tG1Cnhy7SPKf7bFGHKvw9z7dnXsejpo2tZO0dn8NX/AK8YSex83Ds6hg38PJp51m9RNFceyWOi2arIzhkotmqyMoViGfrOl3tF1jJ07I/fs182Ktv3o7J8Y2lgOliYmN8OjiYmN8AD16AAAAAAAAAAAAAAAAAA3nB3XHSe80e9YlXbg7rjpPeaPesSi6nzI6I2peuOg4Dlc6r4nfafuVu/cByudV8TvtP3K2XZOfizbJzsUMgOkdEJE5K+IPgepXNGv17Wcrz7O/ZciOmPGI+mI9aO3pYvXMbIt37Nc0XbdUV0VR6YmJ3iXyuqi3CcJfK6uLcJwlaEarhzWrWv6DjahRtFVdO12mP4a46Ko+n6tm1czljOMzEubyxnGZiUccqvD3wnBta3Yo/a4+1u/tHpomeifCZ+v2IhWgyLFrLxruNfoiu1domiume2JjaYVy4g0a7oOuZOnXd5i3Vvbrn+Oiemmfo+vdZ067ix7OfZY0+7ix7OfZrAFJRAAAAAAAAAAAAAAAAAAfqiuu3XFdFVVNdM7xVTO0wyP0nqH9dk/wCWr8WKPJiJeTESyv0nqH9dk/5avxed7MysiiKb+Teu0xO8RXXNUb+LxHnDBugAfp6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//9k="
                                                             alt="Raphaelle Upton">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -552,7 +550,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             530-529-3969 - <span class="__cf_email__"
-                                                                data-cfemail="88e9faede6e6edfac8edf0e9e5f8e4eda6e7faef">[email&#160;protected]</span>
+                                                                data-cfemail="83e2f1e6edede6f1c3e6fbe2eef3efe6adecf1e4">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -564,7 +562,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Gerry Larson">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -577,7 +575,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             814-376-5924 - <span class="__cf_email__"
-                                                                data-cfemail="3c55515d52550a0f7c59445d514c5059125f5351">[email&#160;protected]</span>
+                                                                data-cfemail="224b4f434c4b141162475a434f524e470c414d4f">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -589,7 +587,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAD6APoDASIAAhEBAxEB/8QAHAABAAMAAwEBAAAAAAAAAAAAAAUGBwECBAMI/8QAQhABAAEDAgIECQgGCwAAAAAAAAECAwQFEQYxEiFBgQcTFCJRYXGRoRVCQ2JyscHRFiMyUlXhFyQzY4KTorLC4vH/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAwUGBAIB/8QAKREBAAIBAwIGAQUBAAAAAAAAAAEDAgQFERIhMTJBUYGhwSNCYXGxIv/aAAwDAQACEQMRAD8A6gN2wgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD7YmJfzsq3jY1ubl65O1NMdr5MxEcy+xEzPEPimtN4U1jVIprs4lVFqeV295lPt6+ue6F/4e4LwtJoov5VNOTmc+lVG9NE/Vj8Z+C0KTUbvET00xz/ADK7020TMdV08fxDPMXwaVzTE5epU0z202re/wAZmPuSFHg30uI8/LzJ9k0x/wAVzFbluOpy/cssdu02P7VLueDbTZj9Xm5dM/W6NX4QiszwbZduJqw861e+rcpmifxaSPuG5anGfNy+Z7bpso8vDDNR0fUNJudDNxblredoqmN6Z9kx1S8Lfb1i1k2arN+3Rct1RtVRXG8T3M64p4I8jt15+lU1VWI67ljnNEemn0x6uz7rbSbpjbPRZHE/Sp1e15VROdc8x9qOAt1QAAAAAAAAAAAAAAAAAAAANQ4C0OnD0z5SvUf1jJjzN/m2+z38/czK1bm7dot0866opjvb3ZtUY9i3ZtxtRbpiimPRERtCn3i6cK4rj1/C42emM7Jsn0/LuCP1vUo0jRsrO2iqq1R5sT21TO0fGYZ7DGc8oxjxlocsoxxnKfCHOpa1p2kURVnZVFqZjemnnVV7IjrV674RtIoqmKLGZc9cUUxE++pmmVlX83JuZGTdquXbk71VVTzfFoqtoqiP1JmZZ23d7Zn9OIiGrY3hB0S/XFNzyjH3+dct7x/pmVmxsmxmWKb+Neou2quVdFW8SwNN8Ma9e0PU6KunPklyqKb1HZt+97YR6jaMOmcqZ7+yTTbvn1RjdHb3bMETvG8DPtAyXjXQadI1SL+PR0cXJ3qpiOVFXbHs7Y/krDX+N8KnM4Xyatt67Exdp9W07T8JlkDV7bfN1EdXjHZlNyoim+enwnuALBXgAAAAAAAAAAAAAAAAAPrjXIs5dm7PKiumqe6W+RMTG8TvD8/Nk4R1anVeH7FU1b37ERaux27xynvjafepN5rmccbI9Pyu9msiMsq59fwnUNxVgXdS4bzMexE1XejFdNMdvRmJ2+CZFFXnNecZx6L2zCM8Jwn1fn7badpGr6/wRh6tXXk41UYuXV11TEb0Vz647J9cfFQNT4X1fSpqm/iVV2o+ltefT8OXfs1en19N8dp4n2llNRoLqJ7xzHvCHAdriaFi+EbHsYlmzXgXqqqLdNM1eMjrmI23fX+kvF/h17/MhnAr52zTTPPT9ysI3PUxHHV9Qv2o+EDGztMysSNPu0zftVW4qmuOqZiY3UEHTRpq6ImK445c1+psvmJsnngAToAAAAAAAAAAAAAAAAAABLcP67f0DUYyLcdO1V5t21v+3T+cdiJHjPDHPGcco5iXvDPKvKMsZ4mG7adqWJquHTlYd2Llurn6aZ9Ex2S9bC9M1bN0fJ8fhXpt1fOp501R6JjtaHo/hAwMyKbWo0+SXuXT5257+cd/vZvVbXZVPVX3j7aTS7nXbHTZ2n6XEdLV61ftU3bNyi5bq5VUVRMT3w7qvjhaR3ReocO6Rqe85ODamufpKI6NXvjmqOp+DeYiqvS8vpf3V/8ACqPyaEOqnWX0+XLs5btHRd5se/uwnP03N0y/4nNxq7NfZ0o6p9k8p7nkb1l4eNn49WPlWaL1qrnTXG//AJLNOJ+Crml015un9K7hx110T11Wo/GPX2fFeaTc8Lp6LO0/Sj1e2Z0xOdfePtUAFqqgAAAAAAAAAAAAAAAAAAAAezB0vO1ObkYWNXfm3t0uh2b8vuez9Fdd/hl/3QjyurxnjLKIn+0mNNmUc44zMf0hxMforrv8Mv8AuhH5mFk6fkTYy7NVm7ERPRq57SY215TxjlE/JlVZjHOWMx8O2FqWbptzp4eVdsz29Crqn2xyla9P8I2dZ2pz8a3k09tdHmVfl8IUoeLdNTd58eUlWpup8mXDZNL4u0fVZpot5Hib0/RX/NmfZPKfenX5+WzhXi7J03KtYmZdqu4NcxTvXO82vXE+j1KfVbR0xOVM/C30u79UxjdHy1VxMRMTExvE84lyKNeMk4z0CnRtTi7j07YmTvVREcqKu2n8v5Ky1/jbCpzOF8mrbeuxMXaZ9G09fwmWQNZtt83Uf9eMdmT3GiKb56fCe4A73AAAAAAAAAAAAAAAAAAAu/g1vxRqmbjzPXcsxVH+Gf8As0piPD+p/JGuY2ZO/i6aujc2/dnqn8+5ttFVNyimuiqKqao3iY5TDM7vVON3X6TH+NNtFsZUdHrE/wCuWZeEfDqt6vj5kR+rvWuhv9amZ/CYaaj9Z0jH1vTq8PJ3iJ66K450Vdkw5dFqIoujOfD1dWt0830zhHj6MOE7qvCWr6Vcq3xqr9mOV2zE1Rt645x3oOYmmZiYmJjnEtZXbhZHOE8wydlWdc8ZxxLgdrdu5drii3RVXVPKmmN5XHhngnLycq3l6namxjUTFXiq42queqY7I9rzdfXTj1Zy9U0WXZdOENGwOn8nY3jN+n4qnpb+nbregGLmeZ5bSI4jhHa/t+jmp78vJbn+2WHtf42zacPhfJp32rvzFqmPTvPX8IlkDRbNjMVZZe8s7vOUTbjj7QALhTgAAAAAAAAAAAAAAAAAC/8ABPFdFu3RpOoXIpiOrHu1T1fZmfu93oUAQajT4X4dGSfT6jPT59eD9AjKdB44zdKppx8uJy8WOqN58+iPVPbHqn4L9pvE+karTEWMuim5P0V2ehV7p5927MajQXUT3jmPeGn0+vpvjtPE+0ph0rtW7n7duir7VMS7jidrrRbotxtRRTTH1Y2dgAcV1026Kq66opppjeapnaIhE6nxNpOk01eUZdFV2PorU9Kv3Ry79mc8Q8YZmuRNi3E4+Hv/AGcT11/an8Pvdum0Ft8+HEe7i1Ovqojx5n2ccYcQRrmpRRYqnyPH3pt/Xntq/JXAaqqrGrCMMfCGVttytznPLxkASIwAAAAAAAAAAAAAAAAAAAAAHtxdX1LCiIxs/ItUx82m5O3u5JGjjPiG3G0ajVP2rdE/fCBEWVFWXfLGJ+EuN9uPbHKY+U9XxlxBXG06jVH2bdEfdCPydZ1PMiacnPyblM/NquTt7uTwhjRVj3xxiPgyvty7ZZTPyAJUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Stephany Bode Jr.">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -602,7 +600,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             618-376-2147 - <span class="__cf_email__"
-                                                                data-cfemail="bbded7d6d2c9da95ccdacfdec9c8fbdec3dad6cbd7de95d4c9dc">[email&#160;protected]</span>
+                                                                data-cfemail="cda8a1a0a4bface3baacb9a8bfbe8da8b5aca0bda1a8e3a2bfaa">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -620,11 +618,11 @@
                             class="p-0 nav-link d-flex lh-1 text-reset" data-bs-toggle="dropdown"
                             aria-label="Open user menu">
                             <span class="crop-image-original avatar avatar-sm"
-                                style="background-image: url(data:image/jpeg;base64,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)"></span>
+                                style="background-image: url(data:image/jpeg;base64,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)"></span>
                             <div class="d-none d-xl-block ps-2">
                                 <div>Conor Smith</div>
                                 <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                        data-cfemail="483e3d24243a212b20082c212b2321263b2726662b2725">[email&#160;protected]</span>
+                                        data-cfemail="a5d3d0c9c9d7ccc6cde5c1ccc6cecccbd6cacb8bc6cac8">[email&#160;protected]</span>
                                 </div>
                             </div>
                         </a>
@@ -695,11 +693,11 @@
                             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                                 aria-label="Open user menu">
                                 <span class="crop-image-original avatar avatar-sm"
-                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
+                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
                                 <div class="d-none d-xl-block ps-2">
                                     <div>Conor Smith</div>
                                     <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                            data-cfemail="4e383b22223c272d260e2a272d2527203d2120602d2123">[email&#160;protected]</span>
+                                            data-cfemail="f781829b9b859e949fb7939e949c9e99849899d994989a">[email&#160;protected]</span>
                                     </div>
                                 </div>
                             </a>
@@ -900,9 +898,9 @@
 
 
                             </li>
-                            <li class="nav-item active ">
-                                <a class="nav-link nav-priority-50 active show"
-                                    href="https://cms.botble.com/admin/members" id="cms-core-member" title="Members">
+                            <li class="nav-item ">
+                                <a class="nav-link nav-priority-50" href="https://cms.botble.com/admin/members"
+                                    id="cms-core-member" title="Members">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block" title="Members">
                                         <svg class="icon  svg-icon-ti-ti-users" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1430,9 +1428,10 @@
 
                                 </div>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link nav-priority-9999" href="https://cms.botble.com/admin/settings"
-                                    id="cms-core-settings" title="Settings">
+                            <li class="nav-item active ">
+                                <a class="nav-link nav-priority-9999 active show"
+                                    href="https://cms.botble.com/admin/settings" id="cms-core-settings"
+                                    title="Settings">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block" title="Settings">
                                         <svg class="icon  svg-icon-ti-ti-settings" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1492,8 +1491,11 @@
                                             <li class="breadcrumb-item">
                                                 <a href="https://cms.botble.com/admin">Dashboard</a>
                                             </li>
+                                            <li class="breadcrumb-item">
+                                                <a href="https://cms.botble.com/admin/settings">Settings</a>
+                                            </li>
                                             <li class="breadcrumb-item active" aria-current="page">
-                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Members</h1>
+                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Website Tracking</h1>
                                             </li>
                                         </ol>
                                     </nav>
@@ -1510,346 +1512,140 @@
 
                 <div class="page-body page-content">
                     <div class="container-xl">
-                        <div class="table-wrapper">
-                            <div class="card mb-3 table-configuration-wrap" style="display: none;">
-                                <div class="card-body">
-                                    <button class="btn btn-icon  btn-sm btn-show-table-options rounded-pill"
-                                        type="button">
-                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
+
+
+                        <form method="POST" action="https://cms.botble.com/admin/settings/website-tracking"
+                            accept-charset="UTF-8" id="botble-theme-forms-settings-website-tracking-setting-form"
+                            class="js-base-form dirty-check" section_title="Website Tracking"
+                            section_description="Configure website tracking"><input name="_method" type="hidden"
+                                value="PUT"><input name="_token" type="hidden"
+                                value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
+
+                            <div class="row mb-5 d-block d-md-flex">
+                                <div class="col-12 col-md-3">
+                                    <h2>Website Tracking</h2>
+
+                                    <p class="text-muted">Configure website tracking</p>
+
+
+                                </div>
+
+                                <div class="col-12 col-md-9">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="mb-3 position-relative">
+
+                                                <label class="form-label" for="google_tag_manager_type">
+
+
+
+                                                </label>
+
+
+                                                <div class="position-relative form-check-group">
+                                                    <label class="form-check form-check-inline">
+                                                        <input class="form-check-input" id="google_tag_manager_type"
+                                                            type="radio" name="google_tag_manager_type"
+                                                            value="id" checked>
+
+                                                        <span class="form-check-label">Google tag ID</span>
+                                                    </label>
+                                                    <label class="form-check form-check-inline">
+                                                        <input class="form-check-input" id="google_tag_manager_type"
+                                                            type="radio" name="google_tag_manager_type"
+                                                            value="code">
+
+                                                        <span class="form-check-label">Google tag code</span>
+                                                    </label>
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+
+                                            <div class="mb-3 position-relative" data-bb-collapse="true"
+                                                data-bb-trigger="[name=google_tag_manager_type]" data-bb-value="id"
+                                                style="">
+
+                                                <label class="form-label" for="google_tag_manager_id">
+
+
+
+                                                </label>
+
+
+                                                <input class="form-control" data-counter="250"
+                                                    placeholder="Example: G-123ABC4567" name="google_tag_manager_id"
+                                                    type="text" value="G-76NX8HY29D">
+
+
+                                                <small class="form-hint">
+                                                    <a href="https://support.google.com/analytics/answer/9539598#find-G-ID"
+                                                        target="_blank">https://support.google.com/analytics/answer/9539598#find-G-ID</a>
+                                                </small>
+
+
+                                            </div>
+
+
+
+                                            <div class="mb-3 position-relative" data-bb-collapse="true"
+                                                data-bb-trigger="[name=google_tag_manager_type]"
+                                                data-bb-value="code" style="display: none">
+
+                                                <label class="form-label" for="google_tag_manager_code">
+
+
+
+                                                </label>
+
+
+                                                <div class="mb-3 position-relative">
+                                                    <textarea name="google_tag_manager_code" class="form-control"
+                                                        id="google_tag_manager_code_d835d2663b126af3eeea403f2325eee9" data-bb-code-editor="" data-mode="htmlmixed"
+                                                        data-counter="1000" rows="3"></textarea>
+                                                </div>
+
+
+                                                <small class="form-hint">
+                                                    <a href="https://developers.google.com/tag-platform/gtagjs/install"
+                                                        target="_blank">https://developers.google.com/tag-platform/gtagjs/install</a>
+                                                </small>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-9 offset-md-3">
+                                    <button class="btn btn-primary" type="submit"
+                                        form="botble-theme-forms-settings-website-tracking-setting-form">
+                                        <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M18 6l-12 12" />
-                                            <path d="M6 6l12 12" />
+                                            <path
+                                                d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+                                            <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                            <path d="M14 4l0 4l-6 0l0 -4" />
                                         </svg>
+                                        Save settings
 
                                     </button>
-
-                                    <div class="wrapper-filter">
-                                        <p>Filters</p>
-
-                                        <input type="hidden" class="filter-data-url"
-                                            value="https://cms.botble.com/admin/tables/filters" />
-
-                                        <div class="sample-filter-item-wrap hidden">
-                                            <div class="row filter-item form-filter">
-                                                <div class="col-auto w-50 w-sm-auto">
-                                                    <div class="mb-3 position-relative">
-                                                        <select class="form-select filter-column-key"
-                                                            name="filter_columns[]" id="filter_columns[]">
-                                                            <option value="first_name">First Name</option>
-                                                            <option value="last_name">Last Name</option>
-                                                            <option value="email">Email</option>
-                                                            <option value="created_at">Created At</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-auto w-50 w-sm-auto">
-                                                    <div class="mb-3 position-relative">
-                                                        <select
-                                                            class="form-select filter-operator filter-column-operator"
-                                                            name="filter_operators[]" id="filter_operators[]">
-                                                            <option value="like">Contains</option>
-                                                            <option value="=">Is equal to</option>
-                                                            <option value="&gt;">Greater than</option>
-                                                            <option value="&lt;">Less than</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-auto w-100 w-sm-25">
-                                                    <span class="filter-column-value-wrap">
-                                                        <input class="form-control filter-column-value"
-                                                            type="text" placeholder="Value"
-                                                            name="filter_values[]">
-                                                    </span>
-                                                </div>
-
-                                                <div class="col">
-                                                    <button
-                                                        class="btn btn-icon   btn-remove-filter-item mb-3 text-danger"
-                                                        type="button" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Delete">
-                                                        <svg class="icon icon-left svg-icon-ti-ti-trash"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M4 7l16 0" />
-                                                            <path d="M10 11l0 6" />
-                                                            <path d="M14 11l0 6" />
-                                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                        </svg>
-
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <form method="GET" action="https://cms.botble.com/admin/members"
-                                            accept-charset="UTF-8" class="filter-form">
-                                            <input type="hidden" name="filter_table_id"
-                                                class="filter-data-table-id"
-                                                value="botble-member-tables-member-table">
-                                            <input type="hidden" name="class" class="filter-data-class"
-                                                value="Botble\Member\Tables\MemberTable">
-                                            <div class="filter_list inline-block filter-items-wrap">
-                                                <div class="row filter-item form-filter filter-item-default">
-                                                    <div class="col-auto w-50 w-sm-auto">
-                                                        <div class="mb-3 position-relative">
-                                                            <select class="form-select filter-column-key"
-                                                                name="filter_columns[]" id="filter_columns[]">
-                                                                <option value="" selected>Select field</option>
-                                                                <option value="first_name">First Name</option>
-                                                                <option value="last_name">Last Name</option>
-                                                                <option value="email">Email</option>
-                                                                <option value="created_at">Created At</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-auto w-50 w-sm-auto">
-                                                        <div class="mb-3 position-relative">
-                                                            <select
-                                                                class="form-select filter-operator filter-column-operator"
-                                                                name="filter_operators[]" id="filter_operators[]">
-                                                                <option value="like">Contains</option>
-                                                                <option value="=" selected>Is equal to</option>
-                                                                <option value="&gt;">Greater than</option>
-                                                                <option value="&lt;">Less than</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-auto w-100 w-sm-25">
-                                                        <div class="filter-column-value-wrap mb-3">
-                                                            <input class="form-control filter-column-value"
-                                                                type="text" placeholder="Value"
-                                                                name="filter_values[]" value="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="btn-list">
-                                                <button class="btn   add-more-filter" type="button">
-
-                                                    Add additional filter
-
-                                                </button>
-                                                <button class="btn btn-primary  btn-apply" type="submit">
-
-                                                    Apply
-
-                                                </button>
-                                                <a class="btn btn-icon" style="display: none;" type="button"
-                                                    href="https://cms.botble.com/admin/members"
-                                                    data-bb-toggle="datatable-reset-filter">
-                                                    <svg class="icon icon-left svg-icon-ti-ti-refresh"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                                    </svg>
-
-                                                </a>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
 
-                            <div class="card has-actions has-filter">
-                                <div class="card-header">
-                                    <div
-                                        class="w-100 justify-content-between d-flex flex-wrap align-items-center gap-1">
-                                        <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-1">
-                                            <div class="dropdown d-inline-block">
-                                                <button class="btn   dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown">
 
-                                                    Bulk Actions
-
-                                                </button>
-
-                                                <div class="dropdown-menu">
-                                                    <div class="dropdown-submenu">
-                                                        <button class="dropdown-item">
-
-                                                            Bulk changes
-
-                                                            <svg class="icon dropdown-item-icon ms-auto me-0 svg-icon-ti-ti-chevron-right"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z"
-                                                                    fill="none" />
-                                                                <path d="M9 6l6 6l-6 6" />
-                                                            </svg> </button>
-                                                        <div class="dropdown-menu">
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="first_name"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                First Name
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="last_name"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Last Name
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="email"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Email
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="created_at"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Created At
-
-                                                            </button>
-                                                        </div>
-                                                    </div>
-
-                                                    <a class="dropdown-item"
-                                                        href="https://cms.botble.com/admin/tables/bulk-actions"
-                                                        data-trigger-bulk-action="data-trigger-bulk-action"
-                                                        data-method="POST"
-                                                        data-table-target="Botble\Member\Tables\MemberTable"
-                                                        data-target="Botble\Table\BulkActions\DeleteBulkAction"
-                                                        data-confirmation-modal-title="Confirm to perform this action"
-                                                        data-confirmation-modal-message="Are you sure you want to do this action? This cannot be undone."
-                                                        data-confirmation-modal-button="Delete"
-                                                        data-confirmation-modal-cancel-button="Cancel">
-
-                                                        Delete
-
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <button class="btn   btn-show-table-options" type="button">
-
-                                                Filters
-
-                                            </button>
-
-                                            <div class="table-search-input">
-                                                <label>
-                                                    <input type="search" class="form-control input-sm"
-                                                        placeholder="Search..." style="min-width: 120px">
-                                                    <button type="button" title="Search..."
-                                                        class="search-icon"><svg class="icon  svg-icon-ti-ti-search"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                                            <path d="M21 21l-6 -6" />
-                                                        </svg></button>
-                                                    <button type="button" title="Clear"
-                                                        class="search-reset-icon"><svg
-                                                            class="icon  svg-icon-ti-ti-x"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M18 6l-12 12" />
-                                                            <path d="M6 6l12 12" />
-                                                        </svg></button>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <button class="btn action-item btn-primary " tabindex="0"
-                                                aria-controls="botble-member-tables-member-table" type="button"
-                                                aria-haspopup="dialog" aria-expanded="false">
-                                                <span data-action="create"
-                                                    data-href="https://cms.botble.com/admin/members/create">
-                                                    <svg class="icon  svg-icon-ti-ti-plus"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path d="M12 5l0 14" />
-                                                        <path d="M5 12l14 0" />
-                                                    </svg>
-                                                    Create
-                                                </span>
-
-                                            </button>
-
-                                            <button class="btn" type="button" data-bb-toggle="dt-buttons"
-                                                data-bb-target=".buttons-reload" tabindex="0"
-                                                aria-controls="botble-member-tables-member-table">
-                                                <svg class="icon icon-left svg-icon-ti-ti-refresh"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                                    <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                                </svg>
-                                                Reload
-
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-table">
-                                    <div class="table-responsive table-has-actions table-has-filter">
-                                        <table class="table card-table table-vcenter table-striped table-hover"
-                                            id="botble-member-tables-member-table">
-                                            <thead>
-                                                <tr>
-                                                    <th title="Checkbox"><input
-                                                            class="form-check-input m-0 align-middle table-check-all"
-                                                            data-set=".dataTable .checkboxes" name=""
-                                                            type="checkbox"></th>
-                                                    <th title="ID" width="20"
-                                                        class="text-center no-column-visibility  column-key-0">ID</th>
-                                                    <th title="Avatar" width="50" class=" column-key-1">Avatar
-                                                    </th>
-                                                    <th title="Name" class="text-start  column-key-2">Name</th>
-                                                    <th title="Email" class="text-start  column-key-3">Email</th>
-                                                    <th title="Created At" width="100" class=" column-key-4">
-                                                        Created At</th>
-                                                    <th title="Operations">Operations</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        </form>
 
 
 
@@ -1864,7 +1660,7 @@
                                     Copyright 2024 © Botble Technologies. Version <span class="fw-medium">7.4.7</span>
                                 </div>
                                 <div class="order-1 order-lg-2">
-                                    Page loaded in 0.19 seconds
+                                    Page loaded in 0.28 seconds
                                 </div>
                             </div>
                         </div>
@@ -1891,7 +1687,7 @@
                 ),
         };
         BotbleVariables.authorized =
-            "0";
+            "1";
         BotbleVariables.authorize_url = "https://cms.botble.com/admin/membership/authorize";
 
         BotbleVariables.menu_item_count_url = "https://cms.botble.com/admin/menu-items-count";
@@ -1918,26 +1714,28 @@
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/spectrum/spectrum.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fslightbox.js?v=7.4.7"></script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/jquery.dataTables.min.js?v=7.4.7">
+    <script src="https://cms.botble.com/vendor/core/core/js-validation/js/js-validation.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.are-you-sure/jquery.are-you-sure.js?v=7.4.7">
     </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/dataTables.bootstrap.min.js?v=7.4.7">
-    </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/dataTables.buttons.min.js?v=7.4.7">
-    </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/buttons.bootstrap.min.js?v=7.4.7">
-    </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/js/dataTables.responsive.min.js?v=7.4.7">
-    </script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/moment-with-locales.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/plugins/language/js/language-global.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/bootstrap3-typeahead.min.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/table/js/table.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/table/js/filter.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/packages/slug/js/slug.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/lib/codemirror.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/show-hint.js?v=7.4.7">
+    </script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/anyword-hint.js?v=7.4.7">
+    </script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/display/autorefresh.js?v=7.4.7">
+    </script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/mode/htmlmixed.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/mode/css.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/mode/javascript.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/mode/xml.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/xml-hint.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/html-hint.js?v=7.4.7">
+    </script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/css-hint.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/codemirror/addon/hint/javascript-hint.js?v=7.4.7">
+    </script>
 
 
 
@@ -1952,7 +1750,7 @@
                     <div class="modal-body">
                         <form method="POST" action="https://cms.botble.com/admin/search" accept-charset="UTF-8"
                             data-bb-toggle="gs-form"><input name="_token" type="hidden"
-                                value="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
+                                value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
                             <div class="mb-3 position-relative input-icon input-icon">
                                 <label class="form-label sr-only" for="keyword">
                                     Search
@@ -2064,7 +1862,7 @@
                 <div class="modal-content">
                     <form action="https://cms.botble.com/admin/media/files/download-url" method="POST"
                         id="image-picker-add-from-url-form">
-                        <input type="hidden" name="_token" value="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx"
+                        <input type="hidden" name="_token" value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6"
                             autocomplete="off">
                         <div class="modal-header">
                             <h5 class="modal-title">Add from URL</h5>
@@ -2137,7 +1935,7 @@
             RV_MEDIA_CONFIG.translations.actions_list.other.properties = 'Properties';
         </script>
 
-        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1733991098"></script>
+        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1734321396"></script>
 
 
 
@@ -3913,6 +3711,14 @@
                         "uri": "admin\/tools\/data-synchronize\/import\/other-translations\/validate",
                         "methods": ["POST"]
                     },
+                    "storage.local": {
+                        "uri": "storage\/{path}",
+                        "methods": ["GET", "HEAD"],
+                        "wheres": {
+                            "path": ".*"
+                        },
+                        "parameters": ["path"]
+                    },
                     "public.ajax.render-ui-block": {
                         "uri": "ajax\/render-ui-blocks",
                         "methods": ["POST"]
@@ -3938,6 +3744,14 @@
                         "uri": "{slug?}",
                         "methods": ["GET", "HEAD"],
                         "parameters": ["slug"]
+                    },
+                    "public.member.language-advanced.save": {
+                        "uri": "account\/language-advanced\/save\/{id}",
+                        "methods": ["POST"],
+                        "wheres": {
+                            "id": "[0-9]+"
+                        },
+                        "parameters": ["id"]
                     }
                 }
             };
@@ -4684,444 +4498,53 @@
                 }
             });
         </script>
-        <div class="modal fade modal-blur modal fade modal-blur modal-confirm-delete" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
+        <script>
+            jQuery(document).ready(function() {
+                'use strict';
+                $("#botble-theme-forms-settings-website-tracking-setting-form").each(function() {
+                    $(this).validate({
+                        errorElement: 'div',
+                        errorClass: 'invalid-feedback',
 
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>Confirm delete</h3>
-
-                        <div class="text-muted text-break">
-                            Do you really want to delete this record?
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-danger delete-crud-entry">
-                                        Delete
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur delete-many-modal" tabindex="-1" role="dialog"
-            aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>Confirm delete</h3>
-
-                        <div class="text-muted text-break">
-                            Do you really want to delete selected record(s)?
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-danger delete-many-entry-button">
-                                        Delete
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur modal-bulk-change-items" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered " role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h5 class="modal-title">Bulk changes</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-
-
-                    <div class="modal-body">
-                        <div class="modal-bulk-change-content"></div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-primary  confirm-bulk-change-button" type="button"
-                            data-load-url="https://cms.botble.com/admin/tables/filters">
-
-                            Save
-
-                        </button>
-
-                        <button class="btn" type="button" data-bs-dismiss="modal">
-
-                            Cancel
-
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur bulk-action-confirm-modal" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>''</h3>
-
-                        <div class="text-muted text-break">
-                            ''
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button"
-                                        class="w-100 btn btn-danger confirm-trigger-bulk-actions-button">
-
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur single-action-confirm-modal" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>''</h3>
-
-                        <div class="text-muted text-break">
-                            ''
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button"
-                                        class="w-100 btn btn-danger confirm-trigger-single-action-button">
-
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(function() {
-                    window.LaravelDataTables = window.LaravelDataTables || {};
-                    window.LaravelDataTables["botble-member-tables-member-table"] = $(
-                        "#botble-member-tables-member-table").DataTable({
-                        "serverSide": true,
-                        "processing": true,
-                        "ajax": {
-                            "url": "https:\/\/cms.botble.com\/admin\/members?",
-                            "method": "POST"
-                        },
-                        "columns": [{
-                            "data": "checkbox",
-                            "name": "checkbox",
-                            "title": "<input class=\"form-check-input m-0 align-middle table-check-all\" data-set=\".dataTable .checkboxes\" name=\"\" type=\"checkbox\">",
-                            "orderable": false,
-                            "searchable": false,
-                            "defaultContent": "",
-                            "className": "w-1 text-start no-column-visibility",
-                            "titleAttr": "Checkbox"
-                        }, {
-                            "data": "id",
-                            "name": "id",
-                            "title": "ID",
-                            "orderable": true,
-                            "searchable": true,
-                            "className": "text-center no-column-visibility  column-key-0",
-                            "width": 20,
-                            "class": "text-center no-column-visibility  column-key-0"
-                        }, {
-                            "data": "avatar_thumb_url",
-                            "name": "avatar_thumb_url",
-                            "title": "Avatar",
-                            "orderable": false,
-                            "searchable": false,
-                            "width": 50,
-                            "class": " column-key-1",
-                            "className": " column-key-1"
-                        }, {
-                            "data": "name",
-                            "name": "name",
-                            "title": "Name",
-                            "orderable": false,
-                            "searchable": true,
-                            "className": "text-start  column-key-2",
-                            "class": "text-start  column-key-2"
-                        }, {
-                            "data": "email",
-                            "name": "email",
-                            "title": "Email",
-                            "orderable": true,
-                            "searchable": true,
-                            "className": "text-start  column-key-3",
-                            "class": "text-start  column-key-3"
-                        }, {
-                            "data": "created_at",
-                            "name": "created_at",
-                            "title": "Created At",
-                            "orderable": true,
-                            "searchable": true,
-                            "type": "date",
-                            "width": 100,
-                            "class": " column-key-4",
-                            "className": " column-key-4"
-                        }, {
-                            "data": "row_actions",
-                            "name": "row_actions",
-                            "title": "Operations",
-                            "orderable": false,
-                            "searchable": false,
-                            "className": "text-center no-column-visibility text-nowrap",
-                            "responsivePriority": 99
-                        }],
-                        "dom": "fBrt<'card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2'<'d-flex justify-content-between align-items-center gap-3'l<'m-0 text-muted'i>><'d-flex justify-content-center'p>>",
-                        "buttons": {
-                            "stateSave": true,
-                            "buttons": [{
-                                "className": "action-item btn-primary ",
-                                "text": "<span data-action=\"create\" data-href=\"https:\/\/cms.botble.com\/admin\/members\/create\">\n            <svg class=\"icon  svg-icon-ti-ti-plus\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M12 5l0 14\" \/>\n  <path d=\"M5 12l14 0\" \/>\n<\/svg>    \n    Create\n<\/span>\n"
-                            }, "reload"]
-                        },
-                        "initComplete": function() {
-                            Botble.initResources();
-
-                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
-                                detail: {
-                                    table: this
-                                }
-                            }));
-                        },
-                        "drawCallback": function() {
-                            var tableWrapper = $(this).closest(".dataTables_wrapper");
-                            var dtDataCount = this.api().data().count();
-
-                            if (dtDataCount === 0) {
-                                tableWrapper.find(".card-footer").prop('style',
-                                    'display: none !important;');
+                        errorPlacement: function(error, element) {
+                            if (element.closest('[data-bb-toggle="tree-checkboxes"]').length) {
+                                error.insertAfter(element.closest(
+                                    '[data-bb-toggle="tree-checkboxes"]'));
+                            } else if (element.parent('.input-group').length || element.prop(
+                                'type') === 'checkbox' || element.prop('type') === 'radio') {
+                                error.insertAfter(element.parent());
+                            } else if ($(element).data('select2')) {
+                                error.insertAfter(element.next('span'));
                             } else {
-                                tableWrapper.find(".card-footer").prop('style', null);
+                                error.insertAfter(element);
                             }
-
-                            tableWrapper.find(".dataTables_paginate").toggle(this.api().page.info()
-                                .pages > 1);
-
-                            tableWrapper.find(".dataTables_length").toggle(dtDataCount >= 10);
-                            tableWrapper.find(".dataTables_info").toggle(dtDataCount > 0);
-
-                            setTimeout(function() {
-                                var searchInputWrapper = $(
-                                    ".table-wrapper .table-search-input input");
-                                if (!searchInputWrapper.val()) {
-                                    searchInputWrapper.val(tableWrapper.find(
-                                        ".dataTables_filter input").val());
-                                }
-
-                                if (searchInputWrapper.val()) {
-                                    searchInputWrapper.addClass(
-                                        'border-primary bg-info-subtle')
-
-                                    searchInputWrapper.closest('label').find(
-                                        '.search-reset-icon').show()
-                                    searchInputWrapper.closest('label').find('.search-icon')
-                                        .hide()
-                                } else {
-                                    searchInputWrapper.removeClass(
-                                        'border-primary bg-info-subtle')
-
-                                    searchInputWrapper.closest('label').find(
-                                        '.search-reset-icon').hide()
-                                    searchInputWrapper.closest('label').find('.search-icon')
-                                        .show()
-                                }
-                            }, 200);
-                            Botble.initResources();
-
-                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
-                                detail: {
-                                    table: this
-                                }
-                            }));
                         },
-                        "paging": true,
-                        "searching": true,
-                        "info": true,
-                        "searchDelay": 350,
-                        "bStateSave": true,
-                        "lengthMenu": [
-                            [10, 30, 50, 100, 500, -1],
-                            [10, 30, 50, 100, 500, "All"]
-                        ],
-                        "pageLength": 10,
-                        "bServerSide": true,
-                        "bDeferRender": true,
-                        "bProcessing": true,
-                        "language": {
-                            "aria": {
-                                "sortAscending": "orderby asc",
-                                "sortDescending": "orderby desc",
-                                "paginate": {
-                                    "next": "Next &raquo;",
-                                    "previous": "&laquo; Previous"
-                                }
-                            },
-                            "emptyTable": "No data to display",
-                            "info": "<span class=\"dt-length-records\">\n    <svg class=\"icon  svg-icon-ti-ti-world\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\" \/>\n  <path d=\"M3.6 9h16.8\" \/>\n  <path d=\"M3.6 15h16.8\" \/>\n  <path d=\"M11.5 3a17 17 0 0 0 0 18\" \/>\n  <path d=\"M12.5 3a17 17 0 0 1 0 18\" \/>\n<\/svg>    <span class=\"d-none d-sm-inline\">Show from<\/span>\n    _START_\n    to _END_ in\n    <span class=\"badge bg-secondary text-secondary-fg\">\n    \n    _TOTAL_\n<\/span>\n    <span class=\"hidden-xs\">records<\/span>\n<\/span>\n",
-                            "infoEmpty": "No record",
-                            "lengthMenu": "<span class=\"dt-length-style\">_MENU_<\/span>",
-                            "search": "",
-                            "searchPlaceholder": "Search...",
-                            "zeroRecords": "No record",
-                            "processing": {},
-                            "paginate": {
-                                "next": "Next &raquo;",
-                                "previous": "&laquo; Previous"
-                            },
-                            "infoFiltered": "(filtered from _MAX_ total records)"
+
+                        highlight: function(element) {
+                            $(element).closest('.form-control').removeClass('is-valid').addClass(
+                                'is-invalid');
                         },
-                        "order": [
-                            [1, "desc"]
-                        ],
-                        "responsive": true,
-                        "autoWidth": false
+
+
+                        unhighlight: function(element) {
+                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
+                                'is-valid');
+                        },
+
+                        success: function(element) {
+                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
+                                'is-valid');
+                        },
+
+                        focusInvalid: false,
+
+                        rules: JSON.parse(
+                            '{\u0022google_tag_manager_type\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022In\u0022,[\u0022id\u0022,\u0022code\u0022],\u0022The selected google tag manager type is invalid.\u0022,false]]},\u0022google_tag_manager_id\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022String\u0022,[],\u0022The google tag manager id must be a string.\u0022,false],[\u0022Max\u0022,[\u0022255\u0022],\u0022The google tag manager id must not be greater than 255 characters.\u0022,false]]},\u0022google_tag_manager_code\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022String\u0022,[],\u0022The google tag manager code must be a string.\u0022,false],[\u0022Max\u0022,[\u00222048\u0022],\u0022The google tag manager code must not be greater than 2048 characters.\u0022,false]]}}'
+                            )
                     });
                 });
             });
         </script>
-
-
 
     </div>
 
