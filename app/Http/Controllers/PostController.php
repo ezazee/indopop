@@ -8,11 +8,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $mediaGeneral = Post::where('category', 'general')->with('media')->get();
-        $mediaMembers = Post::where('category', 'members')->with('media')->get();
-        $mediaNews = Post::where('category', 'news')->with('media')->get();
-
-        return view('media.index', compact('mediaGeneral', 'mediaMembers', 'mediaNews'));
+        return view('media.index');
     }
 
     public function store(Request $request)

@@ -258,7 +258,7 @@
                             <button class="btn action-item btn-primary " tabindex="0"
                                 aria-controls="botble-blog-tables-post-table" type="button" aria-haspopup="dialog"
                                 aria-expanded="false">
-                                <span data-action="create" data-href="{{ route('blog.create') }}">
+                                <span data-action="create" data-href="{{ route('member.create') }}">
                                     <svg class="icon  svg-icon-ti-ti-plus" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categori;
 
 class BlogController extends Controller
 {
@@ -13,6 +14,8 @@ class BlogController extends Controller
         return view('backend.pages.blog.posting.edit');
     }
     public function createPost() {
-        return view('backend.pages.blog.posting.create');
+        $category = Categori::all();
+        // dd($category);
+        return view('backend.pages.blog.posting.create',compact('category'));
     }
 }

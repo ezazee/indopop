@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categori extends Model
+class Tag extends Model
 {
-    protected $table = 'categories';
-
-    protected $fillable = ['nama_kategori', 'slug'];
+    protected $fillable = ['nama_tags', 'slug'];
     use HasFactory;
 }

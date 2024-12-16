@@ -49,13 +49,16 @@ Route::get('/dashboard/blog/post/create', [BlogController::class, 'createPost'])
 
 // Tags
 Route::get('/dashboard/blog/tags', [TagsController::class, 'tagsIndex'])->name('tags.index');
-Route::get('/dashboard/blog/tags/edit', [TagsController::class, 'tagsEdit'])->name('tags.edit');
+Route::get('/dashboard/blog/tags/edit/{id}', [TagsController::class, 'tagsEdit'])->name('tags.edit');
 Route::get('/dashboard/blog/tags/create', [TagsController::class, 'tagsCreate'])->name('tags.create');
+Route::post('/dashboard/blog/tags/create', [TagsController::class, 'tagAdd'])->name('tags.add');
 
 // Category
-Route::get('/dashboard/blog/category/edit', [CategoryController::class, 'categoryEdit'])->name('category.edit');
+Route::get('/dashboard/blog/category/edit/{id}', [CategoryController::class, 'categoryEdit'])->name('category.edit');
 Route::get('/dashboard/blog/category/create', [CategoryController::class, 'categoryCreate'])->name('category.create');
 Route::post('/dashboard/blog/category/add', [CategoryController::class, 'categoryAdd'])->name('category.add');
+Route::delete('/dashboard/blog/category/delete/{id}', [CategoryController::class, 'categoryDestroy'])->name('category.destroy');
+
 
 
 
