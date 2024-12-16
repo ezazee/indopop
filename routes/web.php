@@ -56,6 +56,8 @@ Route::get('/dashboard/blog/tags/create', [TagsController::class, 'tagsCreate'])
 // Category
 Route::get('/dashboard/blog/category/edit', [CategoryController::class, 'categoryEdit'])->name('category.edit');
 Route::get('/dashboard/blog/category/create', [CategoryController::class, 'categoryCreate'])->name('category.create');
+Route::post('/dashboard/blog/category/add', [CategoryController::class, 'categoryAdd'])->name('category.add');
+
 
 
 // === {{ !! Media Page !! }} === //
