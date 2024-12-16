@@ -24,6 +24,8 @@
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/treeCategory.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/codeMirror.css') }}">
 <link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/showHint.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/crop-image.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="{{ asset('backend/css/cropper.css') }}">
 <style>
     [v-cloak],
     [x-cloak] {

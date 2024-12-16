@@ -88,3 +88,8 @@ Route::get('/dashboard/settings/annalyics', [SettingsController::class, 'annalyt
 
 // Google Tag Manager
 Route::get('/dashboard/settings/google-tag', [SettingsController::class, 'googleTag'])->name('settings.googletag');
+
+// Member Dashboard
+Route::get('/dashboard/settings/member-dashboard', [SettingsController::class, 'memberDashboard'])->name('settings.memberDashboard');
+Route::get('/dashboard/settings/member-dashboard/edit', [SettingsController::class, 'editMemberDashboard'])->name('settings.editMemberDashboard');
+Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'createMemberDashboard'])->name('settings.createMemberDashboard');

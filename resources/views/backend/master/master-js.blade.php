@@ -69,3 +69,7 @@
 <script src="{{ asset('backend/js/htmlMixed.js') }}"></script>
 <script src="{{ asset('backend/js/showHint.js') }}"></script>
 <script src="{{ asset('backend/js/xml.js') }}"></script>
+<script src="{{ asset('backend/js/crop-image.js') }}"></script>
+<script src="{{ asset('backend/js/cropper.js') }}"></script>
+<script src="{{ asset('backend/js/javascript.js') }}"></script>
+<script src="{{ asset('backend/js/profile.js') }}"></script>

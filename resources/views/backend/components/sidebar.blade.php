@@ -271,27 +271,26 @@
                                 Annalyics
                             </span>
                         </a>
+                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/settings/member-dashboard*') ? 'active' : '' }}"
+                            href="{{ route('settings.memberDashboard') }}" id="cms-plugins-blog-categories"
+                            title="Categories">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
+                                <svg class="icon svg-icon-ti-ti-user-shield" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h2" />
+                                    <path
+                                        d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z" />
+                                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title text-truncate">
+                                Member Dashboard
+                            </span>
+                        </a>
                     </div>
-                </li>
-                <li class="nav-item {{ Request::is('dashboard/system') ? 'active' : '' }}">
-                    <a class="nav-link nav-priority-10000" href="https://cms.botble.com/dashboard/system"
-                        id="cms-core-system" title="Platform Administration">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block" title="Platform Administration">
-                            <svg class="icon svg-icon-ti-ti-user-shield" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h2" />
-                                <path
-                                    d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z" />
-                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            </svg>
-                        </span>
-                        <span class="nav-link-title text-truncate">
-                            Platform Administration
-                        </span>
-                    </a>
                 </li>
             </ul>
         </div>
