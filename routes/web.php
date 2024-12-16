@@ -8,6 +8,7 @@ use App\Http\Controllers\MediaController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,3 +78,27 @@ Route::post('/media', [PostController::class, 'store'])->name('media.store');
 Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
 Route::get('/dashboard/member/create', [MemberController::class, 'memberCreate'])->name('member.create');
 Route::post('/dashboard/member/create', [MemberController::class, 'memberPost'])->name('member.post');
+Route::get('/dashboard/member/edit', [MemberController::class, 'memberEdit'])->name('member.edit');
+
+
+// === {{ !! Export Data Page !! }} === //
+// Export Data
+Route::get('/dashboard/export-data', [DashboardController::class, 'exportData'])->name('dashboard.export');
+
+
+// === {{ !! Settings Page !! }} === //
+// Google Annalytics
+Route::get('/dashboard/settings/annalyics', [SettingsController::class, 'annalytic'])->name('settings.annalytic');
+
+// Google Tag Manager
+Route::get('/dashboard/settings/google-tag', [SettingsController::class, 'googleTag'])->name('settings.googletag');
+
+// Member Dashboard
+Route::get('/dashboard/settings/member-dashboard', [SettingsController::class, 'memberDashboard'])->name('settings.memberDashboard');
+Route::get('/dashboard/settings/member-dashboard/edit', [SettingsController::class, 'editMemberDashboard'])->name('settings.editMemberDashboard');
+Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'createMemberDashboard'])->name('settings.createMemberDashboard');
+
+// Roles And Permission
+Route::get('/dashboard/settings/roles-permission', [SettingsController::class, 'rolesPermission'])->name('settings.rolesPermission');
+Route::get('/dashboard/settings/roles-permission/edit', [SettingsController::class, 'editRolesPermission'])->name('settings.editRolesPermission');
+Route::get('/dashboard/settings/roles-permission/create', [SettingsController::class, 'createRolesPermission'])->name('settings.createRolesPermission');

@@ -6,8 +6,8 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Members | Botble Technologies</title>
-    <meta name="csrf-token" content="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
+    <title>Details &quot;Admin&quot; | Botble Technologies</title>
+    <meta name="csrf-token" content="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
 
     <link href="https://cms.botble.com/vendor/core/core/base/images/favicon.png" rel="icon shortcut">
     <meta property="og:image" content="https://cms.botble.com/vendor/core/core/base/images/favicon.png">
@@ -373,17 +373,15 @@
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/css/dataTables.bootstrap.min.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/core/base/libraries/jquery-ui/jquery-ui.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/css/buttons.bootstrap.min.css?v=7.4.7">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/css/responsive.bootstrap.min.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/core/base/libraries/jquery-treeview/jquery.treeview.min.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/core/base/css/core.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
         href="https://cms.botble.com/vendor/core/plugins/language/css/language.css?v=7.4.7">
     <link media="all" type="text/css" rel="stylesheet"
-        href="https://cms.botble.com/vendor/core/core/table/css/table.css?v=7.4.7">
+        href="https://cms.botble.com/vendor/core/packages/slug/css/slug.css?v=7.4.7">
 
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/js/app.js?v=7.4.7"></script>
@@ -539,7 +537,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Raphaelle Upton">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -552,7 +550,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             530-529-3969 - <span class="__cf_email__"
-                                                                data-cfemail="88e9faede6e6edfac8edf0e9e5f8e4eda6e7faef">[email&#160;protected]</span>
+                                                                data-cfemail="28495a4d46464d5a684d50494558444d06475a4f">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -564,7 +562,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Gerry Larson">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -577,7 +575,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             814-376-5924 - <span class="__cf_email__"
-                                                                data-cfemail="3c55515d52550a0f7c59445d514c5059125f5351">[email&#160;protected]</span>
+                                                                data-cfemail="d9b0b4b8b7b0efea99bca1b8b4a9b5bcf7bab6b4">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -589,7 +587,7 @@
                                                 <div class="row">
                                                     <div class="col-auto">
                                                         <img class="avatar"
-                                                            src="data:image/jpeg;base64,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"
+                                                            src="data:image/jpeg;base64,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"
                                                             alt="Stephany Bode Jr.">
                                                     </div>
                                                     <div class="col align-items-center">
@@ -602,7 +600,7 @@
                                                         </p>
                                                         <p class="text-secondary text-truncate mt-n1 mb-0">
                                                             618-376-2147 - <span class="__cf_email__"
-                                                                data-cfemail="bbded7d6d2c9da95ccdacfdec9c8fbdec3dad6cbd7de95d4c9dc">[email&#160;protected]</span>
+                                                                data-cfemail="157079787c67743b62746170676655706d74786579703b7a6772">[email&#160;protected]</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -620,11 +618,11 @@
                             class="p-0 nav-link d-flex lh-1 text-reset" data-bs-toggle="dropdown"
                             aria-label="Open user menu">
                             <span class="crop-image-original avatar avatar-sm"
-                                style="background-image: url(data:image/jpeg;base64,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)"></span>
+                                style="background-image: url(data:image/jpeg;base64,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)"></span>
                             <div class="d-none d-xl-block ps-2">
                                 <div>Conor Smith</div>
                                 <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                        data-cfemail="483e3d24243a212b20082c212b2321263b2726662b2725">[email&#160;protected]</span>
+                                        data-cfemail="4731322b2b352e242f07232e242c2e293428296924282a">[email&#160;protected]</span>
                                 </div>
                             </div>
                         </a>
@@ -695,11 +693,11 @@
                             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                                 aria-label="Open user menu">
                                 <span class="crop-image-original avatar avatar-sm"
-                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
+                                    style="background-image: url(data:image/jpeg;base64,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)"></span>
                                 <div class="d-none d-xl-block ps-2">
                                     <div>Conor Smith</div>
                                     <div class="mt-1 small text-muted"><span class="__cf_email__"
-                                            data-cfemail="4e383b22223c272d260e2a272d2527203d2120602d2123">[email&#160;protected]</span>
+                                            data-cfemail="9ceae9f0f0eef5fff4dcf8f5fff7f5f2eff3f2b2fff3f1">[email&#160;protected]</span>
                                     </div>
                                 </div>
                             </a>
@@ -900,9 +898,9 @@
 
 
                             </li>
-                            <li class="nav-item active ">
-                                <a class="nav-link nav-priority-50 active show"
-                                    href="https://cms.botble.com/admin/members" id="cms-core-member" title="Members">
+                            <li class="nav-item ">
+                                <a class="nav-link nav-priority-50" href="https://cms.botble.com/admin/members"
+                                    id="cms-core-member" title="Members">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block" title="Members">
                                         <svg class="icon  svg-icon-ti-ti-users" xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1452,9 +1450,10 @@
 
 
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link nav-priority-10000" href="https://cms.botble.com/admin/system"
-                                    id="cms-core-system" title="Platform Administration">
+                            <li class="nav-item active ">
+                                <a class="nav-link nav-priority-10000 active show"
+                                    href="https://cms.botble.com/admin/system" id="cms-core-system"
+                                    title="Platform Administration">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"
                                         title="Platform Administration">
                                         <svg class="icon  svg-icon-ti-ti-user-shield"
@@ -1492,8 +1491,15 @@
                                             <li class="breadcrumb-item">
                                                 <a href="https://cms.botble.com/admin">Dashboard</a>
                                             </li>
+                                            <li class="breadcrumb-item">
+                                                <a href="https://cms.botble.com/admin/system">System</a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <a href="https://cms.botble.com/admin/system/roles">Roles And
+                                                    Permissions</a>
+                                            </li>
                                             <li class="breadcrumb-item active" aria-current="page">
-                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Members</h1>
+                                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Details "Admin"</h1>
                                             </li>
                                         </ol>
                                     </nav>
@@ -1510,346 +1516,2409 @@
 
                 <div class="page-body page-content">
                     <div class="container-xl">
-                        <div class="table-wrapper">
-                            <div class="card mb-3 table-configuration-wrap" style="display: none;">
-                                <div class="card-body">
-                                    <button class="btn btn-icon  btn-sm btn-show-table-options rounded-pill"
-                                        type="button">
-                                        <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M18 6l-12 12" />
-                                            <path d="M6 6l12 12" />
-                                        </svg>
 
-                                    </button>
 
-                                    <div class="wrapper-filter">
-                                        <p>Filters</p>
+                        <form method="POST" action="https://cms.botble.com/admin/system/roles/edit/1"
+                            accept-charset="UTF-8" id="botble-a-c-l-forms-role-form"
+                            class="js-base-form dirty-check"><input name="_token" type="hidden"
+                                value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
 
-                                        <input type="hidden" class="filter-data-url"
-                                            value="https://cms.botble.com/admin/tables/filters" />
 
-                                        <div class="sample-filter-item-wrap hidden">
-                                            <div class="row filter-item form-filter">
-                                                <div class="col-auto w-50 w-sm-auto">
-                                                    <div class="mb-3 position-relative">
-                                                        <select class="form-select filter-column-key"
-                                                            name="filter_columns[]" id="filter_columns[]">
-                                                            <option value="first_name">First Name</option>
-                                                            <option value="last_name">Last Name</option>
-                                                            <option value="email">Email</option>
-                                                            <option value="created_at">Created At</option>
-                                                        </select>
-                                                    </div>
+                            <div class="row">
+                                <div class="gap-3 col-md-9">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="form-body">
+
+
+
+
+                                                <div class="mb-3 position-relative">
+
+                                                    <label class="form-label form-label required" for="name">
+                                                        Name
+
+
+                                                    </label>
+
+
+                                                    <input class="form-control" data-counter="120"
+                                                        placeholder="Name" required="required" name="name"
+                                                        type="text" value="Admin">
+
+
+
+
                                                 </div>
 
-                                                <div class="col-auto w-50 w-sm-auto">
-                                                    <div class="mb-3 position-relative">
-                                                        <select
-                                                            class="form-select filter-operator filter-column-operator"
-                                                            name="filter_operators[]" id="filter_operators[]">
-                                                            <option value="like">Contains</option>
-                                                            <option value="=">Is equal to</option>
-                                                            <option value="&gt;">Greater than</option>
-                                                            <option value="&lt;">Less than</option>
-                                                        </select>
-                                                    </div>
+
+
+
+
+                                                <div class="mb-3 position-relative">
+
+                                                    <label class="form-label" for="description">
+                                                        Description
+
+
+                                                    </label>
+
+
+                                                    <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description"
+                                                        name="description" cols="50" id="">Admin users role</textarea>
+
+
+
+
                                                 </div>
 
-                                                <div class="col-auto w-100 w-sm-25">
-                                                    <span class="filter-column-value-wrap">
-                                                        <input class="form-control filter-column-value"
-                                                            type="text" placeholder="Value"
-                                                            name="filter_values[]">
-                                                    </span>
+
+
+
+                                                <div class="mb-3 position-relative">
+
+
+
+                                                    <label class="form-check form-switch ">
+                                                        <input name="is_default" type="hidden" value="0" />
+                                                        <input class="form-check-input" name="is_default"
+                                                            type="checkbox" value="1" id="is_default"
+                                                            checked />
+
+                                                        <span class="form-check-label">Is default?</span>
+                                                    </label>
+
+
+
+
                                                 </div>
 
-                                                <div class="col">
-                                                    <button
-                                                        class="btn btn-icon   btn-remove-filter-item mb-3 text-danger"
-                                                        type="button" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Delete">
-                                                        <svg class="icon icon-left svg-icon-ti-ti-trash"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M4 7l16 0" />
-                                                            <path d="M10 11l0 6" />
-                                                            <path d="M14 11l0 6" />
-                                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                        </svg>
 
-                                                    </button>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h4 class="card-title">
+                                                Permission Flags
+                                            </h4>
+
+                                            <div class="card-actions">
+                                                <div class="d-flex">
+                                                    <label class="form-check form-check m-0">
+                                                        <input type="checkbox" id="allTreeChecked"
+                                                            class="form-check-input label label-default allTree"
+                                                            value="">
+
+                                                        <span class="form-check-label">
+                                                            <span class="badge bg-primary-lt">
+
+                                                                All Permissions
+                                                            </span>
+                                                        </span>
+
+                                                    </label>
+                                                    <div id="sidetreecontrol" class="ms-3"><a
+                                                            href="?#">Collapse all</a> | <a
+                                                            href="?#">Expand all</a></div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <form method="GET" action="https://cms.botble.com/admin/members"
-                                            accept-charset="UTF-8" class="filter-form">
-                                            <input type="hidden" name="filter_table_id"
-                                                class="filter-data-table-id"
-                                                value="botble-member-tables-member-table">
-                                            <input type="hidden" name="class" class="filter-data-class"
-                                                value="Botble\Member\Tables\MemberTable">
-                                            <div class="filter_list inline-block filter-items-wrap">
-                                                <div class="row filter-item form-filter filter-item-default">
-                                                    <div class="col-auto w-50 w-sm-auto">
-                                                        <div class="mb-3 position-relative">
-                                                            <select class="form-select filter-column-key"
-                                                                name="filter_columns[]" id="filter_columns[]">
-                                                                <option value="" selected>Select field</option>
-                                                                <option value="first_name">First Name</option>
-                                                                <option value="last_name">Last Name</option>
-                                                                <option value="email">Email</option>
-                                                                <option value="created_at">Created At</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                        <div class="card-body">
+                                            <div class="permissions-tree" id="checkboxes-permisstions"
+                                                data-name="foo">
+                                                <ul class="parent_tree m-0 p-0 list-unstyled" id="node0">
+                                                    <li class="permissions-item list-unstyled">
+                                                        <div class="permissions-header">
+                                                            <label class="form-check">
+                                                                <input type="checkbox" id="checkbox_one_0"
+                                                                    name="flags[]"
+                                                                    class="form-check-input check-success"
+                                                                    value="core.cms" checked>
 
-                                                    <div class="col-auto w-50 w-sm-auto">
-                                                        <div class="mb-3 position-relative">
-                                                            <select
-                                                                class="form-select filter-operator filter-column-operator"
-                                                                name="filter_operators[]" id="filter_operators[]">
-                                                                <option value="like">Contains</option>
-                                                                <option value="=" selected>Is equal to</option>
-                                                                <option value="&gt;">Greater than</option>
-                                                                <option value="&lt;">Less than</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                                <span class="form-check-label">
+                                                                    <span class="badge bg-success-lt">
 
-                                                    <div class="col-auto w-100 w-sm-25">
-                                                        <div class="filter-column-value-wrap mb-3">
-                                                            <input class="form-control filter-column-value"
-                                                                type="text" placeholder="Value"
-                                                                name="filter_values[]" value="">
-                                                        </div>
-                                                    </div>
+                                                                        CMS
+                                                                    </span>
+                                                                </span>
 
-                                                    <div class="col">
-                                                    </div>
-                                                </div>
+                                                            </label>
+                                                        </div>
+                                                        <ul class="row permissions-body has-children">
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_0">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_0"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="media.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Media
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="files.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    File
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="files.create" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="files.edit" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="files.trash" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Trash
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child3">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_3"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="files.destroy" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="folders.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Folder
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="folders.create"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="folders.edit" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="folders.trash" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Trash
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child3">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_3"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="folders.destroy"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_1">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_1"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="pages.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Pages
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="pages.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="pages.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="pages.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_2">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_2"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="block.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Static Blocks
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="block.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="block.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="block.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_3">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_3"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="plugins.blog" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Blog
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="posts.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Posts
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="posts.create" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="posts.edit" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="posts.destroy" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="categories.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Categories
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="categories.create"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="categories.edit"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="categories.destroy"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="tags.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Tags
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="tags.create" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="tags.edit" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="tags.destroy" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_4">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_4"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="contacts.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Contact
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="contacts.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="contacts.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="contact.custom-fields">
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Custom Fields
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_5">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_5"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="custom-fields.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Custom Fields
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="custom-fields.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="custom-fields.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="custom-fields.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_6">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_6"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="galleries.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Galleries
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="galleries.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="galleries.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="galleries.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_0_7">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_0_7"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="member.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Members
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="member.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="member.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="member.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul class="parent_tree m-0 p-0 list-unstyled" id="node1">
+                                                    <li class="permissions-item list-unstyled">
+                                                        <div class="permissions-header">
+                                                            <label class="form-check">
+                                                                <input type="checkbox" id="checkbox_one_1"
+                                                                    name="flags[]"
+                                                                    class="form-check-input check-success"
+                                                                    value="settings.index" checked>
+
+                                                                <span class="form-check-label">
+                                                                    <span class="badge bg-success-lt">
+
+                                                                        Settings
+                                                                    </span>
+                                                                </span>
+
+                                                            </label>
+                                                        </div>
+                                                        <ul class="row permissions-body has-children">
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_1_0">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_1_0"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="settings.common" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Common
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.options" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    General
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.email" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Email
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.media" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Media
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_3">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_3" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.admin-appearance"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Admin Appearance
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_4">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_4" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.cache" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Cache
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_5">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_5" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.datatables" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Datatables
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_6">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_6" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.email.rules" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Email Rules
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_7">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_7" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="optimize.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Optimize
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_8">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_8" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="settings.website-tracking"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Website Tracking
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_9">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_9" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="languages.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Languages
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="languages.create"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="languages.edit"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="languages.destroy"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_1_1">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_1_1"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="settings.others" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Others
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="analytics.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Analytics
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="blog.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Blog
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="captcha.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Captcha
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_3">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_3" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="contact.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Contact
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_4">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_4" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="member.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Member
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_5">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_5" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="social-login.settings" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Social Login
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_1_2">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_1_2"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="plugins.translation" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Localization
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="translations.locales" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Locales
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="translations.theme-translations"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Theme translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="translations.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Other translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul class="parent_tree m-0 p-0 list-unstyled" id="node2">
+                                                    <li class="permissions-item list-unstyled">
+                                                        <div class="permissions-header">
+                                                            <label class="form-check">
+                                                                <input type="checkbox" id="checkbox_one_2"
+                                                                    name="flags[]"
+                                                                    class="form-check-input check-success"
+                                                                    value="core.system" checked>
+
+                                                                <span class="form-check-label">
+                                                                    <span class="badge bg-success-lt">
+
+                                                                        System
+                                                                    </span>
+                                                                </span>
+
+                                                            </label>
+                                                        </div>
+                                                        <ul class="row permissions-body has-children">
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_0">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_0"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="users.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Users
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="users.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="users.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="users.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_1">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_1"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="roles.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Roles
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="roles.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="roles.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Edit
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="roles.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_2">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_2"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="core.manage.license" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Manage license
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_3">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_3"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="systems.cronjob" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Cronjob
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_4">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_4"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="plugins.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Plugins
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="plugins.edit" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Activate/Deactivate
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="plugins.remove" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Remove
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="plugins.marketplace" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Add New Plugins
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_5">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_5"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="core.appearance" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Appearance
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="menus.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Menu
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="menus.create" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Create
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="menus.edit" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Edit
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child2">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_2"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="menus.destroy" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Delete
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Theme
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                        <ul class="list-unstyled">
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child0">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_0"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="theme.activate"
+                                                                                        checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Activate
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                            <li style="background-color: inherit"
+                                                                                id="node_grand_child1">
+                                                                                <label class="form-check">
+                                                                                    <input type="checkbox"
+                                                                                        id="checkbox_four_1"
+                                                                                        name="flags[]"
+                                                                                        class="form-check-input"
+                                                                                        value="theme.remove" checked>
+
+                                                                                    <span class="form-check-label">
+                                                                                        Remove
+                                                                                    </span>
+
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.options" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Theme options
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_3">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_3" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.custom-css" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Custom CSS
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_4">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_4" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.custom-js" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Custom JS
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_5">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_5" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.custom-html" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Custom HTML
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_6">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_6" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme.robots-txt" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Robots.txt Editor
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_7">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_7" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="widgets.index" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Widgets
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_6">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_6"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="analytics.general" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Analytics
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="analytics.page" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Top Page
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="analytics.browser" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Top Browser
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="analytics.referrer" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Top Referrer
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_7">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_7"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="audit-log.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Activity Logs
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="audit-log.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_8">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_8"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="backups.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Backup
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="backups.create" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Create
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="backups.restore" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Restore
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="backups.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_2_9">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_2_9"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="request-log.index" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Request Logs
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="request-log.destroy" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Delete
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul class="parent_tree m-0 p-0 list-unstyled" id="node3">
+                                                    <li class="permissions-item list-unstyled">
+                                                        <div class="permissions-header">
+                                                            <label class="form-check">
+                                                                <input type="checkbox" id="checkbox_one_3"
+                                                                    name="flags[]"
+                                                                    class="form-check-input check-success"
+                                                                    value="core.tools" checked>
+
+                                                                <span class="form-check-label">
+                                                                    <span class="badge bg-success-lt">
+
+                                                                        Tools
+                                                                    </span>
+                                                                </span>
+
+                                                            </label>
+                                                        </div>
+                                                        <ul class="row permissions-body has-children">
+                                                            <li class="list-unstyled col-4 m-0"
+                                                                style="background-color: inherit" id="node_sub_3_0">
+                                                                <label class="form-check">
+                                                                    <input type="checkbox" id="checkbox_two_3_0"
+                                                                        name="flags[]" class="form-check-input"
+                                                                        value="tools.data-synchronize" checked>
+
+                                                                    <span class="form-check-label">
+                                                                        <span class="badge bg-primary-lt">
+
+                                                                            Import/Export Data
+                                                                        </span>
+                                                                    </span>
+
+                                                                </label>
+                                                                <ul class="list-unstyled">
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_0">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_0" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="posts.export" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Export Posts
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_1">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_1" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="posts.import" checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Import Posts
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_2">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_2" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme-translations.export"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Export Theme translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_3">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_3" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="other-translations.export"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Export Other Translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_4">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_4" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="theme-translations.import"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Import Theme Translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                    <li style="background-color: inherit"
+                                                                        id="node_sub_sub_5">
+                                                                        <label class="form-check">
+                                                                            <input type="checkbox"
+                                                                                id="checkbox_three_5" name="flags[]"
+                                                                                class="form-check-input check-yellow"
+                                                                                value="other-translations.import"
+                                                                                checked>
+
+                                                                            <span class="form-check-label">
+                                                                                <span class="badge bg-yellow-lt">
+
+                                                                                    Import Other Translations
+                                                                                </span>
+                                                                            </span>
+
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="col-md-3 gap-3 d-flex flex-column-reverse flex-md-column mb-md-0 mb-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">
+                                                Publish
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
                                             <div class="btn-list">
-                                                <button class="btn   add-more-filter" type="button">
-
-                                                    Add additional filter
-
-                                                </button>
-                                                <button class="btn btn-primary  btn-apply" type="submit">
-
-                                                    Apply
-
-                                                </button>
-                                                <a class="btn btn-icon" style="display: none;" type="button"
-                                                    href="https://cms.botble.com/admin/members"
-                                                    data-bb-toggle="datatable-reset-filter">
-                                                    <svg class="icon icon-left svg-icon-ti-ti-refresh"
+                                                <button class="btn btn-primary" type="submit" value="apply"
+                                                    name="submitter">
+                                                    <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
                                                         xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
                                                         stroke="currentColor" stroke-width="2"
                                                         stroke-linecap="round" stroke-linejoin="round">
                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                                                        <path
+                                                            d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+                                                        <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                        <path d="M14 4l0 4l-6 0l0 -4" />
                                                     </svg>
+                                                    Save
+
+                                                </button>
+
+                                                <button class="btn" type="submit" name="submitter"
+                                                    value="save">
+                                                    <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
+                                                        <path d="M4 14h9" />
+                                                        <path d="M10 11l3 3l-3 3" />
+                                                    </svg>
+                                                    Save &amp; Exit
+
+                                                </button>
+
+                                                <a class="btn" type="button"
+                                                    href="https://cms.botble.com/admin/system/roles/duplicate/1">
+                                                    <svg class="icon icon-left svg-icon-ti-ti-copy"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path
+                                                            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                        <path
+                                                            d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                    </svg>
+                                                    Duplicate
 
                                                 </a>
+
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="card has-actions has-filter">
-                                <div class="card-header">
-                                    <div
-                                        class="w-100 justify-content-between d-flex flex-wrap align-items-center gap-1">
-                                        <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-1">
-                                            <div class="dropdown d-inline-block">
-                                                <button class="btn   dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown">
+                                    <div data-bb-waypoint data-bb-target="#form-actions"></div>
 
-                                                    Bulk Actions
+                                    <header class="top-0 w-100 position-fixed end-0 z-1000" id="form-actions"
+                                        style="display: none;">
+                                        <div class="navbar">
+                                            <div class="container-xl">
+                                                <div class="row g-2 align-items-center w-100">
+                                                    <div class="col">
+                                                        <div class="page-pretitle">
+                                                            <nav aria-label="breadcrumb">
+                                                                <ol class="breadcrumb">
+                                                                </ol>
+                                                            </nav>
 
-                                                </button>
-
-                                                <div class="dropdown-menu">
-                                                    <div class="dropdown-submenu">
-                                                        <button class="dropdown-item">
-
-                                                            Bulk changes
-
-                                                            <svg class="icon dropdown-item-icon ms-auto me-0 svg-icon-ti-ti-chevron-right"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z"
-                                                                    fill="none" />
-                                                                <path d="M9 6l6 6l-6 6" />
-                                                            </svg> </button>
-                                                        <div class="dropdown-menu">
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="first_name"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                First Name
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="last_name"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Last Name
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="email"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Email
-
-                                                            </button>
-                                                            <button class="dropdown-item bulk-change-item"
-                                                                data-key="created_at"
-                                                                data-class-item="Botble\Member\Tables\MemberTable"
-                                                                data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-
-                                                                Created At
-
-                                                            </button>
                                                         </div>
                                                     </div>
+                                                    <div class="col-auto ms-auto d-print-none">
+                                                        <div class="btn-list">
+                                                            <button class="btn btn-primary" type="submit"
+                                                                value="apply" name="submitter">
+                                                                <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"
+                                                                        fill="none" />
+                                                                    <path
+                                                                        d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+                                                                    <path
+                                                                        d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                                    <path d="M14 4l0 4l-6 0l0 -4" />
+                                                                </svg>
+                                                                Save
 
-                                                    <a class="dropdown-item"
-                                                        href="https://cms.botble.com/admin/tables/bulk-actions"
-                                                        data-trigger-bulk-action="data-trigger-bulk-action"
-                                                        data-method="POST"
-                                                        data-table-target="Botble\Member\Tables\MemberTable"
-                                                        data-target="Botble\Table\BulkActions\DeleteBulkAction"
-                                                        data-confirmation-modal-title="Confirm to perform this action"
-                                                        data-confirmation-modal-message="Are you sure you want to do this action? This cannot be undone."
-                                                        data-confirmation-modal-button="Delete"
-                                                        data-confirmation-modal-cancel-button="Cancel">
+                                                            </button>
 
-                                                        Delete
+                                                            <button class="btn" type="submit" name="submitter"
+                                                                value="save">
+                                                                <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"
+                                                                        fill="none" />
+                                                                    <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
+                                                                    <path d="M4 14h9" />
+                                                                    <path d="M10 11l3 3l-3 3" />
+                                                                </svg>
+                                                                Save &amp; Exit
 
-                                                    </a>
+                                                            </button>
+
+                                                            <a class="btn" type="button"
+                                                                href="https://cms.botble.com/admin/system/roles/duplicate/1">
+                                                                <svg class="icon icon-left svg-icon-ti-ti-copy"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"
+                                                                        fill="none" />
+                                                                    <path
+                                                                        d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                                    <path
+                                                                        d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                                </svg>
+                                                                Duplicate
+
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <button class="btn   btn-show-table-options" type="button">
-
-                                                Filters
-
-                                            </button>
-
-                                            <div class="table-search-input">
-                                                <label>
-                                                    <input type="search" class="form-control input-sm"
-                                                        placeholder="Search..." style="min-width: 120px">
-                                                    <button type="button" title="Search..."
-                                                        class="search-icon"><svg class="icon  svg-icon-ti-ti-search"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                                            <path d="M21 21l-6 -6" />
-                                                        </svg></button>
-                                                    <button type="button" title="Clear"
-                                                        class="search-reset-icon"><svg
-                                                            class="icon  svg-icon-ti-ti-x"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M18 6l-12 12" />
-                                                            <path d="M6 6l12 12" />
-                                                        </svg></button>
-                                                </label>
-                                            </div>
                                         </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <button class="btn action-item btn-primary " tabindex="0"
-                                                aria-controls="botble-member-tables-member-table" type="button"
-                                                aria-haspopup="dialog" aria-expanded="false">
-                                                <span data-action="create"
-                                                    data-href="https://cms.botble.com/admin/members/create">
-                                                    <svg class="icon  svg-icon-ti-ti-plus"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path d="M12 5l0 14" />
-                                                        <path d="M5 12l14 0" />
-                                                    </svg>
-                                                    Create
-                                                </span>
+                                    </header>
 
-                                            </button>
 
-                                            <button class="btn" type="button" data-bb-toggle="dt-buttons"
-                                                data-bb-target=".buttons-reload" tabindex="0"
-                                                aria-controls="botble-member-tables-member-table">
-                                                <svg class="icon icon-left svg-icon-ti-ti-refresh"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                                    <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                                </svg>
-                                                Reload
 
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="card-table">
-                                    <div class="table-responsive table-has-actions table-has-filter">
-                                        <table class="table card-table table-vcenter table-striped table-hover"
-                                            id="botble-member-tables-member-table">
-                                            <thead>
-                                                <tr>
-                                                    <th title="Checkbox"><input
-                                                            class="form-check-input m-0 align-middle table-check-all"
-                                                            data-set=".dataTable .checkboxes" name=""
-                                                            type="checkbox"></th>
-                                                    <th title="ID" width="20"
-                                                        class="text-center no-column-visibility  column-key-0">ID</th>
-                                                    <th title="Avatar" width="50" class=" column-key-1">Avatar
-                                                    </th>
-                                                    <th title="Name" class="text-start  column-key-2">Name</th>
-                                                    <th title="Email" class="text-start  column-key-3">Email</th>
-                                                    <th title="Created At" width="100" class=" column-key-4">
-                                                        Created At</th>
-                                                    <th title="Operations">Operations</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-
+                        </form>
 
 
 
@@ -1864,7 +3933,7 @@
                                     Copyright 2024 © Botble Technologies. Version <span class="fw-medium">7.4.7</span>
                                 </div>
                                 <div class="order-1 order-lg-2">
-                                    Page loaded in 0.19 seconds
+                                    Page loaded in 0.38 seconds
                                 </div>
                             </div>
                         </div>
@@ -1891,7 +3960,7 @@
                 ),
         };
         BotbleVariables.authorized =
-            "0";
+            "1";
         BotbleVariables.authorize_url = "https://cms.botble.com/admin/membership/authorize";
 
         BotbleVariables.menu_item_count_url = "https://cms.botble.com/admin/menu-items-count";
@@ -1918,26 +3987,15 @@
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/spectrum/spectrum.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fancybox/jquery.fancybox.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/core/base/libraries/fslightbox.js?v=7.4.7"></script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/jquery.dataTables.min.js?v=7.4.7">
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery-ui/jquery-ui.min.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery-treeview/jquery.treeview.min.js?v=7.4.7">
     </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/media/js/dataTables.bootstrap.min.js?v=7.4.7">
+    <script src="https://cms.botble.com/vendor/core/core/js-validation/js/js-validation.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/base/libraries/jquery.are-you-sure/jquery.are-you-sure.js?v=7.4.7">
     </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/dataTables.buttons.min.js?v=7.4.7">
-    </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Buttons/js/buttons.bootstrap.min.js?v=7.4.7">
-    </script>
-    <script
-        src="https://cms.botble.com/vendor/core/core/base/libraries/datatables/extensions/Responsive/js/dataTables.responsive.min.js?v=7.4.7">
-    </script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/moment-with-locales.min.js?v=7.4.7"></script>
     <script src="https://cms.botble.com/vendor/core/plugins/language/js/language-global.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/base/libraries/bootstrap3-typeahead.min.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/table/js/table.js?v=7.4.7"></script>
-    <script src="https://cms.botble.com/vendor/core/core/table/js/filter.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/core/acl/js/role.js?v=7.4.7"></script>
+    <script src="https://cms.botble.com/vendor/core/packages/slug/js/slug.js?v=7.4.7"></script>
 
 
 
@@ -1952,7 +4010,7 @@
                     <div class="modal-body">
                         <form method="POST" action="https://cms.botble.com/admin/search" accept-charset="UTF-8"
                             data-bb-toggle="gs-form"><input name="_token" type="hidden"
-                                value="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx">
+                                value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6">
                             <div class="mb-3 position-relative input-icon input-icon">
                                 <label class="form-label sr-only" for="keyword">
                                     Search
@@ -2064,7 +4122,7 @@
                 <div class="modal-content">
                     <form action="https://cms.botble.com/admin/media/files/download-url" method="POST"
                         id="image-picker-add-from-url-form">
-                        <input type="hidden" name="_token" value="lTSRHx96RfkMPPMpTNJTpGUNi4SrCCnhC2b9awKx"
+                        <input type="hidden" name="_token" value="U1lk1x2RAY1jBoJbF9pPgEkmfRrsgMp78U2kvbE6"
                             autocomplete="off">
                         <div class="modal-header">
                             <h5 class="modal-title">Add from URL</h5>
@@ -2137,7 +4195,7 @@
             RV_MEDIA_CONFIG.translations.actions_list.other.properties = 'Properties';
         </script>
 
-        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1733991098"></script>
+        <script src="https://cms.botble.com/vendor/core/core/media/js/integrate.js?v=1734328816"></script>
 
 
 
@@ -3913,6 +5971,14 @@
                         "uri": "admin\/tools\/data-synchronize\/import\/other-translations\/validate",
                         "methods": ["POST"]
                     },
+                    "storage.local": {
+                        "uri": "storage\/{path}",
+                        "methods": ["GET", "HEAD"],
+                        "wheres": {
+                            "path": ".*"
+                        },
+                        "parameters": ["path"]
+                    },
                     "public.ajax.render-ui-block": {
                         "uri": "ajax\/render-ui-blocks",
                         "methods": ["POST"]
@@ -3938,6 +6004,14 @@
                         "uri": "{slug?}",
                         "methods": ["GET", "HEAD"],
                         "parameters": ["slug"]
+                    },
+                    "public.member.language-advanced.save": {
+                        "uri": "account\/language-advanced\/save\/{id}",
+                        "methods": ["POST"],
+                        "wheres": {
+                            "id": "[0-9]+"
+                        },
+                        "parameters": ["id"]
                     }
                 }
             };
@@ -4684,444 +6758,53 @@
                 }
             });
         </script>
-        <div class="modal fade modal-blur modal fade modal-blur modal-confirm-delete" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
+        <script>
+            jQuery(document).ready(function() {
+                'use strict';
+                $("#botble-a-c-l-forms-role-form").each(function() {
+                    $(this).validate({
+                        errorElement: 'div',
+                        errorClass: 'invalid-feedback',
 
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>Confirm delete</h3>
-
-                        <div class="text-muted text-break">
-                            Do you really want to delete this record?
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-danger delete-crud-entry">
-                                        Delete
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur delete-many-modal" tabindex="-1" role="dialog"
-            aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>Confirm delete</h3>
-
-                        <div class="text-muted text-break">
-                            Do you really want to delete selected record(s)?
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-danger delete-many-entry-button">
-                                        Delete
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur modal-bulk-change-items" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered " role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h5 class="modal-title">Bulk changes</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-
-
-                    <div class="modal-body">
-                        <div class="modal-bulk-change-content"></div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-primary  confirm-bulk-change-button" type="button"
-                            data-load-url="https://cms.botble.com/admin/tables/filters">
-
-                            Save
-
-                        </button>
-
-                        <button class="btn" type="button" data-bs-dismiss="modal">
-
-                            Cancel
-
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur bulk-action-confirm-modal" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>''</h3>
-
-                        <div class="text-muted text-break">
-                            ''
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button"
-                                        class="w-100 btn btn-danger confirm-trigger-bulk-actions-button">
-
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade modal-blur modal fade modal-blur single-action-confirm-modal" tabindex="-1"
-            role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-
-
-                    <div class="modal-status bg-danger"></div>
-
-                    <div class="modal-body text-center py-4">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-
-                        <div class="mb-2">
-                            <svg class="icon icon-lg text-danger svg-icon-ti-ti-alert-triangle"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 9v4" />
-                                <path
-                                    d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
-                                <path d="M12 16h.01" />
-                            </svg>
-                        </div>
-
-                        <h3>''</h3>
-
-                        <div class="text-muted text-break">
-                            ''
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button"
-                                        class="w-100 btn btn-danger confirm-trigger-single-action-button">
-
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="w-100 btn btn-" data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(function() {
-                    window.LaravelDataTables = window.LaravelDataTables || {};
-                    window.LaravelDataTables["botble-member-tables-member-table"] = $(
-                        "#botble-member-tables-member-table").DataTable({
-                        "serverSide": true,
-                        "processing": true,
-                        "ajax": {
-                            "url": "https:\/\/cms.botble.com\/admin\/members?",
-                            "method": "POST"
-                        },
-                        "columns": [{
-                            "data": "checkbox",
-                            "name": "checkbox",
-                            "title": "<input class=\"form-check-input m-0 align-middle table-check-all\" data-set=\".dataTable .checkboxes\" name=\"\" type=\"checkbox\">",
-                            "orderable": false,
-                            "searchable": false,
-                            "defaultContent": "",
-                            "className": "w-1 text-start no-column-visibility",
-                            "titleAttr": "Checkbox"
-                        }, {
-                            "data": "id",
-                            "name": "id",
-                            "title": "ID",
-                            "orderable": true,
-                            "searchable": true,
-                            "className": "text-center no-column-visibility  column-key-0",
-                            "width": 20,
-                            "class": "text-center no-column-visibility  column-key-0"
-                        }, {
-                            "data": "avatar_thumb_url",
-                            "name": "avatar_thumb_url",
-                            "title": "Avatar",
-                            "orderable": false,
-                            "searchable": false,
-                            "width": 50,
-                            "class": " column-key-1",
-                            "className": " column-key-1"
-                        }, {
-                            "data": "name",
-                            "name": "name",
-                            "title": "Name",
-                            "orderable": false,
-                            "searchable": true,
-                            "className": "text-start  column-key-2",
-                            "class": "text-start  column-key-2"
-                        }, {
-                            "data": "email",
-                            "name": "email",
-                            "title": "Email",
-                            "orderable": true,
-                            "searchable": true,
-                            "className": "text-start  column-key-3",
-                            "class": "text-start  column-key-3"
-                        }, {
-                            "data": "created_at",
-                            "name": "created_at",
-                            "title": "Created At",
-                            "orderable": true,
-                            "searchable": true,
-                            "type": "date",
-                            "width": 100,
-                            "class": " column-key-4",
-                            "className": " column-key-4"
-                        }, {
-                            "data": "row_actions",
-                            "name": "row_actions",
-                            "title": "Operations",
-                            "orderable": false,
-                            "searchable": false,
-                            "className": "text-center no-column-visibility text-nowrap",
-                            "responsivePriority": 99
-                        }],
-                        "dom": "fBrt<'card-footer d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2'<'d-flex justify-content-between align-items-center gap-3'l<'m-0 text-muted'i>><'d-flex justify-content-center'p>>",
-                        "buttons": {
-                            "stateSave": true,
-                            "buttons": [{
-                                "className": "action-item btn-primary ",
-                                "text": "<span data-action=\"create\" data-href=\"https:\/\/cms.botble.com\/admin\/members\/create\">\n            <svg class=\"icon  svg-icon-ti-ti-plus\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M12 5l0 14\" \/>\n  <path d=\"M5 12l14 0\" \/>\n<\/svg>    \n    Create\n<\/span>\n"
-                            }, "reload"]
-                        },
-                        "initComplete": function() {
-                            Botble.initResources();
-
-                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
-                                detail: {
-                                    table: this
-                                }
-                            }));
-                        },
-                        "drawCallback": function() {
-                            var tableWrapper = $(this).closest(".dataTables_wrapper");
-                            var dtDataCount = this.api().data().count();
-
-                            if (dtDataCount === 0) {
-                                tableWrapper.find(".card-footer").prop('style',
-                                    'display: none !important;');
+                        errorPlacement: function(error, element) {
+                            if (element.closest('[data-bb-toggle="tree-checkboxes"]').length) {
+                                error.insertAfter(element.closest(
+                                    '[data-bb-toggle="tree-checkboxes"]'));
+                            } else if (element.parent('.input-group').length || element.prop(
+                                'type') === 'checkbox' || element.prop('type') === 'radio') {
+                                error.insertAfter(element.parent());
+                            } else if ($(element).data('select2')) {
+                                error.insertAfter(element.next('span'));
                             } else {
-                                tableWrapper.find(".card-footer").prop('style', null);
+                                error.insertAfter(element);
                             }
-
-                            tableWrapper.find(".dataTables_paginate").toggle(this.api().page.info()
-                                .pages > 1);
-
-                            tableWrapper.find(".dataTables_length").toggle(dtDataCount >= 10);
-                            tableWrapper.find(".dataTables_info").toggle(dtDataCount > 0);
-
-                            setTimeout(function() {
-                                var searchInputWrapper = $(
-                                    ".table-wrapper .table-search-input input");
-                                if (!searchInputWrapper.val()) {
-                                    searchInputWrapper.val(tableWrapper.find(
-                                        ".dataTables_filter input").val());
-                                }
-
-                                if (searchInputWrapper.val()) {
-                                    searchInputWrapper.addClass(
-                                        'border-primary bg-info-subtle')
-
-                                    searchInputWrapper.closest('label').find(
-                                        '.search-reset-icon').show()
-                                    searchInputWrapper.closest('label').find('.search-icon')
-                                        .hide()
-                                } else {
-                                    searchInputWrapper.removeClass(
-                                        'border-primary bg-info-subtle')
-
-                                    searchInputWrapper.closest('label').find(
-                                        '.search-reset-icon').hide()
-                                    searchInputWrapper.closest('label').find('.search-icon')
-                                        .show()
-                                }
-                            }, 200);
-                            Botble.initResources();
-
-                            document.dispatchEvent(new CustomEvent("core-table-init-completed", {
-                                detail: {
-                                    table: this
-                                }
-                            }));
                         },
-                        "paging": true,
-                        "searching": true,
-                        "info": true,
-                        "searchDelay": 350,
-                        "bStateSave": true,
-                        "lengthMenu": [
-                            [10, 30, 50, 100, 500, -1],
-                            [10, 30, 50, 100, 500, "All"]
-                        ],
-                        "pageLength": 10,
-                        "bServerSide": true,
-                        "bDeferRender": true,
-                        "bProcessing": true,
-                        "language": {
-                            "aria": {
-                                "sortAscending": "orderby asc",
-                                "sortDescending": "orderby desc",
-                                "paginate": {
-                                    "next": "Next &raquo;",
-                                    "previous": "&laquo; Previous"
-                                }
-                            },
-                            "emptyTable": "No data to display",
-                            "info": "<span class=\"dt-length-records\">\n    <svg class=\"icon  svg-icon-ti-ti-world\"\n  xmlns=\"http:\/\/www.w3.org\/2000\/svg\"\n  width=\"24\"\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  fill=\"none\"\n  stroke=\"currentColor\"\n  stroke-width=\"2\"\n  stroke-linecap=\"round\"\n  stroke-linejoin=\"round\"\n  >\n  <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"\/>\n  <path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\" \/>\n  <path d=\"M3.6 9h16.8\" \/>\n  <path d=\"M3.6 15h16.8\" \/>\n  <path d=\"M11.5 3a17 17 0 0 0 0 18\" \/>\n  <path d=\"M12.5 3a17 17 0 0 1 0 18\" \/>\n<\/svg>    <span class=\"d-none d-sm-inline\">Show from<\/span>\n    _START_\n    to _END_ in\n    <span class=\"badge bg-secondary text-secondary-fg\">\n    \n    _TOTAL_\n<\/span>\n    <span class=\"hidden-xs\">records<\/span>\n<\/span>\n",
-                            "infoEmpty": "No record",
-                            "lengthMenu": "<span class=\"dt-length-style\">_MENU_<\/span>",
-                            "search": "",
-                            "searchPlaceholder": "Search...",
-                            "zeroRecords": "No record",
-                            "processing": {},
-                            "paginate": {
-                                "next": "Next &raquo;",
-                                "previous": "&laquo; Previous"
-                            },
-                            "infoFiltered": "(filtered from _MAX_ total records)"
+
+                        highlight: function(element) {
+                            $(element).closest('.form-control').removeClass('is-valid').addClass(
+                                'is-invalid');
                         },
-                        "order": [
-                            [1, "desc"]
-                        ],
-                        "responsive": true,
-                        "autoWidth": false
+
+
+                        unhighlight: function(element) {
+                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
+                                'is-valid');
+                        },
+
+                        success: function(element) {
+                            $(element).closest('.form-control').removeClass('is-invalid').addClass(
+                                'is-valid');
+                        },
+
+                        focusInvalid: false,
+
+                        rules: JSON.parse(
+                            '{\u0022name\u0022:{\u0022laravelValidation\u0022:[[\u0022Required\u0022,[],\u0022The name field is required.\u0022,true],[\u0022String\u0022,[],\u0022The name must be a string.\u0022,false],[\u0022Max\u0022,[\u0022120\u0022],\u0022The name must not be greater than 120 characters.\u0022,false],[\u0022Min\u0022,[\u00223\u0022],\u0022The name must be at least 3 characters.\u0022,false]]},\u0022description\u0022:{\u0022laravelValidation\u0022:[[\u0022Nullable\u0022,[],\u0022validation.nullable\u0022,false],[\u0022String\u0022,[],\u0022The description must be a string.\u0022,false],[\u0022String\u0022,[],\u0022The description must be a string.\u0022,false],[\u0022Max\u0022,[\u0022255\u0022],\u0022The description must not be greater than 255 characters.\u0022,false]]},\u0022is_default\u0022:{\u0022laravelValidationRemote\u0022:[[{},[\u0022is_default\u0022,\u0022eyJpdiI6ImVXM2pqeUpDS3JDKzdzdjdSeTVxRGc9PSIsInZhbHVlIjoiTmUrVlQ1b0l2eE5qdkk0V3dKdlU1a2M1dEp0ZmNWWHNPM3UvWE0wbnBoUE0rWHBzN2JWVEIzZWlqV1RpQ0ZidFJlR3JIR1BkbE1oUzc2SFVwSWVDOUE9PSIsIm1hYyI6Ijc5MTJlZGFhNzU1MTI2ODMwYzdhNmRmYjJjODJkMDdmNjc1NWMwNzkyYmMwODc0ODAyYWEyOTJjMGYxYjY2ZjUiLCJ0YWciOiIifQ==\u0022,false],\u0022validation.illuminate\\\\_validation\\\\_invokable_validation_rule\u0022,false]]}}'
+                            )
                     });
                 });
             });
         </script>
-
-
 
     </div>
 
