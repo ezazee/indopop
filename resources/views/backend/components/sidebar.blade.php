@@ -290,7 +290,7 @@
                                 Member Dashboard
                             </span>
                         </a>
-                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/settings/roles-permission*') ? 'active' : '' }}"
+                        {{-- <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/settings/roles-permission*') ? 'active' : '' }}"
                             href="{{ route('settings.rolesPermission') }}" id="cms-plugins-blog-categories"
                             title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
@@ -310,7 +310,7 @@
                             <span class="nav-link-title text-truncate">
                                 Roles & Permission
                             </span>
-                        </a>
+                        </a> --}}
                     </div>
                 </li>
             </ul>

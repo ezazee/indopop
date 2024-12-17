@@ -35,18 +35,18 @@ class SettingsController extends Controller
     }
 
     // Roles Permission
-    public function rolesPermission()
-    {
-        return view('backend.pages.settings.rolePermission.index');
-    }
+    // public function rolesPermission()
+    // {
+    //     return view('backend.pages.settings.rolePermission.index');
+    // }
 
-    public function editRolesPermission()
-    {
-        return view('backend.pages.settings.rolePermission.edit');
-    }
+    // public function editRolesPermission()
+    // {
+    //     return view('backend.pages.settings.rolePermission.edit');
+    // }
 
-    public function createRolesPermission()
-    {
-        return view('backend.pages.settings.rolePermission.create');
-    }
+    // public function createRolesPermission()
+    // {
+    //     return view('backend.pages.settings.rolePermission.create');
+    // }
 }

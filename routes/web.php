@@ -99,6 +99,6 @@ Route::get('/dashboard/settings/member-dashboard/edit', [SettingsController::cla
 Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'createMemberDashboard'])->name('settings.createMemberDashboard');
 
 // Roles And Permission
-Route::get('/dashboard/settings/roles-permission', [SettingsController::class, 'rolesPermission'])->name('settings.rolesPermission');
-Route::get('/dashboard/settings/roles-permission/edit', [SettingsController::class, 'editRolesPermission'])->name('settings.editRolesPermission');
-Route::get('/dashboard/settings/roles-permission/create', [SettingsController::class, 'createRolesPermission'])->name('settings.createRolesPermission');
+// Route::get('/dashboard/settings/roles-permission', [SettingsController::class, 'rolesPermission'])->name('settings.rolesPermission');
+// Route::get('/dashboard/settings/roles-permission/edit', [SettingsController::class, 'editRolesPermission'])->name('settings.editRolesPermission');
+// Route::get('/dashboard/settings/roles-permission/create', [SettingsController::class, 'createRolesPermission'])->name('settings.createRolesPermission');

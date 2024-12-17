@@ -148,21 +148,6 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="card meta-boxes">
-                            <div class="card-header">
-                                <h4 class="card-title">
-                                    <label class="form-label" for="role_id">
-                                        Role
-                                    </label>
-                                </h4>
-                            </div>
-                            <div class=" card-body">
-                                <select class="form-control form-select" id="" name="role_id">
-                                    <option value="" selected="selected">Select role</option>
-                                    <option value="1">Admin</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </form>
