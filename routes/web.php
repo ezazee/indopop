@@ -104,6 +104,8 @@ Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::c
 Route::post('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'addMemberDashboard'])->name('settings.addMemberDashboard');
 Route::delete('/dashboard/settings/member-dashboard/delete/{id}', [SettingsController::class, 'deleteMemberDashboard'])->name('settings.deleteMemberDashboard');
 
-
 // === {{ !! Profile !! }} === //
 Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])->name('profile.indexProfile');
+
+
+Route::get('/login', [DashboardController::class, 'loginPage'])->name('login');

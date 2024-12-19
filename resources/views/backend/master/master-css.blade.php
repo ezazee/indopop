@@ -33,4 +33,18 @@
     [x-cloak] {
         display: none;
     }
+
+    .input-password-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        padding: 10px 15px;
+        z-index: 9;
+    }
+
+    input[data-bb-password]:valid,
+    input[data-bb-password].is-valid {
+        background-image: unset;
+    }
 </style>
