@@ -12,10 +12,26 @@ class Post extends Model
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $fillable = ['title', 'content', 'category'];
+    protected $fillable = ['title', 'content', 'gambar','image_caption','slug','status','headline','start_date','start_time','keyword','description','kategori_id','user_id'];
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images')->useDisk('public');
     }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Categori::class, 'kategori_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tags');
+    }
+
 }

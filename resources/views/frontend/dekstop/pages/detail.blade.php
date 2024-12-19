@@ -7,23 +7,22 @@
         @include('frontend.dekstop.components.ads-1')
 
         <div class="mt-20">
-            <h3 class="card-headline-no-image-title">Dangdut</h3>
+            <h3 class="card-headline-no-image-title">{{ $post->kategori->nama_kategori }}</h3>
         </div>
 
         <div class="content-home" id="content">
             <div class="content-article">
                 <article class="article-detail">
-                    <h1 class="article-detail--title">Kimberly Ryder Belum Menjanda, Ibu Sudah Berharap Dapat Ganti yang
-                        Lebih Baik</h1>
-                    <div class="article-detail--desc">Irvina Zainal, ibu dari aktris Kimberly Ryder, mengungkapkan
-                        harapannya agar putrinya bisa mendapatkan jodoh yang baik setelah resmi bercerai dari Edward Akbar.
-                    </div>
+                    <h1 class="article-detail--title">{{ $post->title }}</h1>
+                    @if ($post->description )
+                    <div class="article-detail--desc">{{ $post->description }}</div>
+                    @endif
                     <div class="article-detail--info">
                         <div class="author">
-                            <strong>Admin</strong>
+                            <strong>{{ $post->user->name }}</strong>
                         </div>
                         <div class="date">
-                            Kamis, 16 September 2021 | 18:06 WIB
+                            {{ \Carbon\Carbon::parse($post->created_at)->translatedFormat('l, d F Y | H:i') }} WIB
                         </div>
                     </div>
 
@@ -47,55 +46,19 @@
 
                     <figure class="article-detail-figure">
                         <img alt="image" width="660" height="497"
-                            src="https://staging.indopop.id/desktop/assets/images/detailpage.jpg"
+                            src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
                             class="card-headline-img" />
-                        <figcaption>Nadiem Makarim (Instagram/Kemdikbud.RI)</figcaption>
+                        <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
-                        <p><strong>Indopop.id</strong> - Diplomat senior Indonesia Dino Patti Djalal membeberkan tiga bukti
-                            yang menunjukkan bahwa seseorang bernama Fredy Kusnadi diduga terlibat dalam kasus penggelapan
-                            sertifikat tanah milik ibundanya.</p>
-                        <p>Dino menuding Fredy merupakan sindikat mafia tanah yang menggelapkan sertifikat tanah ibundanya
-                            tersebut.</p>
-                        <p>"Saya ingin memberikan tiga bukti mengenai keterlibatan Fredy dalam sindikat mafia tanah," ujar
-                            Dino dalam video yang diunggah di akun Instagram miliknya, Senin (15/2/2021) dini hari.</p>
-                        <p>Dino menuturkan, bukti pertama yang dimilikinya, yakni rekaman pengakuan dari seseorang bernama
-                            Sherly. Sherly, kata Dino, saat ini telah ditangkap polisi dan berstatus tersangka.</p>
-                        <div class="read-also-wrap">
-                            <span class="read-also-wrap-title">Baca Juga:</span>
-                            <a href="" class="read-also-wrap-item">Hurricane Ida updates: At least 1 death in
-                                Louisiana as New Orleans loses power</a>
-                        </div>
-                        <p>"Saya memberikan apresiasi dan terima kasih karena Sherly telah memberikan pengakuan yang
-                            sejujur-jujurnya mengenai peran Fredy dalam salah satu aksi penipuan terhadap rumah ibu saya,"
-                            ucap Dino sebagaimana dilansir dari Antara.</p>
-                        <p>Bukti kedua yang disampaikan Dino, yakni bukti transfer uang. Uang tersebut diduga merupakan
-                            bagian dari hasil penggadaian sertifikat rumah milik ibunya di suatu koperasi.</p>
-                        <p>"Bukti kedua yang saya miliki dan sudah saya berikan ke polisi adalah bukti transfer yang
-                            diterima Fredy sebesar Rp 320 juta. Ini adalah sebagai bagian dari hasil penggadaian sertifikat
-                            rumah milik ibu saya ke suatu koperasi. Dari sana diuangkan sekitar Rp 4 (miliar) sampai Rp 5
-                            miliar dan dibagi-bagi di antara mereka. Paling besar mungkin itu bosnya mendapat Rp 1,7 miliar.
-                            Yang lain antara Rp 1 miliar dan Rp 500 juta," kata Dino.</p>
-                        <div class="read-also-wrap">
-                            <span class="read-also-wrap-title">Baca Juga:</span>
-                            <a href="" class="read-also-wrap-item">Hurricane Ida updates: At least 1 death in
-                                Louisiana as New Orleans loses power</a>
-                        </div>
-                        <p>"Jadi jelas nama Fredy ada di berbagai kasus rumah, sedikitnya tiga rumah, tapi mungkin lebih
-                            dari itu," sambung dia</p>
-                    </div>
-                    <div class="article-detail-pagination">
-                        <a href="" class="active">1</a>
-                        <a href="?page=detail">2</a>
-                        <a href="?page=detail">3</a>
-                        <a href="?page=detail">4</a>
-                        <a href="" class="show-all">Tampilkan Semua</a>
+                        <p><strong>Indopop.id</strong> {!! nl2br(str_replace(['[caption]', '[/caption]'], '', $post->content)) !!}
+                        </p>
                     </div>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>
-                        <a href="" class="tag-item">SIKM</a>
-                        <a href="" class="tag-item">Anies Baswedan</a>
-                        <a href="" class="tag-item">PSBB</a>
+                        @foreach ($tagsdetail as $index => $tags)
+                        <a href="" class="tag-item"> {{ $tags->nama_tags }}</a>
+                        @endforeach
                     </div>
 
                     <div class="share-baru-bottom">

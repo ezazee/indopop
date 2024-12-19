@@ -321,6 +321,9 @@
                         @endforeach
                      </tbody>
                   </table>
+                  <div class="mt-3">
+                     {{ $tag->links('pagination::bootstrap-4') }}
+                 </div>
                </div>
             </div>
          </div>

@@ -153,7 +153,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item {{ Request::is('dashboard/members') ? 'active' : '' }}">
+                <li class="nav-item {{ Request::is('dashboard/member') || Request::is('dashboard/member/create') || Request::is('dashboard/member/edit/*') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-50" href="{{ route('member.index') }}" id="cms-core-member"
                         title="Members">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Members">
@@ -288,27 +288,6 @@
                             </span>
                             <span class="nav-link-title text-truncate">
                                 Member Dashboard
-                            </span>
-                        </a>
-                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/settings/roles-permission*') ? 'active' : '' }}"
-                            href="{{ route('settings.rolesPermission') }}" id="cms-plugins-blog-categories"
-                            title="Categories">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
-                                <svg class="icon  svg-icon-ti-ti-users-group" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
-                                    <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M17 10h2a2 2 0 0 1 2 2v1" />
-                                    <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title text-truncate">
-                                Roles & Permission
                             </span>
                         </a>
                     </div>

@@ -3,86 +3,23 @@
         @include('frontend.dekstop.components.ads-2')
         <div>
             <h3 class="card-headline-no-image-title">Terkini</h3>
+            @foreach ($postTerkini as $item)
             <article class="card-four">
                 <div class="card-four-img-wrap">
                     <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
+                        src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
                 </div>
                 <div class="card-four--info">
                     <h4 class="card-four--title">
-                        <a href="/detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                            2021</a>
+                        <a href="/detail">{{$item->title}}</a>
                     </h4>
                     <div class="category-and-time">
-                        <a href="/detail">Flexing</a>
-                        <span>11:15 WIB</span>
+                        <a href="/detail">{{$item->kategori->nama_kategori}}</a>
+                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                     </div>
                 </div>
             </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                            2021</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Gosip</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                            2021</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Me And Moms</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                            2021</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">K-Pop</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                            2021</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Vibes</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
+            @endforeach
         </div>
         {{-- Ads --}}
         @include('frontend.dekstop.components.ads-3')
@@ -107,84 +44,23 @@
         </div>
         <div>
             <h3 class="card-headline-no-image-title">Terpopuler</h3>
+            @foreach ($postTerpopuler as $item)
             <article class="card-four">
                 <div class="card-four-img-wrap">
                     <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
+                        src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
                 </div>
                 <div class="card-four--info">
                     <h4 class="card-four--title">
-                        <a href="/detail">Heboh Kasus P. Diddy, Penolakan Agnez Mo Ikut Pergaulan
-                            Seleb</a>
+                        <a href="/detail">{{$item->title}}</a>
                     </h4>
                     <div class="category-and-time">
-                        <a href="/detail">Gosip</a>
-                        <span>11:15 WIB</span>
+                        <a href="/detail">{{$item->kategori->nama_kategori}}</a>
+                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                     </div>
                 </div>
             </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">Siap-Siap! Lisa BLACKPINK Gelar Fan Meet Up Pada 15</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Parenting</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">Nikita Mirzani Ngomel Pakai Filter Lemon, Diduga Ada Luka
-                            Kegampar Lolly</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Flexing</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">Video Andre Taulany Rangkulan Mesra Sama Eca Aura Tuai
-                            Kritik</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Dangdut</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
-            <article class="card-four">
-                <div class="card-four-img-wrap">
-                    <img alt="image" class="card-four-img"
-                        src="https://staging.indopop.id/desktop/assets/images/headline.jpg" />
-                </div>
-                <div class="card-four--info">
-                    <h4 class="card-four--title">
-                        <a href="/detail">Bernadya Buka Suara usai Kontennya Penuh Komentar Pelecehan</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <a href="/detail">Me And Moms</a>
-                        <span>11:15 WIB</span>
-                    </div>
-                </div>
-            </article>
+            @endforeach
         </div>
     </div>
 </div>

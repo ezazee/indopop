@@ -13,60 +13,17 @@
                             <li class="menu-item">
                                 <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">HOME</a>
                             </li>
+                            @foreach ($categories as $item)
                             <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
+                                <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}" class="{{ Request::is('kanal/' . $item->slug) ? 'active' : '' }}">{{$item->nama_kategori}}</a>
+                                {{-- <ul class="dropdown-menu">
                                     <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
                                     <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
                                     <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
                                     <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
+                                </ul> --}}
                             </li>
-                            <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
-                                    <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
-                                    <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
-                                    <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
-                                    <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
-                                    <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
-                                    <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
-                                    <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
-                                    <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
-                                    <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
-                                    <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
-                                    <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
-                                    <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item dropdown">
-                                <a href="#" class="{{ Request::is('kanal*') ? 'active' : '' }}">KANAL</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
-                                    <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
-                                    <li><a href="{{ url('/kanal/sub3') }}">Sub Kanal 3</a></li>
-                                    <li><a href="{{ url('/kanal/sub4') }}">Sub Kanal 4</a></li>
-                                </ul>
-                            </li>
+                            @endforeach
                             <li class="menu-item">
                                 <a href="https://www.youtube.com/@indopopid" target="_blank">VIDEO</a>
                             </li>

@@ -259,7 +259,9 @@
                                         <th title="Checkbox"><input
                                                 class="form-check-input m-0 align-middle table-check-all"
                                                 data-set=".dataTable .checkboxes" name="" type="checkbox"></th>
-                                        <th title="Username" class="text-start  column-key-0">Username
+                                        <th title="Image" width="50"
+                                                class=" column-key-1  column-key-1  column-key-1">Avatar</th>
+                                        <th title="Name" class="text-start  column-key-0">Name
                                         </th>
                                         <th title="Email" class="text-start  column-key-1">Email</th>
                                         <th title="Role" class=" column-key-2">Role</th>
@@ -268,39 +270,33 @@
                                         </th>
                                         <th title="Status" width="100" class=" column-key-4">Status
                                         </th>
-                                        <th title="Is super?" width="100" class=" column-key-5">Is
-                                            super?
-                                        </th>
                                         <th class="text-center" title="Operations">Operations</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($user as $item)
                                     <tr class="odd">
                                         <td class="w-1 text-start no-column-visibility dtr-control"><input
                                                 class="form-check-input m-0 align-middle checkboxes" type="checkbox"
                                                 name="id[]" value="1"></td>
+                                                <td class="column-key-1  column-key-1  column-key-1"><img
+                                                    src="{{ asset('backend/images/profile/profile.png') }}" width="50"
+                                                    alt="Image"></td>
                                         <td class="text-start column-key-0 sorting_1"><a
-                                                href="{{ route('settings.editMemberDashboard') }}"
-                                                title="admin">admin</a></td>
+                                                href="{{ route('settings.editMemberDashboard', ['id' => $item->id ]) }}"
+                                                title="{{$item->name}}">{{$item->name}}</a></td>
                                         <td class="  text-start  column-key-1"><a
-                                                href="mailto:vullrich@dickinson.com">vullrich@dickinson.com</a></td>
-                                        <td class="   column-key-2"><a class="editable editable-click" data-type="select"
-                                                data-source="https://cms.botble.com/admin/system/roles/json"
-                                                data-pk="1" data-url="https://cms.botble.com/admin/system/roles/assign"
-                                                data-value="0" data-title="Assigned Role" href="#">
-                                                No role assigned
+                                                href="mailto:{{ $item->email }}">{{ $item->email }}</a></td>
+                                        <td class="   column-key-2">
+                                                {{ $item->role->name }}
                                             </a>
                                         </td>
-                                        <td class="   column-key-3">2024-09-01</td>
-                                        <td class="   column-key-4"><span
-                                                class="badge bg-info text-info-fg">Activated</span></td>
-                                        <td class="   column-key-5"><span class="badge bg-success text-success-fg">
-                                                Yes
-                                            </span>
-                                        </td>
+                                        <td class="column-key-3">{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
+                                        <td class="column-key-4"><span
+                                                class="badge bg-info text-info-fg">{{ $item->status }}</span></td>
                                         <td class="  text-center no-column-visibility text-nowrap">
                                             <div class="table-actions">
-                                                <a href="{{ route('settings.editMemberDashboard') }}"
+                                                <a href="{{ route('settings.editMemberDashboard', ['id' => $item->id ]) }}"
                                                     class="btn btn-sm btn-icon btn-primary">
                                                     <svg class="icon  svg-icon-ti-ti-edit" data-bs-toggle="tooltip"
                                                         data-bs-title="Edit" xmlns="http://www.w3.org/2000/svg"
@@ -318,33 +314,33 @@
                                                     </svg>
                                                     <span class="sr-only">Edit</span>
                                                 </a>
-                                                <a href="https://cms.botble.com/admin/system/users/1"
-                                                    data-dt-single-action="" data-method="DELETE"
-                                                    data-confirmation-modal="true"
-                                                    data-confirmation-modal-title="Confirm delete"
-                                                    data-confirmation-modal-message="Do you really want to delete this record?"
-                                                    data-confirmation-modal-button="Delete"
-                                                    data-confirmation-modal-cancel-button="Cancel"
-                                                    class="btn btn-sm btn-icon btn-danger">
-                                                    <svg class="icon  svg-icon-ti-ti-trash" data-bs-toggle="tooltip"
-                                                        data-bs-title="Delete" xmlns="http://www.w3.org/2000/svg"
-                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path d="M4 7l16 0"></path>
-                                                        <path d="M10 11l0 6"></path>
-                                                        <path d="M14 11l0 6"></path>
-                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                                                    </svg>
-                                                    <span class="sr-only">Delete</span>
-                                                </a>
+                                                <form action="{{ route('settings.deleteMemberDashboard', ['id' => $item->id]) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-icon btn-danger" data-bs-toggle="tooltip" data-bs-title="Delete"
+                                                        onclick="return confirm('Do you really want to delete this record?');">
+                                                        <svg class="icon svg-icon-ti-ti-trash" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M4 7l16 0"></path>
+                                                            <path d="M10 11l0 6"></path>
+                                                            <path d="M14 11l0 6"></path>
+                                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                                        </svg>
+                                                        <span class="sr-only">Delete</span>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr>   
+                                    @endforeach
                                 </tbody>
                             </table>
+                            <div class="mt-3">
+                                {{ $user->links('pagination::bootstrap-4') }}
+                            </div>
                         </div>
                     </div>
                 </div>

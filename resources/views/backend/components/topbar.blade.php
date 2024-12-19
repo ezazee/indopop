@@ -22,7 +22,7 @@
 
         <div class="flex-row navbar-nav order-md-last">
             <div class="dropdown nav-item">
-                <a href="https://cms.botble.com/admin/system/users/profile/1"
+                <a href="{{ route('profile.indexProfile') }}"
                     class="p-0 nav-link d-flex lh-1 text-reset" data-bs-toggle="dropdown"
                     aria-label="Open user menu">
                     <span class="crop-image-original avatar avatar-sm"
@@ -36,7 +36,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end">
-                    <a class="dropdown-item" href="https://cms.botble.com/admin/system/users/profile/1">
+                    <a class="dropdown-item" href="{{ route('profile.indexProfile') }}">
                         <svg class="icon dropdown-item-icon svg-icon-ti-ti-user" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

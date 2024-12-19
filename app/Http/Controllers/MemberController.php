@@ -9,7 +9,11 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     public function memberIndex() {
-        return view('backend.pages.member.index');
+        $user = User::whereHas('role', function ($query) {
+            $query->where('name', 'editor');
+        })->paginate(5);
+        
+        return view('backend.pages.member.index',compact('user'));
     }
 
     public function memberCreate(){
@@ -21,6 +25,14 @@ class MemberController extends Controller
             'password' => 'required|min:8|confirmed',
             'images' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $emailExists = User::where('email', $request->email)->exists();
+
+        if ($emailExists) {
+            return redirect()->back()
+                ->withInput() 
+                ->withErrors(['email' => 'Email sudah ada di database.']);
+        }
 
         $imagePath = null;
         if ($request->hasFile('images')) {
@@ -53,8 +65,8 @@ class MemberController extends Controller
         return redirect()->route('member.index')->with('success', 'Member berhasil ditambahkan!');
     }
 
-    public function memberEdit($slug){
-        $member = User::with('role')->where('slug', $slug)->firstOrFail();
+    public function memberEdit($id){
+        $member = User::with('role')->where('id', $id)->firstOrFail();
         return view('backend.pages.member.edit',compact('member'));
     }
 
@@ -91,7 +103,7 @@ class MemberController extends Controller
             'phone' => $request->input('phone'),
             'birthday' => $request->input('birthday'),
             'description' => $request->input('description'),
-            'role_id' => 1,
+            'role_id' => $request->input('role'),
             'status' => $request->input('status'),
             'images' => $imagePath,
         ];
@@ -107,11 +119,10 @@ class MemberController extends Controller
         return redirect()->back()->with('success', 'Users updated successfully.');
     }
 
-    public function destroy($id)
+    public function memberdelete($id)
     {
         $member = User::findOrFail($id);
         $member->delete();
-        Alert::error('Deleted', 'Member deleted successfully.');
         return redirect()->route('member.index')->with('success', 'Member deleted successfully.');
     }
 }

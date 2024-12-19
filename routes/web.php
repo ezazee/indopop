@@ -9,6 +9,7 @@ use App\Http\Controllers\TagsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,13 +27,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/detail', [HomeController::class, 'detail'])->name('detail.desktop');
+Route::get('/detail/{slug}', [HomeController::class, 'detail'])->name('detail.desktop');
 Route::get('/redaksi', [HomeController::class, 'redaksi'])->name('redaksi.desktop');
 Route::get('/kebijakan-privasi', [HomeController::class, 'kebijakanPrivasi'])->name('kebijakan.desktop');
 Route::get('/kode-etik', [HomeController::class, 'kodeEtik'])->name('kodeEtik.desktop');
 Route::get('/visi-misi', [HomeController::class, 'visiMisi'])->name('visiMisi.desktop');
 Route::get('/site-map', [HomeController::class, 'siteMap'])->name('siteMap.desktop');
-Route::get('/kanal', [HomeController::class, 'kanal'])->name('kanal.desktop');
+Route::get('/kanal/{slug}', [HomeController::class, 'kanal'])->name('kanal.desktop');
 Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop');
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
 
@@ -78,7 +79,10 @@ Route::post('/media', [PostController::class, 'store'])->name('media.store');
 Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
 Route::get('/dashboard/member/create', [MemberController::class, 'memberCreate'])->name('member.create');
 Route::post('/dashboard/member/create', [MemberController::class, 'memberPost'])->name('member.post');
-Route::get('/dashboard/member/edit', [MemberController::class, 'memberEdit'])->name('member.edit');
+Route::get('/dashboard/member/edit/{id}', [MemberController::class, 'memberEdit'])->name('member.edit');
+Route::put('/dashboard/member/update/{id}', [MemberController::class, 'memberUpdate'])->name('member.update');
+Route::delete('/dashboard/member/delete/{id}', [MemberController::class, 'memberdelete'])->name('member.delete');
+
 
 
 // === {{ !! Export Data Page !! }} === //
@@ -95,10 +99,11 @@ Route::get('/dashboard/settings/google-tag', [SettingsController::class, 'google
 
 // Member Dashboard
 Route::get('/dashboard/settings/member-dashboard', [SettingsController::class, 'memberDashboard'])->name('settings.memberDashboard');
-Route::get('/dashboard/settings/member-dashboard/edit', [SettingsController::class, 'editMemberDashboard'])->name('settings.editMemberDashboard');
+Route::get('/dashboard/settings/member-dashboard/edit/{id}', [SettingsController::class, 'editMemberDashboard'])->name('settings.editMemberDashboard');
 Route::get('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'createMemberDashboard'])->name('settings.createMemberDashboard');
+Route::post('/dashboard/settings/member-dashboard/create', [SettingsController::class, 'addMemberDashboard'])->name('settings.addMemberDashboard');
+Route::delete('/dashboard/settings/member-dashboard/delete/{id}', [SettingsController::class, 'deleteMemberDashboard'])->name('settings.deleteMemberDashboard');
 
-// Roles And Permission
-Route::get('/dashboard/settings/roles-permission', [SettingsController::class, 'rolesPermission'])->name('settings.rolesPermission');
-Route::get('/dashboard/settings/roles-permission/edit', [SettingsController::class, 'editRolesPermission'])->name('settings.editRolesPermission');
-Route::get('/dashboard/settings/roles-permission/create', [SettingsController::class, 'createRolesPermission'])->name('settings.createRolesPermission');
+
+// === {{ !! Profile !! }} === //
+Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])->name('profile.indexProfile');
