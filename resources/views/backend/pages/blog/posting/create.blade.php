@@ -1,12 +1,13 @@
 @extends('backend.master.app')
+
 @section('content')
 @include('backend.components.breadcrumb')
+
 <div class="page-body page-content">
    <div class="container-xl">
       <form method="POST" action="https://cms.botble.com/admin/blog/posts/create" accept-charset="UTF-8"
          id="botble-blog-forms-post-form" class="js-base-form dirty-check">
-         <input name="_token" type="hidden"
-            value="ZomMcTjBrmCGafyJ5GMAh46L9SPPEMlrkrQGaGzI">
+         <input name="_token" type="hidden" value="ZomMcTjBrmCGafyJ5GMAh46L9SPPEMlrkrQGaGzI">
          <div role="alert" class="alert alert-info">
             <div class="d-flex">
                <div>
@@ -20,8 +21,7 @@
                   </svg>
                </div>
                <div class="w-100">
-                  You are editing "<strong class="current_language_text">English</strong>"
-                  version
+                  You are editing "<strong class="current_language_text">English</strong>" version
                </div>
             </div>
          </div>
@@ -39,9 +39,7 @@
                         <div class="mb-3 ">
                            <div class="slug-field-wrapper" data-field-name="name">
                               <div class="mb-3 position-relative">
-                                 <label class="form-label required" for="slug">
-                                 Permalink
-                                 </label>
+                                 <label class="form-label required" for="slug">Permalink</label>
                                  <div class="input-group input-group-flat">
                                     <span class="input-group-text">
                                         {{ config('app.url') }}/
@@ -89,11 +87,11 @@
                         <div class="mb-3 position-relative">
                            <label for="content" class="form-label">Content</label>
                            <div class="mb-2 btn-list">
-                              <button class="btn   show-hide-editor-btn" type="button"
+                              <button class="btn show-hide-editor-btn" type="button"
                                  data-result="content">
                               Show/Hide Editor
                               </button>
-                              <button class="btn   btn_gallery" type="button" data-result="content"
+                              <button class="btn btn_gallery" type="button" data-result="content"
                                  data-multiple="true" data-action="media-insert-ckeditor">
                                  <svg class="icon icon-left svg-icon-ti-ti-photo"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -118,105 +116,39 @@
                <div id="advanced-sortables" class="meta-box-sortables">
                   <div class="card meta-boxes mb-3" id="gallery_wrap">
                      <div class="card-header">
-                        <h4 class="card-title">
-                           Gallery images
-                        </h4>
+                        <h4 class="card-title">Gallery images</h4>
                      </div>
                      <div class="card-body">
                         <input id="gallery-data" class="form-control" name="gallery" type="hidden">
                         <div>
                            <div class="list-photos-gallery">
-                              <div class="row" id="list-photos-items">
-                              </div>
+                              <div class="row" id="list-photos-items"></div>
                            </div>
                            <div class="d-flex gap-2">
-                              <a href="#" class="btn_select_gallery">Select
-                              images</a>
-                              <a href="#" class="text-danger reset-gallery  hidden ">Reset
-                              gallery</a>
-                           </div>
-                        </div>
-                        <div class="modal fade modal-blur" id="edit-gallery-item" tabindex="-1"
-                           role="dialog" aria-hidden="true" data-select2-dropdown-parent="true">
-                           <div class="modal-dialog modal-dialog-centered " role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <h5 class="modal-title">Update photo&#039;s
-                                       description
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                       aria-label="Close"></button>
-                                 </div>
-                                 <div class="modal-body">
-                                    <input type="text" class="form-control"
-                                       id="gallery-item-description"
-                                       placeholder="Photo&#039;s description...">
-                                 </div>
-                                 <div class="modal-footer">
-                                    <div class="btn-list">
-                                       <button class="btn btn-danger" type="button"
-                                          id="delete-gallery-item">
-                                       Delete this photo
-                                       </button>
-                                       <button class="btn" type="button" data-bs-dismiss="modal">
-                                       Cancel
-                                       </button>
-                                       <button class="btn btn-primary" type="button"
-                                          id="update-gallery-item">
-                                       Update
-                                       </button>
-                                    </div>
-                                 </div>
-                              </div>
+                              <a href="#" class="btn_select_gallery">Select images</a>
+                              <a href="#" class="text-danger reset-gallery hidden">Reset gallery</a>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="card meta-boxes mb-3" id="seo_wrap">
                      <div class="card-header">
-                        <h4 class="card-title">
-                           Search Engine Optimize
-                        </h4>
-                        <div class="card-actions"><a href="#" class="btn-trigger-show-seo-detail">
-                           Edit SEO meta
-                           </a>
-                        </div>
+                        <h4 class="card-title">Search Engine Optimize</h4>
+                        <div class="card-actions"><a href="#" class="btn-trigger-show-seo-detail">Edit SEO meta</a></div>
                      </div>
                      <div class="card-body">
                         <div class="seo-preview" v-pre>
-                           <p class="default-seo-description">
-                              Setup meta title &amp; description to make your site easy to
-                              discovered on search engines such as Google
-                           </p>
-                           <div class="existed-seo-meta hidden">
-                              <h4 class="page-title-seo text-truncate">
-                              </h4>
-                              <div class="page-url-seo">
-                                 <p>-</p>
-                              </div>
-                              <div>
-                                 <span style="color: #70757a;">Dec 11, 2024
-                                 - </span>
-                                 <span class="page-description-seo">
-                                 </span>
-                              </div>
-                           </div>
+                           <p class="default-seo-description">Setup meta title &amp; description to make your site easy to discovered on search engines such as Google</p>
                         </div>
                         <div class="hidden seo-edit-section" v-pre>
                            <hr class="my-4">
-                           </hr>
                            <div class="mb-3 position-relative">
-                              <label for="seo_meta[seo_title]" class="form-label">SEO
-                              Title</label>
-                              <input class="form-control" data-counter="70" placeholder="SEO Title"
-                                 data-allow-over-limit name="seo_meta[seo_title]" type="text"
-                                 id="seo_meta[seo_title]">
+                              <label for="seo_meta[seo_title]" class="form-label">SEO Title</label>
+                              <input class="form-control" data-counter="70" placeholder="SEO Title" data-allow-over-limit name="seo_meta[seo_title]" type="text" id="seo_meta[seo_title]">
                            </div>
                            <div class="mb-3 position-relative">
-                              <label for="seo_meta[seo_description]" class="form-label">SEO
-                              description</label>
-                              <textarea class="form-control" data-counter="160" rows="3" placeholder="SEO description" data-allow-over-limit
-                                 name="seo_meta[seo_description]" cols="50" id="seo_meta[seo_description]"></textarea>
+                              <label for="seo_meta[seo_description]" class="form-label">SEO description</label>
+                              <textarea class="form-control" data-counter="160" rows="3" placeholder="SEO description" data-allow-over-limit name="seo_meta[seo_description]" cols="50" id="seo_meta[seo_description]"></textarea>
                            </div>
                         </div>
                      </div>
@@ -226,9 +158,7 @@
             <div class="col-md-3 gap-3 d-flex flex-column-reverse flex-md-column mb-md-0 mb-5">
                <div class="card">
                   <div class="card-header">
-                     <h4 class="card-title">
-                        Publish
-                     </h4>
+                     <h4 class="card-title">Publish</h4>
                   </div>
                   <div class="card-body">
                      <div class="btn-list">
@@ -238,8 +168,7 @@
                               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                               stroke-linecap="round" stroke-linejoin="round">
                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                              <path
-                                 d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+                              <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
                               <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                               <path d="M14 4l0 4l-6 0l0 -4" />
                            </svg>
@@ -268,22 +197,19 @@
                            <div class="col">
                               <div class="page-pretitle">
                                  <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                    </ol>
+                                    <ol class="breadcrumb"></ol>
                                  </nav>
                               </div>
                            </div>
                            <div class="col-auto ms-auto d-print-none">
                               <div class="btn-list">
-                                 <button class="btn btn-primary" type="submit" value="apply"
-                                    name="submitter">
+                                 <button class="btn btn-primary" type="submit" value="apply" name="submitter">
                                     <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                       <path
-                                          d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+                                       <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
                                        <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                                        <path d="M14 4l0 4l-6 0l0 -4" />
                                     </svg>
@@ -313,7 +239,7 @@
                         <label for="status" class="form-label required">Status</label>
                      </h4>
                   </div>
-                  <div class=" card-body">
+                  <div class="card-body">
                      <select class="form-control form-select" required="required" id="status"
                         name="status">
                         <option value="published">Published</option>
@@ -377,28 +303,15 @@
                            @endforeach
                         </ul>
                      </div>
-                     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                     <script>
-                        function filter_categories_998852741(inputSearchId) {
-                            const searchInput = document.getElementById('search-category-input-' + inputSearchId).value.toLowerCase();
-                            const categories = document.querySelectorAll('.tree-categories-list-' + inputSearchId + ' label');
-                        
-                            categories.forEach(category => {
-                                const text = category.textContent.toLowerCase();
-                                category.style.display = text.includes(searchInput) ? '' : 'none';
-                            });
-                        }
-                     </script>
                   </div>
                </div>
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
-                        <label for="banner_image" class="form-label">Banner image
-                        (1920x170px)</label>
+                        <label for="banner_image" class="form-label">Banner image (1920x170px)</label>
                      </h4>
                   </div>
-                  <div class=" card-body">
+                  <div class="card-body">
                      <div class="image-box image-box-banner_image" action="select-image" data-counter="250">
                         <input class="image-data" name="banner_image" type="hidden" value=""
                            class="" data-counter="250" />
@@ -450,7 +363,7 @@
                         <label for="tag" class="form-label">Tags</label>
                      </h4>
                   </div>
-                  <div class=" card-body">
+                  <div class="card-body">
                      <input class="form-control tags" placeholder="Write some tags"
                         data-url="https://cms.botble.com/admin/blog/tags/all" name="tag" type="text"
                         id="tag">
@@ -463,4 +376,35 @@
       </form>
    </div>
 </div>
+
+<!-- Tambahkan jQuery dan CKEditor -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
+<script src="{{ asset('backend/ckeditor/ckeditor.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        CKEDITOR.replace('content', {
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{ csrf_token() }}',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
+            toolbar: [
+                { name: 'document', items: ['Source', 'NewPage', 'Preview', 'Print'] },
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+                { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll'] },
+                { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
+                { name: 'styles', items: ['Styles', 'Format'] },
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
+                { name: 'alignment', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+                { name: 'ui', items: ['Font', 'FontSize', 'TextColor', 'BGColor'] },
+                { name: 'tools', items: ['Maximize'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+                { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                { name: 'source', items: [''] },
+                { name: 'iframe', items: ['Iframe'] }
+            ],
+            height: 400
+        });
+    });
+ </script>
+
+
 @endsection

@@ -101,7 +101,7 @@
                                         regions: [
                                             {
                                                 values: i,
-                                                scale: ["#ffffff", "#206bc4"],
+                                                scale: ["#ffffff", "#47005e"],
                                                 normalizeFunction: "polynomial",
                                             },
                                         ],

@@ -14,8 +14,8 @@
     --bb-gray-700: #3a4859;
     --bb-gray-800: #182433;
     --bb-gray-900: #040a11;
-    --bb-primary: #206bc4;
-    --bb-secondary: #6c7a91;
+    --bb-primary: #47005e;
+    --bb-secondary: #5c3669;
     --bb-success: #2fb344;
     --bb-info: #4299e1;
     --bb-warning: #f76707;
@@ -23,7 +23,7 @@
     --bb-light: #f6f8fb;
     --bb-dark: #182433;
     --bb-muted: #6c7a91;
-    --bb-blue: #206bc4;
+    --bb-blue: #47005e;
     --bb-azure: #4299e1;
     --bb-indigo: #4263eb;
     --bb-purple: #ae3ec9;
@@ -50,7 +50,7 @@
     --bb-flickr: #0063dc;
     --bb-bitbucket: #0052cc;
     --bb-tabler: #0054a6;
-    --bb-primary-rgb: 32, 107, 196;
+    --bb-primary-rgb: 71, 0, 94;
     --bb-secondary-rgb: 108, 122, 145;
     --bb-success-rgb: 47, 179, 68;
     --bb-info-rgb: 66, 153, 225;
@@ -59,7 +59,7 @@
     --bb-light-rgb: 246, 248, 251;
     --bb-dark-rgb: 24, 36, 51;
     --bb-muted-rgb: 108, 122, 145;
-    --bb-blue-rgb: 32, 107, 196;
+    --bb-blue-rgb: 71, 0, 94;
     --bb-azure-rgb: 66, 153, 225;
     --bb-indigo-rgb: 66, 99, 235;
     --bb-purple-rgb: 174, 62, 201;
@@ -140,8 +140,8 @@
     --bb-tertiary-bg: #eef3f6;
     --bb-tertiary-bg-rgb: 238, 243, 246;
     --bb-heading-color: inherit;
-    --bb-link-color: #206bc4;
-    --bb-link-color-rgb: 32, 107, 196;
+    --bb-link-color: #47005e;
+    --bb-link-color-rgb: 71, 0, 94;
     --bb-link-decoration: none;
     --bb-link-hover-color: #1a569d;
     --bb-link-hover-color-rgb: 26, 86, 157;
@@ -15685,8 +15685,8 @@ body[data-bs-theme="dark"] [data-bs-theme="light"] .btn-close {
 :host,
 :root,
 [data-bs-theme="light"] {
-    --bb-primary: #206bc4;
-    --bb-primary-rgb: 32, 107, 196;
+    --bb-primary: #47005e;
+    --bb-primary-rgb: 71, 0, 94;
     --bb-primary-fg: var(--bb-light);
     --bb-primary-darken: #1d60b0;
     --bb-primary-lt: #e9f0f9;
@@ -15739,8 +15739,8 @@ body[data-bs-theme="dark"] [data-bs-theme="light"] .btn-close {
     --bb-muted-darken: #616e83;
     --bb-muted-lt: #f0f2f4;
     --bb-muted-lt-rgb: 240, 242, 244;
-    --bb-blue: #206bc4;
-    --bb-blue-rgb: 32, 107, 196;
+    --bb-blue: #47005e;
+    --bb-blue-rgb: 71, 0, 94;
     --bb-blue-fg: var(--bb-light);
     --bb-blue-darken: #1d60b0;
     --bb-blue-lt: #e9f0f9;
@@ -17887,7 +17887,7 @@ body[data-bs-theme="dark"] [data-bs-theme="light"] {
     --bb-bg-surface-secondary: #1b293a;
     --bb-bg-surface-tertiary: #151f2c;
     --bb-link-color: #307fdd;
-    --bb-link-hover-color: #206bc4;
+    --bb-link-hover-color: #47005e;
     --bb-active-bg: #1b293a;
     --bb-disabled-color: var(--bb-gray-700);
     --bb-border-color: var(--bb-dark-mode-border-color);
@@ -21884,7 +21884,7 @@ textarea[cols] {
     background-color: inherit;
 }
 .list-group-item.active {
-    border-left-color: #206bc4;
+    border-left-color: #47005e;
     border-left-width: 2px;
 }
 .list-group-item.active,
@@ -22170,7 +22170,7 @@ textarea[cols] {
     font-weight: var(--bb-font-weight-normal);
 }
 .page-link:hover .page-item-title {
-    color: #206bc4;
+    color: #47005e;
 }
 .page-item.disabled .page-item-title {
     color: var(--bb-disabled-color);
@@ -22324,8 +22324,8 @@ textarea[cols] {
     color: var(--bb-body-color) !important;
 }
 .status-primary {
-    --bb-status-color: #206bc4;
-    --bb-status-color-rgb: 32, 107, 196;
+    --bb-status-color: #47005e;
+    --bb-status-color-rgb: 71, 0, 94;
 }
 .status-secondary {
     --bb-status-color: #6c7a91;
@@ -22360,8 +22360,8 @@ textarea[cols] {
     --bb-status-color-rgb: 108, 122, 145;
 }
 .status-blue {
-    --bb-status-color: #206bc4;
-    --bb-status-color-rgb: 32, 107, 196;
+    --bb-status-color: #47005e;
+    --bb-status-color-rgb: 71, 0, 94;
 }
 .status-azure {
     --bb-status-color: #4299e1;
@@ -23651,7 +23651,7 @@ a.step-item:hover {
     color: rgba(var(--bb-primary-rgb), var(--bb-text-opacity)) !important;
 }
 .border-primary {
-    border-color: #206bc4 !important;
+    border-color: #47005e !important;
 }
 .bg-secondary {
     --bb-bg-opacity: 1;
@@ -23813,7 +23813,7 @@ a.step-item:hover {
     color: rgba(var(--bb-blue-rgb), var(--bb-text-opacity)) !important;
 }
 .border-blue {
-    border-color: #206bc4 !important;
+    border-color: #47005e !important;
 }
 .bg-azure {
     --bb-bg-opacity: 1;
@@ -25342,10 +25342,10 @@ a.form-hint {
     padding: 3px 0 3px 18px;
 }
 .permissions-tree .form-check .form-check-input.check-blue:checked {
-    background-color: #206bc4;
+    background-color: #47005e;
 }
 .permissions-tree .form-check .form-check-input.check-blue:focus {
-    border-color: #206bc4;
+    border-color: #47005e;
 }
 .permissions-tree .form-check .form-check-input.check-danger:checked {
     background-color: #e73f3f;

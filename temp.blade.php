@@ -342,17 +342,17 @@
     <style>
         :root {
             --primary-font: "Inter";
-            --primary-color: #206bc4;
-            --primary-color-rgb: 32, 107, 196;
+            --primary-color: #47005e;
+            --primary-color-rgb: 71, 0, 94;
             --secondary-color: #6c7a91;
             --secondary-color-rgb: 108, 122, 145;
             --heading-color: inherit;
             --text-color: #182433;
             --text-color-rgb: 24, 36, 51;
-            --link-color: #206bc4;
-            --link-color-rgb: 32, 107, 196;
-            --link-hover-color: #206bc4;
-            --link-hover-color-rgb: 32, 107, 196;
+            --link-color: #47005e;
+            --link-color-rgb: 71, 0, 94;
+            --link-hover-color: #47005e;
+            --link-hover-color-rgb: 71, 0, 94;
         }
     </style>
 

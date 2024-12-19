@@ -43,8 +43,8 @@
 <script src="{{ asset('backend/js/momentLocales.min.js') }}"></script>
 <script src="{{ asset('backend/js/table.js') }}"></script>
 <script src="{{ asset('backend/js/areYouSure.js') }}"></script>
-<script src="{{ asset('backend/js/ckEditor.js') }}"></script>
-<script src="{{ asset('backend/js/editor.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/ckEditor.js') }}"></script>
+<script src="{{ asset('backend/js/editor.js') }}"></script> --}}
 <script src="{{ asset('backend/js/galleryMain.js') }}"></script>
 <script src="{{ asset('backend/js/htmlDif.js') }}"></script>
 <script src="{{ asset('backend/js/jsValidation.js') }}"></script>

@@ -14,11 +14,11 @@
                 <div class="container container-tight my-5 px-lg-5">
                     <div class="text-center mb-4">
                         <a href="https://cms.botble.com/admin" class="navbar-brand">
-                            <img src="https://cms.botble.com/vendor/core/core/base/images/logo.png"
+                            <img src="{{ asset('backend/images/logo/favicon.png') }}"
                                 style="max-height: 50px; max-width: 100%;" alt="Botble Technologies">
                         </a>
                     </div>
-                    <form method="POST" action="https://cms.botble.com/admin/login" accept-charset="UTF-8"
+                    <form action="#" accept-charset="UTF-8"
                         id="botble-a-c-l-forms-auth-login-form" class="js-base-form dirty-check">
                         <input name="_token" type="hidden" value="QJOvzLgmrWSCHuSY1tXGUoKRFpDO1tZdCxz1ZouT">
                         <div class="form-body">
@@ -35,7 +35,7 @@
                                 <label class="form-label form-label required" for="password">
                                     Password
                                     <span class="form-label-description">
-                                        <a href="https://cms.botble.com/admin/password/reset" tabindex="5"
+                                        <a href="#" tabindex="5"
                                             title="Forgot Password">Lost your password?</a>
                                     </span>
                                 </label>
@@ -85,13 +85,12 @@
             </div>
             <div class="position-relative col-12 col-lg-6 col-xl-8 d-none d-lg-block">
                 <div class="bg-cover bg-white h-100 min-vh-100"
-                    style="background-image: url(https://cms.botble.com/vendor/core/core/acl/images/backgrounds/10.jpg)">
+                    style="background-image: url('{{ asset('backend/images/indopop.id.jpg') }}')">
                 </div>
                 <div class="end-0 bottom-0 position-absolute">
                     <div class="text-white me-5 mb-4">
-                        <h1 class="mb-1">Botble Technologies</h1>
-                        <p>Copyright 2024 © Botble Technologies. Version <span class="fw-medium">7.4.7</span>
-                        </p>
+                        <h1 class="mb-1">KBN Technologies</h1>
+                        <p>Copyright {{ date('Y') }} © KBN Technologies</p>
                     </div>
                 </div>
             </div>
@@ -127,7 +126,5 @@
         });
     </script>
 </body>
-
-
 
 </html>
