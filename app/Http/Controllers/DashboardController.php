@@ -10,7 +10,13 @@ class DashboardController extends Controller
     {
         return view('backend.index');
     }
-    public function exportData() {
+    public function exportData()
+    {
         return view('backend.pages.export-data.index');
+    }
+
+    public function loginPage()
+    {
+        return view('backend.pages.auth.login');
     }
 }

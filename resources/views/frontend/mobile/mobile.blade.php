@@ -9,7 +9,7 @@
                 });
             </script>
         </div>
-        <!--  -->
+        <!-- Headline -->
         @include('frontend.mobile.components.ads-2')
         <div>
             <article class="card-headline">
@@ -185,7 +185,6 @@
 
                 <div class="list-element">
                     <article class="main-card">
-
                         <div class="main-card--infoml0">
                             <h4 class="main-card--title">
                                 <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV
@@ -309,8 +308,25 @@
                         </div>
                     </div>
                 </article>
+                <article class="main-card">
+                    <div class="main-card-img-wrap">
+                        <img alt="image" class="main-card-img"
+                            src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
+                    </div>
+                    <div class="main-card--info">
+                        <h4 class="main-card--title">
+                            <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
+                                2021</a>
+                        </h4>
+                        <div class="category-and-time">
+                            <span>11:15 WIB</span>
+                        </div>
+                    </div>
+                </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -401,8 +417,25 @@
                             src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
                     </div>
                 </article>
+                <article class="main-card">
+                    <div class="main-card--infomr10">
+                        <h4 class="main-card--title">
+                            <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
+                                2021</a>
+                        </h4>
+                        <div class="category-and-time">
+                            <span>11:15 WIB</span>
+                        </div>
+                    </div>
+                    <div class="main-card-img-wrap">
+                        <img alt="image" class="main-card-img"
+                            src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
+                    </div>
+                </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore" id="loadmore">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -472,7 +505,9 @@
                     </div>
                 </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore" id="loadmore">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -539,8 +574,26 @@
                             src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
                     </div>
                 </article>
+
+                <article class="main-card">
+                    <div class="main-card--infomr10">
+                        <h4 class="main-card--title">
+                            <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
+                                2021</a>
+                        </h4>
+                        <div class="category-and-time">
+                            <span>11:15 WIB</span>
+                        </div>
+                    </div>
+                    <div class="main-card-img-wrap">
+                        <img alt="image" class="main-card-img"
+                            src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
+                    </div>
+                </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore" id="loadmore">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -610,7 +663,9 @@
                     </div>
                 </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore" id="loadmore">Selengkapnya</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -677,8 +732,26 @@
                             src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
                     </div>
                 </article>
+
+                <article class="main-card">
+                    <div class="main-card--infomr10">
+                        <h4 class="main-card--title">
+                            <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
+                                2021</a>
+                        </h4>
+                        <div class="category-and-time">
+                            <span>11:15 WIB</span>
+                        </div>
+                    </div>
+                    <div class="main-card-img-wrap">
+                        <img alt="image" class="main-card-img"
+                            src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
+                    </div>
+                </article>
                 <div class="t10-b20 mb-20">
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    <a href="#">
+                        <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
+                    </a>
                 </div>
             </div>
         </div>
