@@ -39,7 +39,7 @@ class SettingsController extends Controller
     {
         return view('backend.pages.settings.memberDashboard.create');
     }
-
+    
     public function addMemberDashboard(Request $request){
         $request->validate([
             'password' => 'required|min:8|confirmed',
