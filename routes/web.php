@@ -106,3 +106,7 @@ Route::delete('/dashboard/settings/member-dashboard/delete/{id}', [SettingsContr
 
 // === {{ !! Profile !! }} === //
 Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])->name('profile.indexProfile');
+
+
+
+//adad
