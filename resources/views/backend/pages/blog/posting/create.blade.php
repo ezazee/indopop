@@ -44,7 +44,7 @@
                                         {{ config('app.url') }}/
                                     </span>
                                     <input class="form-control ps-0" type="text" name="slug"
-                                       id="slug" required="required" />
+                                       id="slug" />
                                     <span class="input-group-text slug-actions">
                                        <a href="#" class="link-secondary d-none"
                                           data-bs-toggle="tooltip" aria-label="Generate URL"
@@ -113,23 +113,6 @@
                   </div>
                </div>
                <div id="advanced-sortables" class="meta-box-sortables">
-                  <div class="card meta-boxes mb-3" id="gallery_wrap">
-                     <div class="card-header">
-                        <h4 class="card-title">Gallery images</h4>
-                     </div>
-                     <div class="card-body">
-                        <input id="gallery-data" class="form-control" name="gallery" type="hidden">
-                        <div>
-                           <div class="list-photos-gallery">
-                              <div class="row" id="list-photos-items"></div>
-                           </div>
-                           <div class="d-flex gap-2">
-                              <a href="#" class="btn_select_gallery">Select images</a>
-                              <a href="#" class="text-danger reset-gallery hidden">Reset gallery</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
                   <div class="card meta-boxes mb-3" id="seo_wrap">
                      <div class="card-header">
                         <h4 class="card-title">Search Engine Optimize</h4>
@@ -383,8 +366,10 @@
 <script>
     $(document).ready(function() {
         CKEDITOR.replace('content', {
-         filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-         filebrowserUploadMethod: 'form',
+         filebrowserBrowseUrl: '/laravel-filemanager?type=Images',
+         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
+         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+               //   filebrowserUploadMethod: 'form',
          toolbar: [
                 { name: 'document', items: ['Source', 'NewPage', 'Preview', 'Print'] },
                 { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },

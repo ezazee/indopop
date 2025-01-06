@@ -113,9 +113,14 @@ Route::delete('/dashboard/settings/member-dashboard/delete/{id}', [SettingsContr
 Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])->name('profile.indexProfile');
 
 
-Route::get('/login', [DashboardController::class, 'loginPage'])->name('login');
+Route::get('/spring', [DashboardController::class, 'loginPage'])->name('login');
 
 
 Route::get('/blank', function () {
-    return view('blank'); // Ganti dengan view yang sesuai
+    return view('blank'); 
 })->name('blank');
+
+
+Route::group(['prefix' => 'laravel-filemanager'], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

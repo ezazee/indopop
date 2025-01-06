@@ -57,7 +57,7 @@
                                     </a>
 
                                     <a href="https://cms.botble.com/artificial-intelligence" data-bs-toggle="tooltip"
-                                        data-bs-original-title="Total posts: 5" target="_blank">(5)</a>
+                                        data-bs-original-title="Total posts: 5" target="_blank"></a>
 
                                     <span data-bs-toggle="modal" data-bs-target=".modal-confirm-delete"
                                         data-url="https://cms.botble.com/admin/blog/categories/1" class="ms-2">

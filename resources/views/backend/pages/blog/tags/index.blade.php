@@ -268,7 +268,8 @@
                             <td class="w-1 text-start no-column-visibility dtr-control"><input
                                class="form-check-input m-0 align-middle checkboxes" type="checkbox"
                                name="id[]" value="{{ $item->id }}"></td>
-                            <td class="text-center no-column-visibility column-key-0 sorting_1">{{ $index+1 }}</td>
+                            <td class="text-center no-column-visibility column-key-0 sorting_1">{{ $loop->iteration + ($tag->currentPage() - 1) * $tag->perPage() }}
+                           </td>
                             <td class="text-start column-key-1"><a href="{{ route('tags.edit',['id' => $item->id ]) }}"
                                title="{{ $item->nama_tags }}">{{ $item->nama_tags }}</a>
                             </td>

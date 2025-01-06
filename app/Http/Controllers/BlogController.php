@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categori;
+use App\Models\Post;
 
 class BlogController extends Controller
 {
     public function blogPost(){
-        return view('backend.pages.blog.posting.index');
+        $post = Post::with('kategori', 'user')
+        ->latest()
+        ->paginate(20);
+
+        
+        return view('backend.pages.blog.posting.index',compact('post'));
     }
     public function editPost(){
         return view('backend.pages.blog.posting.edit');

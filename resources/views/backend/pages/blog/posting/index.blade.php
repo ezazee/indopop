@@ -299,31 +299,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($post as $index => $item)
+                                        
                                     <tr class="odd">
                                         <td class="w-1 text-start no-column-visibility dtr-control"><input
                                                 class="form-check-input m-0 align-middle checkboxes" type="checkbox"
                                                 name="id[]" value="1"></td>
                                         <td
-                                            class="  text-center no-column-visibility  column-key-0 text-center no-column-visibility  column-key-0  column-key-0">
-                                            1</td>
+                                            class="text-center no-column-visibility  column-key-0 text-center no-column-visibility  column-key-0  column-key-0">
+                                            {{ $loop->iteration + ($post->currentPage() - 1) * $post->perPage() }}
+                                        </td>
+                                        @php
+                                            $images = explode('|', $item->gambar);
+                                        @endphp
                                         <td class="   column-key-1  column-key-1  column-key-1"><img
-                                                src="https://cms.botble.com/storage/news/1-150x150.jpg" width="50"
-                                                alt="Image"></td>
+                                                src="{{ is_array($images) ? $images[0] : $images }}" width="50"
+                                                alt="Image">
+                                        </td>
                                         <td class="  text-start  column-key-2 text-start  column-key-2  column-key-2"><a
                                                 href="{{ route('blog.edit') }}"
-                                                title="Breakthrough in Quantum Computing: Computing Power Reaches Milestone">Breakthrough
-                                                in Quantum Computing: Computing Power Reaches Milestone</a></td>
-                                        <td class="   column-key-3  column-key-3  column-key-3"><a
-                                                href="https://cms.botble.com/admin/blog/categories/edit/4"
-                                                target="_blank">5G and Connectivity</a>, <a
-                                                href="https://cms.botble.com/admin/blog/categories/edit/6"
-                                                target="_blank">Green Technology</a></td>
-                                        <td class="   column-key-4  column-key-4  column-key-4"><a
-                                                href="https://cms.botble.com/admin/system/users/profile/1"
-                                                target="_blank">Conor Smith</a></td>
-                                        <td class="column-key-5 column-key-5 column-key-5 sorting_1">2024-09-01</td>
-                                        <td class="  text-center  column-key-6 text-center  column-key-6  column-key-6">
-                                            <span class="badge bg-success text-success-fg">Published</span>
+                                                title="{{ $item->title }}">{{ $item->title }}</a></td>
+                                        <td class="column-key-3  column-key-3  column-key-3">{{ $item->kategori->nama_kategori }} </td>
+                                        <td class="column-key-4  column-key-4  column-key-4">{{ $item->user->name }}</td>
+                                        <td class="text-center no-column-visibility column-key-5 column-key-5 column-key-5 ">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y H:i') }}</td>
+                                        <td class="  text-start  column-key-6 text-center  column-key-6  column-key-6">
+                                            @if ($item->status == 'publish')
+                                            <span class="badge bg-success text-success-fg">{{ ucfirst($item->status) }}</span>  
+                                            @else
+                                            <span class="badge bg-secondary text-secondary-fg">{{ ucfirst($item->status) }}</span>  
+                                            @endif
                                         </td>
                                         <td class="  text-center no-column-visibility text-nowrap">
                                             <div class="table-actions">
@@ -371,8 +375,12 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                            <div class="mt-3">
+                                {{ $post->links('pagination::bootstrap-4') }}
+                            </div>
                         </div>
                     </div>
                 </div>
