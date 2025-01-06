@@ -5,9 +5,8 @@
 
 <div class="page-body page-content">
    <div class="container-xl">
-      <form method="POST" action="https://cms.botble.com/admin/blog/posts/create" accept-charset="UTF-8"
-         id="botble-blog-forms-post-form" class="js-base-form dirty-check">
-         <input name="_token" type="hidden" value="ZomMcTjBrmCGafyJ5GMAh46L9SPPEMlrkrQGaGzI">
+      <form method="POST" action="{{ route('blog.add') }}" accept-charset="UTF-8" id="botble-blog-forms-post-form" class="js-base-form dirty-check">
+         @csrf
          <div role="alert" class="alert alert-info">
             <div class="d-flex">
                <div>
@@ -384,9 +383,9 @@
 <script>
     $(document).ready(function() {
         CKEDITOR.replace('content', {
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{ csrf_token() }}',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
-            toolbar: [
+         filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+         filebrowserUploadMethod: 'form',
+         toolbar: [
                 { name: 'document', items: ['Source', 'NewPage', 'Preview', 'Print'] },
                 { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
                 { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll'] },

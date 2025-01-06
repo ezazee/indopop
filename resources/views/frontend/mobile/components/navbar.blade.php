@@ -60,24 +60,11 @@
                 <li class="menu-item {{ Request::is('/') ? 'active' : '' }}">
                     <a href="/">HOME</a>
                 </li>
-                <li class="menu-item {{ Request::is('dangdut') ? 'active' : '' }}">
-                    <a href="/dangdut">DANGDUT</a>
+                @foreach ($categories as $item)
+                <li class="menu-item {{ Request::is('kanal/' . $item->slug) ? 'active' : '' }}">
+                    <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}" class="">{{$item->nama_kategori}}</a>
                 </li>
-                <li class="menu-item {{ Request::is('flexing') ? 'active' : '' }}">
-                    <a href="/flexing">FLEXING</a>
-                </li>
-                <li class="menu-item {{ Request::is('gosip') ? 'active' : '' }}">
-                    <a href="/gosip">GOSIP</a>
-                </li>
-                <li class="menu-item {{ Request::is('k-pop') ? 'active' : '' }}">
-                    <a href="/k-pop">K-POP</a>
-                </li>
-                <li class="menu-item {{ Request::is('vibes') ? 'active' : '' }}">
-                    <a href="/vibes">VIBES</a>
-                </li>
-                <li class="menu-item {{ Request::is('me-and-moms') ? 'active' : '' }}">
-                    <a href="/me-and-moms">ME AND MOMS</a>
-                </li>
+                @endforeach
                 <li class="menu-item">
                     <a href="https://www.youtube.com/@indopopid" target="_blank">VIDEO</a>
                 </li>

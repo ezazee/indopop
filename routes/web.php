@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ImageUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/dashboard/blog/post', [BlogController::class, 'blogPost'])->name('blog.post');
 Route::get('/dashboard/blog/post/edit', [BlogController::class, 'editPost'])->name('blog.edit');
 Route::get('/dashboard/blog/post/create', [BlogController::class, 'createPost'])->name('blog.create');
+Route::post('/dashboard/blog/post/create', [BlogController::class, 'PostAdd'])->name('blog.add');
+Route::post('/upload-image', [ImageUploadController::class, 'uploadImage'])->name('ckeditor.upload');
+Route::get('media-modal', [ImageUploadController::class, 'show'])->name('media.modal');
+
 
 // Tags
 Route::get('/dashboard/blog/tags', [TagsController::class, 'tagsIndex'])->name('tags.index');
@@ -109,3 +114,8 @@ Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])
 
 
 Route::get('/login', [DashboardController::class, 'loginPage'])->name('login');
+
+
+Route::get('/blank', function () {
+    return view('blank'); // Ganti dengan view yang sesuai
+})->name('blank');

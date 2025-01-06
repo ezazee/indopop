@@ -15,7 +15,12 @@ class BlogController extends Controller
     }
     public function createPost() {
         $category = Categori::all();
-        // dd($category);
         return view('backend.pages.blog.posting.create',compact('category'));
     }
+
+    public function PostAdd(Request $request) {
+        dd($request);
+        return redirect()->back()->with('success', 'Category Added successfully.');
+    }
+    
 }

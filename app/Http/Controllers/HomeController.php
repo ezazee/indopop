@@ -144,7 +144,7 @@ class HomeController extends Controller
 
         // dd($postDangdut);
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.mobile', compact('topPostheadline','postTerkini','postTerpopuler','topPostDangdut','otherPostsDangdut','topPostFlexing','otherPostsFlexing','topPostGosip','otherPostsGosip','topPostKPop','otherPostsKPop','topPostVibes','otherPostsVibes','topPostMeandmom','otherPostsMeandmom'))->with([
+            return view('frontend.mobile.mobile', compact('otherPostsheadline','topPostheadline','postTerkini','postTerpopuler','topPostDangdut','otherPostsDangdut','topPostFlexing','otherPostsFlexing','topPostGosip','otherPostsGosip','topPostKPop','otherPostsKPop','topPostVibes','otherPostsVibes','topPostMeandmom','otherPostsMeandmom'))->with([
                 'content' => 'frontend.mobile.pages.index',
             ]);
         } else {
@@ -164,6 +164,22 @@ class HomeController extends Controller
         ->latest()
         ->take(5)
         ->get();
+
+        $postTerkiniBottom = Post::with('kategori', 'user')
+        ->where('status', 'publish')
+        ->latest()
+        ->take(20)
+        ->get();
+
+        $kategoriId = $post->kategori_id;
+
+        $relatedPosts = Post::with(['kategori', 'user'])
+        ->where('kategori_id', $kategoriId)
+        ->where('status', 'publish')
+        ->where('id', '!=', $post->id)
+        ->take(5)
+        ->get();
+
 
         // $postTerpopuler = Post::with('kategori', 'user')
         // ->where('status', 'publish')
@@ -196,7 +212,7 @@ class HomeController extends Controller
         ->get();
 
 
-        $allPosts = collect([$post, $postTerpopuler,$postTerkini])->flatten();
+        $allPosts = collect([$post, $postTerpopuler,$postTerkini,$relatedPosts,$postTerkiniBottom])->flatten();
 
         foreach ($allPosts as $singlePost) {
             if ($singlePost && $singlePost->gambar) {
@@ -208,9 +224,9 @@ class HomeController extends Controller
         $tagsdetail = $post->tags;
 
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.detail',compact('post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.mobile.pages.detail',compact('relatedPosts','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
         } else {
-            return view('frontend.dekstop.pages.detail',compact('post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.dekstop.pages.detail',compact('relatedPosts','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
         }
     }
 
