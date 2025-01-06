@@ -11,10 +11,10 @@
                 </div>
                 <div class="card-four--info">
                     <h4 class="card-four--title">
-                        <a href="/detail">{{$item->title}}</a>
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{$item->title}}</a>
                     </h4>
                     <div class="category-and-time">
-                        <a href="/detail">{{$item->kategori->nama_kategori}}</a>
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{$item->kategori->nama_kategori}}</a>
                         <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                     </div>
                 </div>
@@ -52,10 +52,10 @@
                 </div>
                 <div class="card-four--info">
                     <h4 class="card-four--title">
-                        <a href="/detail">{{$item->title}}</a>
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{$item->title}}</a>
                     </h4>
                     <div class="category-and-time">
-                        <a href="/detail">{{$item->kategori->nama_kategori}}</a>
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{$item->kategori->nama_kategori}}</a>
                         <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                     </div>
                 </div>
