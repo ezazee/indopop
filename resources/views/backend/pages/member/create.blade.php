@@ -176,77 +176,21 @@
                                     </svg>
                                     Save
                                 </button>
-                                <button class="btn" type="button">
+                                <a href="{{ route('member.index') }}" class="btn">
                                     <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
                                         <path d="M4 14h9" />
                                         <path d="M10 11l3 3l-3 3" />
                                     </svg>
-                                    Save &amp; Exit
-                                </button>
+                                    Back
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    {{-- <div data-bb-waypoint data-bb-target="#form-actions"></div>
-
-                    <header class="top-0 w-100 position-fixed end-0 z-1000" id="form-actions"
-                        style="display: none;">
-                        <div class="navbar">
-                            <div class="container-xl">
-                                <div class="row g-2 align-items-center w-100">
-                                    <div class="col">
-                                        <div class="page-pretitle">
-                                            <nav aria-label="breadcrumb">
-                                                <ol class="breadcrumb">
-                                                </ol>
-                                            </nav>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-auto ms-auto d-print-none">
-                                        <div class="btn-list">
-                                            <button class="btn btn-primary" type="submit" value="apply"
-                                                name="submitter">
-                                                <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path
-                                                        d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
-                                                    <path
-                                                        d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                    <path d="M14 4l0 4l-6 0l0 -4" />
-                                                </svg>
-                                                Save
-                                            </button>
-
-                                            <button class="btn" type="submit" name="submitter"
-                                                value="save">
-                                                <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
-                                                    <path d="M4 14h9" />
-                                                    <path d="M10 11l3 3l-3 3" />
-                                                </svg>
-                                                Save &amp; Exit
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </header> --}}
 
                     <div class="card meta-boxes">
                         <div class="card-header">

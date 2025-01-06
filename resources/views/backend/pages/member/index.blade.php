@@ -334,7 +334,11 @@
                                                 href="{{ route('member.edit', ['id' => $item->id ]) }}" >{{ $item->email }}</a></td>
                                     <td class="column-key-5 column-key-5 column-key-5 sorting_1">{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
                                     <td class="  text-center  column-key-6 text-center  column-key-6  column-key-6">
-                                        <span class="badge bg-success text-success-fg">{{ $item->status }}</span>
+                                        @if ($item->status == 'active')
+                                        <span class="badge bg-success text-success-fg">{{ ucfirst($item->status) }}</span>
+                                        @else
+                                        <span class="badge bg-danger text-danger-fg">{{ ucfirst($item->status) }}</span>
+                                        @endif
                                     </td>
                                     <td class="text-center no-column-visibility text-nowrap">
                                         <div class="table-actions">

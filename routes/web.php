@@ -71,12 +71,7 @@ Route::delete('/dashboard/blog/category/delete/{id}', [CategoryController::class
 
 // === {{ !! Media Page !! }} === //
 // Media Page
-Route::get('/dashboard/media', [MediaController::class, 'index'])->name('media.index');
-Route::post('/dashboard/media', [MediaController::class, 'store'])->name('media.store');
-Route::delete('/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
-
-Route::get('/media', [PostController::class, 'index'])->name('media.index');
-Route::post('/media', [PostController::class, 'store'])->name('media.store');
+Route::get('/dashboard/media', [PostController::class, 'mediaDashboard'])->name('media.index');
 
 
 // === {{ !! Member Page !! }} === //

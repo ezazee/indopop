@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller
 {
-    public function index()
+    public function mediaDashboard()
     {
-        return view('media.index');
+        return view('backend.pages.media.index');
     }
 
     public function store(Request $request)
