@@ -295,49 +295,32 @@
                   </div>
                   <div class="card-body">
                      <div class="image-box image-box-banner_image" action="select-image" data-counter="250">
-                        <input class="image-data" name="banner_image" type="hidden" value=""
-                           class="" data-counter="250" />
-                        <div style="width: 8rem" class="preview-image-wrapper mb-1">
-                           <div class="preview-image-inner">
-                              <a data-bb-toggle="image-picker-choose" data-target="popup"
-                                 class="image-box-actions" data-result="banner_image"
-                                 data-action="select-image" data-allow-thumb="1" href="#">
-                              <img class="preview-image default-image"
-                                 data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                 src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                 alt="Preview image" />
-                              <span class="image-picker-backdrop"></span>
-                              </a>
-                              <button class="btn btn-pill btn-icon  btn-sm image-picker-remove-button p-0"
-                                 style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
-                                 data-bb-toggle="image-picker-remove" data-bs-toggle="tooltip"
-                                 data-bs-placement="top" title="Remove image">
-                                 <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M18 6l-12 12" />
-                                    <path d="M6 6l12 12" />
-                                 </svg>
-                              </button>
-                           </div>
-                        </div>
-                        <a data-bb-toggle="image-picker-choose" data-target="popup"
-                           data-result="banner_image" data-action="select-image" data-allow-thumb="1"
-                           href="#">
-                        Choose image
-                        </a>
-                        <div data-bb-toggle="upload-from-url">
-                           <span class="text-muted">or</span>
-                           <a href="javascript:void(0)" class="mt-1" data-bs-toggle="modal"
-                              data-bs-target="#image-picker-add-from-url"
-                              data-bb-target=".image-box-banner_image">
-                           Add from URL
-                           </a>
-                        </div>
+                         <input class="image-data" name="banner_image" type="hidden" value="" data-counter="250" />
+                         <div style="width: 8rem" class="preview-image-wrapper mb-1">
+                             <div class="preview-image-inner">
+                                 <a data-bb-toggle="image-picker-choose" data-target="popup" class="image-box-actions"
+                                    data-result="banner_image" data-action="select-image" data-allow-thumb="1" href="#">
+                                     <img class="preview-image default-image" data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
+                                          src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png" alt="Preview image" />
+                                     <span class="image-picker-backdrop"></span>
+                                 </a>
+                                 <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0" style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
+                                         data-bb-toggle="image-picker-remove" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove image">
+                                     <svg class="icon icon-sm icon-left svg-icon-ti-ti-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                         <path d="M18 6l-12 12" />
+                                         <path d="M6 6l12 12" />
+                                     </svg>
+                                 </button>
+                             </div>
+                         </div>
+                         <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" data-bb-toggle="image-picker-choose" data-target="popup"
+                            data-result="banner_image" data-action="select-image" data-allow-thumb="1">
+                             Choose image
+                         </a>
                      </div>
-                  </div>
+                 </div>
                </div>
                <div class="card meta-boxes">
                   <div class="card-header">
@@ -390,5 +373,20 @@
     });
  </script>
 
+<script>
+   function openFileManager(event) {
+       event.preventDefault(); // Prevent default anchor action
 
+       // Open the file manager in a popup
+       var width = 800; // Set the popup width
+       var height = 600; // Set the popup height
+       var left = (screen.width - width) / 2;
+       var top = (screen.height - height) / 2;
+
+       var url = "{{ url('/laravel-filemanager') }}"; // URL of the Laravel File Manager
+       var windowFeatures = `width=${width}, height=${height}, left=${left}, top=${top}`;
+
+       window.open(url, "FileManager", windowFeatures);
+   }
+</script>
 @endsection
