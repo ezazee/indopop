@@ -7,23 +7,6 @@
    <div class="container-xl">
       <form method="POST" action="{{ route('blog.add') }}" accept-charset="UTF-8" id="botble-blog-forms-post-form" class="js-base-form dirty-check">
          @csrf
-         <div role="alert" class="alert alert-info">
-            <div class="d-flex">
-               <div>
-                  <svg class="icon alert-icon svg-icon-ti-ti-info-circle" xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                     <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                     <path d="M12 9h.01" />
-                     <path d="M11 12h1v4h1" />
-                  </svg>
-               </div>
-               <div class="w-100">
-                  You are editing "<strong class="current_language_text">English</strong>" version
-               </div>
-            </div>
-         </div>
          <div class="row">
             <div class="gap-3 col-md-9">
                <div class="card mb-3">
@@ -32,9 +15,8 @@
                         <div class="mb-3 position-relative">
                            <label for="name" class="form-label required">Name</label>
                            <input class="form-control" data-counter="250" placeholder="Name"
-                              required="required" name="name" type="text" id="name">
+                              required="required" name="title" type="text" id="name">
                         </div>
-                        <input type="hidden" name="model" value="Botble\Blog\Models\Post">
                         <div class="mb-3 ">
                            <div class="slug-field-wrapper" data-field-name="name">
                               <div class="mb-3 position-relative">
@@ -74,37 +56,30 @@
                               <div class="slug-data" data-url="https://cms.botble.com/ajax/slug/create"
                                  data-view="https://cms.botble.com/" data-id="0">
                               </div>
-                              <input name="slug_id" type="hidden" value="0">
-                              <input name="is_slug_editable" type="hidden" value="1">
                            </div>
                         </div>
                         <div class="mb-3 position-relative">
                            <label for="description" class="form-label">Description</label>
-                           <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description" name="description"
+                           <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description" name="short_description"
                               cols="50" id="description"></textarea>
                         </div>
                         <div class="mb-3 position-relative">
                            <label for="content" class="form-label">Content</label>
                            <div class="mb-2 btn-list">
-                              <button class="btn show-hide-editor-btn" type="button"
-                                 data-result="content">
-                              Show/Hide Editor
-                              </button>
-                              <button class="btn btn_gallery" type="button" data-result="content"
-                                 data-multiple="true" data-action="media-insert-ckeditor">
+                              <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn">
                                  <svg class="icon icon-left svg-icon-ti-ti-photo"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M15 8h.01" />
-                                    <path
-                                       d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
-                                    <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
-                                    <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
-                                 </svg>
-                                 Add media
-                              </button>
+                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                 <path d="M15 8h.01" />
+                                 <path
+                                    d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
+                                 <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
+                                 <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
+                              </svg>
+                              Add media
+                             </a>
                            </div>
                            <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
                               placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
@@ -119,11 +94,7 @@
                         <div class="card-actions"><a href="#" class="btn-trigger-show-seo-detail">Edit SEO meta</a></div>
                      </div>
                      <div class="card-body">
-                        <div class="seo-preview" v-pre>
-                           <p class="default-seo-description">Setup meta title &amp; description to make your site easy to discovered on search engines such as Google</p>
-                        </div>
                         <div class="hidden seo-edit-section" v-pre>
-                           <hr class="my-4">
                            <div class="mb-3 position-relative">
                               <label for="seo_meta[seo_title]" class="form-label">SEO Title</label>
                               <input class="form-control" data-counter="70" placeholder="SEO Title" data-allow-over-limit name="seo_meta[seo_title]" type="text" id="seo_meta[seo_title]">
@@ -156,18 +127,18 @@
                            </svg>
                            Save
                         </button>
-                        <button class="btn" type="submit" name="submitter" value="save">
+                        <a href="{{ route('blog.post') }}" class="btn">
                            <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                              xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                              stroke-linecap="round" stroke-linejoin="round">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                              <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
-                              <path d="M4 14h9" />
-                              <path d="M10 11l3 3l-3 3" />
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                               <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
+                               <path d="M4 14h9" />
+                               <path d="M10 11l3 3l-3 3" />
                            </svg>
-                           Save &amp; Exit
-                        </button>
+                           Back
+                       </a>
                      </div>
                   </div>
                </div>
@@ -197,18 +168,18 @@
                                     </svg>
                                     Save
                                  </button>
-                                 <button class="btn" type="submit" name="submitter" value="save">
+                                 <a href="{{ route('blog.post') }}" class="btn">
                                     <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
-                                       xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                       viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                       <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
-                                       <path d="M4 14h9" />
-                                       <path d="M10 11l3 3l-3 3" />
+                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 18v3h16v-14l-8 -4l-8 4v3" />
+                                        <path d="M4 14h9" />
+                                        <path d="M10 11l3 3l-3 3" />
                                     </svg>
-                                    Save &amp; Exit
-                                 </button>
+                                    Back
+                                </a>
                               </div>
                            </div>
                         </div>
@@ -222,13 +193,19 @@
                      </h4>
                   </div>
                   <div class="card-body">
-                     <select class="form-control form-select" required="required" id="status"
-                        name="status">
-                        <option value="published">Published</option>
-                        <option value="draft">Draft</option>
-                        <option value="scheduled">Scheduled</option>
+                     <label for="status">Status</label>
+                     <select class="form-control form-select" id="status" name="status">
+                         <option value="publish">Published</option>
+                         <option value="scheduled">Scheduled</option>
                      </select>
-                  </div>
+                 
+                     <div id="form-scheduled" style="margin-top: 10px;">
+                         <label class="form-label">Date</label>
+                         <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
+                         <label class="form-label">Time</label>
+                         <input type="time" class="form-control">
+                     </div>
+                 </div>
                </div>
                <div class="card meta-boxes">
                   <div class="card-header">
@@ -239,9 +216,9 @@
                   <div class="card-body">
                     <div class="position-relative">
                         <label class="form-check form-switch ">
-                        <input name="is_featured" type="hidden" value="0" />
-                        <input class="form-check-input" name="is_featured" type="checkbox"
-                           value="1" id="is_featured" />
+                        <input name="headline" type="hidden" value="no" />
+                        <input class="form-check-input" name="headline" type="checkbox"
+                           value="yes" />
                         <span class="form-check-label">Is headline?</span>
                         </label>
                      </div>
@@ -250,7 +227,7 @@
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
-                        <label for="categories[]" class="form-label">Categories</label>
+                        <label for="categories[]" class="form-label required">Categories</label>
                      </h4>
                   </div>
                   <div class="card-body">
@@ -274,15 +251,27 @@
                      <div data-bb-toggle="tree-checkboxes" class="tree-categories-list-998852741">
                         <ul class="list-unstyled ">
                            @foreach ($category as $item)
-                           <li>
-                              <label class="form-check">
-                              <input type="checkbox" name="categories" class="form-check-input" >
-                              <span class="form-check-label">
-                               {{ $item->nama_kategori }}
-                              </span>
-                              </label>
-                           </li>
-                           @endforeach
+                          <li>
+                             <label class="form-check">
+                                <input type="checkbox" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" data-category-id="{{ $item->id }}">
+                                <span class="form-check-label" required>
+                                   {{ $item->nama_kategori }}
+                                </span>
+                             </label>
+                             <ul class="list-unstyled ms-4 mt-2">
+                                @foreach ($item->subCategories as $subItem)
+                                   <li>
+                                      <label class="form-check">
+                                         <input type="checkbox" name="subcategories[{{ $item->id }}][]" class="form-check-input subcategory-checkbox" data-parent-id="{{ $item->id }}" data-subcategory-id="{{ $subItem->id }}">
+                                         <span class="form-check-label">
+                                            {{ $subItem->nama_sub_kategori }}
+                                         </span>
+                                      </label>
+                                   </li>
+                                @endforeach
+                             </ul>
+                          </li>
+                       @endforeach
                         </ul>
                      </div>
                   </div>
@@ -290,22 +279,24 @@
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
-                        <label for="banner_image" class="form-label">Banner image (1920x170px)</label>
+                        <label for="banner_image" class="form-label required">Banner image</label>
                      </h4>
                   </div>
                   <div class="card-body">
-                     <div class="image-box image-box-banner_image" action="select-image" data-counter="250">
-                         <input class="image-data" name="banner_image" type="hidden" value="" data-counter="250" />
-                         <div style="width: 8rem" class="preview-image-wrapper mb-1">
+                     <div class="image-box image-box-banner_image" data-counter="250">
+                         <input class="image-data" name="banner_image" type="hidden" value="" data-counter="250" required/>
+                         <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;" 
+                              class="preview-image-wrapper mb-1">
                              <div class="preview-image-inner">
-                                 <a data-bb-toggle="image-picker-choose" data-target="popup" class="image-box-actions"
-                                    data-result="banner_image" data-action="select-image" data-allow-thumb="1" href="#">
+                                 <a href="#" data-bb-toggle="image-picker-choose" onclick="openFileManager(event)" class="image-box-actions"
+                                    data-result="banner_image" data-action="select-image" data-allow-thumb="1">
                                      <img class="preview-image default-image" data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                          src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png" alt="Preview image" />
+                                          src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png" 
+                                          alt="Preview image" style="max-width: 100%; max-height: 100%;" />
                                      <span class="image-picker-backdrop"></span>
                                  </a>
                                  <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0" style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
-                                         data-bb-toggle="image-picker-remove" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove image">
+                                         onclick="removeImage()" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove image">
                                      <svg class="icon icon-sm icon-left svg-icon-ti-ti-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -315,27 +306,24 @@
                                  </button>
                              </div>
                          </div>
-                         <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" data-bb-toggle="image-picker-choose" data-target="popup"
-                            data-result="banner_image" data-action="select-image" data-allow-thumb="1">
+                         <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
                              Choose image
                          </a>
                      </div>
-                 </div>
+                 </div>                 
                </div>
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
-                        <label for="tag" class="form-label">Tags</label>
+                        <label for="tag" class="form-label required">Tags</label>
                      </h4>
                   </div>
                   <div class="card-body">
                      <input class="form-control tags" placeholder="Write some tags"
-                        data-url="https://cms.botble.com/admin/blog/tags/all" name="tag" type="text"
-                        id="tag">
+                        data-url="" name="tag" type="text"
+                        id="tag" required="required">
                   </div>
                </div>
-               <input class="form-control" name="author_type" type="hidden"
-                  value="Botble\Member\Models\Member">
             </div>
          </div>
       </form>
@@ -375,18 +363,49 @@
 
 <script>
    function openFileManager(event) {
-       event.preventDefault(); // Prevent default anchor action
+       event.preventDefault();
 
-       // Open the file manager in a popup
-       var width = 800; // Set the popup width
-       var height = 600; // Set the popup height
-       var left = (screen.width - width) / 2;
-       var top = (screen.height - height) / 2;
+       const route_prefix = "/laravel-filemanager?type=image";
 
-       var url = "{{ url('/laravel-filemanager') }}"; // URL of the Laravel File Manager
-       var windowFeatures = `width=${width}, height=${height}, left=${left}, top=${top}`;
+       window.open(route_prefix, 'FileManager', 'width=900,height=600');
 
-       window.open(url, "FileManager", windowFeatures);
+       window.SetUrl = function (file) {
+         const fileData = Array.isArray(file) ? file[0] : file;
+
+         const fileUrl = fileData.url || fileData.thumb_url;
+
+         if (fileUrl) {
+            const inputField = document.querySelector('input[name="banner_image"]');
+            if (inputField) {
+                  inputField.value = fileUrl;
+            }
+
+            const previewImage = document.querySelector('.preview-image');
+            if (previewImage) {
+                  previewImage.src = fileUrl;
+            }
+
+            const removeButton = document.querySelector('.image-picker-remove-button');
+            if (removeButton) {
+                  removeButton.style.display = 'inline-block';
+            }
+         } else {
+            // console.error('Invalid file object or missing URL property:', fileData);
+         }
+      };
+
+   }
+
+   function removeImage() {
+       const inputField = document.querySelector('input[name="banner_image"]');
+       inputField.value = '';
+
+       const previewImage = document.querySelector('.preview-image');
+       previewImage.src = previewImage.getAttribute('data-default');
+
+       const removeButton = document.querySelector('.image-picker-remove-button');
+       removeButton.style.display = 'none';
    }
 </script>
+
 @endsection

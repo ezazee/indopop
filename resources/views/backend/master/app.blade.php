@@ -12,6 +12,7 @@
         <div class="d-block d-lg-flex">
             @include('backend.components.sidebar')
             <div class="page-wrapper">
+                @include('sweetalert::alert')
                     @yield('content')
                 @include('backend.components.footer')
             </div>
@@ -19,5 +20,4 @@
     </div>
     @extends('backend.master.master-js')
 </body>
-
 </html>

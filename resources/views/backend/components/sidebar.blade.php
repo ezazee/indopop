@@ -80,10 +80,9 @@
                         data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
                         title="Blog">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Blog">
-                            <svg class="icon svg-icon-ti-ti-article" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            <svg class="icon svg-icon-ti-ti-article" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
@@ -101,10 +100,9 @@
                         <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/blog/post*') ? 'active' : '' }}"
                             href="{{ route('blog.post') }}" id="cms-plugins-blog-post" title="Posts">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Posts">
-                                <svg class="icon svg-icon-ti-ti-file-text" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                <svg class="icon svg-icon-ti-ti-file-text" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                                     <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -118,13 +116,11 @@
                             </span>
                         </a>
                         <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/blog/category*') ? 'active' : '' }}"
-                            href="{{ route('category.create') }}" id="cms-plugins-blog-categories"
-                            title="Categories">
+                            href="{{ route('category.create') }}" id="cms-plugins-blog-categories" title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
-                                <svg class="icon svg-icon-ti-ti-folder" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                <svg class="icon svg-icon-ti-ti-folder" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path
                                         d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" />
@@ -137,10 +133,9 @@
                         <a class="dropdown-item nav-priority-30 {{ Request::is('dashboard/blog/tags*') ? 'active' : '' }}"
                             href="{{ route('tags.index') }}" id="cms-plugins-blog-tags" title="Tags">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Tags">
-                                <svg class="icon svg-icon-ti-ti-tag" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                <svg class="icon svg-icon-ti-ti-tag" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                     <path
@@ -153,13 +148,14 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item {{ Request::is('dashboard/member') || Request::is('dashboard/member/create') || Request::is('dashboard/member/edit/*') ? 'active' : '' }}">
+                <li
+                    class="nav-item {{ Request::is('dashboard/member') || Request::is('dashboard/member/create') || Request::is('dashboard/member/edit/*') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-50" href="{{ route('member.index') }}" id="cms-core-member"
                         title="Members">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Members">
                             <svg class="icon svg-icon-ti-ti-users" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                                 <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -177,8 +173,8 @@
                         title="Media">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Media">
                             <svg class="icon svg-icon-ti-ti-folder" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" />
@@ -189,14 +185,14 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item {{ Request::is('dashboard/export-data') ? 'active' : '' }}">
-                    <a class="nav-link nav-priority-999" href="{{ route('dashboard.export') }}" id="cms-core-media"
-                        title="Media">
+                <li class="nav-item dropdown {{ Request::is('dashboard/export-data*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog" id="cms-plugins-blog"
+                        data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
+                        title="Blog">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Media">
                             <svg class="icon svg-icon-ti-ti-package-import" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M12 21l-8 -4.5v-9l8 -4.5l8 4.5v4.5" />
                                 <path d="M12 12l8 -4.5" />
@@ -210,16 +206,55 @@
                             Export Data
                         </span>
                     </a>
+                    <div
+                        class="dropdown-menu animate slideIn dropdown-menu-start {{ Request::is('dashboard/export-data*') ? 'show' : '' }}">
+                        <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/settings/google-tag*') ? 'active' : '' }}"
+                            href="{{ route('dashboard.export') }}" id="cms-plugins-blog-post" title="Posts">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Widgets">
+                                <svg class="icon  svg-icon-ti-ti-layout" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M4 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                                    <path
+                                        d="M4 13m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                                    <path
+                                        d="M14 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                                </svg> </span>
+                            <span class="nav-link-title text-truncate">
+                                Posts Data
+                            </span>
+                        </a>
+                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/export-data/report') ? 'active' : '' }}"
+                            href="{{ route('settings.annalytic') }}" id="cms-plugins-blog-categories"
+                            title="Categories">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block" title="Theme Options">
+                                <svg class="icon  svg-icon-ti-ti-list-tree" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M9 6h11" />
+                                    <path d="M12 12h8" />
+                                    <path d="M15 18h5" />
+                                    <path d="M5 6v.01" />
+                                    <path d="M8 12v.01" />
+                                    <path d="M11 18v.01" />
+                                </svg> </span>
+                            <span class="nav-link-title text-truncate">
+                                Report
+                            </span>
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown {{ Request::is('dashboard/settings*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog" id="cms-plugins-blog"
                         data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
                         title="Blog">
                         <span class="nav-link-icon d-md-none d-lg-inline-block" title="Settings">
-                            <svg class="icon svg-icon-ti-ti-settings" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            <svg class="icon svg-icon-ti-ti-settings" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
@@ -235,10 +270,9 @@
                         <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/settings/google-tag*') ? 'active' : '' }}"
                             href="{{ route('settings.googletag') }}" id="cms-plugins-blog-post" title="Posts">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Posts">
-                                <svg class="icon  svg-icon-ti-ti-world" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                <svg class="icon  svg-icon-ti-ti-world" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
                                     <path d="M3.6 9h16.8" />
@@ -256,9 +290,9 @@
                             title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
                                 <svg class="icon  svg-icon-ti-ti-brand-google-analytics"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path
                                         d="M10 9m0 1.105a1.105 1.105 0 0 1 1.105 -1.105h1.79a1.105 1.105 0 0 1 1.105 1.105v9.79a1.105 1.105 0 0 1 -1.105 1.105h-1.79a1.105 1.105 0 0 1 -1.105 -1.105z" />
@@ -276,9 +310,8 @@
                             title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
                                 <svg class="icon svg-icon-ti-ti-user-shield" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h2" />
                                     <path

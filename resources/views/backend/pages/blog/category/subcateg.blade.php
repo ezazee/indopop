@@ -44,7 +44,7 @@
                             <div class="mb-3 position-relative">
                                 <label for="name" class="form-label">Name</label>
                                 <input id="nama_kategori" class="form-control" data-counter="250" placeholder="Name"
-                                    name="nama_kategori" type="text" value="{{ $category->nama_kategori }}">
+                                    name="nama_kategori" type="text" value="{{ $category->nama_sub_kategori }}">
                             </div>
                             <div class="mb-3">
                                 <div class="slug-field-wrapper">
@@ -54,7 +54,7 @@
                                         </label>
                                         <div class="input-group input-group-flat">
                                             <span class="input-group-text" >
-                                                {{ config('app.url') }}/kanal/
+                                                {{ config('app.url') }}/sub-kanal/
                                             </span>                                            
                                             <input id="slug" class="form-control ps-0" type="text" value="{{ $category->slug }}" readonly />
                                         </div>
@@ -83,7 +83,7 @@
                                             Save
                                         </button>
                                     </form>
-                                        <form action="{{ route('category.destroy', ['id' => $category->id]) }}" method="POST">
+                                        <form action="{{ route('subcateg.destroy', ['id' => $category->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             

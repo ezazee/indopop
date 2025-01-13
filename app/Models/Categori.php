@@ -11,4 +11,9 @@ class Categori extends Model
 
     protected $fillable = ['nama_kategori', 'slug'];
     use HasFactory;
+
+    public function subCategories()
+    {
+        return $this->hasMany(SubCategory::class, 'category_id');
+    }
 }

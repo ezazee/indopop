@@ -4,16 +4,35 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class MemberController extends Controller
 {
-    public function memberIndex() {
-        $user = User::whereHas('role', function ($query) {
-            $query->where('name', 'editor');
-        })->paginate(5);
-        
-        return view('backend.pages.member.index',compact('user'));
+    public function memberIndex(Request $request) {
+        $query = User::query();
+
+        $query->whereHas('role', function ($query) {
+            $query->where('name', 'Editor');
+        });
+    
+        if ($request->has('filter_columns')) {
+            foreach ($request->input('filter_columns') as $index => $column) {
+                $operator = $request->input('filter_operators')[$index] ?? '=';
+                $value = $request->input('filter_values')[$index] ?? '';
+    
+                if (!empty($column) && !empty($value)) {
+                    if ($operator === 'like') {
+                        $value = "%$value%";
+                    }
+    
+                    $query->where($column, $operator, $value);
+                }
+            }
+        }
+    
+        $user = $query->paginate(5);
+        return view('backend.pages.member.index', compact('user'));
     }
 
     public function memberCreate(){
@@ -29,6 +48,7 @@ class MemberController extends Controller
         $emailExists = User::where('email', $request->email)->exists();
 
         if ($emailExists) {
+            Alert::info('Info', 'Email already exists!');
             return redirect()->back()
                 ->withInput() 
                 ->withErrors(['email' => 'Email sudah ada di database.']);
@@ -61,7 +81,7 @@ class MemberController extends Controller
             'status' => $request->status,
             'images' => $imagePath,
         ]);
-
+        Alert::success('Success', 'Member added successfully!!');
         return redirect()->route('member.index')->with('success', 'Member berhasil ditambahkan!');
     }
 
@@ -116,6 +136,7 @@ class MemberController extends Controller
         }
 
         $users->update($updateData);
+        Alert::success('Success', 'Member updated successfully!!');
         return redirect()->back()->with('success', 'Users updated successfully.');
     }
 
@@ -123,6 +144,7 @@ class MemberController extends Controller
     {
         $member = User::findOrFail($id);
         $member->delete();
+        Alert::error('Delete', 'Member Deleted!!');
         return redirect()->route('member.index')->with('success', 'Member deleted successfully.');
     }
 }

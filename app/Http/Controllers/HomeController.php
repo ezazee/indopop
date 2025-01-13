@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Jenssegers\Agent\Agent;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\Categori;
 use Carbon\Carbon;
 
@@ -412,6 +413,7 @@ class HomeController extends Controller
             return view('frontend.dekstop.pages.kanal',compact('category','post','postTerkini','postTerpopuler'));
         }
     }
+
     public function byIndex()
     {
         $postTerkini = Post::with('kategori', 'user')
@@ -444,6 +446,38 @@ class HomeController extends Controller
             return view('frontend.dekstop.pages.byIndex',compact('post','postTerkini','postTerpopuler'));
         }
     }
+
+    public function byTag($slug){
+        $tag = Tag::where('slug', $slug)->firstOrFail();
+        $post = $tag->posts()->where('status', 'publish')->orderBy('created_at', 'desc')->paginate(17);
+
+        $postTerkini = Post::with('kategori', 'user')
+        ->where('status', 'publish')
+        ->latest()
+        ->take(5)
+        ->get();
+
+        $postTerpopuler = Post::with('kategori', 'user')
+        ->where('status', 'publish')
+        ->orderBy('view', 'desc')
+        ->take(5)
+        ->get();
+
+        $allPosts = collect([$post->items(), $postTerpopuler, $postTerkini])->flatten();
+
+        foreach ($allPosts as $singlePost) {
+            if ($singlePost->gambar) {
+                $singlePost->gambar = explode('|', $singlePost->gambar);
+            }
+        }
+
+        if ($this->agent->isMobile()) {
+            return view('frontend.mobile.pages.bytag',compact('post','postTerkini','postTerpopuler'));
+        } else {
+            return view('frontend.dekstop.pages.bytag',compact('post','postTerkini','postTerpopuler'));
+        }
+    }
+
     public function searchResult()
     {
         if ($this->agent->isMobile()) {

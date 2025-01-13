@@ -1,6 +1,28 @@
 @extends('backend.master.app')
 @section('content')
-    @include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Settings</h1>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Member Dashboard</h1>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="page-body page-content">
         <div class="container-xl">
             <div class="table-wrapper">
@@ -67,66 +89,49 @@
                                     </div>
                                 </div>
                             </div>
-                            <form method="GET" action="https://cms.botble.com/admin/system/users" accept-charset="UTF-8"
-                                class="filter-form">
-                                <input type="hidden" name="filter_table_id" class="filter-data-table-id"
-                                    value="botble-a-c-l-tables-user-table">
-                                <input type="hidden" name="class" class="filter-data-class"
-                                    value="Botble\ACL\Tables\UserTable">
+                            <form method="GET" action="{{ route('settings.memberDashboard') }}" accept-charset="UTF-8" class="filter-form">
                                 <div class="filter_list inline-block filter-items-wrap">
                                     <div class="row filter-item form-filter filter-item-default">
-                                        <div class="col-auto w-50 w-sm-auto">
-                                            <div class="mb-3 position-relative">
-                                                <select class="form-select filter-column-key" name="filter_columns[]"
-                                                    id="filter_columns[]">
+                                        <div class="col-auto">
+                                            <div class="mb-3">
+                                                <select class="form-select filter-column-key" name="filter_columns[]" required>
                                                     <option value="" selected>Select field</option>
-                                                    <option value="username">Username</option>
+                                                    <option value="name">Name</option>
+                                                    <option value="role">Role</option>
                                                     <option value="email">Email</option>
                                                     <option value="status">Status</option>
                                                     <option value="created_at">Created At</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-auto w-50 w-sm-auto">
-                                            <div class="mb-3 position-relative">
-                                                <select class="form-select filter-operator filter-column-operator"
-                                                    name="filter_operators[]" id="filter_operators[]">
-                                                    <option value="like">Contains</option>
-                                                    <option value="=" selected>Is equal to</option>
-                                                    <option value="&gt;">Greater than</option>
-                                                    <option value="&lt;">Less than</option>
+                            
+                                        <div class="col-auto">
+                                            <div class="mb-3">
+                                                <select class="form-select filter-operator filter-column-operator" name="filter_operators[]">
+                                                    <option value="like" selected>Contains</option>
+                                                    <option value="=">Is equal to</option>
+                                                    <option value=">">Greater than</option>
+                                                    <option value="<">Less than</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-auto w-100 w-sm-25">
-                                            <div class="filter-column-value-wrap mb-3">
-                                                <input class="form-control filter-column-value" type="text"
-                                                    placeholder="Value" name="filter_values[]" value="">
+                            
+                                        <div class="col-auto">
+                                            <div class="mb-3">
+                                                <input class="form-control filter-column-value" type="text" placeholder="Value"
+                                                       name="filter_values[]" required>
                                             </div>
                                         </div>
-                                        <div class="col">
+                            
+                                        <div class="col-auto">
+                                            <button class="btn btn-secondary add-more-filter" type="button">Add Filter</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="btn-list">
-                                    <button class="btn   add-more-filter" type="button">
-                                        Add additional filter
-                                    </button>
-                                    <button class="btn btn-primary  btn-apply" type="submit">
-                                        Apply
-                                    </button>
-                                    <a class="btn btn-icon" style="display: none;" type="button"
-                                        href="https://cms.botble.com/admin/system/users"
-                                        data-bb-toggle="datatable-reset-filter">
-                                        <svg class="icon icon-left svg-icon-ti-ti-refresh"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                            <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                        </svg>
-                                    </a>
+                            
+                                <div class="btn-list mt-3">
+                                    <button class="btn btn-primary" type="submit">Apply</button>
+                                    <a class="btn btn-light" href="{{ route('settings.memberDashboard') }}">Reset</a>
                                 </div>
                             </form>
                         </div>
@@ -136,57 +141,6 @@
                     <div class="card-header">
                         <div class="w-100 justify-content-between d-flex flex-wrap align-items-center gap-1">
                             <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-1">
-                                <div class="dropdown d-inline-block">
-                                    <button class="btn   dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                        Bulk Actions
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <div class="dropdown-submenu">
-                                            <button class="dropdown-item">
-                                                Bulk changes
-                                                <svg class="icon dropdown-item-icon ms-auto me-0 svg-icon-ti-ti-chevron-right"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M9 6l6 6l-6 6" />
-                                                </svg>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <button class="dropdown-item bulk-change-item" data-key="username"
-                                                    data-class-item="Botble\ACL\Tables\UserTable"
-                                                    data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-                                                    Username
-                                                </button>
-                                                <button class="dropdown-item bulk-change-item" data-key="email"
-                                                    data-class-item="Botble\ACL\Tables\UserTable"
-                                                    data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-                                                    Email
-                                                </button>
-                                                <button class="dropdown-item bulk-change-item" data-key="status"
-                                                    data-class-item="Botble\ACL\Tables\UserTable"
-                                                    data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-                                                    Status
-                                                </button>
-                                                <button class="dropdown-item bulk-change-item" data-key="created_at"
-                                                    data-class-item="Botble\ACL\Tables\UserTable"
-                                                    data-save-url="https://cms.botble.com/admin/tables/bulk-changes/save">
-                                                    Created At
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <a class="dropdown-item" href="https://cms.botble.com/admin/tables/bulk-actions"
-                                            data-trigger-bulk-action="data-trigger-bulk-action" data-method="POST"
-                                            data-table-target="Botble\ACL\Tables\UserTable"
-                                            data-target="Botble\Table\BulkActions\DeleteBulkAction"
-                                            data-confirmation-modal-title="Confirm to perform this action"
-                                            data-confirmation-modal-message="Are you sure you want to do this action? This cannot be undone."
-                                            data-confirmation-modal-button="Delete"
-                                            data-confirmation-modal-cancel-button="Cancel">
-                                            Delete
-                                        </a>
-                                    </div>
-                                </div>
                                 <button class="btn   btn-show-table-options" type="button">
                                     Filters
                                 </button>
@@ -234,19 +188,15 @@
                                         Create
                                     </span>
                                 </button>
-                                <button class="btn" type="button" data-bb-toggle="dt-buttons"
-                                    data-bb-target=".buttons-reload" tabindex="0"
-                                    aria-controls="botble-a-c-l-tables-user-table">
-                                    <svg class="icon icon-left svg-icon-ti-ti-refresh" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                    </svg>
-                                    Reload
-                                </button>
+                                <a class="btn" href="{{ route('settings.memberDashboard') }}"><svg class="icon icon-left svg-icon-ti-ti-refresh" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                                    <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                                 </svg>
+                                 Reload</a>
                             </div>
                         </div>
                     </div>

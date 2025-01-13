@@ -34,6 +34,15 @@
 
     <div class="page-body page-content">
         <div class="container-xl">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form method="POST" action="{{ route('member.update', ['id' => $member->id]) }}" accept-charset="UTF-8" id="botble-member-forms-member-form" class="js-base-form dirty-check" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -69,49 +78,6 @@
                                             <label for="phone" class="form-label">Phone</label>
                                             <input class="form-control" data-counter="15"
                                                 placeholder="Phone" name="phone" type="text"  value="{{ $member->phone }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 position-relative">
-                                            <label for="dob" class="form-label">Date of birth</label>
-                                            <div class="input-group datepicker">
-                                                <input class="form-control " placeholder="Y-m-d"
-                                                    data-input="" readonly="readonly" name="dob"
-                                                    type="text" value="2024-12-12" id="dob">
-                                                <button class="btn btn-icon" type="button"
-                                                    data-toggle="data-toggle">
-                                                    <svg class="icon icon-left svg-icon-ti-ti-calendar"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z"
-                                                            fill="none" />
-                                                        <path
-                                                            d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
-                                                        <path d="M16 3v4" />
-                                                        <path d="M8 3v4" />
-                                                        <path d="M4 11h16" />
-                                                        <path d="M11 15h1" />
-                                                        <path d="M12 15v3" />
-                                                    </svg>
-                                                </button>
-                                                <button class="btn btn-icon   text-danger" type="button"
-                                                    data-clear="data-clear">
-                                                    <svg class="icon icon-left svg-icon-ti-ti-x"
-                                                        xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z"
-                                                            fill="none" />
-                                                        <path d="M18 6l-12 12" />
-                                                        <path d="M6 6l12 12" />
-                                                    </svg>
-
-                                                </button>
-                                            </div>
                                         </div>
                                     </div>
 
@@ -217,64 +183,6 @@
                                 <option value="2" {{ $member->role->name== 'Administrator' ? 'selected' : '' }}>Administrator</option>
                             </select>
                         </div>                        
-                    </div>
-                    <div class="card meta-boxes">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <label for="avatar_image" class="form-label">Image</label>
-                            </h4>
-                        </div>
-                        <div class=" card-body">
-                            <div class="image-box image-box-avatar_image" action="select-image"
-                                data-counter="250">
-                                <input class="image-data" name="images" type="hidden" value="" class="" data-counter="250" />
-                                <div style="width: 8rem" class="preview-image-wrapper mb-1">
-                                    <div class="preview-image-inner">
-                                        <a data-bb-toggle="image-picker-choose" data-target="popup"
-                                            class="image-box-actions" data-result="avatar_image"
-                                            data-action="select-image" data-allow-thumb="1" href="#">
-                                            <img class="preview-image default-image"
-                                                data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                alt="Preview image" />
-                                            <span class="image-picker-backdrop"></span>
-                                        </a>
-                                        <button
-                                            class="btn btn-pill btn-icon  btn-sm image-picker-remove-button p-0"
-                                            style="display: none; --bb-btn-font-size: 0.5rem;"
-                                            type="button" data-bb-toggle="image-picker-remove"
-                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Remove image">
-                                            <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M18 6l-12 12" />
-                                                <path d="M6 6l12 12" />
-                                            </svg>
-
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <a data-bb-toggle="image-picker-choose" data-target="popup"
-                                    data-result="avatar_image" data-action="select-image"
-                                    data-allow-thumb="1" href="#">
-                                    Choose image
-                                </a>
-
-                                <div data-bb-toggle="upload-from-url">
-                                    <span class="text-muted">or</span>
-                                    <a href="javascript:void(0)" class="mt-1" data-bs-toggle="modal"
-                                        data-bs-target="#image-picker-add-from-url"
-                                        data-bb-target=".image-box-avatar_image">
-                                        Add from URL
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

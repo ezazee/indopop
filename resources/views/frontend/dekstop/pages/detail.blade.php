@@ -68,13 +68,14 @@
                         <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
-                        <p><strong>Indopop.id</strong> {!! nl2br(str_replace(['[caption]', '[/caption]'], '', $post->content)) !!}
-                        </p>
+                        <p><strong>Indopop.id</strong> {!! nl2br(preg_replace('/\[caption[^\]]*\]/is', '', $post->content)) !!}</p>
+                        
+                        {{-- <p>{!! preg_replace(['/\[caption[^\]]*\]/is', '/<\/?caption>/is', '/<\/?br\s*\/?>/'], '', $post->content) !!}</p> --}}
                     </div>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>
                         @foreach ($tagsdetail as $index => $tags)
-                            <a href="" class="tag-item"> {{ $tags->nama_tags }}</a>
+                            <a href="{{ route('bytag', ['slug' => $tags->slug]) }}" class="tag-item"> {{ $tags->nama_tags }}</a>
                         @endforeach
                     </div>
 
