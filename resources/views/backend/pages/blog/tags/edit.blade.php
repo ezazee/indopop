@@ -50,11 +50,11 @@
                                  </div>
                               </div>
                               <small class="form-hint mt-n2 text-truncate">Preview: <a
-                                 href="https://cms.botble.com/tag/ar-gaming"
+                                 href="#"
                                  target="_blank">{{ config('app.url') }}/tag/{{ $tag->slug }}</a></small>
                               <input class="slug-current" name="slug" type="hidden" value="ar-gaming">
-                              <div class="slug-data" data-url="https://cms.botble.com/ajax/slug/create"
-                                 data-view="https://cms.botble.com/tag/" data-id="21">
+                              <div class="slug-data" data-url="#"
+                                 data-view="#" data-id="21">
                               </div>
                               <input name="slug_id" type="hidden" value="21">
                               <input name="is_slug_editable" type="hidden" value="1">
@@ -86,7 +86,7 @@
                               <div>
                                 <span style="color: #70757a;">
                                     {{ date('M d, Y', strtotime($tag->created_at)) }}
-                                </span>                                
+                                </span>
                                  <span class="page-description-seo">
                                  </span>
                               </div>

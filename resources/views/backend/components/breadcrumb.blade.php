@@ -6,7 +6,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="https://cms.botble.com/admin">Dashboard</a>
+                                <a href="/">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <h1 class="mb-0 d-inline-block fs-6 lh-1">Page</h1>

@@ -77,7 +77,7 @@
                </div>
                <div class="col dashboard-widget-item col-12 col-md-6 col-lg-3">
                   <a class="text-white d-block rounded position-relative overflow-hidden text-decoration-none bg-success"
-                     href="https://cms.botble.com/admin/plugins/installed" style="">
+                     href="#" style="">
                      <div class="d-flex justify-content-between align-items-center">
                         <div class="details px-4 py-3 d-flex flex-column justify-content-between">
                            <div class="desc fw-medium">Plugins</div>
@@ -104,7 +104,7 @@
                </div>
                <div class="col dashboard-widget-item col-12 col-md-6 col-lg-3">
                   <a class="text-white d-block rounded position-relative overflow-hidden text-decoration-none bg-yellow"
-                     href="https://cms.botble.com/admin/pages" style="">
+                     href="#" style="">
                      <div class="d-flex justify-content-between align-items-center">
                         <div class="details px-4 py-3 d-flex flex-column justify-content-between">
                            <div class="desc fw-medium">Pages</div>
@@ -399,13 +399,13 @@
        fetchTopBrowsers();
       //  fetchTopReferrers();
    });
-   
+
    function fetchTopPages() {
       const tableBody = document.querySelector('.table-body-getTopPages');
       const loadingRow = document.createElement('tr');
       loadingRow.classList.add('loading-row');
       loadingRow.innerHTML = `<td colspan="3" class="text-center">Loading...</td>`;
-      tableBody.innerHTML = ''; 
+      tableBody.innerHTML = '';
       tableBody.appendChild(loadingRow);
 
       fetch('/top-pages')
@@ -444,9 +444,9 @@
       const loadingRow = document.createElement('tr');
       loadingRow.classList.add('loading-row');
       loadingRow.innerHTML = `<td colspan="3" class="text-center">Loading...</td>`;
-      tableBody.innerHTML = ''; 
+      tableBody.innerHTML = '';
       tableBody.appendChild(loadingRow);
-      
+
       fetch('/top-browsers')
       .then(response => response.json())
       .then(data => {

@@ -13,7 +13,7 @@
                 class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
                 <div class="container container-tight my-5 px-lg-5">
                     <div class="text-center mb-4">
-                        <a href="https://cms.botble.com/admin" class="navbar-brand">
+                        <a href="#" class="navbar-brand">
                             <img src="{{ asset('backend/images/logo/favicon.png') }}"
                                 style="max-height: 50px; max-width: 100%;" alt="Botble Technologies">
                         </a>

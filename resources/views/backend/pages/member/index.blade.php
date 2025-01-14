@@ -1,29 +1,6 @@
 @extends('backend.master.app')
 @section('content')
-<div class="page-header d-print-none">
-    <div class="container-xl">
-        <div class="row g-2 align-items-center">
-            <div class="col">
-                <div class="page-pretitle">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="https://cms.botble.com/admin">Dashboard</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <h1 class="mb-0 d-inline-block fs-6 lh-1">Member</h1>
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div class="col-auto ms-auto d-print-none">
-                <div class="btn-list">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('backend.components.breadcrumb')
 
 
 <div class="page-body page-content">
@@ -111,7 +88,7 @@
                                             </select>
                                         </div>
                                     </div>
-                        
+
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <select class="form-select filter-operator filter-column-operator" name="filter_operators[]">
@@ -122,26 +99,26 @@
                                             </select>
                                         </div>
                                     </div>
-                        
+
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <input class="form-control filter-column-value" type="text" placeholder="Value"
                                                    name="filter_values[]" required>
                                         </div>
                                     </div>
-                        
+
                                     <div class="col-auto">
                                         <button class="btn btn-secondary add-more-filter" type="button">Add Filter</button>
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="btn-list mt-3">
                                 <button class="btn btn-primary" type="submit">Apply</button>
                                 <a class="btn btn-light" href="{{ route('member.index') }}">Reset</a>
                             </div>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

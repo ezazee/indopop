@@ -50,11 +50,11 @@
                                  </div>
                               </div>
                               <small class="form-hint mt-n2 text-truncate">Preview: <a
-                                 href="https://cms.botble.com/"
+                                 href="#"
                                  target="_blank">https://cms.botble.com/</a></small>
                               <input class="slug-current" name="slug" type="hidden" value="">
-                              <div class="slug-data" data-url="https://cms.botble.com/ajax/slug/create"
-                                 data-view="https://cms.botble.com/" data-id="0">
+                              <div class="slug-data" data-url="#"
+                                 data-view="#" data-id="0">
                               </div>
                            </div>
                         </div>
@@ -198,7 +198,7 @@
                          <option value="publish">Published</option>
                          <option value="scheduled">Scheduled</option>
                      </select>
-                 
+
                      <div id="form-scheduled" style="margin-top: 10px;">
                          <label class="form-label">Date</label>
                          <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
@@ -285,13 +285,13 @@
                   <div class="card-body">
                      <div class="image-box image-box-banner_image" data-counter="250">
                          <input class="image-data" name="banner_image" type="hidden" value="" data-counter="250" required/>
-                         <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;" 
+                         <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
                               class="preview-image-wrapper mb-1">
                              <div class="preview-image-inner">
                                  <a href="#" data-bb-toggle="image-picker-choose" onclick="openFileManager(event)" class="image-box-actions"
                                     data-result="banner_image" data-action="select-image" data-allow-thumb="1">
                                      <img class="preview-image default-image" data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                          src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png" 
+                                          src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
                                           alt="Preview image" style="max-width: 100%; max-height: 100%;" />
                                      <span class="image-picker-backdrop"></span>
                                  </a>
@@ -310,7 +310,7 @@
                              Choose image
                          </a>
                      </div>
-                 </div>                 
+                 </div>
                </div>
                <div class="card meta-boxes">
                   <div class="card-header">

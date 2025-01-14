@@ -1,33 +1,6 @@
 @extends('backend.master.app')
 @section('content')
-    <div class="page-header d-print-none">
-        <div class="container-xl">
-            <div class="row g-2 align-items-center">
-                <div class="col">
-                    <div class="page-pretitle">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="https://cms.botble.com/admin">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="https://cms.botble.com/admin/blog/posts">Member</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    <h1 class="mb-0 d-inline-block fs-6 lh-1">Create new member</h1>
-                                </li>
-                            </ol>
-                        </nav>
-
-                    </div>
-                </div>
-                <div class="col-auto ms-auto d-print-none">
-                    <div class="btn-list">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@include('backend.components.breadcrumb')
 
     <div class="page-body page-content">
         <div class="container-xl">
@@ -183,11 +156,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             const imageInput = document.getElementById('image-input');
             const previewImage = document.getElementById('preview-image');
-    
+
             if (imageInput && previewImage) {
                 imageInput.addEventListener('change', function (event) {
                     const file = event.target.files[0];
-    
+
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function (e) {
@@ -205,5 +178,5 @@
             }
         });
     </script>
-    
+
 @endsection
