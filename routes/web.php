@@ -94,7 +94,8 @@ Route::delete('/dashboard/member/delete/{id}', [MemberController::class, 'member
 
 // === {{ !! Export Data Page !! }} === //
 // Export Data
-Route::get('/dashboard/export-data', [DashboardController::class, 'exportData'])->name('dashboard.export');
+Route::get('/dashboard/export/export-post', [DashboardController::class, 'exportDataPost'])->name('dashboard.exportPost');
+Route::get('/dashboard/export/export-report', [DashboardController::class, 'exportReport'])->name('dashboard.exportReport');
 
 
 // === {{ !! Settings Page !! }} === //
@@ -121,7 +122,7 @@ Route::get('/system/users/profile/', [ProfileController::class, 'indexProfile'])
 Route::get('/spring', [DashboardController::class, 'loginPage'])->name('login');
 
 Route::get('/blank', function () {
-    return view('blank'); 
+    return view('blank');
 })->name('blank');
 
 

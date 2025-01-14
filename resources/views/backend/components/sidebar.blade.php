@@ -185,7 +185,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item dropdown {{ Request::is('dashboard/export-data*') ? 'active' : '' }}">
+                <li class="nav-item dropdown {{ Request::is('dashboard/export*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog" id="cms-plugins-blog"
                         data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
                         title="Blog">
@@ -207,9 +207,9 @@
                         </span>
                     </a>
                     <div
-                        class="dropdown-menu animate slideIn dropdown-menu-start {{ Request::is('dashboard/export-data*') ? 'show' : '' }}">
-                        <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/settings/google-tag*') ? 'active' : '' }}"
-                            href="{{ route('dashboard.export') }}" id="cms-plugins-blog-post" title="Posts">
+                        class="dropdown-menu animate slideIn dropdown-menu-start {{ Request::is('dashboard/export*') ? 'show' : '' }}">
+                        <a class="dropdown-item nav-priority-10 {{ Request::is('dashboard/export/export-post*') ? 'active' : '' }}"
+                            href="{{ route('dashboard.exportPost') }}" id="cms-plugins-blog-post" title="Posts">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Widgets">
                                 <svg class="icon  svg-icon-ti-ti-layout" xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -226,8 +226,8 @@
                                 Posts Data
                             </span>
                         </a>
-                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/export-data/report') ? 'active' : '' }}"
-                            href="{{ route('settings.annalytic') }}" id="cms-plugins-blog-categories"
+                        <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/export/export-report*') ? 'active' : '' }}"
+                            href="{{ route('dashboard.exportReport') }}" id="cms-plugins-blog-categories"
                             title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Theme Options">
                                 <svg class="icon  svg-icon-ti-ti-list-tree" xmlns="http://www.w3.org/2000/svg"

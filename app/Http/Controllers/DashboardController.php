@@ -28,8 +28,8 @@ class DashboardController extends Controller
         // $settings = Settings::first();
         // $propertyId = $settings->analytics;
         // $startDate = now()->subDays(30)->format('Y-m-d');
-        // $endDate = now()->format('Y-m-d'); 
-    
+        // $endDate = now()->format('Y-m-d');
+
         // try {
         //     $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
         //     dd($analyticsData);
@@ -43,18 +43,18 @@ class DashboardController extends Controller
     {
         $settings = Settings::first();
         $propertyId = $settings->analytics;
-    
+
         $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d')); 
-    
+        $endDate = $request->query('end_date', now()->format('Y-m-d'));
+
         try {
             $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-    
+
             $topPages = [];
             if (!empty($analyticsData['topPages'])) {
                 foreach ($analyticsData['topPages'] as $page) {
                     $topPages[] = [
-                        'page' => $page['page'], 
+                        'page' => $page['page'],
                         'sessions' => $page['sessions'],
                     ];
                 }
@@ -72,18 +72,18 @@ class DashboardController extends Controller
     public function gettopBrowsers(Request $request){
         $settings = Settings::first();
         $propertyId = $settings->analytics;
-    
+
         $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d')); 
-    
+        $endDate = $request->query('end_date', now()->format('Y-m-d'));
+
         try {
             $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-    
+
             $topBrowsers = [];
             if (!empty($analyticsData['topBrowsers'])) {
                 foreach ($analyticsData['topBrowsers'] as $page) {
                     $topBrowsers[] = [
-                        'browser' => $page['browser'], 
+                        'browser' => $page['browser'],
                         'sessions' => $page['sessions'],
                     ];
                 }
@@ -101,18 +101,18 @@ class DashboardController extends Controller
     public function gettopReferrers(Request $request){
         $settings = Settings::first();
         $propertyId = $settings->analytics;
-    
+
         $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d')); 
-    
+        $endDate = $request->query('end_date', now()->format('Y-m-d'));
+
         try {
             $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-    
+
             $topReferrers = [];
             if (!empty($analyticsData['topReferrers'])) {
                 foreach ($analyticsData['topReferrers'] as $page) {
                     $topReferrers[] = [
-                        'referrer' => $page['referrer'], 
+                        'referrer' => $page['referrer'],
                         'sessions' => $page['sessions'],
                     ];
                 }
@@ -127,9 +127,14 @@ class DashboardController extends Controller
         }
     }
 
-    public function exportData()
+    public function exportDataPost()
     {
-        return view('backend.pages.export-data.index');
+        return view('backend.pages.export.export-post.index');
+    }
+
+    public function exportReport()
+    {
+        return view('backend.pages.export.export-report.index');
     }
 
     public function loginPage()
