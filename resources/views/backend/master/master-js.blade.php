@@ -77,7 +77,7 @@
 <script src="{{ asset('backend/js/jqueryTreeView.js') }}"></script>
 <script src="{{ asset('backend/js/roles.js') }}"></script>
 
-<script>
+{{-- <script>
     document.querySelectorAll('[data-bb-toggle-password]').forEach(button => {
         button.addEventListener('click', () => {
             const passwordField = button.parentElement.querySelector('[data-bb-password]');
@@ -104,4 +104,4 @@
             }
         });
     });
-</script>
+</script> --}}

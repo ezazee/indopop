@@ -6,7 +6,6 @@
     max-height: 150px;
     overflow-y: auto;
 }
-
 </style>
     @include('backend.components.breadcrumb')
     <div class="page-body page-content">
@@ -54,15 +53,11 @@
                                         <option value="11">John Smith</option>
                                     </select>
                                 </div>
-
                             </div>
-
-
                             <div class="mt-3">
                                 <button type="button" class="btn btn-primary btn-sm">Submit</button>
                             </div>
                         </div>
-
 
                         <div class="container mt-5">
                             <div class="d-flex justify-content-between">
