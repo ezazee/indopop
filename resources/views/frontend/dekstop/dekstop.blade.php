@@ -336,9 +336,6 @@
                     </div>
                     @endforeach
                 </div>
-                <div>
-                    <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
-                </div>
             </div>
         </div>
         @include('frontend.dekstop.components.sidebar')
