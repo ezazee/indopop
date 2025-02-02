@@ -9,6 +9,7 @@ use App\Models\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use Carbon\Carbon;
 
 
 class BlogController extends Controller
@@ -55,6 +56,14 @@ class BlogController extends Controller
     public function editPost($id){
         $post = Post::with('kategori')->findOrFail($id);
         $category = Categori::all();
+        $allPosts = collect([$post])->flatten();
+
+        foreach ($allPosts as $singlePost) {
+            if ($singlePost->gambar) {
+                $singlePost->gambar = explode('|', $singlePost->gambar);
+            }
+        }
+
         return view('backend.pages.blog.posting.edit',compact('post','category'));
     }
     public function createPost() {
@@ -78,7 +87,6 @@ class BlogController extends Controller
         //     'tag' => 'nullable|json',
         // ]);
     
-            // dd($request);
             $post = Post::create([
                 'title' => $request->input('title'),
                 'slug' => $request->input('title', Str::slug($request->input('title'))),
@@ -86,6 +94,8 @@ class BlogController extends Controller
                 'content' => $request->input('content'),
                 'keyword' => $request->input('seo_meta.seo_title'),
                 'description' => $request->input('seo_meta.seo_description'),
+                'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
+                'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
                 'status' => $request->input('status'),
                 'headline' => $request->input('headline', 'no'),
                 'kategori_id' => $request->input('categories'),
@@ -116,7 +126,7 @@ class BlogController extends Controller
 
 
     public function PostUpdate(Request $request, $id) {
-
+        // dd($request);
         $post = Post::findOrFail($id);
 
         $post->update([
@@ -125,6 +135,8 @@ class BlogController extends Controller
             'content' => $request->input('content'),
             'keyword' => $request->input('seo_meta.seo_title'),
             'description' => $request->input('seo_meta.seo_description'),
+            'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
+            'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
             'status' => $request->input('status'),
             'headline' => $request->input('headline', 'no'),
             'kategori_id' => $request->input('categories'),

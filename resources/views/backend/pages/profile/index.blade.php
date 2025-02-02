@@ -113,7 +113,7 @@
                                         </label>
                                         <input class="form-control" data-counter="60"
                                             placeholder="e.g: example@domain.com" name="email" type="email"
-                                            value="{{ Auth::user()->email }}">
+                                            value="{{ Auth::user()->email }}" readonly disabled>
                                     </div>
                                 </div>
                                 <div class="card-footer bg-transparent mt-3 p-0 pt-3">

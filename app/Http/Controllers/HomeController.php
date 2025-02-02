@@ -97,7 +97,7 @@ class HomeController extends Controller
         $postDangdut = $getPostByCategory('Dangdut', 5);
         $postFlexing = $getPostByCategory('Flexing', 5);
         $postGosip = $getPostByCategory('Gosip', 5);
-        $postKPop = $getPostByCategory('K-Pop', 5);
+        $postKPop = $getPostByCategory('K-POP', 5);
         $postVibes = $getPostByCategory('Vibes', 5);
         $postMeandmom = $getPostByCategory('Me and Moms', 5);
 
@@ -481,9 +481,8 @@ class HomeController extends Controller
     public function searchResult(Request $request)
     {
 
-        $query = $request->input('q'); // Ambil query pencarian dari input
-
-        $posts = Post::with(['kategori', 'user', 'tags']) // Pastikan relasi ada
+        $query = $request->input('q'); 
+        $posts = Post::with(['kategori', 'user', 'tags'])
             ->where('status', 'publish')
             ->where(function ($q) use ($query) {
                 $q->where('title', 'ILIKE', "%{$query}%") 
@@ -496,7 +495,7 @@ class HomeController extends Controller
                   });
             })
             ->latest()
-            ->paginate(10); // Gunakan paginate tanpa ->get()
+            ->paginate(25);
 
             $postTerkini = Post::with('kategori', 'user')
             ->where('status', 'publish')

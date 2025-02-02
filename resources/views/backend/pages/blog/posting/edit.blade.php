@@ -223,20 +223,20 @@
                             <select class="form-control form-select" id="status" name="status">
                                 <option value="publish" {{ $post->status == 'publish' ? 'selected' : '' }}>Published
                                 </option>
-                                <option value="scheduled" {{ $post->status == 'scheduled' ? 'selected' : '' }}>Scheduled
+                                <option value="schedule" {{ $post->status == 'schedule' ? 'selected' : '' }}>Scheduled
                                 </option>
                             </select>
 
-
-                            <div id="form-scheduled"
-                                style="margin-top: 10px; {{ $post->status != 'scheduled' ? 'display: none;' : '' }}">
+                            <div id="form-scheduled" style="margin-top: 10px;">
                                 <label class="form-label">Date</label>
                                 <input type="date" class="form-control" name="scheduled_date"
-                                    value="{{ $post->scheduled_date ?? '' }}" min="{{ date('Y-m-d') }}">
+                                    value="{{ isset($post->start_date) ? \Carbon\Carbon::parse($post->start_date)->format('Y-m-d') : '' }}" 
+                                    min="{{ date('Y-m-d') }}">
+                            
                                 <label class="form-label">Time</label>
                                 <input type="time" class="form-control" name="scheduled_time"
-                                    value="{{ $post->scheduled_time ?? '' }}">
-                            </div>
+                                    value="{{ isset($post->start_time) ? \Carbon\Carbon::parse($post->start_time)->format('H:i') : '' }}">
+                            </div>                                                       
                         </div>
                     </div>
                     <div class="card meta-boxes">
@@ -259,30 +259,25 @@
                     <div class="card meta-boxes">
                         <div class="card-header">
                             <h4 class="card-title">
-                                <label for="categories" class="form-label">Categories</label>
+                                <label for="categories" class="form-label required">Categories</label>
                             </h4>
                         </div>
                         <div class="card-body">
-                            <div data-bb-toggle="tree-checkboxes" class="tree-categories-list-998852741">
+                            <div class="tree-categories-list-998852741">
                                 <ul class="list-unstyled">
                                     @foreach ($category as $item)
                                     <li>
-                                       <label class="form-check">
-                                          <input type="checkbox" name="categories" class="form-check-input category-checkbox" 
-                                              value="{{ $item->id }}"
-                                              {{ $post->kategori->id == $item->id ? 'checked' : '' }}>
-                                          <span class="form-check-label">
-                                              {{ $item->nama_kategori }}
-                                          </span>
-                                      </label>
+                                        <label class="form-check">
+                                            <input type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" {{ $post->kategori->id == $item->id ? 'checked' : '' }} onchange="toggleCategorySelection(this)">
+                                            <span class="form-check-label">
+                                                {{ $item->nama_kategori }}
+                                            </span>
+                                        </label>
                                         <ul class="list-unstyled ms-4 mt-2">
                                             @foreach ($item->subCategories as $subItem)
                                             <li>
                                                 <label class="form-check">
-                                                    <input type="checkbox" name="subcategories[{{ $item->id }}][]"
-                                                        class="form-check-input subcategory-checkbox"
-                                                        data-parent-id="{{ $item->id }}"
-                                                        data-subcategory-id="{{ $subItem->id }}">
+                                                    <input type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" value="{{ $subItem->id }}" onchange="toggleSubCategorySelection(this)">
                                                     <span class="form-check-label">
                                                         {{ $subItem->nama_sub_kategori }}
                                                     </span>
@@ -304,7 +299,7 @@
                         </div>
                         <div class="card-body">
                             <div class="image-box image-box-banner_image" data-counter="250">
-                                <input class="image-data" name="banner_image" type="hidden" value="" data-counter="250"
+                                <input class="image-data" name="banner_image" type="hidden" value="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" data-counter="250"
                                     required />
                                 <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
                                     class="preview-image-wrapper mb-1">
@@ -481,5 +476,62 @@
 
 </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        function toggleScheduledForm() {
+            if ($("#status").val() === "schedule") {
+                $("#form-scheduled").show();
+            } else {
+                $("#form-scheduled").hide();
+            }
+        }
+        toggleScheduledForm();
+        $("#status").change(function() {
+            toggleScheduledForm();
+        });
+    });
+</script>
+
+<script>
+    function toggleCategorySelection(selectedCategory) {
+        let categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+        categoryCheckboxes.forEach(function (checkbox) {
+            if (checkbox !== selectedCategory) {
+                checkbox.disabled = selectedCategory.checked;
+            }
+        });
+ 
+        let subcategoryCheckboxes = document.querySelectorAll('.subcategory-checkbox');
+        subcategoryCheckboxes.forEach(function (checkbox) {
+            checkbox.disabled = !selectedCategory.checked;
+        });
+ 
+        if (!selectedCategory.checked) {
+            categoryCheckboxes.forEach(function (checkbox) {
+                checkbox.disabled = false;
+            });
+ 
+            subcategoryCheckboxes.forEach(function (checkbox) {
+                checkbox.disabled = false; 
+            });
+        }
+    }
+ 
+    function toggleSubCategorySelection(selectedSubCategory) {
+        let subcategoryCheckboxes = document.querySelectorAll('.subcategory-checkbox');
+        subcategoryCheckboxes.forEach(function (checkbox) {
+            if (checkbox !== selectedSubCategory) {
+                checkbox.disabled = selectedSubCategory.checked;
+            }
+        });
+ 
+        if (!selectedSubCategory.checked) {
+            subcategoryCheckboxes.forEach(function (checkbox) {
+                checkbox.disabled = false;
+            });
+        }
+    }
+ </script>
 @endsection
