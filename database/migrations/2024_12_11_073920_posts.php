@@ -14,7 +14,7 @@ return new class extends Migration
             $table->text('content');
             $table->text('gambar')->nullable();
             $table->text('image_caption')->nullable();
-            $table->text('short_description')->nullable();
+            $table->string('short_description')->nullable();
             $table->string('slug')->nullable();
             $table->enum('status', ['draft', 'schedule', 'publish']);
             $table->string('headline')->nullable();

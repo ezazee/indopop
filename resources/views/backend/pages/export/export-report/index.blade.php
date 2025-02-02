@@ -7,13 +7,34 @@
     overflow-y: auto;
 }
 </style>
-    @include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                               <h1 class="mb-0 d-inline-block fs-6 lh-1">Report</h1>
+                           </li>
+                        </ol>
+                    </nav>
+ 
+                </div>
+            </div>
+            <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
     <div class="page-body page-content">
         <div class="container-xl">
-            <form method="POST" action="https://cms.botble.com/admin/blog/tools/data-synchronize/export/posts"
-                accept-charset="UTF-8" data-bb-toggle="export-data" class="data-synchronize-export-form"
-                data-success-message="Exported successfully." data-error-message="Export failed.">
-                <input name="_token" type="hidden" value="42fIbQT6Xrovsd94lwR86DyRlKGguWCIqCcbupto">
+            <form method="GET" action="{{ route('dashboard.exportReport') }}">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">
@@ -25,12 +46,12 @@
                             <div class="row g-3">
                                 <div class="col">
                                     <label for="startDate" class="form-label">Start Date</label>
-                                    <input type="date" id="startDate" class="form-control"
+                                    <input type="date" id="startDate" name="start_date" class="form-control"
                                         placeholder="Pilih Tanggal Awal" required>
                                 </div>
                                 <div class="col">
                                     <label for="endDate" class="form-label">End Date</label>
-                                    <input type="date" id="endDate" class="form-control"
+                                    <input type="date" id="endDate" name="end_date" class="form-control"
                                         placeholder="Pilih Tanggal Akhir" required>
                                 </div>
                             </div>
@@ -40,31 +61,24 @@
                                     <select class="select-search-full form-select" data-placeholder="Select author"
                                             data-allow-clear="true" id="author_id" name="author_id[]" multiple>
                                         <option value="" disabled>Select author</option>
-                                        <option value="1">Graciela Bogan</option>
-                                        <option value="2">Sterling Krajcik</option>
-                                        <option value="3">Lee Jenkins</option>
-                                        <option value="4">Lucile Block</option>
-                                        <option value="5">Torrey Wiegand</option>
-                                        <option value="6">Beverly Schuppe</option>
-                                        <option value="7">Mariam Green</option>
-                                        <option value="8">Jacynthe Ratke</option>
-                                        <option value="9">Ally Ortiz</option>
-                                        <option value="10">Kurtis Huel</option>
-                                        <option value="11">John Smith</option>
+                                        <option value="all">All</option>
+                                        @foreach ($user as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="mt-3">
-                                <button type="button" class="btn btn-primary btn-sm">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Filter</button>
                             </div>
                         </div>
-
+                    </form>
                         <div class="container mt-5">
                             <div class="d-flex justify-content-between">
                                 <h2>Generated Report</h2>
                                 <p><em>From: <strong>2024-12-01</strong> To: <strong>2025-01-14</strong></em></p>
                             </div>
-                            <label class="form-label">Report User (NamaUser)</label>
+                            {{-- <label class="form-label">Report User (NamaUser)</label> --}}
                             <table class="table table-bordered mt-3">
                                 <thead class="table-light">
                                     <tr>
@@ -75,51 +89,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($user as $user)
                                     <tr>
-                                        <td>Mohamad Rezaa</td>
-                                        <td>email.com</td>
-                                        <td>admin</td>
-                                        <td></td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->role->name }}</td>
+                                        <td>{{ $user->posts_count }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Mohamad Rezaa</td>
-                                        <td>email.com</td>
-                                        <td>admin</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mohamad Rezaa</td>
-                                        <td>email.com</td>
-                                        <td>admin</td>
-                                        <td></td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-
-                        {{-- <div class="mb-3 position-relative">
-                            <label class="form-label">
-                                Format
-                            </label>
-                            <div class="position-relative form-check-group">
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="format" value="pdf" checked>
-                                    <span class="form-check-label">PDF</span>
-                                </label>
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="format" value="xlsx">
-                                    <span class="form-check-label">Excel</span>
-                                </label>
-                            </div>
-                        </div> --}}
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary" type="submit">
-                            Export
-                        </button>
+                        <form method="POST" action="{{ route('dashboard.exportPdf') }}">
+                            @csrf
+                            <input type="hidden" name="user" value="{{ $user_json }}">
+                            <input type="hidden" name="start_date" value="{{ $start_date }}">
+                            <input type="hidden" name="end_date" value="{{ $end_date }}">
+                            <button type="submit" class="btn btn-primary mt-3">Export to PDF</button>
+                        </form>                    
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 @endsection

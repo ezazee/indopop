@@ -1,13 +1,34 @@
 @extends('backend.master.app')
 @section('content')
-@include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+   <div class="container-xl">
+       <div class="row g-2 align-items-center">
+           <div class="col">
+               <div class="page-pretitle">
+                   <nav aria-label="breadcrumb">
+                       <ol class="breadcrumb">
+                           <li class="breadcrumb-item">
+                               <a href="{{ route('dashboard') }}">Dashboard</a>
+                           </li>
+                           <li class="breadcrumb-item active" aria-current="page">
+                              <h1 class="mb-0 d-inline-block fs-6 lh-1">Post Data</h1>
+                          </li>
+                       </ol>
+                   </nav>
+
+               </div>
+           </div>
+           <div class="col-auto ms-auto d-print-none">
+               <div class="btn-list">
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
 <div class="page-body page-content">
    <div class="container-xl">
-      <form method="POST" action="https://cms.botble.com/admin/blog/tools/data-synchronize/export/posts"
-         accept-charset="UTF-8" data-bb-toggle="export-data" class="data-synchronize-export-form"
-         data-success-message="Exported successfully." data-error-message="Export failed.">
-         <input name="_token"
-            type="hidden" value="42fIbQT6Xrovsd94lwR86DyRlKGguWCIqCcbupto">
+      <form method="POST" action="{{ route('posts.export') }}">
+         @csrf
          <div class="card">
             <div class="card-header">
                <h4 class="card-title">
@@ -20,7 +41,7 @@
                      <div class="col">
                         <div class="text-center bg-body-tertiary rounded p-3">
                            <h3 class="text-muted mb-2">Total Posts</h3>
-                           <div class="fs-1 fw-bold">20</div>
+                           <div class="fs-1 fw-bold">{{ $postCount }}</div>
                         </div>
                      </div>
                   </div>
@@ -36,9 +57,9 @@
                      <div class="mb-3 position-relative">
                         <label class="form-check">
                         <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="name" checked>
+                           value="title" checked>
                         <span class="form-check-label">
-                        Name
+                        Title
                         </span>
                         </label>
                      </div>
@@ -63,36 +84,18 @@
                      <div class="mb-3 position-relative">
                         <label class="form-check">
                         <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="is_featured" checked>
+                           value="headline" checked>
                         <span class="form-check-label">
-                        Is Featured
+                        Is Headline
                         </span>
                         </label>
                      </div>
                      <div class="mb-3 position-relative">
                         <label class="form-check">
                         <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="format_type" checked>
-                        <span class="form-check-label">
-                        Format Type
-                        </span>
-                        </label>
-                     </div>
-                     <div class="mb-3 position-relative">
-                        <label class="form-check">
-                        <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="image" checked>
+                           value="gambar" checked>
                         <span class="form-check-label">
                         Image
-                        </span>
-                        </label>
-                     </div>
-                     <div class="mb-3 position-relative">
-                        <label class="form-check">
-                        <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="views" checked>
-                        <span class="form-check-label">
-                        Views
                         </span>
                         </label>
                      </div>
@@ -102,15 +105,6 @@
                            value="slug" checked>
                         <span class="form-check-label">
                         Slug
-                        </span>
-                        </label>
-                     </div>
-                     <div class="mb-3 position-relative">
-                        <label class="form-check">
-                        <input type="checkbox" name="columns[]" class="form-check-input export-column"
-                           value="url" checked>
-                        <span class="form-check-label">
-                        URL
                         </span>
                         </label>
                      </div>
@@ -156,6 +150,10 @@
                      <label class="form-check form-check-inline">
                      <input class="form-check-input" type="radio" name="format" value="xlsx">
                      <span class="form-check-label">Excel</span>
+                     </label>
+                     <label class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="format" value="json">
+                        <span class="form-check-label">JSON</span>
                      </label>
                   </div>
                </div>

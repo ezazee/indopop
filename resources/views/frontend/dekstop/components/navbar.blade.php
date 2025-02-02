@@ -11,7 +11,7 @@
                     <div class="main-menu-container">
                         <ul class="main-menu">
                             <li class="menu-item">
-                                <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">HOME</a>
+                                <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
                             </li>
                             @foreach ($categories as $item)
                             <li class="menu-item dropdown">
@@ -25,11 +25,11 @@
                             </li>
                             @endforeach
                             <li class="menu-item">
-                                <a href="https://www.youtube.com/@indopopid" target="_blank">VIDEO</a>
+                                <a href="https://www.youtube.com/@indopopid" target="_blank">Video</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ url('/indeks') }}"
-                                    class="{{ Request::is('indeks') ? 'active' : '' }}">INDEKS</a>
+                                    class="{{ Request::is('indeks') ? 'active' : '' }}">Indeks</a>
                             </li>
                         </ul>
 

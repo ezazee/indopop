@@ -5,7 +5,10 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Carbon\Carbon;
+use App\Models\Post;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -30,8 +33,7 @@ class MemberController extends Controller
                 }
             }
         }
-    
-        $user = $query->paginate(5);
+        $user = $query->orderBy('first_name', 'asc')->paginate(5);
         return view('backend.pages.member.index', compact('user'));
     }
 
@@ -147,4 +149,57 @@ class MemberController extends Controller
         Alert::error('Delete', 'Member Deleted!!');
         return redirect()->route('member.index')->with('success', 'Member deleted successfully.');
     }
+
+
+    // chart
+
+    public function getChartData(Request $request)
+    {
+            $userId = $request->query('user_id');
+            $dataType = $request->query('data_type', 'daily');
+        
+            if ($dataType == 'daily') {
+                $chartData = Post::selectRaw('DATE(created_at AT TIME ZONE \'UTC\' AT TIME ZONE \'Asia/Jakarta\') as date, COUNT(*) as total')
+                    ->where('user_id', $userId)
+                    ->whereDate(DB::raw('DATE(created_at AT TIME ZONE \'UTC\' AT TIME ZONE \'Asia/Jakarta\')'), Carbon::today())
+                    ->groupBy(DB::raw('DATE(created_at AT TIME ZONE \'UTC\' AT TIME ZONE \'Asia/Jakarta\')'))
+                    ->orderBy(DB::raw('DATE(created_at AT TIME ZONE \'UTC\' AT TIME ZONE \'Asia/Jakarta\')'))
+                    ->get();
+            }
+             elseif ($dataType == 'weekly') {
+                $startOfWeek = Carbon::now()->startOfWeek();
+                $endOfWeek = Carbon::now()->endOfWeek(); 
+            
+                $chartData = Post::selectRaw('
+                    EXTRACT(YEAR FROM created_at) as year, 
+                    EXTRACT(WEEK FROM created_at) as week, 
+                    COUNT(*) as total')
+                    ->where('user_id', $userId)
+                    ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
+                    ->groupBy(DB::raw('EXTRACT(YEAR FROM created_at), EXTRACT(WEEK FROM created_at)'))
+                    ->orderBy(DB::raw('EXTRACT(YEAR FROM created_at), EXTRACT(WEEK FROM created_at)'))
+                    ->get();
+            } elseif ($dataType == 'monthly') {
+                $chartData = Post::selectRaw('
+                EXTRACT(MONTH FROM created_at) as month, 
+                COUNT(*) as total')
+                ->where('user_id', $userId)
+                ->whereYear('created_at', Carbon::now()->year)
+                ->whereMonth('created_at', Carbon::now()->month)
+                ->groupBy(DB::raw('EXTRACT(MONTH FROM created_at)'))
+                ->orderBy(DB::raw('EXTRACT(MONTH FROM created_at)'))
+                ->get();
+            } else {
+                return response()->json(['error' => 'Invalid data type'], 400);
+            }
+        
+            return response()->json([
+                'daily' => $dataType == 'daily' ? $chartData : [],
+                'weekly' => $dataType == 'weekly' ? $chartData : [],
+                'monthly' => $dataType == 'monthly' ? $chartData : []
+            ]);
+        
+    }
+    
+    
 }

@@ -7,6 +7,7 @@ use App\Models\Categori;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -52,7 +53,7 @@ class BlogController extends Controller
     }
     
     public function editPost($id){
-        $post = Post::where('id', $id)->firstOrFail();
+        $post = Post::with('kategori')->findOrFail($id);
         $category = Categori::all();
         return view('backend.pages.blog.posting.edit',compact('post','category'));
     }
@@ -77,7 +78,7 @@ class BlogController extends Controller
         //     'tag' => 'nullable|json',
         // ]);
     
-
+            // dd($request);
             $post = Post::create([
                 'title' => $request->input('title'),
                 'slug' => $request->input('title', Str::slug($request->input('title'))),
@@ -89,7 +90,7 @@ class BlogController extends Controller
                 'headline' => $request->input('headline', 'no'),
                 'kategori_id' => $request->input('categories'),
                 'gambar' => $request->input('banner_image'),
-                'user_id' => 1,
+                'user_id' => Auth::id(),
             ]);
             
             $tags = json_decode($request->input('tag'), true);
@@ -109,9 +110,49 @@ class BlogController extends Controller
             
                 $post->tags()->sync($tagIds);
             }
-        
-        return redirect()->back()->with('success', 'Category Added successfully.');
+        Alert::success('Success', 'Post added successfully!!');
+        return redirect()->back()->with('success', 'post Added successfully.');
     }
+
+
+    public function PostUpdate(Request $request, $id) {
+
+        $post = Post::findOrFail($id);
+
+        $post->update([
+            'title' => $request->input('title'),
+            'short_description' => $request->input('short_description'),
+            'content' => $request->input('content'),
+            'keyword' => $request->input('seo_meta.seo_title'),
+            'description' => $request->input('seo_meta.seo_description'),
+            'status' => $request->input('status'),
+            'headline' => $request->input('headline', 'no'),
+            'kategori_id' => $request->input('categories'),
+            'gambar' => $request->input('banner_image'),
+        ]);
+    
+        $tags = json_decode($request->input('tag'), true);
+        if ($tags && is_array($tags)) {
+            $tagIds = [];
+            foreach ($tags as $tag) {
+                if (!empty($tag['value'])) {
+                    $slug = Str::slug($tag['value']);
+                    
+                    $tagModel = Tag::firstOrCreate(
+                        ['nama_tags' => $tag['value']],
+                        ['slug' => $slug]
+                    );
+                    $tagIds[] = $tagModel->id;
+                }
+            }
+    
+            $post->tags()->sync($tagIds);
+        }
+    
+        Alert::success('Success', 'Post updated successfully!!');
+        return redirect()->back()->with('success', 'post Added successfully.');
+    }
+    
 
     public function deletePost($id)
     {

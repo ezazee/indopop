@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // Middleware lainnya
         'device' => \App\Http\Middleware\DeviceDetection::class,
+        'role' => \App\Http\Middleware\RoleMiddleware::class,
     ];
 }

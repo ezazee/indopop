@@ -1,7 +1,34 @@
 @extends('backend.master.app')
 
 @section('content')
-@include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+   <div class="container-xl">
+       <div class="row g-2 align-items-center">
+           <div class="col">
+               <div class="page-pretitle">
+                   <nav aria-label="breadcrumb">
+                       <ol class="breadcrumb">
+                           <li class="breadcrumb-item">
+                               <a href="{{ route('dashboard') }}">Dashboard</a>
+                           </li>
+                           <li class="breadcrumb-item">
+                              <a href="{{ route('blog.post') }}">Post</a>
+                          </li>
+                           <li class="breadcrumb-item active" aria-current="page">
+                              <h1 class="mb-0 d-inline-block fs-6 lh-1">Create</h1>
+                          </li>
+                       </ol>
+                   </nav>
+
+               </div>
+           </div>
+           <div class="col-auto ms-auto d-print-none">
+               <div class="btn-list">
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
 
 <div class="page-body page-content">
    <div class="container-xl">
@@ -23,10 +50,9 @@
                                  <label class="form-label required" for="slug">Permalink</label>
                                  <div class="input-group input-group-flat">
                                     <span class="input-group-text">
-                                        {{ config('app.url') }}/
+                                        {{ config('app.url') }}/detail/
                                     </span>
-                                    <input class="form-control ps-0" type="text" name="slug"
-                                       id="slug" />
+                                    <input class="form-control ps-0" type="text" id="slug" />
                                     <span class="input-group-text slug-actions">
                                        <a href="#" class="link-secondary d-none"
                                           data-bs-toggle="tooltip" aria-label="Generate URL"
@@ -49,19 +75,12 @@
                                     </span>
                                  </div>
                               </div>
-                              <small class="form-hint mt-n2 text-truncate">Preview: <a
-                                 href="#"
-                                 target="_blank">https://cms.botble.com/</a></small>
-                              <input class="slug-current" name="slug" type="hidden" value="">
-                              <div class="slug-data" data-url="#"
-                                 data-view="#" data-id="0">
-                              </div>
                            </div>
                         </div>
                         <div class="mb-3 position-relative">
                            <label for="description" class="form-label">Description</label>
-                           <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description" name="short_description"
-                              cols="50" id="description"></textarea>
+                           <textarea class="form-control" data-counter="200" rows="4" placeholder="Short description" name="short_description"
+                              cols="50"></textarea>
                         </div>
                         <div class="mb-3 position-relative">
                            <label for="content" class="form-label">Content</label>
@@ -96,8 +115,8 @@
                      <div class="card-body">
                         <div class="hidden seo-edit-section" v-pre>
                            <div class="mb-3 position-relative">
-                              <label for="seo_meta[seo_title]" class="form-label">SEO Title</label>
-                              <input class="form-control" data-counter="70" placeholder="SEO Title" data-allow-over-limit name="seo_meta[seo_title]" type="text" id="seo_meta[seo_title]">
+                              <label for="seo_meta[seo_title]" class="form-label">SEO Keyword</label>
+                              <input class="form-control" data-counter="70" placeholder="SEO Keyword" data-allow-over-limit name="seo_meta[seo_title]" type="text" id="seo_meta[seo_title]">
                            </div>
                            <div class="mb-3 position-relative">
                               <label for="seo_meta[seo_description]" class="form-label">SEO description</label>
@@ -115,7 +134,7 @@
                   </div>
                   <div class="card-body">
                      <div class="btn-list">
-                        <button class="btn btn-primary" type="submit" value="apply" name="submitter">
+                        <button class="btn btn-primary" type="submit">
                            <svg class="icon icon-left svg-icon-ti-ti-device-floppy"
                               xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -188,25 +207,25 @@
                </header>
                <div class="card meta-boxes">
                   <div class="card-header">
-                     <h4 class="card-title">
-                        <label for="status" class="form-label required">Status</label>
-                     </h4>
+                      <h4 class="card-title">
+                          <label for="status" class="form-label required">Status</label>
+                      </h4>
                   </div>
                   <div class="card-body">
-                     <label for="status">Status</label>
-                     <select class="form-control form-select" id="status" name="status">
-                         <option value="publish">Published</option>
-                         <option value="scheduled">Scheduled</option>
-                     </select>
-
-                     <div id="form-scheduled" style="margin-top: 10px;">
-                         <label class="form-label">Date</label>
-                         <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
-                         <label class="form-label">Time</label>
-                         <input type="time" class="form-control">
-                     </div>
-                 </div>
-               </div>
+                      <label for="status">Status</label>
+                      <select class="form-control form-select" id="status" name="status">
+                          <option value="publish">Published</option>
+                          <option value="schedule">Scheduled</option>
+                      </select>
+              
+                      <div id="form-scheduled" style="margin-top: 10px;">
+                          <label class="form-label">Date</label>
+                          <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
+                          <label class="form-label">Time</label>
+                          <input type="time" class="form-control">
+                      </div>
+                  </div>
+              </div>
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
@@ -231,49 +250,32 @@
                      </h4>
                   </div>
                   <div class="card-body">
-                     <div class="mb-3">
-                        <div class="input-icon">
-                           <input type="text" id="search-category-input-998852741" class="form-control"
-                              placeholder="Search..." onkeyup="filter_categories_998852741(998852741)"
-                              formnovalidate />
-                           <span class="input-icon-addon">
-                              <svg class="icon  svg-icon-ti-ti-search" xmlns="http://www.w3.org/2000/svg"
-                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round">
-                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                 <path d="M21 21l-6 -6" />
-                              </svg>
-                           </span>
-                        </div>
-                     </div>
-                     <div data-bb-toggle="tree-checkboxes" class="tree-categories-list-998852741">
-                        <ul class="list-unstyled ">
-                           @foreach ($category as $item)
-                          <li>
-                             <label class="form-check">
-                                <input type="checkbox" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" data-category-id="{{ $item->id }}">
-                                <span class="form-check-label" required>
-                                   {{ $item->nama_kategori }}
-                                </span>
-                             </label>
-                             <ul class="list-unstyled ms-4 mt-2">
-                                @foreach ($item->subCategories as $subItem)
-                                   <li>
-                                      <label class="form-check">
-                                         <input type="checkbox" name="subcategories[{{ $item->id }}][]" class="form-check-input subcategory-checkbox" data-parent-id="{{ $item->id }}" data-subcategory-id="{{ $subItem->id }}">
-                                         <span class="form-check-label">
-                                            {{ $subItem->nama_sub_kategori }}
-                                         </span>
-                                      </label>
-                                   </li>
-                                @endforeach
-                             </ul>
-                          </li>
-                       @endforeach
+                     <div class="tree-categories-list-998852741">
+                        <ul class="list-unstyled">
+                            @foreach ($category as $item)
+                            <li>
+                                <label class="form-check">
+                                    <input type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}">
+                                    <span class="form-check-label">
+                                        {{ $item->nama_kategori }}
+                                    </span>
+                                </label>
+                                <ul class="list-unstyled ms-4 mt-2">
+                                    @foreach ($item->subCategories as $subItem)
+                                    <li>
+                                        <label class="form-check">
+                                            <input type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories" class="form-check-input subcategory-checkbox" value="{{ $subItem->id }}">
+                                            <span class="form-check-label">
+                                                {{ $subItem->nama_sub_kategori }}
+                                            </span>
+                                        </label>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            @endforeach
                         </ul>
-                     </div>
+                    </div>                    
                   </div>
                </div>
                <div class="card meta-boxes">

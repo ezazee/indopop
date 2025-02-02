@@ -66,6 +66,10 @@ class PostSeeder extends Seeder
                         }
                     }
                 }
+
+                $user = DB::table('users')->where('email', $postData['Author Email'])->first();
+                $userId = $user ? $user->id : 1;
+
             
                 $post = Post::create([
                     'title' => $postData['Title'],
@@ -76,7 +80,7 @@ class PostSeeder extends Seeder
                     'status' => $postData['Status'],
                     'kategori_id' => $category ? $category->id : 1,
                     'headline' => $headlineStatus,
-                    'user_id' => 1,
+                    'user_id' => $userId,
                     'created_at' => !empty($postData['Date'])
                         ? Carbon::createFromFormat('Y-m-d', $postData['Date'])->format('Y-m-d H:i:s')
                         : now()->format('Y-m-d H:i:s'),

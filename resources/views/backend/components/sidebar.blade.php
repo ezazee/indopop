@@ -41,12 +41,16 @@
                         </svg>
                         Profile
                     </a>
-                    <a class="dropdown-item" href="#">
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <svg class="icon dropdown-item-icon svg-icon-ti-ti-logout" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 -2h7a2 2 0 0 0 2 -2v-2" />
                             <path d="M9 12h12l-3 -3" />
                             <path d="M18 15l3 -3" />
                         </svg>
@@ -115,6 +119,7 @@
                                 Posts
                             </span>
                         </a>
+                        @if(Auth::check() && Auth::user()->role && Auth::user()->role->name == 'Administrator')
                         <a class="dropdown-item nav-priority-20 {{ Request::is('dashboard/blog/category*') ? 'active' : '' }}"
                             href="{{ route('category.create') }}" id="cms-plugins-blog-categories" title="Categories">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Categories">
@@ -130,6 +135,7 @@
                                 Categories
                             </span>
                         </a>
+                        @endif
                         <a class="dropdown-item nav-priority-30 {{ Request::is('dashboard/blog/tags*') ? 'active' : '' }}"
                             href="{{ route('tags.index') }}" id="cms-plugins-blog-tags" title="Tags">
                             <span class="nav-link-icon d-md-none d-lg-inline-block" title="Tags">
@@ -148,6 +154,7 @@
                         </a>
                     </div>
                 </li>
+                @if(Auth::check() && Auth::user()->role && Auth::user()->role->name == 'Administrator')
                 <li
                     class="nav-item {{ Request::is('dashboard/member') || Request::is('dashboard/member/create') || Request::is('dashboard/member/edit/*') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-50" href="{{ route('member.index') }}" id="cms-core-member"
@@ -168,6 +175,7 @@
                         </span>
                     </a>
                 </li>
+                @endif
                 <li class="nav-item {{ Request::is('dashboard/media') ? 'active' : '' }}">
                     <a class="nav-link nav-priority-999" href="{{ route('media.index') }}" id="cms-core-media"
                         title="Media">
@@ -185,6 +193,7 @@
                         </span>
                     </a>
                 </li>
+                @if(Auth::check() && Auth::user()->role && Auth::user()->role->name == 'Administrator')
                 <li class="nav-item dropdown {{ Request::is('dashboard/export*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle nav-priority-3" href="#cms-plugins-blog" id="cms-plugins-blog"
                         data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false"
@@ -325,6 +334,7 @@
                         </a>
                     </div>
                 </li>
+                @endif
             </ul>
         </div>
     </div>

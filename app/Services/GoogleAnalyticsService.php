@@ -62,7 +62,6 @@ class GoogleAnalyticsService
             'topPages' => [],
             'topBrowsers' => [],
             'topReferrers' => [],
-            'recentPosts' => [],
             'activityLogs' => [],
             'requestErrors' => [],
         ];
@@ -70,13 +69,23 @@ class GoogleAnalyticsService
         $siteAnalyticsResponse = $this->analytics->runReport([
             'property' => 'properties/' . $propertyId,
             'dateRanges' => [$dateRange],
-            'metrics' => $siteMetrics,
+            'metrics' => [
+                new Metric(['name' => 'sessions']),
+                new Metric(['name' => 'bounceRate']),
+                new Metric(['name' => 'screenPageViews']),
+                new Metric(['name' => 'activeUsers']),
+            ],
         ]);
-
+        
+        $analyticsData['siteAnalytics'] = [];
+        
         foreach ($siteAnalyticsResponse->getRows() as $row) {
-            foreach ($row->getMetricValues() as $key => $metricValue) {
-                $analyticsData['siteAnalytics'][$siteMetrics[$key]->getName()] = $metricValue->getValue();
-            }
+            $analyticsData['siteAnalytics'][] = [
+                'sessions' => $row->getMetricValues()[0]->getValue(), 
+                'bouncerate' => number_format($row->getMetricValues()[1]->getValue() * 100, 2),
+                'pageviews' => $row->getMetricValues()[2]->getValue(),
+                'activeusers' => $row->getMetricValues()[3]->getValue(),
+            ];
         }
 
         $topPagesResponse = $this->analytics->runReport([
@@ -89,7 +98,7 @@ class GoogleAnalyticsService
         $analyticsData['topPages'] = [];
         
         foreach ($topPagesResponse->getRows() as $index => $row) {
-            if ($index >= 10) break; // Limit to 10 items
+            if ($index >= 10) break;
             $analyticsData['topPages'][] = [
                 'page' => $row->getDimensionValues()[0]->getValue(),
                 'sessions' => $row->getMetricValues()[0]->getValue(),
@@ -129,7 +138,7 @@ class GoogleAnalyticsService
         ]);
 
         foreach ($topBrowsersResponse->getRows() as $index => $row) {
-            if ($index >= 10) break;
+            if ($index >= 15) break;
             $analyticsData['topBrowsers'][] = [
                 'browser' => $row->getDimensionValues()[0]->getValue(),
                 'sessions' => $row->getMetricValues()[0]->getValue(),
@@ -143,21 +152,14 @@ class GoogleAnalyticsService
             'dimensions' => $referrerDimensions,
         ]);
 
-        foreach ($topReferrersResponse->getRows() as $row) {
+        foreach ($topReferrersResponse->getRows() as $index => $row) {
+            if ($index >= 5) break;
             $analyticsData['topReferrers'][] = [
                 'referrer' => $row->getDimensionValues()[0]->getValue(),
                 'sessions' => $row->getMetricValues()[0]->getValue(),
             ];
         }
 
-        $analyticsData['recentPosts'] = Post::orderBy('created_at', 'desc')->take(5)->get();
-
-        // Fetch activity logs (example)
-        // $analyticsData['activityLogs'] = ActivityLog::orderBy('created_at', 'desc')->take(5)->get();
-
-        // Fetch request errors (example)
-        // $analyticsData['requestErrors'] = RequestError::orderBy('created_at', 'desc')->take(5)->get();
-        // dd($analyticsData);
         return $analyticsData;
     } catch (Exception $e) {
         throw new Exception("Error fetching Google Analytics report: " . $e->getMessage());

@@ -1,6 +1,31 @@
 @extends('backend.master.app')
 @section('content')
-    @include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                               <h1 class="mb-0 d-inline-block fs-6 lh-1">Member</h1>
+                           </li>
+                        </ol>
+                    </nav>
+ 
+                </div>
+            </div>
+            <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ 
 
     <div class="page-body page-content">
         <div class="container-xl">
@@ -273,7 +298,7 @@
                                                     </a>
 
                                                     <a href="#" class="btn btn-sm btn-icon btn-info"
-                                                        data-bs-toggle="modal" data-bs-target="#viewModal"
+                                                        data-bs-toggle="modal" data-bs-target="#viewModal" data-id="{{ $item->id }}"
                                                         style="margin-right: 5px;">
                                                         <svg class="icon svg-icon-ti-ti-eye"
                                                             xmlns="http://www.w3.org/2000/svg" width="24"
@@ -290,9 +315,6 @@
                                                         </svg>
                                                         <span class="sr-only">View</span>
                                                     </a>
-
-
-
                                                     <form action="{{ route('member.delete', ['id' => $item->id]) }}"
                                                         method="POST" style="display:inline;">
                                                         @csrf
@@ -329,7 +351,8 @@
                                 {{ $user->links('pagination::bootstrap-4') }}
                             </div>
                         </div>
-                    </div>
+                    </div>  
+
                 </div>
             </div>
         </div>

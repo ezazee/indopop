@@ -30,13 +30,12 @@ class TagsController extends Controller
             }
         }
     
-        $tag = $query->paginate(50);
+        $tag = $query->orderBy('nama_tags', 'asc')->paginate(50);
         return view('backend.pages.blog.tags.index',compact('tag'));
     }
     public function tagsEdit($id)
     {
         $tag = Tag::where('id', $id)->firstOrFail();
-        Alert::success('Success', 'Tags updated successfully!!');
         return view('backend.pages.blog.tags.edit',compact('tag'));
     }
     public function tagsCreate()
@@ -45,6 +44,14 @@ class TagsController extends Controller
     }
 
     public function tagAdd(Request $request){
+
+        $existingTag = Tag::where('nama_tags', $request->nama_tags)->first();
+
+        if ($existingTag) {
+            Alert::info('Info', 'Tag already exists!');
+            return redirect()->back()->with('info', 'Tag already exists.');
+        }
+
         Tag::create([
             'nama_tags' => $request->nama_tags,
             'slug' => Str::slug($request->nama_tags),

@@ -77,12 +77,12 @@
                </div>
                <div class="col dashboard-widget-item col-12 col-md-6 col-lg-3">
                   <a class="text-white d-block rounded position-relative overflow-hidden text-decoration-none bg-success"
-                     href="#" style="">
+                     href="{{ route('tags.index') }}" style="">
                      <div class="d-flex justify-content-between align-items-center">
                         <div class="details px-4 py-3 d-flex flex-column justify-content-between">
-                           <div class="desc fw-medium">Plugins</div>
+                           <div class="desc fw-medium">Tags</div>
                            <div class="number fw-bolder">
-                              <span>16</span>
+                              <span>{{ $tagcount }}</span>
                            </div>
                         </div>
                         <div class="visual ps-1 position-absolute end-0">
@@ -104,12 +104,12 @@
                </div>
                <div class="col dashboard-widget-item col-12 col-md-6 col-lg-3">
                   <a class="text-white d-block rounded position-relative overflow-hidden text-decoration-none bg-yellow"
-                     href="#" style="">
+                     href="{{ route('category.create') }}" style="">
                      <div class="d-flex justify-content-between align-items-center">
                         <div class="details px-4 py-3 d-flex flex-column justify-content-between">
-                           <div class="desc fw-medium">Pages</div>
+                           <div class="desc fw-medium">Categories</div>
                            <div class="number fw-bolder">
-                              <span>5</span>
+                              <span>{{ $categoryCount }}</span>
                            </div>
                         </div>
                         <div class="visual ps-1 position-absolute end-0">
@@ -177,8 +177,98 @@
                         </div>
                      </div>
                   </div>
-                  <div class="d-flex flex-column justify-content-between h-100 widget-content  "
-                     style="min-height: 10rem;"></div>
+                  <div class="d-flex flex-column justify-content-between h-100 widget-content  " style="min-height: 10rem;">
+                     
+                  </div>
+                  <div class="row row-cards px-2 mb-3">
+                     <div class="col-sm-6 col-lg-3">
+                        <div class="card analytic-card">
+                           <div class="card-body p-3">
+                              <div class="row align-items-center">
+                                 <div class="col-auto">
+                                    <svg class="icon icon-md text-white bg-pink rounded p-1 svg-icon-ti-ti-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                       <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                       <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                 </div>
+                                 <div class="col mt-0">
+                                    <p class="text-secondary mb-0 fs-4">
+                                       Sessions
+                                    </p>
+                                    <h3 class="mb-n1 fs-1" id="sessions">0</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3">
+                        <div class="card analytic-card">
+                           <div class="card-body p-3">
+                              <div class="row align-items-center">
+                                 <div class="col-auto">
+                                    <svg class="icon icon-md text-white bg-lime rounded p-1 svg-icon-ti-ti-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                       <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                                       <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                       <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+                                    </svg>
+                                 </div>
+                                 <div class="col mt-0">
+                                    <p class="text-secondary mb-0 fs-4">
+                                       Visitors
+                                    </p>
+                                    <h3 class="mb-n1 fs-1" id="visitors">0</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3">
+                        <div class="card analytic-card">
+                           <div class="card-body p-3">
+                              <div class="row align-items-center">
+                                 <div class="col-auto">
+                                    <svg class="icon icon-md text-white bg-azure rounded p-1 svg-icon-ti-ti-traffic-cone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                       <path d="M4 20l16 0"></path>
+                                       <path d="M9.4 10l5.2 0"></path>
+                                       <path d="M7.8 15l8.4 0"></path>
+                                       <path d="M6 20l5 -15h2l5 15"></path>
+                                    </svg>
+                                 </div>
+                                 <div class="col mt-0">
+                                    <p class="text-secondary mb-0 fs-4">
+                                       Pageviews
+                                    </p>
+                                    <h3 class="mb-n1 fs-1" id="pageviews">0</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6 col-lg-3">
+                        <div class="card analytic-card">
+                           <div class="card-body p-3">
+                              <div class="row align-items-center">
+                                 <div class="col-auto">
+                                    <svg class="icon icon-md text-white bg-yellow rounded p-1 svg-icon-ti-ti-bolt" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                       <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"></path>
+                                    </svg>
+                                 </div>
+                                 <div class="col mt-0">
+                                    <p class="text-secondary mb-0 fs-4">
+                                       Bounce Rate
+                                    </p>
+                                    <h3 class="mb-n1 fs-1" id="bounceRate">0%</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
             <div class="widget-item col-12 d-flex col-md-6 col-sm-6">
@@ -349,8 +439,7 @@
                  </div>
                </div>
             </div>
-            <div class="widget-item col-12 d-flex col-md-6 col-sm-6" id="widget_posts_recent"
-               data-url="https://cms.botble.com/admin/blog/posts/widgets/recent-posts">
+            <div class="widget-item col-12 d-flex col-md-6 col-sm-6">
                <div class="card card-sm flex-fill">
                   <div class="card-header">
                      <h4 class="card-title">
@@ -358,34 +447,25 @@
                      </h4>
                      <div class="card-actions btn-actions"></div>
                   </div>
-                  <div class="d-flex flex-column justify-content-between h-100 widget-content  "
-                     style="min-height: 10rem;"></div>
-               </div>
-            </div>
-            <div class="widget-item col-12 d-flex col-md-6 col-sm-6" id="widget_audit_logs"
-               data-url="https://cms.botble.com/admin/audit-logs/widgets/activities">
-               <div class="card card-sm flex-fill">
-                  <div class="card-header">
-                     <h4 class="card-title">
-                        Activities Logs
-                     </h4>
-                     <div class="card-actions btn-actions"></div>
-                  </div>
-                  <div class="d-flex flex-column justify-content-between h-100 widget-content  "
-                     style="min-height: 10rem;"></div>
-               </div>
-            </div>
-            <div class="widget-item col-12 d-flex col-md-6 col-sm-6" id="widget_request_errors"
-               data-url="https://cms.botble.com/admin/request-logs/widgets/request-errors">
-               <div class="card card-sm flex-fill">
-                  <div class="card-header">
-                     <h4 class="card-title">
-                        Request Errors
-                     </h4>
-                     <div class="card-actions btn-actions"></div>
-                  </div>
-                  <div class="d-flex flex-column justify-content-between h-100 widget-content  "
-                     style="min-height: 10rem;"></div>
+                  <div class="d-flex flex-column justify-content-between h-100 widget-content" style="min-height: 10rem;">
+                     <table class="table table-striped" id="top-refrer-table">
+                         <thead>
+                             <tr>
+                                 <th>#</th>
+                                 <th>Tittle</th>
+                             </tr>
+                         </thead>
+                         <tbody class="table-body-gettopReferrers">
+                           @foreach ($recentPosts as $index => $item)
+                           <tr>
+                              <td>{{ $index+1 }}</td>
+                              <td>{{ $item->title }}</td>
+                           </tr>
+                           @endforeach
+                         </tbody>
+                     </table>
+                     <p id="no-data" class="text-center" style="display: none;">No data received</p>
+                 </div>
                </div>
             </div>
          </div>
@@ -397,7 +477,8 @@
    document.addEventListener('DOMContentLoaded', function () {
        fetchTopPages();
        fetchTopBrowsers();
-      //  fetchTopReferrers();
+       fetchTopReferrers();
+       fetchSiteAnalytics();
    });
 
    function fetchTopPages() {
@@ -421,7 +502,7 @@
                   let row = document.createElement('tr');
                   row.innerHTML = `
                      <td>${index + 1}</td>
-                     <td>${page.page}</td>
+                     <td>{{ config('app.url') }}${page.page}</td>
                      <td>${page.sessions}</td>
                   `;
                   tableBody.appendChild(row);
@@ -478,5 +559,67 @@
       });
 
    }
+
+   function fetchTopReferrers() {
+      const tableBody = document.querySelector('.table-body-gettopReferrers');
+      const loadingRow = document.createElement('tr');
+      loadingRow.classList.add('loading-row');
+      loadingRow.innerHTML = `<td colspan="3" class="text-center">Loading...</td>`;
+      tableBody.innerHTML = '';
+      tableBody.appendChild(loadingRow);
+
+      fetch('/top-referer')
+      .then(response => response.json())
+      .then(data => {
+         const loadingRow = document.querySelector('.loading-row');
+         if (loadingRow) {
+            loadingRow.remove();
+         }
+         if (data.topReferrers && data.topReferrers.length > 0) {
+               const tableBody = document.querySelector('.table-body-gettopReferrers');
+               data.topReferrers.forEach((referrer, index) => {
+                  let row = document.createElement('tr');
+                  row.innerHTML = `
+                     <td>${index + 1}</td>
+                     <td>${referrer.referrer}</td>
+                     <td>${referrer.sessions}</td>
+                  `;
+                  tableBody.appendChild(row);
+               });
+         } else {
+               const tableBody = document.querySelector('.table-body-gettopReferrers');
+               let row = document.createElement('tr');
+               row.innerHTML = `<td colspan="3" class="text-center">No data received</td>`;
+               tableBody.appendChild(row);
+         }
+      })
+      .catch(error => {
+         console.error('Error fetching data:', error);
+         tableBody.innerHTML = `<tr><td colspan="3" class="text-center">Failed to load data</td></tr>`;
+      });
+
+   }
+
+   function fetchSiteAnalytics() {
+    fetch('/getSiteAnalytics')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch site analytics');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.siteAnalytics) {
+                document.getElementById('sessions').textContent = data.siteAnalytics[0].sessions || '0';
+                document.getElementById('visitors').textContent = data.siteAnalytics[0].activeusers || '0';
+                document.getElementById('pageviews').textContent = data.siteAnalytics[0].pageviews || '0';
+                document.getElementById('bounceRate').textContent = (data.siteAnalytics[0].bouncerate || '0') + '%';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching site analytics:', error);
+        });
+}
 </script>
+
 @endsection

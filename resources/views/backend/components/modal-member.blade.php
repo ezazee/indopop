@@ -21,49 +21,16 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    var series = {
-        dailyData: {
-            posts: [5, 10, 15, 20, 25, 30, 35, 40, 45], // Data harian
-            dates: ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05", "2023-01-06", "2023-01-07", "2023-01-08", "2023-01-09"]
-        },
-        weeklyData: {
-            posts: [30, 70, 50, 90, 110], // Data mingguan
-            dates: ["2023-01-01", "2023-01-08", "2023-01-15", "2023-01-22", "2023-01-29"]
-        },
-        monthlyData: {
-            posts: [150, 200, 250], // Data bulanan
-            dates: ["2023-01-01", "2023-02-01", "2023-03-01"]
-        }
-    };
+    var chart;
 
-    var chart; // Variabel untuk menyimpan instance chart
-
-    // Fungsi untuk menginisialisasi grafik
-    function renderChart(dataType) {
-        var data, labels;
-
-        // Menentukan data dan label berdasarkan jenis data
-        if (dataType === 'daily') {
-            data = series.dailyData.posts;
-            labels = series.dailyData.dates;
-        } else if (dataType === 'weekly') {
-            data = series.weeklyData.posts;
-            labels = series.weeklyData.dates;
-        } else if (dataType === 'monthly') {
-            data = series.monthlyData.posts;
-            labels = series.monthlyData.dates;
-        }
-
-        // Jika chart sudah ada, hapus chart yang lama
-        if (chart) {
-            chart.destroy();
-        }
-
+    // Fungsi untuk merender chart
+    function renderChart(dataType, data) {
         var options = {
             series: [{
                 name: "Total Postingan",
-                data: data
+                data: data.posts
             }],
             chart: {
                 type: 'area',
@@ -86,7 +53,7 @@
                 text: 'Jumlah Postingan',
                 align: 'left'
             },
-            labels: labels,
+            labels: data.dates,
             xaxis: {
                 type: 'datetime',
             },
@@ -98,20 +65,52 @@
             }
         };
 
+        if (chart) {
+            chart.destroy();
+        }
+
         chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
     }
 
-    // Event listener untuk membuka modal
-    document.getElementById('viewModal').addEventListener('show.bs.modal', function() {
+    function fetchData(dataType, userId) {
+        axios.get('/chart-data', {
+            params: {
+                user_id: userId,
+                data_type: dataType
+            }
+        })
+        .then(function (response) {
+            var seriesData = response.data[dataType];
+            var data = {
+                posts: seriesData.map(item => item.total),
+                dates: seriesData.map(item => item.date || item.week || item.month)
+            };
+            renderChart(dataType, data);
+        })
+        .catch(function (error) {
+            console.error("Error fetching chart data:", error);
+        });
+    }
+
+    document.getElementById('viewModal').addEventListener('show.bs.modal', function(event) {
+        var button = event.relatedTarget; // Tombol yang membuka modal
+        var userId = button.getAttribute('data-id'); // Ambil user_id dari atribut tombol
         var dataType = document.getElementById('dataType').value; // Ambil nilai dari dropdown
-        renderChart(dataType); // Menampilkan grafik sesuai pilihan
+        fetchData(dataType, userId); // Ambil data dari server dan tampilkan grafik
     });
 
-    // Event listener untuk mengubah grafik saat pilihan diubah
+    // Event listener untuk mengubah grafik saat pilihan di dropdown diubah
     document.getElementById('dataType').addEventListener('change', function() {
-        var dataType = this.value;
-        renderChart(dataType); // Menampilkan grafik sesuai pilihan
+        var dataType = this.value; // Ambil tipe data yang dipilih
+        var userId = document.querySelector('[data-bs-target="#viewModal"]').getAttribute('data-id'); // Ambil user_id
+        fetchData(dataType, userId); // Ambil data dari server dan tampilkan grafik
     });
-    </script>
+
+    // Memuat chart default (harian) saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+        var userId = 1; // Default user_id, sesuaikan dengan user yang sesuai
+        fetchData('daily', userId); // Memuat chart harian pertama kali
+    });
+</script>
 

@@ -49,6 +49,17 @@
             <i class="fas fa-cog fa-fw"></i>
         </a>
         <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                  <!-- Input Search -->
+                  <input 
+                    type="text" 
+                    id="fileSearch" 
+                    class="form-control" 
+                    placeholder="Cari file/folder..."
+                  >
+                </div>
+              </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-display="grid">
@@ -193,7 +204,6 @@
             </div>
         </div>
     </div>
-
     <div id="carouselTemplate" class="d-none carousel slide bg-light" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#previewCarousel" data-slide-to="0" class="active"></li>

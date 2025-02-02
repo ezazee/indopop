@@ -18,18 +18,27 @@
                                 style="max-height: 50px; max-width: 100%;" alt="Botble Technologies">
                         </a>
                     </div>
-                    <form action="#" accept-charset="UTF-8" id="botble-a-c-l-forms-auth-login-form"
-                        class="js-base-form dirty-check">
-                        <input name="_token" type="hidden" value="QJOvzLgmrWSCHuSY1tXGUoKRFpDO1tZdCxz1ZouT">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif                
+
+                    <form action="{{ route('authlogin') }}" method="POST">
+                        @csrf
                         <div class="form-body">
                             <h2 class="h3 text-center mb-3">Sign In Below</h2>
                             <div class="mb-3 position-relative">
                                 <label class="form-label form-label required" for="username">
-                                    Email/Username
+                                    Email
                                 </label>
                                 <input class="form-control" tabindex="1"
-                                    placeholder="Enter your username or email address" required="required"
-                                    name="username" type="text" value="admin">
+                                    placeholder="Enter email address" required="required"
+                                    name="email" type="email">
                             </div>
                             <div class="mb-3 position-relative">
                                 <label class="form-label form-label required" for="password">
@@ -56,14 +65,6 @@
                                     </button>
                                 </div>
                             </div>
-
-                            <label class="form-check">
-                                <input type="checkbox" id="remember" name="remember" class="form-check-input"
-                                    tabindex="3" value="1" checked>
-                                <span class="form-check-label">
-                                    Ingat saya?
-                                </span>
-                            </label>
                             <div class="form-footer">
                                 <button class="btn btn-primary  w-full" type="submit">
                                     <svg class="icon icon-left svg-icon-ti-ti-login-2"

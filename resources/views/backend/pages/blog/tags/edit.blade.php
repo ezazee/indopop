@@ -1,29 +1,38 @@
 @extends('backend.master.app')
 @section('content')
-@include('backend.components.breadcrumb')
+<div class="page-header d-print-none">
+   <div class="container-xl">
+       <div class="row g-2 align-items-center">
+           <div class="col">
+               <div class="page-pretitle">
+                   <nav aria-label="breadcrumb">
+                       <ol class="breadcrumb">
+                           <li class="breadcrumb-item">
+                               <a href="{{ route('dashboard') }}">Dashboard</a>
+                           </li>
+                           <li class="breadcrumb-item">
+                              <a href="{{ route('tags.index') }}">Tags</a>
+                          </li>
+                           <li class="breadcrumb-item active" aria-current="page">
+                              <h1 class="mb-0 d-inline-block fs-6 lh-1">Edit</h1>
+                          </li>
+                       </ol>
+                   </nav>
+
+               </div>
+           </div>
+           <div class="col-auto ms-auto d-print-none">
+               <div class="btn-list">
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
 <div class="page-body page-content">
    <div class="container-xl">
       <form method="POST" action="https://cms.botble.com/admin/blog/tags/edit/8" accept-charset="UTF-8"
          id="botble-blog-forms-tag-form" class="js-base-form dirty-check">
          <input name="_token" type="hidden" value="ZomMcTjBrmCGafyJ5GMAh46L9SPPEMlrkrQGaGzI">
-         <div role="alert" class="alert alert-info">
-            <div class="d-flex">
-               <div>
-                  <svg class="icon alert-icon svg-icon-ti-ti-info-circle" xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                     <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                     <path d="M12 9h.01" />
-                     <path d="M11 12h1v4h1" />
-                  </svg>
-               </div>
-               <div class="w-100">
-                  You are editing "<strong class="current_language_text">English</strong>"
-                  version
-               </div>
-            </div>
-         </div>
          <div class="row">
             <div class="gap-3 col-md-9">
                <div class="card mb-3">

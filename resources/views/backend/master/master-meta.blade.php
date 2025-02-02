@@ -4,6 +4,6 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Dashboard Indopop New</title>
 <link rel="Shortcut icon" href="{{ asset('frontend/logo/favicon.png') }}">
-<meta property="og:image" content="https://staging.indopop.id/desktop/assets/images/share.jpg" />
+<meta property="og:image" content="{{ asset('frontend/logo/favicon.png') }}" />
 <meta name="description" content="Copyright 2024 © Indopop Technologies. Version 7.4.7">
 <meta property="og:description" content="Copyright 2024 © Botble Technologies. Version 7.4.7">
