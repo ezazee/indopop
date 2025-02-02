@@ -9,11 +9,11 @@
             <div>
                 @foreach ($post->take(1) as $item)
                 <article class="card-one-headline">
-                    <div class="card-one-headline-img"><a href="?page=detail"><img class="card-one-headline-img"
+                    <div class="card-one-headline-img"><a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}"><img class="card-one-headline-img"
                                 src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" /></a></div>
                     <div class="card-one-headline--info">
                         <h4 class="card-one-headline--title">
-                            <a href="?page=detail">{{ $item->title }}</a>
+                            <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                         </h4>
                     </div>
                 </article>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="card-two-headline--info">
                             <h4 class="card-two-headline--title">
-                                <a href="?page=detail">{{ $item->title }}</a>
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                             </h4>
                             <div class="category-and-time">
                                 <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="main-card--info">
                                 <h4 class="main-card--title">
-                                    <a href="?page=detail">{{ $item->title }}</a>
+                                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                                 </h4>
                                 <p class="main-card--desc">{!! Str::limit(strip_tags($item->content ), 150) !!} </p>
                                 <div class="category-and-time">

@@ -1,84 +1,24 @@
 @extends('frontend.mobile.master.master-app')
 @section('content')
+<div class="mt-20">
+    <h3 class="card-headline-no-image-title">{{ $category->nama_kategori }}</h3>
+</div>
     <div>
+        @foreach ($post as $item)
         <article class="main-card">
             <div class="main-card-img-wrap">
-                <img alt="image" class="main-card-img" src="https://staging.indopop.id/mobile/assets/images/thumb2.jpg" />
+                <img alt="image" class="main-card-img" src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
             </div>
             <div class="main-card--info">
                 <h4 class="main-card--title">
-                    <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                        2021</a>
+                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                 </h4>
                 <div class="category-and-time">
-                    <a href="?page=detail">Health</a>
-                    <span>11:15 WIB</span>
+                    <a href="{{ route('kanal.desktop', ['slug' => $item->kategori->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
+                    <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                 </div>
             </div>
         </article>
-        <article class="main-card">
-            <div class="main-card-img-wrap">
-                <img alt="image" class="main-card-img"
-                    src="https://staging.indopop.id/mobile/assets/images/thumb2.jpg" />
-            </div>
-            <div class="main-card--info">
-                <h4 class="main-card--title">
-                    <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                        2021</a>
-                </h4>
-                <div class="category-and-time">
-                    <a href="?page=detail">Parenting</a>
-                    <span>11:15 WIB</span>
-                </div>
-            </div>
-        </article>
-        <article class="main-card">
-            <div class="main-card-img-wrap">
-                <img alt="image" class="main-card-img"
-                    src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
-            </div>
-            <div class="main-card--info">
-                <h4 class="main-card--title">
-                    <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                        2021</a>
-                </h4>
-                <div class="category-and-time">
-                    <a href="?page=detail">Health</a>
-                    <span>11:15 WIB</span>
-                </div>
-            </div>
-        </article>
-        <article class="main-card">
-            <div class="main-card-img-wrap">
-                <img alt="image" class="main-card-img"
-                    src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
-            </div>
-            <div class="main-card--info">
-                <h4 class="main-card--title">
-                    <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                        2021</a>
-                </h4>
-                <div class="category-and-time">
-                    <a href="?page=detail">Parenting</a>
-                    <span>11:15 WIB</span>
-                </div>
-            </div>
-        </article>
-        <article class="main-card">
-            <div class="main-card-img-wrap">
-                <img alt="image" class="main-card-img"
-                    src="https://staging.indopop.id/mobile/assets/images/thumb1a.jpg" />
-            </div>
-            <div class="main-card--info">
-                <h4 class="main-card--title">
-                    <a href="?page=detail">8 Fakta Megan Fox, Aktris yang Tampil Sangat Seksi di MTV VMA
-                        2021</a>
-                </h4>
-                <div class="category-and-time">
-                    <a href="?page=detail">Health</a>
-                    <span>11:15 WIB</span>
-                </div>
-            </div>
-        </article>
+        @endforeach
     </div>
 @endsection

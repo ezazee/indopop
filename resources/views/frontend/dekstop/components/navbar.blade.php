@@ -48,9 +48,9 @@
         </div>
     </div>
     <div>
-        <form action="" method="GET">
+        <form action="{{ route('searchResult.dekstop') }}" method="GET">
             <div class="wrap-search-form hidden" id="search-form">
-                <input type="text" name="query" class="input-search" placeholder="Cari disini">
+                <input type="text" name="q" class="input-search" placeholder="Cari di sini..." required>
                 <button type="submit" class="button-search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
@@ -59,6 +59,6 @@
                     </svg>
                 </button>
             </div>
-        </form>
+        </form>        
     </div>
 </header>

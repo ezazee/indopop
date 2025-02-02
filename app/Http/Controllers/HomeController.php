@@ -7,7 +7,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Categori;
 use Carbon\Carbon;
-
+use Illuminate\Http\Request;
 
 
 class HomeController extends Controller
@@ -478,12 +478,49 @@ class HomeController extends Controller
         }
     }
 
-    public function searchResult()
+    public function searchResult(Request $request)
     {
+
+        $query = $request->input('q'); // Ambil query pencarian dari input
+
+        $posts = Post::with(['kategori', 'user', 'tags']) // Pastikan relasi ada
+            ->where('status', 'publish')
+            ->where(function ($q) use ($query) {
+                $q->where('title', 'ILIKE', "%{$query}%") 
+                //   ->orWhere('content', 'ILIKE', "%{$query}%") 
+                  ->orWhereHas('kategori', function ($q) use ($query) {
+                      $q->where('nama_kategori', 'ILIKE', "%{$query}%");
+                  })
+                  ->orWhereHas('tags', function ($q) use ($query) {
+                      $q->where('nama_tags', 'ILIKE', "%{$query}%");
+                  });
+            })
+            ->latest()
+            ->paginate(10); // Gunakan paginate tanpa ->get()
+
+            $postTerkini = Post::with('kategori', 'user')
+            ->where('status', 'publish')
+            ->latest()
+            ->take(5)
+            ->get();
+    
+            $postTerpopuler = Post::with('kategori', 'user')
+            ->where('status', 'publish')
+            ->orderBy('view', 'desc')
+            ->take(5)
+            ->get();
+
+            $allPosts = collect([$posts->items(), $postTerpopuler, $postTerkini])->flatten();
+
+            foreach ($allPosts as $singlePost) {
+                if ($singlePost->gambar) {
+                    $singlePost->gambar = explode('|', $singlePost->gambar);
+                }
+            }
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.search-result');
+            return view('frontend.mobile.pages.search-result',compact('postTerkini','posts','postTerpopuler'));
         } else {
-            return view('frontend.dekstop.pages.search-result');
+            return view('frontend.dekstop.pages.search-result',compact('postTerkini','posts','postTerpopuler'));
         }
     }
 }

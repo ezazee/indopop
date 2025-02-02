@@ -141,6 +141,79 @@
         <!-- end Dangdut -->
 
         <!-- Video -->
+        @php
+function getYouTubeVideos($channelId, $limit = 5) {
+    $url = "https://www.youtube.com/youtubei/v1/browse?prettyPrint=false";
+
+    // Payload JSON untuk request
+    $postData = json_encode([
+        "context" => [
+            "client" => [
+                "clientName" => "WEB",
+                "clientVersion" => "2.20240101.10.00" // Ganti sesuai versi terbaru
+            ]
+        ],
+        "browseId" => $channelId
+    ]);
+
+    // Headers dengan Cookie & User-Agent
+    $headers = [
+        "Content-Type: application/json",
+        "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language: en-US,en;q=0.9",
+        "Referer: https://www.youtube.com/",
+        "Cookie: SID=g.a000tAg_xrn1u9RrD7hYnwMzNEzRQZvcjLFFHmvgujTc2R6nPy9i3nxH6-fm5rR4AWI63ZqQ8QACgYKAQoSARQSFQHGX2MiqFIoKlk-jSwsunEB7cWGFxoVAUF8yKpbKlCgxKfjES5lUKNMoQi30076; YSC=mPK4mRh6sGk; VISITOR_INFO1_LIVE=_gR6Qb5Bdf8;" // Sesuaikan dengan cookie terbaru
+    ];
+
+    // cURL Request
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Simpan response untuk debug
+    file_put_contents("youtube_debug.json", $response);
+
+    $data = json_decode($response, true);
+
+    // Cek apakah ada konten video
+    if (!isset($data["contents"])) {
+        return [];
+    }
+
+    // Ambil daftar video
+    $videos = [];
+    foreach ($data["contents"] as $content) {
+        if (isset($content["videoId"])) {
+            $videoId = $content["videoId"];
+            $videos[] = [
+                "title" => $content["title"]["runs"][0]["text"] ?? "Unknown Title",
+                "url" => "https://www.youtube.com/watch?v=" . $videoId,
+                "thumbnail" => "https://img.youtube.com/vi/$videoId/hqdefault.jpg"
+            ];
+            if (count($videos) >= $limit) break;
+        }
+    }
+
+    return $videos;
+}
+
+// Channel ID YouTube Indopopid
+$channelId = "UCx_CjZ2sNxTg6ICBtlGiubw";
+
+// Ambil 5 video terbaru
+$videos = getYouTubeVideos($channelId, 5);
+
+// Cek hasilnya
+print_r($videos);
+        @endphp
         <div class="live-report-card m-20">
             <h2 class="live-report-card--heading">Video</h2>
             <div class="live-report-card-img-wrap">
