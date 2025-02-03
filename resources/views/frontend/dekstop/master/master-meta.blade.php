@@ -1,11 +1,55 @@
-<title>Indopop.ID | Berita Gosip Artis Terkini Di Indonesia</title>
-<link rel="Shortcut icon" href="{{ asset('frontend/logo/favicon.png') }}">
-<meta name="description" content="Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional">
-<meta property="og:title" content="INDOPOP.ID" />
-<meta property=" og:title" content="INDOPOP.ID" />
-<meta property="og:description"
-    content="Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan." />
-<meta property="og:url" content="http://www.indopop.id" />
-<meta property="og:image" content="https://staging.indopop.id/desktop/assets/images/share.jpg" />
+<meta charset="utf-8">
+<title>
+    {{ request()->is('/') ? 'Indopop.ID | Berita Gosip Artis Terkini Di Indonesia' : ($post->title ?? 'Indopop.ID | Berita Gosip Artis Terkini Di Indonesia') }}
+</title>
+<meta name="description" content="
+    {{ request()->is('/') ? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional' : ($post->description ?? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional') }}
+">
+<meta name="keywords" content="
+    {{ request()->is('/') ? 'berita, gosip, selebriti, Indopop, Indonesia' : ($post->keyword ?? 'berita, gosip, selebriti, Indopop, Indonesia') }}
+">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="
+    {{ request()->is('/') ? 'Indopop.ID' : ($post->title ?? 'Indopop.ID') }}
+">
+<meta property="og:description" content="
+    {{ request()->is('/') ? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.' : ($post->description ?? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.') }}
+">
+<meta property="og:image" content="
+    {{
+        !empty($post->gambar)
+            ? (is_array($post->gambar)
+                ? (isset($post->gambar[0]) ? asset('storage/' . $post->gambar[0]) : asset('images/share.jpg'))
+                : asset('storage/' . $post->gambar))
+            : asset('images/share.jpg')
+    }}
+">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Indopop.ID">
 
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="
+    {{ request()->is('/') ? 'Indopop.ID' : ($post->title ?? 'Indopop.ID') }}
+">
+<meta name="twitter:description" content="
+    {{ request()->is('/') ? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.' : ($post->description ?? 'Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.') }}
+">
+<meta name="twitter:image" content="
+    {{
+        !empty($post->gambar)
+            ? (is_array($post->gambar)
+                ? (isset($post->gambar[0]) ? asset('storage/' . $post->gambar[0]) : asset('images/share.jpg'))
+                : asset('storage/' . $post->gambar))
+            : asset('images/share.jpg')
+    }}
+">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" href="{{ asset('frontend/logo/favicon.png') }}">
+<link rel="shortcut icon" href="{{ asset('frontend/logo/favicon.png') }}">
+
+<meta name="theme-color" content="#030303">

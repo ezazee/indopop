@@ -134,10 +134,8 @@
       <div class="mb-3 col-12">
       </div>
       <div class="col-12">
-         <div id="list_widgets" class="row row-cards" data-bb-toggle="widgets-list"
-            data-url="https://cms.botble.com/admin/widgets/order">
-            <div class="widget-item col-12 d-flex " id="widget_analytics_general"
-               data-url="https://cms.botble.com/admin/analytics/general">
+         <div id="list_widgets" class="row row-cards" data-bb-toggle="widgets-list">
+            <div class="widget-item col-12 d-flex ">
                <div class="card card-sm flex-fill">
                   <div class="card-header">
                      <h4 class="card-title">
@@ -177,9 +175,10 @@
                         </div>
                      </div>
                   </div>
-                  <div class="d-flex flex-column justify-content-between h-100 widget-content  " style="min-height: 10rem;">
-                     
-                  </div>
+                  <div class="d-flex flex-column justify-content-between h-100 widget-content" style="min-height: 10rem;">
+                     <canvas id="trafficChart" style="height: 200px;"></canvas>
+                 </div>
+                 
                   <div class="row row-cards px-2 mb-3">
                      <div class="col-sm-6 col-lg-3">
                         <div class="card analytic-card">
@@ -619,7 +618,7 @@
         .catch(error => {
             console.error('Error fetching site analytics:', error);
         });
-}
+   }
 </script>
 
 @endsection
