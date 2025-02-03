@@ -30,13 +30,13 @@ class HomeController extends Controller
         ->latest()
         ->take(15)
         ->get();
-    
+
         $topPostheadline = $postheadline->shift();
-        
+
         $otherPostsheadline = $postheadline;
-        
+
         $usedPostIds = array_merge($usedPostIds, $postheadline->pluck('id')->toArray());
-        
+
         if ($topPostheadline) {
             $usedPostIds[] = $topPostheadline->id;
         }
@@ -44,7 +44,7 @@ class HomeController extends Controller
         // if ($otherPostsheadline){
         //     $usedPostIds[] = $otherPostsheadline->id;
         // }
-        
+
         $postTerkini = Post::with('kategori', 'user')
         ->where('status', 'publish')
         ->latest()
@@ -73,7 +73,7 @@ class HomeController extends Controller
         //             ->orderBy('view', 'desc')
         //             ->take(5)
         //             ->get();
-                
+
         //         $weekCounter++;
         //     }
         // }
@@ -88,7 +88,7 @@ class HomeController extends Controller
                 ->latest()
                 ->take($limit)
                 ->get();
-    
+
             $usedPostIds = array_merge($usedPostIds, $posts->pluck('id')->toArray());
             return $posts;
         };
@@ -102,27 +102,27 @@ class HomeController extends Controller
         $postMeandmom = $getPostByCategory('Me and Moms', 5);
 
         // data Dangdut
-        $topPostDangdut = $postDangdut->shift(); 
+        $topPostDangdut = $postDangdut->shift();
         $otherPostsDangdut = $postDangdut;
 
         // data Flexing
-        $topPostFlexing = $postFlexing->shift(); 
+        $topPostFlexing = $postFlexing->shift();
         $otherPostsFlexing = $postFlexing;
 
         // data Gosip
-        $topPostGosip = $postGosip->shift(); 
+        $topPostGosip = $postGosip->shift();
         $otherPostsGosip = $postGosip;
-        
+
         // data KPop
-        $topPostKPop = $postKPop->shift(); 
+        $topPostKPop = $postKPop->shift();
         $otherPostsKPop = $postKPop;
 
         // data Vibes
-        $topPostVibes = $postVibes->shift(); 
+        $topPostVibes = $postVibes->shift();
         $otherPostsVibes = $postVibes;
 
         // data Meandmom
-        $topPostMeandmom = $postMeandmom->shift(); 
+        $topPostMeandmom = $postMeandmom->shift();
         $otherPostsMeandmom = $postMeandmom;
         // dd($otherPostsFlexing,$topPostGosip);
 
@@ -133,7 +133,7 @@ class HomeController extends Controller
                 $collection = null;
                 continue;
             }
-        
+
             foreach ($collection as $post) {
                 if (is_object($post) && isset($post->gambar) && is_string($post->gambar)) {
                     $post->gambar = explode('|', $post->gambar);
@@ -141,7 +141,7 @@ class HomeController extends Controller
             }
         }
         unset($collection);
-        
+
 
         // dd($postDangdut);
         if ($this->agent->isMobile()) {
@@ -153,7 +153,7 @@ class HomeController extends Controller
                 'content' => 'frontend.desktop.pages.index',
             ]);
         }
-        
+
     }
 
     public function detail($slug)
@@ -201,7 +201,7 @@ class HomeController extends Controller
         //             ->orderBy('view', 'desc')
         //             ->take(5)
         //             ->get();
-                
+
         //         $weekCounter++;
         //     }
         // }
@@ -408,9 +408,9 @@ class HomeController extends Controller
 
 
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.kanal',compact('category','post','postTerkini','postTerpopuler'));
+            return view('frontend.mobile.pages.kanal',compact('category','post','postTerkini','postTerpopuler', 'allPosts'));
         } else {
-            return view('frontend.dekstop.pages.kanal',compact('category','post','postTerkini','postTerpopuler'));
+            return view('frontend.dekstop.pages.kanal',compact('category','post','postTerkini','postTerpopuler',));
         }
     }
 
@@ -481,12 +481,12 @@ class HomeController extends Controller
     public function searchResult(Request $request)
     {
 
-        $query = $request->input('q'); 
+        $query = $request->input('q');
         $posts = Post::with(['kategori', 'user', 'tags'])
             ->where('status', 'publish')
             ->where(function ($q) use ($query) {
-                $q->where('title', 'ILIKE', "%{$query}%") 
-                //   ->orWhere('content', 'ILIKE', "%{$query}%") 
+                $q->where('title', 'ILIKE', "%{$query}%")
+                //   ->orWhere('content', 'ILIKE', "%{$query}%")
                   ->orWhereHas('kategori', function ($q) use ($query) {
                       $q->where('nama_kategori', 'ILIKE', "%{$query}%");
                   })
@@ -502,7 +502,7 @@ class HomeController extends Controller
             ->latest()
             ->take(5)
             ->get();
-    
+
             $postTerpopuler = Post::with('kategori', 'user')
             ->where('status', 'publish')
             ->orderBy('view', 'desc')

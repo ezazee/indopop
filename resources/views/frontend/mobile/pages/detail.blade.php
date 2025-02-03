@@ -13,8 +13,8 @@
     <article class="article-detail">
         <div class="t5-b20">
             <h1 class="article-detail--title">{{ $post->title }}</h1>
-            @if ($post->description )
-            <div class="article-detail--desc">{{ $post->description }}</div>
+            @if ($post->description)
+                <div class="article-detail--desc">{{ $post->description }}</div>
             @endif
             <div class="article-detail--info">
                 <div class="author"> {{ $post->user->name }} </div>
@@ -41,7 +41,8 @@
             </a>
         </div>
         <figure class="article-detail-figure">
-            <img alt="image" src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" class="card-headline-img" />
+            <img alt="image" src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
+                class="card-headline-img" />
             <figcaption>{{ $post->image_caption }}</figcaption>
         </figure>
         <a href="#!" rel="">
@@ -51,13 +52,13 @@
         </a>
         <div class="t0-b20">
             <div class="article-detail--body">
-                <p> <strong>indopop.id</strong> {!! nl2br(str_replace(['[caption]', '[/caption]'], '', $post->content)) !!}</p>
+                <p><strong>Indopop.id</strong> {!! nl2br(preg_replace('/\[caption[^\]]*\]/is', '', $post->content)) !!}</p>
             </div>
 
             <div class="article-detail-tag">
                 <span class="label card-headline-no-image-title">Tag</span>
                 @foreach ($tagsdetail as $index => $tags)
-                <a href="" class="tag-item"> {{ $tags->nama_tags }}</a>
+                    <a href="" class="tag-item"> {{ $tags->nama_tags }}</a>
                 @endforeach
             </div>
             <div class="share-baru-bottom mb-20">
@@ -92,18 +93,18 @@
         <h3 class="base-title pl-20 pt-20">Terpopuler</h3>
         <div class="list">
             @foreach ($postTerpopuler as $item)
-            <div class="list-element">
-                <article class="main-card">
-                    <div class="main-card--infoml0">
-                        <h4 class="main-card--title">
-                            <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
-                        </h4>
-                        <div class="category-and-time">
-                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                <div class="list-element">
+                    <article class="main-card">
+                        <div class="main-card--infoml0">
+                            <h4 class="main-card--title">
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                            </h4>
+                            <div class="category-and-time">
+                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </div>
+                    </article>
+                </div>
             @endforeach
         </div>
     </div>
@@ -112,31 +113,33 @@
     <div class="mt-20">
         <h3 class="base-title pl-20 mb-10">{{ $post->kategori->nama_kategori }}</h3>
         @foreach ($relatedPosts->take(1) as $item)
-        <article class="card-headline">
-            <img alt="image" class="card-headline-img" src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
-            <div class="card-headline-info">
-                <h4 class="card-headline-title">
-                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
-                </h4>
-                <p class="card-headline-desc">{!! Str::limit(strip_tags($item->content ), 100) !!}</p>
-            </div>
-        </article>
+            <article class="card-headline">
+                <img alt="image" class="card-headline-img"
+                    src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                <div class="card-headline-info">
+                    <h4 class="card-headline-title">
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                    </h4>
+                    <p class="card-headline-desc">{!! Str::limit(strip_tags($item->content), 100) !!}</p>
+                </div>
+            </article>
         @endforeach
         <div>
             @foreach ($relatedPosts->slice(1, 5) as $item)
-            <article class="main-card">
-                <div class="main-card-img-wrap">
-                    <img alt="image" class="main-card-img" src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
-                </div>
-                <div class="main-card--info">
-                    <h4 class="main-card--title">
-                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
-                    </h4>
-                    <div class="category-and-time">
-                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                <article class="main-card">
+                    <div class="main-card-img-wrap">
+                        <img alt="image" class="main-card-img"
+                            src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
                     </div>
-                </div>
-            </article>
+                    <div class="main-card--info">
+                        <h4 class="main-card--title">
+                            <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                        </h4>
+                        <div class="category-and-time">
+                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                        </div>
+                    </div>
+                </article>
             @endforeach
             <div class="t10-b20 mb-20">
                 <button class="main-card-loadmore" id="loadmore">Tampilkan lebih banyak</button>
@@ -150,22 +153,24 @@
         <div>
             <div class="list">
                 @foreach ($postTerkini as $item)
-                <div class="list-element">
-                    <article class="main-card">
-                        <div class="main-card-img-wrap">
-                            <img alt="image" class="main-card-img" src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
-                        </div>
-                        <div class="main-card--info">
-                            <h4 class="main-card--title">
-                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
-                            </h4>
-                            <div class="category-and-time">
-                                <a href="?page=detail">{{ $item->kategori->nama_kategori }}</a>
-                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                    <div class="list-element">
+                        <article class="main-card">
+                            <div class="main-card-img-wrap">
+                                <img alt="image" class="main-card-img"
+                                    src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
                             </div>
-                        </div>
-                    </article>
-                </div>
+                            <div class="main-card--info">
+                                <h4 class="main-card--title">
+                                    <a
+                                        href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                                </h4>
+                                <div class="category-and-time">
+                                    <a href="?page=detail">{{ $item->kategori->nama_kategori }}</a>
+                                    <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 @endforeach
             </div>
             <div class="t10-b20 mb-20">

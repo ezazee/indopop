@@ -58,7 +58,7 @@
         <div>
             <ul class="main-menu">
                 <li class="menu-item {{ Request::is('/') ? 'active' : '' }}">
-                    <a href="/">HOME</a>
+                    <a href="/">Home</a>
                 </li>
                 @foreach ($categories as $item)
                 <li class="menu-item {{ Request::is('kanal/' . $item->slug) ? 'active' : '' }}">
@@ -66,10 +66,10 @@
                 </li>
                 @endforeach
                 <li class="menu-item">
-                    <a href="https://www.youtube.com/@indopopid" target="_blank">VIDEO</a>
+                    <a href="https://www.youtube.com/@indopopid" target="_blank">Video</a>
                 </li>
                 <li class="menu-item {{ Request::is('indeks') ? 'active' : '' }}">
-                    <a href="/indeks">INDEKS</a>
+                    <a href="/indeks">Indeks</a>
                 </li>
             </ul>
         </div>

@@ -1847,3 +1847,8 @@ th {
 .hidden {
     display: none;
 }
+
+
+.fw-bold{
+    font-weight: bold !important;
+}
