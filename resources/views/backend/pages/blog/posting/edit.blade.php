@@ -328,8 +328,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
-                                    class="btn btn-primary btn-sm">
+                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
+                            <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
                                     Choose image
                                 </a>
                             </div>
@@ -342,8 +342,7 @@
                          </h4>
                      </div>
                      <div class="card-body">
-                         <input class="form-control tags" placeholder="Write some tags"
-                             data-url="https://cms.botble.com/admin/blog/tags/all" name="tag" type="text"
+                         <input class="form-control tags" placeholder="Write some tags" name="tag" type="text"
                              value="{{ implode(',', $post->tags->pluck('nama_tags')->toArray()) }}" id="tag">
                      </div>
                  </div>                 

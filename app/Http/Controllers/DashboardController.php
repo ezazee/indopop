@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\GoogleAnalyticsService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Settings;
 use App\Models\User;
 use App\Models\Tag;
@@ -129,34 +130,42 @@ class DashboardController extends Controller
     {
         $settings = Settings::first();
         $propertyId = $settings->analytics;
-
+    
         $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
         $endDate = $request->query('end_date', now()->format('Y-m-d'));
-
+    
         try {
             $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
             $siteAnalytics = [];
-             if (!empty($analyticsData['siteAnalytics'])) {
+            $trafficData = [];
+            $labels = [];
+    
+            if (!empty($analyticsData['siteAnalytics'])) {
                 foreach ($analyticsData['siteAnalytics'] as $page) {
                     $siteAnalytics[] = [
                         'sessions' => $page['sessions'],
                         'bouncerate' => $page['bouncerate'],
                         'pageviews' => $page['pageviews'],
-                        'activeusers' => $page['activeusers']
+                        'activeusers' => $page['activeusers'],
                     ];
+    
+                    $trafficData[] = $page['pageviews'];
+                    $labels[] = $page['date'];  
                 }
             }
+    
             return response()->json([
                 'siteAnalytics' => $siteAnalytics,
+                'trafficData' => $trafficData,
+                'labels' => $labels,
             ]);
-
         } catch (\Exception $e) {
             return response()->json([
                 'error' => $e->getMessage(),
             ]);
         }
     }
-
+    
 
     public function exportDataPost()
     {
@@ -256,5 +265,15 @@ class DashboardController extends Controller
             return redirect()->route('dashboard');
         }
         return view('backend.pages.auth.login');
+    }
+
+
+    public function searchLfm(Request $request){
+        $query = strtolower($request->input('q'));
+        $files = array_filter(Storage::disk('public')->allFiles(), function ($file) use ($query) {
+            return stripos(basename($file), $query) !== false;
+        });
+
+        return view('vendor.laravel-filemanager.search-results', compact('files'));
     }
 }

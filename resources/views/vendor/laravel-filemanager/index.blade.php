@@ -49,17 +49,10 @@
             <i class="fas fa-cog fa-fw"></i>
         </a>
         <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                  <!-- Input Search -->
-                  <input 
-                    type="text" 
-                    id="fileSearch" 
-                    class="form-control" 
-                    placeholder="Cari file/folder..."
-                  >
-                </div>
-              </div>
+            <form id="search-form" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="searchImages" placeholder="Cari File..." aria-label="Search">
+            </form>
+            
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-display="grid">
@@ -329,6 +322,24 @@
             maxFilesize: ({{ $helper->maxUploadSize() }} / 1000)
         }
     </script>
+    <script>
+        document.getElementById("searchImages").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll("#content .item_name");
+    
+            items.forEach(function (item) {
+                let text = item.textContent || item.innerText;
+                let parent = item.closest("a"); 
+    
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    parent.style.display = "";
+                } else {
+                    parent.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

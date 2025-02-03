@@ -309,6 +309,7 @@
                                  </button>
                              </div>
                          </div>
+                         <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text">
                          <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
                              Choose image
                          </a>
