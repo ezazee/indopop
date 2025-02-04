@@ -83,25 +83,25 @@
                               cols="50"></textarea>
                         </div>
                         <div class="mb-3 position-relative">
-                           <label for="content" class="form-label">Content</label>
-                           <div class="mb-2 btn-list">
-                              <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn">
-                                 <svg class="icon icon-left svg-icon-ti-ti-photo"
-                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                 <path d="M15 8h.01" />
-                                 <path
-                                    d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
-                                 <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
-                                 <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
-                              </svg>
-                              Add media
-                             </a>
-                           </div>
-                           <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
-                              placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
+                            <label for="content" class="form-label">Content</label>
+                            <div class="mb-2 btn-list">
+                                <a href="#" onclick="openFileManager(event)" class="btn">
+                                    <svg class="icon icon-left svg-icon-ti-ti-photo"
+                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M15 8h.01" />
+                                        <path
+                                            d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
+                                        <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
+                                        <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
+                                    </svg>
+                                    Add media
+                                </a>
+                            </div>
+                            <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
+                                      placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
                         </div>
                      </div>
                   </div>
@@ -217,7 +217,7 @@
                           <option value="publish">Published</option>
                           <option value="schedule">Scheduled</option>
                       </select>
-              
+
                       <div id="form-scheduled" style="margin-top: 10px;">
                           <label class="form-label">Date</label>
                           <input type="date" class="form-control" name="scheduled_date" min="{{ date('Y-m-d') }}">
@@ -278,7 +278,7 @@
                       </div>
                   </div>
               </div>
-              
+
                <div class="card meta-boxes">
                   <div class="card-header">
                      <h4 class="card-title">
@@ -334,6 +334,34 @@
    </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mediaModalLabel">Add Media</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Isi modal, misalnya iframe untuk Laravel File Manager -->
+                <iframe id="fileManagerIframe" src="" style="width: 100%; height: 500px;"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script>
+    $(document).ready(function() {
+        function openFileManager(event) {
+            event.preventDefault(); // Mencegah perilaku default dari elemen 'a'
+            $('#mediaModal').modal('show'); // Menampilkan modal
+        }
+    });
+</script>
 <!-- Tambahkan jQuery dan CKEditor -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
@@ -366,50 +394,45 @@
  </script>
 
 <script>
-   function openFileManager(event) {
-       event.preventDefault();
+    function openFileManager(event) {
+        event.preventDefault(); // Mencegah perilaku default dari elemen 'a'
 
-       const route_prefix = "/laravel-filemanager?type=image";
+        const route_prefix = "/laravel-filemanager?type=image";
+        const iframe = document.getElementById('fileManagerIframe');
+        iframe.src = route_prefix;
 
-       window.open(route_prefix, 'FileManager', 'width=900,height=600');
+        $('#mediaModal').modal('show'); // Menampilkan modal
 
-       window.SetUrl = function (file) {
-         const fileData = Array.isArray(file) ? file[0] : file;
-
-         const fileUrl = fileData.url || fileData.thumb_url;
-
-         if (fileUrl) {
-            const inputField = document.querySelector('input[name="banner_image"]');
-            if (inputField) {
-                  inputField.value = fileUrl;
+        window.SetUrl = function (file) {
+            const fileData = Array.isArray(file) ? file[0] : file;
+            const fileUrl = fileData.url || fileData.thumb_url;
+            if (fileUrl) {
+                const inputField = document.querySelector('input[name="banner_image"]');
+                if (inputField) {
+                    inputField.value = fileUrl;
+                }
+                const previewImage = document.querySelector('.preview-image');
+                if (previewImage) {
+                    previewImage.src = fileUrl;
+                }
+                const removeButton = document.querySelector('.image-picker-remove-button');
+                if (removeButton) {
+                    removeButton.style.display = 'inline-block';
+                }
+            } else {
+                console.error('Invalid file object or missing URL property:', fileData);
             }
+        };
+    }
 
-            const previewImage = document.querySelector('.preview-image');
-            if (previewImage) {
-                  previewImage.src = fileUrl;
-            }
-
-            const removeButton = document.querySelector('.image-picker-remove-button');
-            if (removeButton) {
-                  removeButton.style.display = 'inline-block';
-            }
-         } else {
-            // console.error('Invalid file object or missing URL property:', fileData);
-         }
-      };
-
-   }
-
-   function removeImage() {
-       const inputField = document.querySelector('input[name="banner_image"]');
-       inputField.value = '';
-
-       const previewImage = document.querySelector('.preview-image');
-       previewImage.src = previewImage.getAttribute('data-default');
-
-       const removeButton = document.querySelector('.image-picker-remove-button');
-       removeButton.style.display = 'none';
-   }
+    function removeImage() {
+        const inputField = document.querySelector('input[name="banner_image"]');
+        inputField.value = '';
+        const previewImage = document.querySelector('.preview-image');
+        previewImage.src = previewImage.getAttribute('data-default');
+        const removeButton = document.querySelector('.image-picker-remove-button');
+        removeButton.style.display = 'none';
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -450,7 +473,7 @@
            });
 
            subcategoryCheckboxes.forEach(function (checkbox) {
-               checkbox.disabled = false; 
+               checkbox.disabled = false;
            });
        }
    }
@@ -470,4 +493,25 @@
        }
    }
 </script>
+
+
+<style>
+    .modal-backdrop.show {
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-backdrop {
+        z-index: 1040;
+    }
+
+    .modal-dialog {
+        max-width: 90%; /* Atur lebar maksimal sesuai kebutuhan */
+        margin: 1.75rem auto;
+    }
+
+    .modal-lg {
+        max-width: 90%; /* Atur lebar maksimal sesuai kebutuhan */
+    }
+</style>
 @endsection
+
