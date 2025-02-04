@@ -13,7 +13,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use App\Models\Post;
+use App\Models\Categori;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,9 +30,36 @@ use Illuminate\Support\Facades\Route;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~  {{ !! END-USER ROUTING !! }} ~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create(route('home'))->setPriority(1.0)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
+        ->add(Url::create(route('byIndex.dekstop'))->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
+        ->add(Url::create(route('redaksi.desktop'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+        ->add(Url::create(route('kebijakan.desktop'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+        ->add(Url::create(route('kodeEtik.desktop'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+        ->add(Url::create(route('visiMisi.desktop'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+        ->add(Url::create(route('siteMap.desktop'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+
+    $posts = Post::orderBy('updated_at', 'desc')->take(500)->get();
+    foreach ($posts as $post) {
+        $sitemap->add(Url::create(route('detail.desktop', $post->slug))
+            ->setPriority(0.9)
+            ->setLastModificationDate($post->updated_at)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+    }
+
+    Categori::chunk(100, function ($categories) use ($sitemap) {
+        foreach ($categories as $category) {
+            $sitemap->add(Url::create(route('kanal.desktop', $category->slug))
+                ->setPriority(0.8)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        }
+    });
+
+    return $sitemap->toResponse(request());
+});
 
 Route::middleware(['auth', 'role:Administrator'])->group(function () {
-
     // === {{ !! Member Page !! }} === //
     // Member
     Route::get('/dashboard/member', [MemberController::class, 'memberIndex'])->name('member.index');
@@ -140,3 +170,4 @@ Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
 
 Route::get('/{slug}', [HomeController::class, 'detail'])->name('detail.desktop');
+

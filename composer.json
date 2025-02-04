@@ -17,6 +17,7 @@
         "maatwebsite/excel": "^3.1",
         "realrashid/sweet-alert": "^7.2",
         "spatie/laravel-medialibrary": "^11.11",
+        "spatie/laravel-sitemap": "^7.3",
         "unisharp/laravel-filemanager": "^2.9"
     },
     "require-dev": {

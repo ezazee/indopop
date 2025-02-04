@@ -9,15 +9,11 @@
             <div class="article-detail--body">
                 <div class="list-article">
                     <ul style="margin: 0; padding:0;">
-                        <li><a href="?page=kanal">HOME</a></li>
-                        <li><a href="?page=kanal">DANGDUT</a></li>
-                        <li><a href="?page=kanal">FLEXING</a></li>
-                        <li><a href="?page=kanal">GOSIP</a></li>
-                        <li><a href="?page=kanal">K-POP</a></li>
-                        <li><a href="?page=kanal">VIBES</a></li>
-                        <li><a href="?page=kanal">ME AND MOMS</a></li>
-                        <li><a href="?page=kanal">VIDEO</a></li>
-                        <li><a href="?page=kanal">INDEKS</a></li>
+                        @foreach ($categories as $item)
+                        <li><a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{$item->nama_kategori}}</a></li>
+                        @endforeach
+                        <li><a href="https://www.youtube.com/@indopopid">VIDEO</a></li>
+                        <li><a href="/indeks">INDEKS</a></li>
                     </ul>
                 </div>
             </div>

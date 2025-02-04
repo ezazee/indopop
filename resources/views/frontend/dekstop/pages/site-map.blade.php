@@ -10,8 +10,8 @@
                             @foreach ($categories as $item)
                             <li><a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{$item->nama_kategori}}</a></li>
                             @endforeach
-                            <li><a href="?page=kanal">VIDEO</a></li>
-                            <li><a href="?page=kanal">INDEKS</a></li>
+                            <li><a href="https://www.youtube.com/@indopopid">VIDEO</a></li>
+                            <li><a href="/indeks">INDEKS</a></li>
                         </ul>
                     </div>
                 </div>
