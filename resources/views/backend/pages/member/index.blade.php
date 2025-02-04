@@ -15,7 +15,7 @@
                            </li>
                         </ol>
                     </nav>
- 
+
                 </div>
             </div>
             <div class="col-auto ms-auto d-print-none">
@@ -25,7 +25,7 @@
         </div>
     </div>
  </div>
- 
+
 
     <div class="page-body page-content">
         <div class="container-xl">
@@ -208,7 +208,8 @@
                                         <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
                                         <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
                                     </svg>
-                                    Reload</a>
+                                    Reload
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -351,7 +352,7 @@
                                 {{ $user->links('pagination::bootstrap-4') }}
                             </div>
                         </div>
-                    </div>  
+                    </div>
 
                 </div>
             </div>
