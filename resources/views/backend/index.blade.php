@@ -495,24 +495,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
     <script>
-        // Create an instance of ApexCharts and specify the options
-        var options = {
-          series: [44, 55, 13, 43, 22],
-          chart: {
-            type: 'donut',
-            height: 200,
-            width: '100%'
-          },
-          labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
-        };
-
-        // Create the chart
-        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
-
-        // Render the chart
-        chart.render();
-        </script>
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetchTopPages();
             fetchTopBrowsers();
@@ -650,32 +632,21 @@
                 });
 
         }
-        
+
+
+
+        var options = {
+            series: [44, 55, 13, 43, 22],
+            chart: {
+                type: 'area',
+                height: 200,
+                width: '100%'
+            },
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
+        };
+        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
+
         function fetchSiteAnalytics() {
-            // Menambahkan spinner loading di setiap elemen
-            const sessionsElement = document.getElementById('sessions');
-            const visitorsElement = document.getElementById('visitors');
-            const pageviewsElement = document.getElementById('pageviews');
-            const bounceRateElement = document.getElementById('bounceRate');
-
-            // Menyimpan teks asli jika ada
-            const originalSessionsText = sessionsElement.textContent;
-            const originalVisitorsText = visitorsElement.textContent;
-            const originalPageviewsText = pageviewsElement.textContent;
-            const originalBounceRateText = bounceRateElement.textContent;
-
-            // Menambahkan spinner loading di setiap elemen
-            sessionsElement.innerHTML = '<span class="loading-spinner"></span>';
-            visitorsElement.innerHTML = '<span class="loading-spinner"></span>';
-            pageviewsElement.innerHTML = '<span class="loading-spinner"></span>';
-            bounceRateElement.innerHTML = '<span class="loading-spinner"></span>';
-
-            // Menambahkan spinner loading di tengah halaman putih
-            const blankPage = document.getElementById('trafficChart');
-            if (blankPage) {
-                blankPage.innerHTML = '<div class="loading-spinner"></div>';
-            }
-
             fetch('/getSiteAnalytics')
                 .then(response => {
                     if (!response.ok) {
@@ -683,41 +654,43 @@
                     }
                     return response.json();
                 })
-
                 .then(data => {
                     if (data.siteAnalytics) {
-                        sessionsElement.textContent = data.siteAnalytics[0].sessions || '0';
-                        visitorsElement.textContent = data.siteAnalytics[0].activeusers || '0';
-                        pageviewsElement.textContent = data.siteAnalytics[0].pageviews || '0';
-                        bounceRateElement.textContent = (data.siteAnalytics[0].bouncerate || '0') + '%';
-                    } else {
-                        // Jika tidak ada data, kembalikan teks asli
-                        sessionsElement.textContent = originalSessionsText;
-                        visitorsElement.textContent = originalVisitorsText;
-                        pageviewsElement.textContent = originalPageviewsText;
-                        bounceRateElement.textContent = originalBounceRateText;
-                    }
+                        const analyticsData = data.siteAnalytics[0];
 
-                    // Menghapus spinner loading di tengah halaman putih
-                    if (blankPage) {
-                        blankPage.innerHTML = '';
+                        // Update text content of elements
+                        document.getElementById('sessions').textContent = analyticsData.sessions || '0';
+                        document.getElementById('visitors').textContent = analyticsData.activeusers || '0';
+                        document.getElementById('pageviews').textContent = analyticsData.pageviews || '0';
+                        document.getElementById('bounceRate').textContent = (analyticsData.bouncerate || '0') + '%';
+
+                        // Update chart series and labels
+                        options.series = [
+                            analyticsData.sessions || 0,
+                            analyticsData.activeusers || 0,
+                            analyticsData.pageviews || 0,
+                            analyticsData.bouncerate || 0
+                        ];
+                        options.labels = [
+                            'Sessions',
+                            'Visitors',
+                            'Pageviews',
+                            'Bounce Rate'
+                        ];
+
+                        // Update the chart with new data
+                        chart.updateOptions(options);
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching site analytics:', error);
-                    // Jika terjadi kesalahan, kembalikan teks asli
-                    sessionsElement.textContent = originalSessionsText;
-                    visitorsElement.textContent = originalVisitorsText;
-                    pageviewsElement.textContent = originalPageviewsText;
-                    bounceRateElement.textContent = originalBounceRateText;
-
-                    // Menghapus spinner loading di tengah halaman putih
-                    if (blankPage) {
-                        blankPage.innerHTML = '';
-                    }
                 });
-
-                console.log(data)
         }
+
+        // Call the function to fetch and update the chart
+        fetchSiteAnalytics();
+
+        // Render the chart initially
+        chart.render();
     </script>
 @endsection
