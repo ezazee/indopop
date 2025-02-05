@@ -103,6 +103,21 @@
                             <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
                                       placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
                         </div>
+                        
+                        <div class="mb-3 position-relative">
+                            <label for="video-url" class="mt-4 block">Video URL</label>
+                            <input class="form-control" id="video-url" placeholder="Paste video URL di sini" type="text" >
+                            <button type="button" class="btn btn-primary btn-sm mt-2" onclick="insertVideo()">
+                                Insert Video
+                            </button>
+                         </div>
+                         <div class="mb-3 position-relative " id="embed-container">
+                            <label for="embed-url" >Generated Embed URL:</label>
+                            <textarea class="form-control" data-counter="160" rows="3" id="embed-url" placeholder="URL Embed" ></textarea>
+                            <button type="button" class="btn btn-primary btn-sm mt-2" onclick="copyEmbedUrl()">
+                                Copy Embed URL
+                            </button>
+                         </div>
                      </div>
                   </div>
                </div>
@@ -494,6 +509,62 @@
    }
 </script>
 
+<script>
+    function convertSocialMediaLink(url) {
+        let regex = /https:\/\/www\.instagram\.com\/(p|reel|tv)\/([^\/?]+)\//;
+        let match = url.match(regex);
+        if (match) {
+            const postId = match[2]; 
+            return `https://www.instagram.com/p/${postId}/embed`;
+        }
+
+        regex = /https:\/\/www\.tiktok\.com\/@[^\/]+\/video\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const videoId = match[1];
+            return `https://www.tiktok.com/embed/v2/${videoId}`;
+        }
+
+        regex = /https:\/\/x\.com\/[^\/]+\/status\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const tweetId = match[1];
+            return `https://platform.twitter.com/embed/Tweet.html?id=${tweetId}`;
+        }
+
+        regex = /https:\/\/www\.youtube\.com\/watch\?v=([^\/&?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const videoId = match[1];
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        throw new Error('URL tidak valid atau tidak didukung.');
+    }
+
+    function insertVideo() {
+        const url = document.getElementById('video-url').value;
+
+        try {
+            const embedUrl = convertSocialMediaLink(url);
+
+            document.getElementById('embed-url').value = embedUrl;
+            document.getElementById('embed-container').style.display = 'block';
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+    }
+
+    function copyEmbedUrl() {
+        const embedUrlInput = document.getElementById('embed-url');
+
+        embedUrlInput.select();
+        embedUrlInput.setSelectionRange(0, 99999);
+
+        document.execCommand("copy");
+        alert("Embed URL copied to clipboard: " + embedUrlInput.value);
+    }
+</script>
 
 <style>
     .modal-backdrop.show {
