@@ -175,9 +175,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column justify-content-between h-100 widget-content"
-                                style="min-height: 10rem;">
-                                <canvas id="trafficChart" style="height: 200px;"></canvas>
+                            <div class="row mb-2">
+                                <div class="col-lg-12">
+                                    <!-- Create a div where the chart will take place -->
+                                    <div id="trafficChart" style="height: 200px;"></div>
+                                </div>
                             </div>
 
                             <div class="row row-cards px-2 mb-3">
@@ -491,6 +493,25 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script>
+        // Create an instance of ApexCharts and specify the options
+        var options = {
+          series: [44, 55, 13, 43, 22],
+          chart: {
+            type: 'donut',
+            height: 200,
+            width: '100%'
+          },
+          labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
+        };
+
+        // Create the chart
+        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
+
+        // Render the chart
+        chart.render();
+        </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetchTopPages();
@@ -662,6 +683,7 @@
                     }
                     return response.json();
                 })
+
                 .then(data => {
                     if (data.siteAnalytics) {
                         sessionsElement.textContent = data.siteAnalytics[0].sessions || '0';
@@ -694,6 +716,8 @@
                         blankPage.innerHTML = '';
                     }
                 });
+
+                console.log(data)
         }
     </script>
 @endsection

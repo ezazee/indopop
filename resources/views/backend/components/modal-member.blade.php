@@ -94,10 +94,10 @@
     }
 
     document.getElementById('viewModal').addEventListener('show.bs.modal', function(event) {
-        var button = event.relatedTarget; // Tombol yang membuka modal
-        var userId = button.getAttribute('data-id'); // Ambil user_id dari atribut tombol
-        var dataType = document.getElementById('dataType').value; // Ambil nilai dari dropdown
-        fetchData(dataType, userId); // Ambil data dari server dan tampilkan grafik
+        var button = event.relatedTarget;
+        var userId = button.getAttribute('data-id');
+        var dataType = document.getElementById('dataType').value;
+        fetchData(dataType, userId);
     });
 
     // Event listener untuk mengubah grafik saat pilihan di dropdown diubah
