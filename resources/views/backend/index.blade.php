@@ -177,8 +177,7 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-lg-12">
-                                    <!-- Create a div where the chart will take place -->
-                                    <div id="trafficChart" style="height: 200px;"></div>
+                                    <div id="trafficChart" style="width: 100%; height: 350px;"></div>
                                 </div>
                             </div>
 
@@ -493,13 +492,40 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
+        let chart;
         document.addEventListener('DOMContentLoaded', function() {
-            fetchTopPages();
-            fetchTopBrowsers();
-            fetchTopReferrers();
-            fetchSiteAnalytics();
+            // fetchTopPages();
+            // fetchTopBrowsers();
+            // fetchTopReferrers();
+            // fetchSiteAnalytics();
+            
+            var options = {
+                series: [{
+                    name: 'XYZ MOTORS',
+                    data: [10, 20, 15, 30, 40, 35] 
+                }],
+                chart: {
+                    type: 'area',
+                    height: 350
+                },
+                xaxis: {
+                    type: 'category',
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+                },
+                yaxis: {
+                    labels: {
+                        formatter: function (value) {
+                            return value; 
+                        }
+                    }
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
+            chart.render();
+
         });
 
         function fetchTopPages() {
@@ -632,20 +658,7 @@
                 });
 
         }
-
-
-
-        var options = {
-            series: [44, 55, 13, 43, 22],
-            chart: {
-                type: 'area',
-                height: 200,
-                width: '100%'
-            },
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
-        };
-        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
-
+        
         function fetchSiteAnalytics() {
             fetch('/getSiteAnalytics')
                 .then(response => {
@@ -658,39 +671,27 @@
                     if (data.siteAnalytics) {
                         const analyticsData = data.siteAnalytics[0];
 
-                        // Update text content of elements
                         document.getElementById('sessions').textContent = analyticsData.sessions || '0';
                         document.getElementById('visitors').textContent = analyticsData.activeusers || '0';
                         document.getElementById('pageviews').textContent = analyticsData.pageviews || '0';
                         document.getElementById('bounceRate').textContent = (analyticsData.bouncerate || '0') + '%';
 
-                        // Update chart series and labels
-                        options.series = [
-                            analyticsData.sessions || 0,
-                            analyticsData.activeusers || 0,
-                            analyticsData.pageviews || 0,
-                            analyticsData.bouncerate || 0
-                        ];
-                        options.labels = [
-                            'Sessions',
-                            'Visitors',
-                            'Pageviews',
-                            'Bounce Rate'
-                        ];
-
-                        // Update the chart with new data
-                        chart.updateOptions(options);
+                        // chart.updateOptions({
+                        //     series: [{
+                        //         name: 'Website Analytics',
+                        //         data: [
+                        //             { x: new Date().getTime(), y: analyticsData.sessions || 0 },
+                        //             { x: new Date().getTime(), y: analyticsData.activeusers || 0 },
+                        //             { x: new Date().getTime(), y: analyticsData.pageviews || 0 },
+                        //             { x: new Date().getTime(), y: analyticsData.bouncerate || 0 }
+                        //         ]
+                        //     }]
+                        // });
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching site analytics:', error);
                 });
         }
-
-        // Call the function to fetch and update the chart
-        fetchSiteAnalytics();
-
-        // Render the chart initially
-        chart.render();
     </script>
 @endsection
