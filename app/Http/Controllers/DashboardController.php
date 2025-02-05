@@ -138,7 +138,6 @@ class DashboardController extends Controller
             $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
             $siteAnalytics = [];
             $trafficData = [];
-            $labels = [];
     
             if (!empty($analyticsData['siteAnalytics'])) {
                 foreach ($analyticsData['siteAnalytics'] as $page) {
@@ -150,14 +149,12 @@ class DashboardController extends Controller
                     ];
     
                     $trafficData[] = $page['pageviews'];
-                    $labels[] = $page['date'];  
                 }
             }
     
             return response()->json([
                 'siteAnalytics' => $siteAnalytics,
                 'trafficData' => $trafficData,
-                'labels' => $labels,
             ]);
         } catch (\Exception $e) {
             return response()->json([
