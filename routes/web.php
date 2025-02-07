@@ -150,7 +150,7 @@ Route::middleware(['auth', 'role:Editor|Administrator'])->group(function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
     Route::get('/laravel-filemanager/search', [DashboardController::class, 'searchLfm'])->name('unisharp.lfm.search');
-    
+
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -170,4 +170,3 @@ Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
 
 Route::get('/{slug}', [HomeController::class, 'detail'])->name('detail.desktop');
-

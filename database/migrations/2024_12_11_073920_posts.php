@@ -14,7 +14,7 @@ return new class extends Migration
             $table->text('content');
             $table->text('gambar')->nullable();
             $table->text('image_caption')->nullable();
-            $table->string('short_description')->nullable();
+            $table->text('short_description')->nullable();
             $table->string('slug')->nullable();
             $table->enum('status', ['draft', 'schedule', 'publish']);
             $table->string('headline')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('kategori_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 
