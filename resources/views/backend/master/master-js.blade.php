@@ -1,15 +1,15 @@
 <script src="{{ asset('backend/js/notification.js') }}"></script>
-<script src="{{ asset('backend/js/jquery.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/jquery.js') }}"></script> --}}
 <script src="{{ asset('backend/js/app.js') }}"></script>
-<script src="{{ asset('backend/js/vueGlobal.min.js') }}"></script>
-<script src="{{ asset('backend/js/vueApp.min.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/vueGlobal.min.js') }}"></script>
+<script src="{{ asset('backend/js/vueApp.min.js') }}"></script> --}}
 <script src="{{ asset('backend/js/core-ui.js') }}"></script>
 <script src="{{ asset('backend/js/excanvas.min.js') }}"></script>
 <script src="{{ asset('backend/js/ie8.fix.min.js') }}"></script>
 <script src="{{ asset('backend/js/modernminz.min.js') }}"></script>
 <script src="{{ asset('backend/js/select2.min.js') }}"></script>
 <script src="{{ asset('backend/js/flatPicker.min.js') }}"></script>
-<script src="{{ asset('backend/js/jquery-cookie.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/jquery-cookie.js') }}"></script> --}}
 <script src="{{ asset('backend/js/core.js') }}"></script>
 <script src="{{ asset('backend/js/toaster.min.js') }}"></script>
 <script src="{{ asset('backend/js/customScrollbar.js') }}"></script>
@@ -43,8 +43,6 @@
 <script src="{{ asset('backend/js/momentLocales.min.js') }}"></script>
 <script src="{{ asset('backend/js/table.js') }}"></script>
 <script src="{{ asset('backend/js/areYouSure.js') }}"></script>
-{{-- <script src="{{ asset('backend/js/ckEditor.js') }}"></script>
-<script src="{{ asset('backend/js/editor.js') }}"></script> --}}
 <script src="{{ asset('backend/js/galleryMain.js') }}"></script>
 <script src="{{ asset('backend/js/htmlDif.js') }}"></script>
 <script src="{{ asset('backend/js/jsValidation.js') }}"></script>
@@ -55,7 +53,7 @@
 <script src="{{ asset('backend/js/tagify.js') }}"></script>
 <script src="{{ asset('backend/js/tags.js') }}"></script>
 <script src="{{ asset('backend/js/dropZone.js') }}"></script>
-<script src="{{ asset('backend/js/jqueryUi.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/jqueryUi.js') }}"></script> --}}
 <script src="{{ asset('backend/js/contextMenu.js') }}"></script>
 <script src="{{ asset('backend/js/treeCategory.js') }}"></script>
 <script src="{{ asset('backend/js/nestAble.js') }}"></script>
@@ -74,8 +72,10 @@
 <script src="{{ asset('backend/js/javascript.js') }}"></script>
 <script src="{{ asset('backend/js/profile.js') }}"></script>
 <script src="{{ asset('backend/js/jqueryUI.min.js') }}"></script>
-<script src="{{ asset('backend/js/jqueryTreeView.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/jqueryTreeView.js') }}"></script> --}}
 <script src="{{ asset('backend/js/roles.js') }}"></script>
+{{-- <script src="{{ asset('backend/js/ckEditor.js') }}"></script>
+<script src="{{ asset('backend/js/editor.js') }}"></script> --}}
 
 {{-- <script>
     document.querySelectorAll('[data-bb-toggle-password]').forEach(button => {

@@ -1,5 +1,22 @@
 @extends('frontend.mobile.master.master-app')
 
+<style>
+    .article-detail--body img {
+        width: 100% !important;
+        height: auto !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .article-detail--body  iframe {
+        width: 100% !important;
+        height: 800px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+</style>
 @section('content')
     <a href="#!" rel="">
         <div class="banner-ads--big">
@@ -52,7 +69,14 @@
         </a>
         <div class="t0-b20">
             <div class="article-detail--body">
-                <p><strong>Indopop.id</strong> {!! nl2br(preg_replace('/\[caption[^\]]*\]/is', '', $post->content)) !!}</p>
+                <p><strong>Indopop.id</strong> {!! preg_replace_callback(
+                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
+                    function ($matches) {
+                        return $matches[0] . '<br><i>' . htmlspecialchars($matches[1]) . '</i>';
+                    },
+                    preg_replace('/\[caption[^\]]*\]/is', '', $post->content),
+                ) !!}
+                </p>
             </div>
 
             <div class="article-detail-tag">

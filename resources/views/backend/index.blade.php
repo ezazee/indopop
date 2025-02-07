@@ -178,10 +178,13 @@
                             <div class="row mb-2">
                                 <div class="col-lg-12">
                                     <!-- Create a div where the chart will take place -->
-                                    <div id="trafficChart" style="height: 200px;"></div>
+                                    <div id="trafficChart"></div>
                                 </div>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="widget-item col-12 d-flex ">
+                        <div class="card card-sm flex-fill">
                             <div class="row row-cards px-2 mb-3">
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="card analytic-card">
@@ -493,7 +496,62 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <!-- Add ApexCharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Initialize the chart -->
+    <script>
+        // Data dummy untuk series.monthDataSeries1
+        var series = {
+            monthDataSeries1: {
+                prices: [80, 75, 90, 85, 70, 65, 60, 55, 70, 80, 95, 100], // Contoh harga saham
+                dates: [
+                    '2023-01-01', '2023-01-02', '2023-01-03', '2023-01-04', '2023-01-05',
+                    '2023-01-06', '2023-01-07', '2023-01-08', '2023-01-09', '2023-01-10',
+                    '2023-01-11', '2023-01-12'
+                ] // Contoh tanggal
+            }
+        };
+
+        // Inisialisasi chart
+        var options = {
+            series: [{
+                name: "STOCK ABC",
+                data: series.monthDataSeries1.prices
+            }],
+            chart: {
+                type: 'area',
+                height: 350,
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            labels: series.monthDataSeries1.dates,
+            xaxis: {
+                type: 'datetime',
+            },
+            yaxis: {
+                opposite: true
+            },
+            legend: {
+                horizontalAlign: 'left'
+            },
+            tooltip: {
+                enabled: true,
+                shared: true
+            }
+        };
+
+        // Render chart menggunakan ApexCharts
+        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
+        chart.render();
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetchTopPages();
@@ -633,19 +691,6 @@
 
         }
 
-
-
-        var options = {
-            series: [44, 55, 13, 43, 22],
-            chart: {
-                type: 'area',
-                height: 200,
-                width: '100%'
-            },
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
-        };
-        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
-
         function fetchSiteAnalytics() {
             fetch('/getSiteAnalytics')
                 .then(response => {
@@ -656,41 +701,16 @@
                 })
                 .then(data => {
                     if (data.siteAnalytics) {
-                        const analyticsData = data.siteAnalytics[0];
-
-                        // Update text content of elements
-                        document.getElementById('sessions').textContent = analyticsData.sessions || '0';
-                        document.getElementById('visitors').textContent = analyticsData.activeusers || '0';
-                        document.getElementById('pageviews').textContent = analyticsData.pageviews || '0';
-                        document.getElementById('bounceRate').textContent = (analyticsData.bouncerate || '0') + '%';
-
-                        // Update chart series and labels
-                        options.series = [
-                            analyticsData.sessions || 0,
-                            analyticsData.activeusers || 0,
-                            analyticsData.pageviews || 0,
-                            analyticsData.bouncerate || 0
-                        ];
-                        options.labels = [
-                            'Sessions',
-                            'Visitors',
-                            'Pageviews',
-                            'Bounce Rate'
-                        ];
-
-                        // Update the chart with new data
-                        chart.updateOptions(options);
+                        document.getElementById('sessions').textContent = data.siteAnalytics[0].sessions || '0';
+                        document.getElementById('visitors').textContent = data.siteAnalytics[0].activeusers || '0';
+                        document.getElementById('pageviews').textContent = data.siteAnalytics[0].pageviews || '0';
+                        document.getElementById('bounceRate').textContent = (data.siteAnalytics[0].bouncerate || '0') +
+                            '%';
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching site analytics:', error);
                 });
         }
-
-        // Call the function to fetch and update the chart
-        fetchSiteAnalytics();
-
-        // Render the chart initially
-        chart.render();
     </script>
 @endsection
