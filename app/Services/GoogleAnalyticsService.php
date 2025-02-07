@@ -69,6 +69,7 @@ class GoogleAnalyticsService
         $siteAnalyticsResponse = $this->analytics->runReport([
             'property' => 'properties/' . $propertyId,
             'dateRanges' => [$dateRange],
+            'dimensions' => [new Dimension(['name' => 'date'])],
             'metrics' => [
                 new Metric(['name' => 'sessions']),
                 new Metric(['name' => 'bounceRate']),
@@ -81,6 +82,7 @@ class GoogleAnalyticsService
         
         foreach ($siteAnalyticsResponse->getRows() as $row) {
             $analyticsData['siteAnalytics'][] = [
+                'date' => \Carbon\Carbon::createFromFormat('Ymd', $row->getDimensionValues()[0]->getValue())->format('Y-m-d'),
                 'sessions' => $row->getMetricValues()[0]->getValue(), 
                 'bouncerate' => number_format($row->getMetricValues()[1]->getValue() * 100, 2),
                 'pageviews' => $row->getMetricValues()[2]->getValue(),

@@ -178,7 +178,7 @@
                             <div class="row mb-2">
                                 <div class="col-lg-12">
                                     <!-- Create a div where the chart will take place -->
-                                    <div id="trafficChart" style="height: 200px;"></div>
+                                    <div id="trafficChart"></div>
                                 </div>
                             </div>
                         </div>
@@ -496,40 +496,77 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <!-- Add ApexCharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Initialize the chart -->
     <script>
-        let chart;
-        document.addEventListener('DOMContentLoaded', function() {
-            // fetchTopPages();
-            // fetchTopBrowsers();
-            // fetchTopReferrers();
-            // fetchSiteAnalytics();
-            
-            var options = {
-                series: [{
-                    name: 'XYZ MOTORS',
-                    data: [10, 20, 15, 30, 40, 35] 
-                }],
-                chart: {
-                    type: 'area',
-                    height: 350
-                },
-                xaxis: {
-                    type: 'category',
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-                },
-                yaxis: {
-                    labels: {
-                        formatter: function (value) {
-                            return value; 
+        $(document).ready(function () {
+            $.ajax({
+                url: "/getSiteAnalytics", // Sesuaikan dengan route Laravel kamu
+                type: "GET",
+                success: function (response) {
+                    if (response.siteAnalytics.length > 0) {
+                        let trafficData = response.trafficData; // Data pageviews
+                        let dates = []; 
+
+                        let startDate = new Date();
+                        startDate.setDate(startDate.getDate() - trafficData.length); 
+
+                        for (let i = 0; i < trafficData.length; i++) {
+                            let date = new Date(startDate);
+                            date.setDate(startDate.getDate() + i);
+                            dates.push(date.toISOString().split("T")[0]);
                         }
+
+                        var options = {
+                            series: [{
+                                name: "Pageviews",
+                                data: trafficData
+                            }],
+                            chart: {
+                                type: 'area',
+                                height: 350
+                            },
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                curve: 'smooth'
+                            },
+                            xaxis: {
+                                type: 'datetime',
+                                categories: dates
+                            },
+                            yaxis: {
+                                title: {
+                                    text: "Pageviews"
+                                }
+                            },
+                            tooltip: {
+                                shared: true
+                            }
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
+                        chart.render();
+                    } else {
+                        console.log("No data available");
                     }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching analytics:", error);
                 }
-            };
-
-            var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
-            chart.render();
-
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchTopPages();
+            fetchTopBrowsers();
+            fetchTopReferrers();
+            fetchSiteAnalytics();
         });
 
         function fetchTopPages() {
@@ -663,19 +700,6 @@
 
         }
 
-
-
-        var options = {
-            series: [44, 55, 13, 43, 22],
-            chart: {
-                type: 'area',
-                height: 200,
-                width: '100%'
-            },
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']
-        };
-        var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
-
         function fetchSiteAnalytics() {
             fetch('/getSiteAnalytics')
                 .then(response => {
@@ -686,30 +710,11 @@
                 })
                 .then(data => {
                     if (data.siteAnalytics) {
-                        const analyticsData = data.siteAnalytics[0];
-
-                        // Update text content of elements
-                        document.getElementById('sessions').textContent = analyticsData.sessions || '0';
-                        document.getElementById('visitors').textContent = analyticsData.activeusers || '0';
-                        document.getElementById('pageviews').textContent = analyticsData.pageviews || '0';
-                        document.getElementById('bounceRate').textContent = (analyticsData.bouncerate || '0') + '%';
-
-                        // Update chart series and labels
-                        options.series = [
-                            analyticsData.sessions || 0,
-                            analyticsData.activeusers || 0,
-                            analyticsData.pageviews || 0,
-                            analyticsData.bouncerate || 0
-                        ];
-                        options.labels = [
-                            'Sessions',
-                            'Visitors',
-                            'Pageviews',
-                            'Bounce Rate'
-                        ];
-
-                        // Update the chart with new data
-                        chart.updateOptions(options);
+                        document.getElementById('sessions').textContent = data.siteAnalytics[0].sessions || '0';
+                        document.getElementById('visitors').textContent = data.siteAnalytics[0].activeusers || '0';
+                        document.getElementById('pageviews').textContent = data.siteAnalytics[0].pageviews || '0';
+                        document.getElementById('bounceRate').textContent = (data.siteAnalytics[0].bouncerate || '0') +
+                            '%';
                     }
                 })
                 .catch(error => {
