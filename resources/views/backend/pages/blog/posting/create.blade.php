@@ -18,45 +18,6 @@
                                         <input class="form-control" data-counter="250" placeholder="Name"
                                             required="required" name="title" type="text" id="name">
                                     </div>
-                                    <div class="mb-3 ">
-                                        <div class="slug-field-wrapper" data-field-name="name">
-                                            <div class="mb-3 position-relative">
-                                                <label class="form-label required" for="slug">Permalink</label>
-                                                <div class="input-group input-group-flat">
-                                                    <span class="input-group-text">
-                                                        {{ config('app.url') }}/
-                                                    </span>
-                                                    <input class="form-control ps-0" type="text" name="slug"
-                                                        id="slug" />
-                                                    <span class="input-group-text slug-actions">
-                                                        <a href="#" class="link-secondary d-none"
-                                                            data-bs-toggle="tooltip" aria-label="Generate URL"
-                                                            data-bs-original-title="Generate URL"
-                                                            data-bb-toggle="generate-slug">
-                                                            <svg class="icon  svg-icon-ti-ti-wand"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                                <path d="M6 21l15 -15l-3 -3l-15 15l3 3" />
-                                                                <path d="M15 6l3 3" />
-                                                                <path
-                                                                    d="M9 3a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                                                <path
-                                                                    d="M19 13a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                                            </svg>
-                                                        </a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <small class="form-hint mt-n2 text-truncate">Preview: <a href="#"
-                                                    target="_blank">https://cms.botble.com/</a></small>
-                                            <input class="slug-current" name="slug" type="hidden" value="">
-                                            <div class="slug-data" data-url="#" data-view="#" data-id="0">
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="mb-3 position-relative">
                                         <label for="description" class="form-label">Description</label>
                                         <textarea class="form-control" data-counter="400" rows="4" placeholder="Short description"
@@ -201,10 +162,9 @@
                                 <label for="status">Status</label>
                                 <select class="form-control form-select" id="status" name="status">
                                     <option value="publish">Published</option>
-                                    <option value="scheduled">Scheduled</option>
+                                    <option value="schedule">Scheduled</option>
                                 </select>
-
-                                <div id="form-scheduled" style="margin-top: 10px;">
+                                <div id="form-schedule" style="margin-top: 10px; display: none;">
                                     <label class="form-label">Date</label>
                                     <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
                                     <label class="form-label">Time</label>
@@ -475,16 +435,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+            // Fungsi untuk menampilkan/menyembunyikan form scheduled
             function toggleScheduledForm() {
                 if ($("#status").val() === "schedule") {
-                    $("#form-scheduled").show();
+                    $("#form-schedule").show(); // Tampilkan form jika nilai adalah "scheduled"
                 } else {
-                    $("#form-scheduled").hide();
+                    $("#form-schedule").hide(); // Sembunyikan form jika nilai bukan "scheduled"
                 }
             }
+
+            // Panggil fungsi pertama kali untuk memastikan kondisi awal benar
             toggleScheduledForm();
-            $("#status").change(function() {
+
+            // Tambahkan event listener untuk perubahan pada dropdown
+            $("#status").change(function () {
                 toggleScheduledForm();
             });
         });

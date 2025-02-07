@@ -52,21 +52,6 @@
                                 <input id="nama_kategori" class="form-control" data-counter="250" placeholder="Name" required="required"
                                     name="nama_kategori" type="text">
                             </div>
-                            <div class="mb-3">
-                                <div class="slug-field-wrapper">
-                                    <div class="mb-3 position-relative">
-                                        <label class="form-label" for="slug">
-                                            Permalink
-                                        </label>
-                                        <div class="input-group input-group-flat">
-                                            <span class="input-group-text" >
-                                                {{ config('app.url') }}/kanal/
-                                            </span>                                            
-                                            <input id="slug" class="form-control ps-0" type="text" readonly />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="mb-3 position-relative">
                                 <label for="parent_id" class="form-label">Parent</label>
                                 <select class="select-search-full form-select" data-allow-clear="false" id="parent_id"

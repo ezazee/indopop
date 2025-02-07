@@ -51,20 +51,7 @@
                             <input id="nama_tags" class="form-control" data-counter="120" placeholder="Name"
                                 required="required" name="nama_tags" type="text">
                         </div>
-                        <div class="mb-3">
-                            <div id="slug-field-wrapper" class="slug-field-wrapper" data-field-name="name">
-                                <div class="mb-3 position-relative">
-                                    <label class="form-label required" for="slug">Permalink</label>
-                                    <div class="input-group input-group-flat">
-                                        <span class="input-group-text">
-                                            {{ config('app.url') }}/tags/
-                                        </span>
-                                        <input id="slug_tags" class="form-control ps-0" type="text" readonly/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                                           
+                    </div>
                   </div>
                </div>
             </div>

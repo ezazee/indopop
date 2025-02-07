@@ -20,7 +20,7 @@
 @section('content')
     <a href="#!" rel="">
         <div class="banner-ads--big">
-            <img src="assets/images/ads_baru/lead.svg" alt="" width="320px" height="100px">
+            @include('frontend.mobile.components.ads-2')
         </div>
     </a>
     <div class="kanal-wrap">
@@ -39,22 +39,19 @@
         </div>
         <div class="share-baru-header">
             <a href="#">
-                <img src="assets/images/share/fb.svg" alt="">
+                <img src="{{ asset('frontend/icons/fb.svg') }}" alt="">
             </a>
             <a href="#">
-                <img src="assets/images/share/twitter.svg" alt="">
+                <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="">
             </a>
             <a href="#">
-                <img src="assets/images/share/line.svg" alt="">
+                <img src="{{ asset('frontend/icons/tele.svg') }}" alt="">
             </a>
             <a href="#">
-                <img src="assets/images/share/tele.svg" alt="">
+                <img src="{{ asset('frontend/icons/wa.svg') }}" alt="">
             </a>
             <a href="#">
-                <img src="assets/images/share/wa.svg" alt="">
-            </a>
-            <a href="#">
-                <img src="assets/images/share/link.svg" alt="">
+                <img src="{{ asset('frontend/icons/link.svg') }}" alt="">
             </a>
         </div>
         <figure class="article-detail-figure">
@@ -64,7 +61,7 @@
         </figure>
         <a href="#!" rel="">
             <div class="banner-ads--big">
-                <img src="assets/images/ads_baru/lead.svg" alt="" width="320px" height="100px">
+                @include('frontend.mobile.components.ads-2')
             </div>
         </a>
         <div class="t0-b20">
@@ -87,29 +84,26 @@
             </div>
             <div class="share-baru-bottom mb-20">
                 <a href="#">
-                    <img src="assets/images/share/fb.svg" alt="">
+                    <img src="{{ asset('frontend/icons/fb.svg') }}" alt="">
                 </a>
                 <a href="#">
-                    <img src="assets/images/share/twitter.svg" alt="">
+                    <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="">
                 </a>
                 <a href="#">
-                    <img src="assets/images/share/line.svg" alt="">
+                    <img src="{{ asset('frontend/icons/tele.svg') }}" alt="">
                 </a>
                 <a href="#">
-                    <img src="assets/images/share/tele.svg" alt="">
+                    <img src="{{ asset('frontend/icons/wa.svg') }}" alt="">
                 </a>
                 <a href="#">
-                    <img src="assets/images/share/wa.svg" alt="">
-                </a>
-                <a href="#">
-                    <img src="assets/images/share/link.svg" alt="">
+                    <img src="{{ asset('frontend/icons/link.svg') }}" alt="">
                 </a>
             </div>
         </div>
     </article>
     <a href="#!" rel="">
         <div class="banner-ads--big">
-            <img src="assets/images/ads_baru/mr2.svg" alt="" width="336px" height="280px">
+            @include('frontend.mobile.components.ads-3')
         </div>
     </a>
     <!-- terpopuler -->

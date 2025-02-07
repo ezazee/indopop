@@ -353,11 +353,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    @include('backend.components.modal-member')
 @endsection
-<!-- Modal -->
-@include('backend.components.modal-member')

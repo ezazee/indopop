@@ -92,11 +92,11 @@
                         </div>
                         <li>Facebook:</li>
                         <div class="list-nama">
-                            <p>FTNewscoid</p>
+                            <p>Indopop ID</p>
                         </div>
                         <li>Instagram:</li>
                         <div class="list-nama">
-                            <p>@ftnews.co.id</p>
+                            <p>@indopop.id</p>
                         </div>
                         <li>Rekening Bank:</li>
                         <div class="list-nama">
@@ -104,7 +104,7 @@
                         </div>
                         <li>No. Rekening:</li>
                         <div class="list-nama">
-                            <p>5230256391 a/n PT. Forum Terkini Media</p>
+                            <p>5230256391 a/n Indopop</p>
                         </div>
 
 

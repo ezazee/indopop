@@ -141,49 +141,18 @@
                                 <h4 class="card-title">
                                     Site Analytics
                                 </h4>
-                                <div class="card-actions btn-actions">
-                                    <div class="dropdown d-flex align-items-center me-2 predefined_range">
-                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            Today
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <button class="dropdown-item" data-key="today" data-label="Today">
-                                                Today
-                                            </button>
-                                            <button class="dropdown-item" data-key="yesterday" data-label="Yesterday">
-                                                Yesterday
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_week" data-label="This Week">
-                                                This Week
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_7_days"
-                                                data-label="Last 7 Days">
-                                                Last 7 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_month" data-label="This Month">
-                                                This Month
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_30_days"
-                                                data-label="Last 30 Days">
-                                                Last 30 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_year" data-label="This Year">
-                                                This Year
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="row mb-2">
                                 <div class="col-lg-12">
-                                    <!-- Create a div where the chart will take place -->
+                                    <td colspan="3" class="text-center">
+                                        <div id="loading-spinner" class="loading-spinner"></div>
+                                    </td>
                                     <div id="trafficChart"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-item col-12 d-flex ">
+                    <div class="widget-item col-12 d-flex">
                         <div class="card card-sm flex-fill">
                             <div class="row row-cards px-2 mb-3">
                                 <div class="col-sm-6 col-lg-3">
@@ -203,12 +172,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="col mt-0">
-                                                    <p class="text-secondary mb-0 fs-4">
-                                                        Sessions
-                                                    </p>
+                                                    <p class="text-secondary mb-0 fs-4">Sessions</p>
                                                     <h3 class="mb-n1 fs-1" id="sessions">0</h3>
                                                 </div>
                                             </div>
+                                            <div id="loading-spinner-sessions" class="loading-spinner"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -229,12 +197,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="col mt-0">
-                                                    <p class="text-secondary mb-0 fs-4">
-                                                        Visitors
-                                                    </p>
+                                                    <p class="text-secondary mb-0 fs-4">Visitors</p>
                                                     <h3 class="mb-n1 fs-1" id="visitors">0</h3>
                                                 </div>
                                             </div>
+                                            <div id="loading-spinner-visitors" class="loading-spinner"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -255,12 +222,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="col mt-0">
-                                                    <p class="text-secondary mb-0 fs-4">
-                                                        Pageviews
-                                                    </p>
+                                                    <p class="text-secondary mb-0 fs-4">Pageviews</p>
                                                     <h3 class="mb-n1 fs-1" id="pageviews">0</h3>
                                                 </div>
                                             </div>
+                                            <div id="loading-spinner-pageviews" class="loading-spinner"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -278,12 +244,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="col mt-0">
-                                                    <p class="text-secondary mb-0 fs-4">
-                                                        Bounce Rate
-                                                    </p>
+                                                    <p class="text-secondary mb-0 fs-4">Bounce Rate</p>
                                                     <h3 class="mb-n1 fs-1" id="bounceRate">0%</h3>
                                                 </div>
                                             </div>
+                                            <div id="loading-spinner-bounceRate" class="loading-spinner"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -296,39 +261,6 @@
                                 <h4 class="card-title">
                                     Top Most Visit Pages
                                 </h4>
-                                <div class="card-actions btn-actions">
-                                    <div class="dropdown d-flex align-items-center me-2 predefined_range">
-                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            Today
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <button class="dropdown-item" data-key="today" data-label="Today">
-                                                Today
-                                            </button>
-                                            <button class="dropdown-item" data-key="yesterday" data-label="Yesterday">
-                                                Yesterday
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_week" data-label="This Week">
-                                                This Week
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_7_days"
-                                                data-label="Last 7 Days">
-                                                Last 7 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_month" data-label="This Month">
-                                                This Month
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_30_days"
-                                                data-label="Last 30 Days">
-                                                Last 30 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_year" data-label="This Year">
-                                                This Year
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="d-flex flex-column justify-content-between h-100 widget-content"
                                 style="min-height: 10rem;">
@@ -353,39 +285,6 @@
                                 <h4 class="card-title">
                                     Top Browsers
                                 </h4>
-                                <div class="card-actions btn-actions">
-                                    <div class="dropdown d-flex align-items-center me-2 predefined_range">
-                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            Today
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <button class="dropdown-item" data-key="today" data-label="Today">
-                                                Today
-                                            </button>
-                                            <button class="dropdown-item" data-key="yesterday" data-label="Yesterday">
-                                                Yesterday
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_week" data-label="This Week">
-                                                This Week
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_7_days"
-                                                data-label="Last 7 Days">
-                                                Last 7 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_month" data-label="This Month">
-                                                This Month
-                                            </button>
-                                            <button class="dropdown-item" data-key="last_30_days"
-                                                data-label="Last 30 Days">
-                                                Last 30 Days
-                                            </button>
-                                            <button class="dropdown-item" data-key="this_year" data-label="This Year">
-                                                This Year
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="d-flex flex-column justify-content-between h-100 widget-content"
                                 style="min-height: 10rem;">
@@ -410,7 +309,7 @@
                                 <h4 class="card-title">
                                     Top Referrers
                                 </h4>
-                                <div class="card-actions btn-actions">
+                                {{-- <div class="card-actions btn-actions">
                                     <div class="dropdown d-flex align-items-center me-2 predefined_range">
                                         <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
@@ -442,7 +341,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="d-flex flex-column justify-content-between h-100 widget-content"
                                 style="min-height: 10rem;">
@@ -502,18 +401,22 @@
 
     <!-- Initialize the chart -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
+
+            $('#loading-spinner').show();
             $.ajax({
-                url: "/getSiteAnalytics", // Sesuaikan dengan route Laravel kamu
+                url: "/getSiteAnalytics",
                 type: "GET",
-                success: function (response) {
+                success: function(response) {
                     if (response.siteAnalytics.length > 0) {
-                        let trafficData = response.trafficData; // Data pageviews
-                        let dates = []; 
+                        let trafficData = response.trafficData;
+                        let sessionsData = response.siteAnalytics.map(item => item.sessions);
+                        let bounceRateData = response.siteAnalytics.map(item => item.bouncerate);
+                        let activeUsersData = response.siteAnalytics.map(item => item.activeusers);
 
+                        let dates = [];
                         let startDate = new Date();
-                        startDate.setDate(startDate.getDate() - trafficData.length); 
-
+                        startDate.setDate(startDate.getDate() - trafficData.length);
                         for (let i = 0; i < trafficData.length; i++) {
                             let date = new Date(startDate);
                             date.setDate(startDate.getDate() + i);
@@ -522,9 +425,22 @@
 
                         var options = {
                             series: [{
-                                name: "Pageviews",
-                                data: trafficData
-                            }],
+                                    name: "Pageviews",
+                                    data: trafficData
+                                },
+                                {
+                                    name: "Sessions",
+                                    data: sessionsData
+                                },
+                                {
+                                    name: "Bounce Rate",
+                                    data: bounceRateData
+                                },
+                                {
+                                    name: "Active Users",
+                                    data: activeUsersData
+                                }
+                            ],
                             chart: {
                                 type: 'area',
                                 height: 350
@@ -539,24 +455,21 @@
                                 type: 'datetime',
                                 categories: dates
                             },
-                            yaxis: {
-                                title: {
-                                    text: "Pageviews"
-                                }
-                            },
                             tooltip: {
                                 shared: true
                             }
                         };
-
                         var chart = new ApexCharts(document.querySelector("#trafficChart"), options);
                         chart.render();
                     } else {
                         console.log("No data available");
                     }
+                    $('#loading-spinner').hide();
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error("Error fetching analytics:", error);
+
+                    $('#loading-spinner').hide();
                 }
             });
         });
@@ -701,6 +614,12 @@
         }
 
         function fetchSiteAnalytics() {
+            // Menampilkan loader sebelum permintaan fetch dimulai
+            document.getElementById('loading-spinner-sessions').style.display = 'block';
+            document.getElementById('loading-spinner-visitors').style.display = 'block';
+            document.getElementById('loading-spinner-pageviews').style.display = 'block';
+            document.getElementById('loading-spinner-bounceRate').style.display = 'block';
+
             fetch('/getSiteAnalytics')
                 .then(response => {
                     if (!response.ok) {
@@ -716,9 +635,21 @@
                         document.getElementById('bounceRate').textContent = (data.siteAnalytics[0].bouncerate || '0') +
                             '%';
                     }
+
+                    // Sembunyikan loader setelah permintaan fetch berhasil
+                    document.getElementById('loading-spinner-sessions').style.display = 'none';
+                    document.getElementById('loading-spinner-visitors').style.display = 'none';
+                    document.getElementById('loading-spinner-pageviews').style.display = 'none';
+                    document.getElementById('loading-spinner-bounceRate').style.display = 'none';
                 })
                 .catch(error => {
                     console.error('Error fetching site analytics:', error);
+
+                    // Sembunyikan loader jika terjadi kesalahan
+                    document.getElementById('loading-spinner-sessions').style.display = 'none';
+                    document.getElementById('loading-spinner-visitors').style.display = 'none';
+                    document.getElementById('loading-spinner-pageviews').style.display = 'none';
+                    document.getElementById('loading-spinner-bounceRate').style.display = 'none';
                 });
         }
     </script>

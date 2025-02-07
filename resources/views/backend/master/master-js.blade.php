@@ -1,5 +1,5 @@
 <script src="{{ asset('backend/js/notification.js') }}"></script>
-{{-- <script src="{{ asset('backend/js/jquery.js') }}"></script> --}}
+<script src="{{ asset('backend/js/jquery.js') }}"></script>
 <script src="{{ asset('backend/js/app.js') }}"></script>
 {{-- <script src="{{ asset('backend/js/vueGlobal.min.js') }}"></script>
 <script src="{{ asset('backend/js/vueApp.min.js') }}"></script> --}}
@@ -9,7 +9,7 @@
 <script src="{{ asset('backend/js/modernminz.min.js') }}"></script>
 <script src="{{ asset('backend/js/select2.min.js') }}"></script>
 <script src="{{ asset('backend/js/flatPicker.min.js') }}"></script>
-{{-- <script src="{{ asset('backend/js/jquery-cookie.js') }}"></script> --}}
+<script src="{{ asset('backend/js/jquery-cookie.js') }}"></script>
 <script src="{{ asset('backend/js/core.js') }}"></script>
 <script src="{{ asset('backend/js/toaster.min.js') }}"></script>
 <script src="{{ asset('backend/js/customScrollbar.js') }}"></script>
@@ -53,7 +53,7 @@
 <script src="{{ asset('backend/js/tagify.js') }}"></script>
 <script src="{{ asset('backend/js/tags.js') }}"></script>
 <script src="{{ asset('backend/js/dropZone.js') }}"></script>
-{{-- <script src="{{ asset('backend/js/jqueryUi.js') }}"></script> --}}
+<script src="{{ asset('backend/js/jqueryUi.js') }}"></script>
 <script src="{{ asset('backend/js/contextMenu.js') }}"></script>
 <script src="{{ asset('backend/js/treeCategory.js') }}"></script>
 <script src="{{ asset('backend/js/nestAble.js') }}"></script>
