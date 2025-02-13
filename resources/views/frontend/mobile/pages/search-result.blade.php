@@ -1,7 +1,7 @@
 @extends('frontend.mobile.master.master-app')
 @section('content')
 <div class="kanal-wrap mt-15 mb-10">
-    <h3 class="base-title">Pencarian: "{{ request('q') }}"</h3>
+    <h3 class="base-title">Pencarian: "{{ is_array(request('q')) ? implode(' ', request('q')) : request('q') }}"</h3>
 </div>
     <div>
         @foreach ($posts as $item)

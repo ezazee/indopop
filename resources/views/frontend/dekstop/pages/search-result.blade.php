@@ -1,7 +1,7 @@
 @extends('frontend.dekstop.master.master-app')
 @section('content')
 <div class="mt-20">
-    <h3 class="card-headline-no-image-title">Pencarian : "{{ request('q') }}"</h3>
+    <h3 class="card-headline-no-image-title">Pencarian : "{{ is_array(request('q')) ? implode(' ', request('q')) : request('q') }}"</h3>
 </div>
     <div class="content-home" id="content">
         <div class="content-article">

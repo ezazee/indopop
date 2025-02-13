@@ -481,12 +481,16 @@ class HomeController extends Controller
     public function searchResult(Request $request)
     {
 
-        $query = $request->input('q');
+        $query = $request->input('q', ''); 
+
+        if (is_array($query)) {
+            $query = implode(' ', $query); 
+        }
+        
         $posts = Post::with(['kategori', 'user', 'tags'])
             ->where('status', 'publish')
             ->where(function ($q) use ($query) {
                 $q->where('title', 'ILIKE', "%{$query}%")
-                //   ->orWhere('content', 'ILIKE', "%{$query}%")
                   ->orWhereHas('kategori', function ($q) use ($query) {
                       $q->where('nama_kategori', 'ILIKE', "%{$query}%");
                   })
