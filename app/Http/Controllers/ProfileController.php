@@ -43,7 +43,7 @@ class ProfileController extends Controller
         auth()->user()->update([
             'password' => Hash::make($request->password),
         ]);
-
-        return redirect()->route('profile.index')->with('success', 'Password updated successfully.');
+        Alert::success('Success', 'Password Update successfully!!');
+        return redirect()->route('profile.indexProfile')->with('success', 'Password updated successfully.');
     }
 }

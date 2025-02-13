@@ -44,20 +44,30 @@
                     </div>
 
                     <div class="share-baru-header">
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/fb.svg') }}" alt="">
+                        <?php $url = urlencode(url()->current()); ?>
+
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/fb.svg') }}" alt="Facebook">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="">
+                    
+                        <!-- Twitter -->
+                        <a href="https://twitter.com/intent/tweet?url={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="Twitter">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/tele.svg') }}" alt="">
+                    
+                        <!-- Telegram -->
+                        <a href="https://t.me/share/url?url={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/tele.svg') }}" alt="Telegram">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/wa.svg') }}" alt="">
+                    
+                        <!-- WhatsApp -->
+                        <a href="https://api.whatsapp.com/send?text={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/wa.svg') }}" alt="WhatsApp">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/link.svg') }}" alt="">
+                    
+                        <!-- Copy Link -->
+                        <a href="javascript:void(0);" onclick="copyToClipboard()">
+                            <img src="{{ asset('frontend/icons/link.svg') }}" alt="Copy Link">
                         </a>
                     </div>
 
@@ -87,22 +97,33 @@
 
                     <div class="share-baru-bottom">
                         <span>Share link :</span>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/fb.svg') }}" alt="">
+                        <?php $url = urlencode(url()->current()); ?>
+
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/fb.svg') }}" alt="Facebook">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="">
+                    
+                        <!-- Twitter -->
+                        <a href="https://twitter.com/intent/tweet?url={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="Twitter">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/tele.svg') }}" alt="">
+                    
+                        <!-- Telegram -->
+                        <a href="https://t.me/share/url?url={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/tele.svg') }}" alt="Telegram">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/wa.svg') }}" alt="">
+                    
+                        <!-- WhatsApp -->
+                        <a href="https://api.whatsapp.com/send?text={{ $url }}" target="_blank">
+                            <img src="{{ asset('frontend/icons/wa.svg') }}" alt="WhatsApp">
                         </a>
-                        <a href="#">
-                            <img src="{{ asset('frontend/icons/link.svg') }}" alt="">
+                    
+                        <!-- Copy Link -->
+                        <a href="javascript:void(0);" onclick="copyToClipboard()">
+                            <img src="{{ asset('frontend/icons/link.svg') }}" alt="Copy Link">
                         </a>
                     </div>
+                    
                 </article>
 
                 <div class="mt-30">
@@ -137,4 +158,16 @@
             @include('frontend.dekstop.components.sidebar')
         </div>
     </div>
+    <script>
+        function copyToClipboard() {
+        var tempInput = document.createElement("input");
+        tempInput.value = window.location.href;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Link copied to clipboard!");
+    }
+
+    </script>
 @endsection

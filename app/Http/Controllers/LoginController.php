@@ -23,7 +23,7 @@ class LoginController extends Controller
         
         if (!$user) {
             return back()->withErrors([
-                'email' => 'Email tidak ditemukan.',
+                'email' => 'User tidak ditemukan.',
             ])->withInput();
         }
         

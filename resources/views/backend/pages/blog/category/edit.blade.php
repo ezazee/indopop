@@ -39,7 +39,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('category.add') }}">
+                        <form method="POST" action="{{ route('category.update', $category->id) }}">
                             @csrf
                             <div class="mb-3 position-relative">
                                 <label for="name" class="form-label">Name</label>

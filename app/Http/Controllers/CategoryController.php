@@ -20,6 +20,34 @@ class CategoryController extends Controller
         return view('backend.pages.blog.category.create',compact('categories'));
     }
 
+    public function categoryUpdate(Request $request, $id) {
+        $request->validate([
+            'nama_kategori' => 'required|string|max:250|unique:categories,nama_kategori,' . $id . '|unique:sub_categories,nama_sub_kategori,' . $id,
+            'parent_id' => 'nullable|exists:categories,id',
+        ]);
+    
+        if ($request->has('parent_id') && $request->parent_id) {
+            $subCategory = SubCategory::findOrFail($id);
+            $subCategory->nama_sub_kategori = $request->nama_kategori;
+            $subCategory->category_id = $request->parent_id;
+            $subCategory->slug = \Str::slug($request->nama_kategori);
+            $subCategory->save();
+    
+            Alert::success('Success', 'Sub Category updated successfully!!');
+            return redirect()->back()->with('success', 'Sub Category updated successfully.');
+        } else {
+            // Update Category
+            $category = Categori::findOrFail($id);
+            $category->nama_kategori = $request->nama_kategori;
+            $category->slug = \Str::slug($request->nama_kategori);
+            $category->save();
+    
+            Alert::success('Success', 'Category updated successfully!!');
+            return redirect()->back()->with('success', 'Category updated successfully.');
+        }
+    }    
+
+
     public function SubcategEdit($id) {
         $categories = Categori::all(); 
         $category = SubCategory::where('id', $id)->firstOrFail();
