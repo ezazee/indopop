@@ -78,14 +78,15 @@
 
                     </figure>
                     <div class="article-detail--body">
-                        <p><strong>Indopop.id</strong> {!! preg_replace_callback(
+                        {!! preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content) !!}
+                        {{-- <p>{!! preg_replace_callback(
                             '/<img[^>]+alt="([^"]*)"[^>]*>/i',
                             function ($matches) {
                                 return $matches[0] . '<br><i>' . htmlspecialchars($matches[1]) . '</i>';
                             },
                             preg_replace('/\[caption[^\]]*\]/is', '', $post->content),
                         ) !!}
-                        </p>
+                        </p> --}}
                     </div>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>

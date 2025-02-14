@@ -8,33 +8,41 @@ use Carbon\Carbon;
 
 class PublishScheduledPosts extends Command
 {
-    protected $signature = 'posts:publish-scheduled';
-    protected $description = 'Publish scheduled posts at their scheduled date and time';
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
+    protected $signature = 'posts:update-status';
+    protected $description = 'Update the status of posts scheduled to be published';
 
     public function handle()
     {
-        $now = Carbon::now();
-
+        $currentDateTime = Carbon::now('Asia/Jakarta');
+        $this->info($currentDateTime);
+        $currentDate = $currentDateTime->format('Y-m-d');
+        $currentTime = $currentDateTime->format('H:i:s');
+    
         $posts = Post::where('status', 'schedule')
-            ->whereDate('start_date', $now->toDateString())
-            ->whereTime('start_time', $now->toTimeString())
+            ->where(function($query) use ($currentDate, $currentTime) {
+                $query->where(function($query) use ($currentDate, $currentTime) {
+                    $query->where('start_date', '=', $currentDate)
+                          ->where('start_time', '<=', $currentTime);
+                })
+                ->orWhere('start_date', '<', $currentDate);
+            })
             ->get();
-
+    
         foreach ($posts as $post) {
+            $scheduledDateTime = Carbon::parse($post->start_date . ' ' . $post->start_time, 'Asia/Jakarta');
+
+            $post->timestamps = false;
+
             $post->status = 'publish';
-            $post->start_date = null;
-            $post->start_time = null;
+            $post->created_at = $scheduledDateTime;
+
             $post->save();
+            
+            $post->timestamps = true;
 
-            $this->info("Post ID {$post->id} published successfully.");
+            $this->info("Updated post ID {$post->id} to public with created_at set to {$scheduledDateTime}");
         }
-
-        return 0;
+    
+        $this->info('Post status update complete');
     }
-
 }

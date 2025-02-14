@@ -16,11 +16,15 @@ class PostSeeder extends Seeder
 {
     public function run()
     {
-        $jsonPath = database_path('seeders/indopop.json');
+        $jsonPath = database_path('/seeders/indopop.json');   
     
         if (File::exists($jsonPath)) {
             $jsonData = File::get($jsonPath);
             $posts = json_decode($jsonData, true);
+
+            if (!is_array($posts)) {
+                throw new \Exception("Data JSON tidak valid: " . json_last_error_msg());
+            }
     
             $categories = [];
     
@@ -70,21 +74,44 @@ class PostSeeder extends Seeder
                 $user = DB::table('users')->where('email', $postData['Author Email'])->first();
                 $userId = $user ? $user->id : 1;
 
-            
-                $post = Post::create([
-                    'title' => $postData['Title'],
-                    'content' => $postData['Content'],
-                    'gambar' => $postData['Image URL'],
-                    'image_caption' => $postData['Image Caption'],
-                    'slug' => $postData['Slug'],
-                    'status' => $postData['Status'],
+                $gambarUrls = explode('|', $postData['Image URL']);
+                $gambarUrls = array_map(function ($url) {
+                    return preg_replace('/https:\/\/indopop\.id\/wp-content\/uploads\/\d{4}\/\d{2}\//','https://indopop.id/storage/photos/shares/', $url);
+                }, $gambarUrls);
+                $gambar = implode('|', $gambarUrls);
+
+            // **Skip jika "content" null atau kosong**
+                if (empty($postData['Content'])) {
+                    echo "Skipping post with empty content: " . ($postData['Title'] ?? 'No Title') . "\n";
+                    continue;
+                }
+
+                $content = $postData['Content'] ?? null;
+
+                if (!empty($content)) {
+                    $content = preg_replace('/https:\/\/indopop\.id\/wp-content\/uploads\/\d{4}\/\d{2}\//', 'https://indopop.id/storage/photos/shares/', $content);
+                }
+                
+                $postDataArray = [
+                    'title' => $postData['Title'] ?? null,
+                    'content' => $content,
+                    'gambar' => $gambar ?? null,
+                    'image_caption' => $postData['Image Caption'] ?? null,
+                    'slug' => $postData['Slug'] ?? null,
+                    'status' => $postData['Status'] ?? 'draft',
                     'kategori_id' => $category ? $category->id : 1,
                     'headline' => $headlineStatus,
                     'user_id' => $userId,
                     'created_at' => !empty($postData['Date'])
                         ? Carbon::createFromFormat('Y-m-d', $postData['Date'])->format('Y-m-d H:i:s')
                         : now()->format('Y-m-d H:i:s'),
-                ]);
+                ];
+                
+                $postDataArray = array_filter($postDataArray, function ($value) {
+                    return $value !== null;
+                });
+                
+                $post = Post::create($postDataArray);
             
                 if (!empty($postData['Tags'])) {
                     echo 'Raw Tags: ' . $postData['Tags'] . "\n";
