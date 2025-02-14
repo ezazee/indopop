@@ -323,21 +323,37 @@
         }
     </script>
     <script>
-        document.getElementById("searchImages").addEventListener("keyup", function () {
-            let filter = this.value.toLowerCase();
-            let items = document.querySelectorAll("#content .item_name");
+       document.getElementById("searchImages").addEventListener("keyup", function () {
+    let query = this.value;
     
-            items.forEach(function (item) {
-                let text = item.textContent || item.innerText;
-                let parent = item.closest("a"); 
-    
-                if (text.toLowerCase().indexOf(filter) > -1) {
-                    parent.style.display = "";
+    if (query.length > 0) {
+        fetch(`/lfm/search?query=${query}`)
+            .then(response => response.json())
+            .then(files => {
+                let container = document.getElementById("content");
+                container.innerHTML = ""; // Hapus tampilan lama
+
+                if (files.length > 0) {
+                    files.forEach(file => {
+                        let card = `
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <img src="/storage/${file}" class="card-img-top" alt="File">
+                                    <div class="card-body">
+                                        <p class="text-center">${file.split('/').pop()}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.innerHTML += card;
+                    });
                 } else {
-                    parent.style.display = "none";
+                    container.innerHTML = `<p class="text-muted text-center">Tidak ada file ditemukan.</p>`;
                 }
             });
-        });
+    }
+});
+
     </script>
     
 </body>

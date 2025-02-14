@@ -151,6 +151,9 @@ Route::middleware(['auth', 'role:Editor|Administrator'])->group(function () {
     Route::group(['prefix' => 'laravel-filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
+
+    Route::get('/lfm/search', [SettingsController::class, 'search'])->name('lfm.search');
+
     Route::get('/laravel-filemanager/search', [DashboardController::class, 'searchLfm'])->name('unisharp.lfm.search');
 
 });

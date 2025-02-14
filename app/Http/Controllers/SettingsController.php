@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Settings;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
+use Storage;
 
 
 class SettingsController extends Controller
@@ -133,4 +134,17 @@ class SettingsController extends Controller
         return redirect()->route('settings.memberDashboard')->with('success', 'Member deleted successfully.');
     }
 
+    public function search(Request $request)
+    {
+        $query = strtolower($request->input('query'));
+        $folder = $request->input('folder', '');
+
+        $files = Storage::disk('public')->allFiles($folder);
+
+        $filteredFiles = array_filter($files, function ($file) use ($query) {
+            return stripos(basename($file), $query) !== false;
+        });
+
+        return response()->json(array_values($filteredFiles));
+    }
 }

@@ -1,5 +1,5 @@
 @if(count($files) > 0)
-    <div class="row">
+    <div id="content" class="row">
         @foreach($files as $file)
             <div class="col-md-3">
                 <div class="card">
