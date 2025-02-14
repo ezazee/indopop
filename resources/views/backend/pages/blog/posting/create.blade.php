@@ -14,9 +14,11 @@
                             <div class="card-body">
                                 <div class="form-body">
                                     <div class="mb-3 position-relative">
-                                        <label for="name" class="form-label required">Name</label>
-                                        <input class="form-control" data-counter="250" placeholder="Name"
-                                            required="required" name="title" type="text" id="name">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input class="form-control" data-counter="250" placeholder="Name" name="title" type="text" id="name">
+                                        @if ($errors->has('title'))
+                                            <small class="text-danger">{{ $errors->first('title') }}</small>
+                                        @endif
                                     </div>
                                     <div class="mb-3 position-relative">
                                         <label for="description" class="form-label">Description</label>
@@ -27,6 +29,9 @@
                                         <label for="content" class="form-label">Content</label>
                                         <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
                                             placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
+                                        @if ($errors->has('content'))
+                                            <small class="text-danger">{{ $errors->first('content') }}</small>
+                                        @endif
                                     </div>
                                     <div class="mb-3 position-relative">
                                         <label for="video-url" class="mt-4 block">Video URL</label>
@@ -155,7 +160,7 @@
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="status" class="form-label required">Status</label>
+                                    <label for="status" class="form-label">Status</label>
                                 </h4>
                             </div>
                             <div class="card-body">
@@ -192,72 +197,50 @@
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="categories[]" class="form-label required">Categories</label>
+                                    <label for="categories" class="form-label">Categories</label>
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <div class="mb-3">
-                                    <div class="input-icon">
-                                        <input type="text" id="search-category-input-998852741" class="form-control"
-                                            placeholder="Search..." onkeyup="filter_categories_998852741(998852741)"
-                                            formnovalidate />
-                                        <span class="input-icon-addon">
-                                            <svg class="icon  svg-icon-ti-ti-search" xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                                <path d="M21 21l-6 -6" />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div data-bb-toggle="tree-checkboxes" class="tree-categories-list-998852741">
-                                    <ul class="list-unstyled ">
+                                <div class="tree-categories-list-998852741">
+                                    <ul class="list-unstyled">
                                         @foreach ($category as $item)
-                                            <li>
-                                                <label class="form-check">
-                                                    <input type="checkbox" name="categories"
-                                                        class="form-check-input category-checkbox"
-                                                        value="{{ $item->id }}"
-                                                        data-category-id="{{ $item->id }}">
-                                                    <span class="form-check-label" required>
-                                                        {{ $item->nama_kategori }}
-                                                    </span>
-                                                </label>
-                                                <ul class="list-unstyled ms-4 mt-2">
-                                                    @foreach ($item->subCategories as $subItem)
-                                                        <li>
-                                                            <label class="form-check">
-                                                                <input type="checkbox"
-                                                                    name="subcategories[{{ $item->id }}][]"
-                                                                    class="form-check-input subcategory-checkbox"
-                                                                    data-parent-id="{{ $item->id }}"
-                                                                    data-subcategory-id="{{ $subItem->id }}">
-                                                                <span class="form-check-label">
-                                                                    {{ $subItem->nama_sub_kategori }}
-                                                                </span>
-                                                            </label>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
+                                        <li>
+                                            <label class="form-check">
+                                                <input type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" onchange="toggleCategorySelection(this)">
+                                                <span class="form-check-label">
+                                                    {{ $item->nama_kategori }}
+                                                </span>
+                                            </label>
+                                            <ul class="list-unstyled ms-4 mt-2">
+                                                @foreach ($item->subCategories as $subItem)
+                                                <li>
+                                                    <label class="form-check">
+                                                        <input type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" onchange="toggleSubCategorySelection(this)">
+                                                        <span class="form-check-label">
+                                                            {{ $subItem->nama_sub_kategori }}
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
                                         @endforeach
                                     </ul>
                                 </div>
+                                @if ($errors->has('categories'))
+                                    <small class="text-danger">{{ $errors->first('categories') }}</small>
+                                @endif
                             </div>
                         </div>
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="banner_image" class="form-label required">Banner image</label>
+                                    <label for="banner_image" class="form-label">Banner image</label>
                                 </h4>
                             </div>
                             <div class="card-body">
                                 <div class="image-box image-box-banner_image" data-counter="250">
-                                    <input class="image-data" name="banner_image" type="hidden" value=""
-                                        data-counter="250" required />
+                                    <input class="image-data" name="banner_image" type="hidden" data-counter="250" />
                                     <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
                                         class="preview-image-wrapper mb-1">
                                         <div class="preview-image-inner">
@@ -286,6 +269,11 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @if ($errors->has('banner_image'))
+                                        <small class="text-danger">{{ $errors->first('banner_image') }}</small>
+                                    @endif
+                                    <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text">
+
                                     <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
                                         class="btn btn-primary btn-sm">
                                         Choose image
@@ -296,12 +284,15 @@
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="tag" class="form-label required">Tags</label>
+                                    <label for="tag" class="form-label">Tags</label>
                                 </h4>
                             </div>
                             <div class="card-body">
                                 <input class="form-control tags" placeholder="Write some tags" data-url=""
-                                    name="tag" type="text" id="tag" required="required">
+                                    name="tag" type="text" id="tag">
+                                @if ($errors->has('tag'))
+                                    <small class="text-danger">{{ $errors->first('tag') }}</small>
+                                @endif
                             </div>
                         </div>
                     </div>

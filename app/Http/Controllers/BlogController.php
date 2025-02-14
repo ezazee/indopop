@@ -73,19 +73,16 @@ class BlogController extends Controller
 
     public function PostAdd(Request $request) {
 
-        // $validatedData = $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'slug' => 'nullable|string|max:255|unique:posts,slug',
-        //     'description' => 'nullable|string',
-        //     'content' => 'nullable|string',
-        //     'seo_meta.seo_title' => 'nullable|string|max:255',
-        //     'seo_meta.seo_description' => 'nullable|string|max:255',
-        //     'status' => 'required|string|in:published,draft',
-        //     'headline' => 'nullable|string|in:yes,no',
-        //     'categories' => 'required|integer|exists:categories,id',
-        //     'banner_image' => 'nullable|url',
-        //     'tag' => 'nullable|json',
-        // ]);
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:posts,slug',
+            'short_description' => 'nullable|string',
+            'content' => 'required|string',
+            'headline' => 'nullable|string|in:yes,no',
+            'categories' => 'required|integer|exists:categories,id',
+            'banner_image' => 'required|url',
+            'tag' => 'required|json',
+        ]);
     
             $post = Post::create([
                 'title' => $request->input('title'),
