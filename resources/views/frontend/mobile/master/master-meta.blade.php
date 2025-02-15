@@ -21,8 +21,14 @@
     {{
         !empty($post->gambar)
             ? (is_array($post->gambar)
-                ? (isset($post->gambar[0]) ? asset('storage/' . $post->gambar[0]) : asset('images/share.jpg'))
-                : asset('storage/' . $post->gambar))
+                ? (isset($post->gambar[0]) 
+                    ? (filter_var($post->gambar[0], FILTER_VALIDATE_URL) 
+                        ? $post->gambar[0] 
+                        : asset('storage/' . $post->gambar[0]))
+                    : asset('images/share.jpg'))
+                : (filter_var($post->gambar, FILTER_VALIDATE_URL) 
+                    ? $post->gambar 
+                    : asset('storage/' . $post->gambar)))
             : asset('images/share.jpg')
     }}
 ">
@@ -42,8 +48,14 @@
     {{
         !empty($post->gambar)
             ? (is_array($post->gambar)
-                ? (isset($post->gambar[0]) ? asset('storage/' . $post->gambar[0]) : asset('images/share.jpg'))
-                : asset('storage/' . $post->gambar))
+                ? (isset($post->gambar[0]) 
+                    ? (filter_var($post->gambar[0], FILTER_VALIDATE_URL) 
+                        ? $post->gambar[0] 
+                        : asset('storage/' . $post->gambar[0]))
+                    : asset('images/share.jpg'))
+                : (filter_var($post->gambar, FILTER_VALIDATE_URL) 
+                    ? $post->gambar 
+                    : asset('storage/' . $post->gambar)))
             : asset('images/share.jpg')
     }}
 ">

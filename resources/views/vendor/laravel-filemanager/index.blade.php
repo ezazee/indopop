@@ -49,9 +49,6 @@
             <i class="fas fa-cog fa-fw"></i>
         </a>
         <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
-            <form id="search-form" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" id="searchImages" placeholder="Cari File..." aria-label="Search">
-            </form>
             
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -322,40 +319,6 @@
             maxFilesize: ({{ $helper->maxUploadSize() }} / 1000)
         }
     </script>
-    <script>
-       document.getElementById("searchImages").addEventListener("keyup", function () {
-    let query = this.value;
-    
-    if (query.length > 0) {
-        fetch(`/lfm/search?query=${query}`)
-            .then(response => response.json())
-            .then(files => {
-                let container = document.getElementById("content");
-                container.innerHTML = ""; // Hapus tampilan lama
-
-                if (files.length > 0) {
-                    files.forEach(file => {
-                        let card = `
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="/storage/${file}" class="card-img-top" alt="File">
-                                    <div class="card-body">
-                                        <p class="text-center">${file.split('/').pop()}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        container.innerHTML += card;
-                    });
-                } else {
-                    container.innerHTML = `<p class="text-muted text-center">Tidak ada file ditemukan.</p>`;
-                }
-            });
-    }
-});
-
-    </script>
-    
 </body>
 
 </html>

@@ -7,7 +7,11 @@ use App\Models\User;
 use App\Models\Settings;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
-use Storage;
+use UniSharp\LaravelFilemanager\Controllers\LfmController;
+use UniSharp\LaravelFilemanager\Lfm;
+use UniSharp\LaravelFilemanager\LfmPath;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 
 class SettingsController extends Controller
@@ -134,17 +138,54 @@ class SettingsController extends Controller
         return redirect()->route('settings.memberDashboard')->with('success', 'Member deleted successfully.');
     }
 
-    public function search(Request $request)
+    public function getItems(Request $request)
     {
-        $query = strtolower($request->input('query'));
-        $folder = $request->input('folder', '');
+        $searchQuery = $request->get('search');
+        dd($searchQuery);
+        $workingDir = '/shares';
 
-        $files = Storage::disk('public')->allFiles($folder);
+        $items = array_merge($this->lfm->folders($workingDir), $this->lfm->files($workingDir));
+    
+        if (!empty($searchQuery)) {
+            $items = array_filter($items, function ($item) use ($searchQuery) {
+                $attributes = $item->attributes;
+                return isset($attributes['name']) && stripos($attributes['name'], $searchQuery) !== false;
+            });
+        }
 
-        $filteredFiles = array_filter($files, function ($file) use ($query) {
-            return stripos(basename($file), $query) !== false;
+        usort($items, function ($a, $b) {
+            $nameA = strtolower($a->name);
+            $nameB = strtolower($b->name);
+    
+            $isNumA = ctype_digit(substr($nameA, 0, 1));
+            $isNumB = ctype_digit(substr($nameB, 0, 1));
+    
+            if ($isNumA && !$isNumB) return 1;
+            if (!$isNumA && $isNumB) return -1;
+    
+            return strcmp($nameA, $nameB);
         });
 
-        return response()->json(array_values($filteredFiles));
+
+        $perPage = request('per_page', 50);
+        $currentPage = request('page', 1);
+        $totalItems = count($items);
+        $pagedItems = array_slice($items, ($currentPage - 1) * $perPage, $perPage);
+    
+        return [
+            'items' => array_map(function ($item) {
+                return $item->fill()->attributes;
+            }, $pagedItems),
+            'paginator' => [
+                'total' => $totalItems,
+                'per_page' => $perPage,
+                'current_page' => $currentPage,
+            ],
+            'display' => $this->helper->getDisplayMode(),
+            'working_dir' => $workingDir,
+            'search_query' => $searchQuery,
+        ];
     }
+
+    
 }

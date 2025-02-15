@@ -17,6 +17,8 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Models\Post;
 use App\Models\Categori;
+
+use UniSharp\LaravelFilemanager\Controllers\ItemsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,6 +104,8 @@ Route::middleware(['auth', 'role:Administrator'])->group(function () {
     Route::delete('/dashboard/blog/category/delete/{id}', [CategoryController::class, 'categoryDestroy'])->name('category.destroy');
     Route::post('/dashboard/blog/category/update/{id}', [CategoryController::class, 'categoryUpdate'])->name('category.update');
 
+    // Route::get('/laravel-filemanager/items', [ItemsController::class, 'getItems']);
+
 
     // subcateg
     Route::get('/dashboard/blog/subcateg/edit/{id}', [CategoryController::class, 'SubcategEdit'])->name('subcateg.edit');
@@ -145,16 +149,14 @@ Route::middleware(['auth', 'role:Editor|Administrator'])->group(function () {
     Route::post('/system/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 
 
-
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/laravel-filemanager', [SettingsController::class, 'getItems'])->name('getItems.file');
 
     Route::group(['prefix' => 'laravel-filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
 
-    Route::get('/lfm/search', [SettingsController::class, 'search'])->name('lfm.search');
-
-    Route::get('/laravel-filemanager/search', [DashboardController::class, 'searchLfm'])->name('unisharp.lfm.search');
+    // Route::get('/laravel-filemanager/search', [DashboardController::class, 'searchLfm'])->name('unisharp.lfm.search');
 
 });
 
