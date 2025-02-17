@@ -29,8 +29,11 @@
                     @foreach ($otherPostsheadline->take(4) as $item)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -49,8 +52,11 @@
                     <div class="list-element">
                         <article class="main-card">
                             <div class="main-card-img-wrap">
-                                <img alt="image" class="main-card-img" width="213" height="130"
-                                    src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="main-card-img" width="213" height="130"
+                                        src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                                </a>
                             </div>
                             <div class="main-card--info">
                                 <h4 class="main-card--title">
@@ -77,8 +83,11 @@
                         $images = explode('|', $topPostDangdut->gambar);
                     @endphp
                     <article class="card-one-headline">
-                        <img alt="image" class="card-one-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-one-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-one-headline--info">
                             <h2 class="card-one-headline--title">
                                 <a
@@ -97,8 +106,11 @@
                     @foreach ($otherPostsDangdut as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -120,8 +132,11 @@
                         $images = explode('|', $topPostFlexing->gambar);
                     @endphp
                     <article class="card-kanal-headline">
-                        <img alt="image" class="card-kanal-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-kanal-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-kanal-headline--info">
                             <h2 class="card-kanal-headline--title">
                                 <a
@@ -139,8 +154,11 @@
                     @foreach ($otherPostsFlexing as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -162,8 +180,11 @@
                         $images = explode('|', $topPostGosip->gambar);
                     @endphp
                     <article class="card-one-headline">
-                        <img alt="image" class="card-one-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-one-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-one-headline--info">
                             <h2 class="card-one-headline--title">
                                 <a
@@ -181,8 +202,11 @@
                     @foreach ($otherPostsGosip as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -205,8 +229,11 @@
                         $images = explode('|', $topPostKPop->gambar);
                     @endphp
                     <article class="card-kanal-headline">
-                        <img alt="image" class="card-kanal-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-kanal-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-kanal-headline--info">
                             <h2 class="card-kanal-headline--title">
                                 <a
@@ -224,8 +251,11 @@
                     @foreach ($otherPostsKPop as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -248,8 +278,11 @@
                         $images = explode('|', $topPostVibes->gambar);
                     @endphp
                     <article class="card-one-headline">
-                        <img alt="image" class="card-one-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-one-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-one-headline--info">
                             <h2 class="card-one-headline--title">
                                 <a
@@ -267,8 +300,11 @@
                     @foreach ($otherPostsVibes as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -291,8 +327,11 @@
                         $images = explode('|', $topPostMeandmom->gambar);
                     @endphp
                     <article class="card-kanal-headline">
-                        <img alt="image" class="card-kanal-headline-img" width="310" height="230"
-                            src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                            <img alt="image" class="card-kanal-headline-img" width="310" height="230"
+                                src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                        </a>
                         <div class="card-kanal-headline--info">
                             <h2 class="card-kanal-headline--title">
                                 <a
@@ -310,8 +349,11 @@
                     @foreach ($otherPostsMeandmom as $post)
                         <article class="card-two-headline">
                             <div class="card-two-headline-img-wrap">
-                                <img alt="image" class="card-two-headline-img" width="100" height="74"
-                                    src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+
+                                    <img alt="image" class="card-two-headline-img" width="100" height="74"
+                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                </a>
                             </div>
                             <div class="card-two-headline--info">
                                 <h4 class="card-two-headline--title">
@@ -333,8 +375,10 @@
                         <div class="list-element">
                             <article class="main-card">
                                 <div class="main-card-img-wrap">
-                                    <img alt="image" class="main-card-img" width="350" height="261"
-                                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
+                                        <img alt="image" class="main-card-img" width="350" height="261"
+                                            src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                                    </a>
                                 </div>
                                 <div class="main-card--info">
                                     <h4 class="main-card--title">

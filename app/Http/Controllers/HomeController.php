@@ -472,21 +472,21 @@ class HomeController extends Controller
         }
 
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.bytag',compact('post','postTerkini','postTerpopuler'));
+            return view('frontend.mobile.pages.bytag',compact('post','postTerkini','postTerpopuler', 'tag'));
         } else {
-            return view('frontend.dekstop.pages.bytag',compact('post','postTerkini','postTerpopuler'));
+            return view('frontend.dekstop.pages.bytag',compact('post','postTerkini','postTerpopuler', 'tag'));
         }
     }
 
     public function searchResult(Request $request)
     {
 
-        $query = $request->input('q', ''); 
+        $query = $request->input('q', '');
 
         if (is_array($query)) {
-            $query = implode(' ', $query); 
+            $query = implode(' ', $query);
         }
-        
+
         $posts = Post::with(['kategori', 'user', 'tags'])
             ->where('status', 'publish')
             ->where(function ($q) use ($query) {

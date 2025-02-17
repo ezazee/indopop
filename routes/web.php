@@ -172,7 +172,7 @@ Route::get('/kebijakan-privasi', [HomeController::class, 'kebijakanPrivasi'])->n
 Route::get('/kode-etik', [HomeController::class, 'kodeEtik'])->name('kodeEtik.desktop');
 Route::get('/visi-misi', [HomeController::class, 'visiMisi'])->name('visiMisi.desktop');
 Route::get('/site-map', [HomeController::class, 'siteMap'])->name('siteMap.desktop');
-Route::get('/kanal/{slug}', [HomeController::class, 'kanal'])->name('kanal.desktop');
+Route::get('/category/{slug}', [HomeController::class, 'kanal'])->name('kanal.desktop');
 Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop');
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
 

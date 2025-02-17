@@ -17,7 +17,9 @@
                     $images = explode('|', $topPostheadline->gambar);
                 @endphp
                 <article class="card-headline">
-                    <img alt="image" class="card-headline-img" src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                    <a href="{{ route('detail.desktop', ['slug' => $topPostheadline->slug]) }}">
+                        <img alt="image" class="card-headline-img" src="{{ isset($images[0]) ? $images[0] : '' }}" />
+                    </a>
                     <div class="card-headline-info">
                         <h4 class="card-headline-title">
                             <a

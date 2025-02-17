@@ -1848,6 +1848,9 @@ th {
     display: none;
 }
 
+.text-primary{
+    color: var(--red-primary);
+}
 
 .fw-bold{
     font-weight: bold !important;
