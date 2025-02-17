@@ -1,38 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Under Maintenance</title>
+  <style>
+    /* CSS Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 350px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #7f8c8d;
+    }
+
+    .loader {
+      display: inline-block;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid rgba(235, 0, 128, 1);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: rgba(235, 0, 128, 1);
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #2980b9;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <canvas id="myChart"></canvas>
-      </div>
+  <div class="maintenance-container">
+    <div class="logo">
+      <img src="./indopop.png" alt="Logo Website">
+    </div>
+    <h1>Website Sedang Maintenance!</h1>
+    <p id="dynamic-message">
+        Website Indopop.Id sedang dalam pemeliharaan. Kami akan segera kembali.
+    </p>
+    <div class="loader"></div>
+  </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // JavaScript untuk animasi pesan dinamis
+    document.addEventListener("DOMContentLoaded", () => {
+      const messages = [
+        "Kami sedang berusaha keras untuk meningkatkan situs ini.",
+        "Tetap pantau untuk pembaruan menarik!",
+        "Terima kasih atas kesabaran Anda."
+      ];
 
-      <script>
-        const ctx = document.getElementById('myChart');
+      const messageElement = document.getElementById('dynamic-message');
+      let currentIndex = 0;
 
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      </script>
+      function updateMessage() {
+        messageElement.style.opacity = 0; // Fade out
+        setTimeout(() => {
+          messageElement.innerHTML = messages[currentIndex];
+          messageElement.style.opacity = 1; // Fade in
+          currentIndex = (currentIndex + 1) % messages.length;
+        }, 500); // Delay sebelum menampilkan pesan berikutnya
+      }
+
+      setInterval(updateMessage, 3000); // Ganti pesan setiap 3 detik
+    });
+  </script>
 </body>
 </html>

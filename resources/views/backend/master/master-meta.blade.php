@@ -5,5 +5,5 @@
 <title>Dashboard Indopop New</title>
 <link rel="Shortcut icon" href="{{ asset('frontend/logo/favicon.png') }}">
 <meta property="og:image" content="{{ asset('frontend/logo/favicon.png') }}" />
-<meta name="description" content="Copyright 2024 © Indopop Technologies. Version 7.4.7">
-<meta property="og:description" content="Copyright 2024 © Botble Technologies. Version 7.4.7">
+<meta name="description" content="Copyright 2025 © Indopop Technologies. Version 7.4.7">
+<meta property="og:description" content="Copyright 2025 © Botble Technologies. Version 7.4.7">

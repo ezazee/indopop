@@ -6,7 +6,7 @@
                     Copyright {{ date('Y') }} © KBN Technologies
                 </div>
                 <div class="order-1 order-lg-2">
-                    Indopop Industries 2024
+                    Indopop Industries 2025
                 </div>
             </div>
         </div>

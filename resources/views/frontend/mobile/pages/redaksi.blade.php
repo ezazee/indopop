@@ -8,6 +8,13 @@
             <div class="article-detail--body">
                 <div class="list-article">
                     <ul style="margin: 0; padding:0;">
+                        <li>Penerbit</li>
+                        <div class="list-nama">
+                            <p>PT FORUM TERKINI MEDIA</p>
+                            <p>Nomor AHU-0033926.AH.01.01.TAHUN 2021 Tanggal, 25 Mei 2021</p>
+                            <p>Terverifikasi secara Administratif dan Faktual oleh Dewan Pers</p>
+                            <p>No. 976/DP-Verifikasi/K/IV/2022</p>
+                        </div>
                         <li>Komisaris Utama</li>
                         <div class="list-nama">
                             <p>Alfonso FP</p>
@@ -20,83 +27,85 @@
                         <div class="list-nama">
                             <p>Bambang Dwiwarno</p>
                         </div>
+                        <li>Plt. Pemimpin Redaksi</li>
+                        <div class="list-nama">
+                            <p>Madinah</p>
+                        </div>
                         <li>Dewan Redaksi</li>
                         <div class="list-nama">
                             <p>Alfonso FP</p>
                             <p>Tanti Sagittarini</p>
                             <p>Roso Daras</p>
+                            <p>Madinah</p>
                         </div>
-                        <li>Pj. Redaktur Pelaksana</li>
+                        <li>Redaktur Pelaksana</li>
                         <div class="list-nama">
-                            <p>Adam Erlangga</p>
+                            <p>Tomy Tresnady</p>
                         </div>
                         <li>Redaksi</li>
                         <div class="list-nama">
-                            <p>Adinda Ratna Safira</p>
-                            <p>Ario Vallentino Syahgatra</p>
-                            <p>Nuralfian</p>
+                            <p>M. Aribowo</p>
                             <p>Choirul Anwar</p>
-                            <p>Jayadi</p>
-                        </div>
-                        <li>Kontributor</li>
-                        <div class="list-nama">
-                            <p>Monang Sitohang</p>
-                        </div>
-                        <li>Multimedia</li>
-                        <div class="list-nama">
-                            <p>Dimas</p>
-                            <p>A. Firhan</p>
-                            <p>Nadya Nuraulia</p>
-                            <p>Siti Fakhriyatussyah Aribah</p>
-                        </div>
-                        <li>Media Pemilu</li>
-                        <div class="list-nama">
                             <p>Diana Ontje Irene Runtu</p>
+                            <p>Galang Kelana</p>
+                            <p>Lilis Suryaningsih</p>
+                            <p>Monang Sitohang</p>
                         </div>
                         <li>Sekretaris Redaksi</li>
                         <div class="list-nama">
                             <p>Trisnawaty</p>
                         </div>
-
-                        <li>Penasihat Hukum</li>
+                        <li>Sosmed & Multimedia</li>
                         <div class="list-nama">
-                            <p>Heriady Sidauruk, SH</p>
-                            <p>Gandhi Alfredo Sinaga, SH</p>
+                            <p>Heriyanto</p>
+                            <p>Anda</p>
+                            <p>Ari Hidayat</p>
+                            <p>Anto Supriyanto</p>
+                            <p>Dimas Adityanugroho</p>
+                            <p>Firhan</p>
+                            <p>Nadya Nur Aulia</p>
+                            <p>Siti Fakhriyatussyah Aribah</p>
                         </div>
-
-                        <li>IT Suport/Web Admin</li>
+                        <li>IT & Development</li>
                         <div class="list-nama">
-                            <p>Agus Ramadhan</p>
+                            <p>Risqi Andriyana</p>
+                            <p>Mohamad Reza Reziyanto</p>
                         </div>
-
                         <li>Bagian Umum</li>
                         <div class="list-nama">
-                            <p>Heri Siswanto</p>
+                            <p>Heri</p>
+                            <p>Anto</p>
+                            <p>Sumiyati</p>
                         </div>
-
+                        <li>Legal</li>
+                        <div class="list-nama">
+                            <p>Heriandi Sidauruk</p>
+                            <p>Ghandi Alfredo Sinaga</p>
+                        </div>
                         <li>Alamat Redaksi:</li>
                         <div class="list-nama">
-                            <p><strong>Royal Spring Residence</strong></p>
-                            <p>Jl. Raya Ragunan No.T.05, RT.8/RW.6, Jati Padang, Ps. Minggu, Jakarta Selatan, DKI Jakarta
-                                12540.<br>
+                            <p>Jl. Raya Ragunan No.T.05, RT.8/RW.6, Jati Padang, Ps. Minggu, Jakarta Selatan, DKI Jakarta 12540
                                 Telepon: +62812-822-81-822</p>
                         </div>
-
                         <li>Email:</li>
                         <div class="list-nama">
-                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="5d2f38393c362e341d3b2933382a2e733e32733439">[email&#160;protected]</a></p>
-                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="1e6e6a78716c6b736a7b6c75777077737b7a777f5e79737f7772307d7173">[email&#160;protected]</a>
-                            </p>
+                            <p>indopopdigital@gmail.com</p>
                         </div>
                         <li>Facebook:</li>
                         <div class="list-nama">
-                            <p>Indopop ID</p>
+                            <p>Indopop.id</p>
+                        </div>
+                        <li>Tiktok:</li>
+                        <div class="list-nama">
+                            <p>@indopopdotid</p>
+                        </div>
+                        <li>YouTube:</li>
+                        <div class="list-nama">
+                            <p>@indopopid</p>
                         </div>
                         <li>Instagram:</li>
                         <div class="list-nama">
-                            <p>@indopop.id</p>
+                            <p>@Indopop.id</p>
                         </div>
                         <li>Rekening Bank:</li>
                         <div class="list-nama">
@@ -104,10 +113,8 @@
                         </div>
                         <li>No. Rekening:</li>
                         <div class="list-nama">
-                            <p>5230256391 a/n Indopop</p>
+                            <p>5230256391 a/n PT. Forum Terkini Media</p>
                         </div>
-
-
                     </ul>
                 </div>
             </div>

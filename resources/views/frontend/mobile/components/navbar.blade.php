@@ -135,7 +135,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                &copy; 2024 indopop.id - All Rights Reserved.
+                &copy; 2025 indopop.id - All Rights Reserved.
             </div>
         </footer>
 </header>
