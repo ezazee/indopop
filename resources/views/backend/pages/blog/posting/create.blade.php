@@ -234,8 +234,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="image-box image-box-banner_image" data-counter="250">
-                                    <input class="image-data" name="banner_image" type="file" data-counter="250" />
-                                    {{-- <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
+                                    <input class="image-data" name="banner_image" type="hidden" data-counter="250" />
+                                    <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
                                         class="preview-image-wrapper mb-1">
                                         <div class="preview-image-inner">
                                             <a href="#" data-bb-toggle="image-picker-choose"
@@ -262,16 +262,16 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     @if ($errors->has('banner_image'))
                                         <small class="text-danger">{{ $errors->first('banner_image') }}</small>
                                     @endif
                                     <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text">
 
-                                    {{-- <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
+                                    <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
                                         class="btn btn-primary btn-sm">
                                         Choose image
-                                    </a> --}}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -369,7 +369,7 @@
 
         const route_prefix = "/laravel-filemanager?type=image";
 
-        window.open(route_prefix, 'FileManager', 'width=900,height=600');
+        window.open(route_prefix, 'FileManager', 'width=1920,height=1080');
 
         window.SetUrl = function(file) {
             const fileData = Array.isArray(file) ? file[0] : file;
