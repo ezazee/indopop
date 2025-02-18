@@ -10,6 +10,7 @@
         "google/analytics-data": "^0.21.1",
         "google/apiclient": "^2.18",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "*",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",

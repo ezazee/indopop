@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->text('gambar')->nullable();
+            $table->text('thumbs')->nullable();
             $table->text('image_caption')->nullable();
             $table->text('short_description')->nullable();
             $table->string('slug')->nullable();
