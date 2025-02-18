@@ -244,13 +244,13 @@
                             <div id="form-scheduled" style="margin-top: 10px;">
                                 <label class="form-label">Date</label>
                                 <input type="date" class="form-control" name="scheduled_date"
-                                    value="{{ isset($post->start_date) ? \Carbon\Carbon::parse($post->start_date)->format('Y-m-d') : '' }}" 
+                                    value="{{ isset($post->start_date) ? \Carbon\Carbon::parse($post->start_date)->format('Y-m-d') : '' }}"
                                     min="{{ date('Y-m-d') }}">
-                            
+
                                 <label class="form-label">Time</label>
                                 <input type="time" class="form-control" name="scheduled_time"
                                     value="{{ isset($post->start_time) ? \Carbon\Carbon::parse($post->start_time)->format('H:i') : '' }}">
-                            </div>                                                       
+                            </div>
                         </div>
                     </div>
                     <div class="card meta-boxes">
@@ -359,7 +359,7 @@
                          <input class="form-control tags" placeholder="Write some tags" name="tag" type="text"
                              value="{{ implode(',', $post->tags->pluck('nama_tags')->toArray()) }}" id="tag">
                      </div>
-                 </div>                 
+                 </div>
                 </div>
             </div>
         </form>
@@ -367,8 +367,8 @@
 </div>
 <!-- Tambahkan jQuery dan CKEditor -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
 <script src="{{ asset('backend/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
 <script>
     $(document).ready(function () {
         CKEDITOR.replace('content', {
@@ -515,23 +515,23 @@
                 checkbox.disabled = selectedCategory.checked;
             }
         });
- 
+
         let subcategoryCheckboxes = document.querySelectorAll('.subcategory-checkbox');
         subcategoryCheckboxes.forEach(function (checkbox) {
             checkbox.disabled = !selectedCategory.checked;
         });
- 
+
         if (!selectedCategory.checked) {
             categoryCheckboxes.forEach(function (checkbox) {
                 checkbox.disabled = false;
             });
- 
+
             subcategoryCheckboxes.forEach(function (checkbox) {
-                checkbox.disabled = false; 
+                checkbox.disabled = false;
             });
         }
     }
- 
+
     function toggleSubCategorySelection(selectedSubCategory) {
         let subcategoryCheckboxes = document.querySelectorAll('.subcategory-checkbox');
         subcategoryCheckboxes.forEach(function (checkbox) {
@@ -539,7 +539,7 @@
                 checkbox.disabled = selectedSubCategory.checked;
             }
         });
- 
+
         if (!selectedSubCategory.checked) {
             subcategoryCheckboxes.forEach(function (checkbox) {
                 checkbox.disabled = false;
@@ -553,7 +553,7 @@
         let regex = /https:\/\/www\.instagram\.com\/(p|reel|tv)\/([^\/?]+)\//;
         let match = url.match(regex);
         if (match) {
-            const postId = match[2]; 
+            const postId = match[2];
             return `https://www.instagram.com/p/${postId}/embed`;
         }
 

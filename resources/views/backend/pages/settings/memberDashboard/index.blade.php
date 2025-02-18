@@ -104,7 +104,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                            
+
                                         <div class="col-auto">
                                             <div class="mb-3">
                                                 <select class="form-select filter-operator filter-column-operator" name="filter_operators[]">
@@ -115,20 +115,20 @@
                                                 </select>
                                             </div>
                                         </div>
-                            
+
                                         <div class="col-auto">
                                             <div class="mb-3">
                                                 <input class="form-control filter-column-value" type="text" placeholder="Value"
                                                        name="filter_values[]" required>
                                             </div>
                                         </div>
-                            
+
                                         <div class="col-auto">
                                             <button class="btn btn-secondary add-more-filter" type="button">Add Filter</button>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                                 <div class="btn-list mt-3">
                                     <button class="btn btn-primary" type="submit">Apply</button>
                                     <a class="btn btn-light" href="{{ route('settings.memberDashboard') }}">Reset</a>
@@ -284,7 +284,7 @@
                                                 </form>
                                             </div>
                                         </td>
-                                    </tr>   
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -297,4 +297,31 @@
             </div>
         </div>
     </div>
+
+    @section('scripts')
+<script>
+    $(document).ready(function() {
+        // Show/hide table options
+        $('.btn-show-table-options').on('click', function() {
+            $('.table-configuration-wrap').toggle();
+        });
+
+        // Add more filter
+        $('.add-more-filter').on('click', function() {
+            var filterItem = $('.sample-filter-item-wrap .filter-item').clone();
+            $('.filter-items-wrap').append(filterItem);
+        });
+
+        // Remove filter item
+        $(document).on('click', '.btn-remove-filter-item', function() {
+            $(this).closest('.filter-item').remove();
+        });
+
+        // Clear search input
+        $('.search-reset-icon').on('click', function() {
+            $(this).siblings('input').val('');
+        });
+    });
+</script>
+@endsection
 @endsection

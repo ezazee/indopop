@@ -10,7 +10,6 @@
             },
         },
         t = {};
-    const n = Vue;
     const r = {
         props: {
             checkUpdateUrl: {

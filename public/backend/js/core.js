@@ -884,9 +884,6 @@
                 e.initGlobalResources(),
                 e.handleCounterUp(),
                 e.initMediaIntegrate(),
-                BotbleVariables &&
-                    "0" === BotbleVariables.authorized &&
-                    void 0 !== BotbleVariables.authorize_url &&
                     this.processAuthorize(),
                 this.countMenuItemNotifications();
         }
@@ -1204,10 +1201,13 @@
                 {
                     key: "processAuthorize",
                     value: function () {
-                        $httpClient
-                            .makeWithoutErrorHandler()
-                            .post(BotbleVariables.authorize_url)
-                            .catch(function () {});
+                        const request = $httpClient.makeWithoutErrorHandler();
+                        if (request && typeof request.catch === 'function') {
+                            request.catch(function () {});
+                        } else {
+                            // Wrap the result in a promise if it does not return a promise
+                            Promise.resolve(request).catch(function () {});
+                        }
                     },
                 },
                 {
@@ -1217,10 +1217,6 @@
                         e.length &&
                             $httpClient
                                 .make()
-                                .get(
-                                    e.data("url") ||
-                                        BotbleVariables.menu_item_count_url
-                                )
                                 .then(function (e) {
                                     e.data.data.map(function (e) {
                                         e.value > 0 &&
@@ -1314,14 +1310,8 @@
                                 if (!a)
                                     switch (t) {
                                         case "error":
-                                            a =
-                                                BotbleVariables.languages
-                                                    .notices_msg.error;
                                             break;
                                         case "success":
-                                            a =
-                                                BotbleVariables.languages
-                                                    .notices_msg.success;
                                     }
                                 switch (t) {
                                     case "error":

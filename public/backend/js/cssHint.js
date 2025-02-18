@@ -9,7 +9,7 @@
         // AMD
         define(["../../lib/codemirror", "../../mode/css/css"], mod);
     // Plain browser env
-    else mod(CodeMirror);
+
 })(function (CodeMirror) {
     "use strict";
 
