@@ -363,51 +363,53 @@
         });
     </script>
 
-    <script>
-        function openFileManager(event) {
-            event.preventDefault();
+<script>
+    function openFileManager(event) {
+        event.preventDefault();
 
-            const route_prefix = "/laravel-filemanager?type=image";
+        const route_prefix = "/laravel-filemanager?type=image";
 
-            window.open(route_prefix, 'FileManager', 'width=900,height=600');
+        window.open(route_prefix, 'FileManager', 'width=900,height=600');
 
-            window.SetUrl = function(file) {
-                const fileData = Array.isArray(file) ? file[0] : file;
+        window.SetUrl = function(file) {
+            const fileData = Array.isArray(file) ? file[0] : file;
 
-                const fileUrl = fileData.url || fileData.thumb_url;
+            const fileUrl = fileData.url || fileData.thumb_url;
 
-                if (fileUrl) {
-                    const inputField = document.querySelector('input[name="banner_image"]');
-                    if (inputField) {
-                        inputField.value = fileUrl;
-                    }
+            if (fileUrl) {
+                const newFileUrl = fileUrl.replace('storage/photos/shares/', 'storage/gambar/');
 
-                    const previewImage = document.querySelector('.preview-image');
-                    if (previewImage) {
-                        previewImage.src = fileUrl;
-                    }
-
-                    const removeButton = document.querySelector('.image-picker-remove-button');
-                    if (removeButton) {
-                        removeButton.style.display = 'inline-block';
-                    }
-                } else {
-                    console.error('Invalid file object or missing URL property:', fileData);
+                const inputField = document.querySelector('input[name="banner_image"]');
+                if (inputField) {
+                    inputField.value = newFileUrl;
                 }
-            };
-        }
 
-        function removeImage() {
-            const inputField = document.querySelector('input[name="banner_image"]');
-            inputField.value = '';
+                const previewImage = document.querySelector('.preview-image');
+                if (previewImage) {
+                    previewImage.src = newFileUrl;
+                }
 
-            const previewImage = document.querySelector('.preview-image');
-            previewImage.src = previewImage.getAttribute('data-default');
+                const removeButton = document.querySelector('.image-picker-remove-button');
+                if (removeButton) {
+                    removeButton.style.display = 'inline-block';
+                }
+            } else {
+                console.error('Invalid file object or missing URL property:', fileData);
+            }
+        };
+    }
 
-            const removeButton = document.querySelector('.image-picker-remove-button');
-            removeButton.style.display = 'none';
-        }
-    </script>
+    function removeImage() {
+        const inputField = document.querySelector('input[name="banner_image"]');
+        inputField.value = '';
+
+        const previewImage = document.querySelector('.preview-image');
+        previewImage.src = previewImage.getAttribute('data-default');
+
+        const removeButton = document.querySelector('.image-picker-remove-button');
+        removeButton.style.display = 'none';
+    }
+</script>
 
     <script>
         $(document).ready(function () {
