@@ -50,18 +50,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="advanced-sortables" class="meta-box-sortables">
-                            <div class="card meta-boxes mb-3" id="seo_wrap">
+                        <div class="meta-box-sortables">
+                            <div class="card meta-boxes mb-3">
                                 <div class="card-header">
                                     <h4 class="card-title">Search Engine Optimize</h4>
-                                    <div class="card-actions"><a href="#" class="btn-trigger-show-seo-detail">Edit SEO
-                                            meta</a></div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="hidden seo-edit-section" v-pre>
+                                    <div class="seo-edit-section" v-pre>
                                         <div class="mb-3 position-relative">
-                                            <label for="seo_meta[seo_title]" class="form-label">SEO Title</label>
-                                            <input class="form-control" data-counter="70" placeholder="SEO Title"
+                                            <label for="seo_meta[seo_title]" class="form-label">SEO Keyword</label>
+                                            <input class="form-control" data-counter="70" placeholder="SEO Keyword"
                                                 data-allow-over-limit name="seo_meta[seo_title]" type="text"
                                                 id="seo_meta[seo_title]">
                                         </div>
@@ -78,9 +76,6 @@
                     </div>
                     <div class="col-md-3 gap-3 d-flex flex-column-reverse flex-md-column mb-md-0 mb-5">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Publish</h4>
-                            </div>
                             <div class="card-body">
                                 <div class="btn-list">
                                     <button class="btn btn-primary" type="submit" value="apply" name="submitter">
@@ -94,7 +89,7 @@
                                             <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                                             <path d="M14 4l0 4l-6 0l0 -4" />
                                         </svg>
-                                        Save
+                                        Publish
                                     </button>
                                     <a href="{{ route('blog.post') }}" class="btn">
                                         <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
@@ -164,7 +159,6 @@
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <label for="status">Status</label>
                                 <select class="form-control form-select" id="status" name="status">
                                     <option value="publish">Published</option>
                                     <option value="schedule">Scheduled</option>
@@ -235,7 +229,7 @@
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="banner_image" class="form-label">Banner image</label>
+                                    <label for="banner_image" class="form-label">Featured Image</label>
                                 </h4>
                             </div>
                             <div class="card-body">

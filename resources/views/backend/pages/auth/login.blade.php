@@ -26,7 +26,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif                
+                    @endif
 
                     <form action="{{ route('authlogin') }}" method="POST">
                         @csrf
@@ -90,8 +90,8 @@
                 </div>
                 <div class="end-0 bottom-0 position-absolute">
                     <div class="text-white me-5 mb-4">
-                        <h1 class="mb-1">KBN Technologies</h1>
-                        <p>Copyright {{ date('Y') }} © KBN Technologies</p>
+                        <h1 class="mb-1">KBN Digital</h1>
+                        <p>Copyright {{ date('Y') }} © KBN Digital</p>
                     </div>
                 </div>
             </div>
