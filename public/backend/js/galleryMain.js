@@ -1,30 +1,35 @@
 (() => {
     "use strict";
     $(function () {
-        $(".btn_select_gallery").rvMedia({
-            filter: "image",
-            view_in: "all_media",
-            onSelectFiles: function (l) {
-                var t =
-                    $(
-                        ".list-photos-gallery .photo-gallery-item:last-child"
-                    ).data("id") + 1;
-                $.each(l, function (e, a) {
-                    $(".list-photos-gallery .row").append(
-                        '<div class="col-md-2 col-sm-3 col-4 photo-gallery-item" data-id="' +
-                            (t + e) +
-                            '" data-img="' +
-                            a.url +
-                            '" data-description=""><div class="gallery_image_wrapper"><img src="' +
-                            a.thumb +
-                            '" alt="image" loading="lazy"/></div></div>'
-                    );
-                }),
-                    e(),
-                    a(),
-                    $(".reset-gallery").removeClass("hidden");
-            },
-        });
+        if (typeof $.fn.rvMedia !== 'undefined') {
+            $(".btn_select_gallery").rvMedia({
+                filter: "image",
+                view_in: "all_media",
+                onSelectFiles: function (l) {
+                    var t =
+                        $(
+                            ".list-photos-gallery .photo-gallery-item:last-child"
+                        ).data("id") + 1;
+                    $.each(l, function (e, a) {
+                        $(".list-photos-gallery .row").append(
+                            '<div class="col-md-2 col-sm-3 col-4 photo-gallery-item" data-id="' +
+                                (t + e) +
+                                '" data-img="' +
+                                a.url +
+                                '" data-description=""><div class="gallery_image_wrapper"><img src="' +
+                                a.thumb +
+                                '" alt="image" loading="lazy"/></div></div>'
+                        );
+                    }),
+                        e(),
+                        a(),
+                        $(".reset-gallery").removeClass("hidden");
+                },
+            });
+        } else {
+            console.error('rvMedia is not defined.');
+        }
+
         var e = function () {
             var e = document.getElementById("list-photos-items");
             e &&

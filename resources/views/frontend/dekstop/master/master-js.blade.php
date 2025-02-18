@@ -1,4 +1,3 @@
-<script src="{{ asset('frontend/js/main.js') }}"></script>
 <script src="{{ asset('frontend/js/sticky-sidebar.min.js') }}"></script>
 <script src="{{ asset('frontend/js/splide.min.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -24,5 +23,18 @@
 <script>
     document.getElementById("search-button").addEventListener("click", function () {
         document.getElementById("search-form").classList.toggle("hidden");
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        if ($("#sticky-sidebar").length > 0) {
+            $("#sticky-sidebar").stickySidebar({
+                containerSelector: "#content",
+                innerWrapperSelector: ".sidebar__inner",
+                topSpacing: 75,
+                bottomSpacing: 10,
+            });
+        }
     });
 </script>

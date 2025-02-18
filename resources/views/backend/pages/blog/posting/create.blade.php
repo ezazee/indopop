@@ -303,24 +303,21 @@
 
     <!-- Tambahkan jQuery dan CKEditor -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
     <script src="{{ asset('backend/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('backend/ckeditor/adapters/jquery.js') }}"></script>
     <script>
         $(document).ready(function() {
             CKEDITOR.replace('content', {
                 filebrowserBrowseUrl: '/laravel-filemanager?type=Images',
                 filebrowserUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
                 filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-                //   filebrowserUploadMethod: 'form',
                 toolbar: [{
                         name: 'document',
                         items: ['Source', 'NewPage', 'Preview', 'Print']
                     },
                     {
                         name: 'clipboard',
-                        items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo',
-                            'Redo'
-                        ]
+                        items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']
                     },
                     {
                         name: 'editing',
@@ -336,9 +333,7 @@
                     },
                     {
                         name: 'basicstyles',
-                        items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript',
-                            '-', 'RemoveFormat'
-                        ]
+                        items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']
                     },
                     {
                         name: 'alignment',
@@ -354,9 +349,7 @@
                     },
                     {
                         name: 'paragraph',
-                        items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-                            'Blockquote'
-                        ]
+                        items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']
                     },
                     {
                         name: 'links',
@@ -405,10 +398,9 @@
                         removeButton.style.display = 'inline-block';
                     }
                 } else {
-                    // console.error('Invalid file object or missing URL property:', fileData);
+                    console.error('Invalid file object or missing URL property:', fileData);
                 }
             };
-
         }
 
         function removeImage() {
@@ -423,23 +415,18 @@
         }
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>
         $(document).ready(function () {
-            // Fungsi untuk menampilkan/menyembunyikan form scheduled
             function toggleScheduledForm() {
                 if ($("#status").val() === "schedule") {
-                    $("#form-schedule").show(); // Tampilkan form jika nilai adalah "scheduled"
+                    $("#form-schedule").show();
                 } else {
-                    $("#form-schedule").hide(); // Sembunyikan form jika nilai bukan "scheduled"
+                    $("#form-schedule").hide();
                 }
             }
 
-            // Panggil fungsi pertama kali untuk memastikan kondisi awal benar
             toggleScheduledForm();
 
-            // Tambahkan event listener untuk perubahan pada dropdown
             $("#status").change(function () {
                 toggleScheduledForm();
             });
