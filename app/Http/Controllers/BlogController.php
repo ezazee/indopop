@@ -12,6 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use App\Helpers\ImageResizeHelper;
 
 
 
@@ -74,75 +75,130 @@ class BlogController extends Controller
         return view('backend.pages.blog.posting.create',compact('category'));
     }
 
-    public function PostAdd(Request $request)
-    {
-        $request->validate([
+    public function PostAdd(Request $request) {
+        // dd($request);
+        $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:posts,slug',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
             'headline' => 'nullable|string|in:yes,no',
             'categories' => 'required|integer|exists:categories,id',
-            // 'banner_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'banner_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'banner_image' => 'required|url',
             'tag' => 'required|json',
         ]);
-
-        if ($request->hasFile('banner_image')) {
-            $image = $request->file('banner_image');
-            $extension = $image->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $thumbFilename = time() . '_thumb.' . $extension;
-        
-            $path = $image->storeAs('public/gambar', $filename);
-        
-            $thumbnail = Image::make($image)
-                ->resize(123, 123)
-                ->encode($extension, 60);
-        
-            Storage::put('public/photos/' . $thumbFilename, $thumbnail);
-        } else {
-            return redirect()->back()->with('error', 'Gambar wajib diunggah.');
-        }
-
-        $post = Post::create([
-            'title' => $request->input('title'),
-            'slug' => $request->input('slug', Str::slug($request->input('title'))),
-            'short_description' => $request->input('short_description'),
-            'image_caption' => $request->input('image_caption'),
-            'content' => $request->input('content'),
-            'keyword' => $request->input('seo_meta.seo_title'),
-            'description' => $request->input('seo_meta.seo_description'),
-            'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
-            'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
-            'status' => $request->input('status'),
-            'headline' => $request->input('headline', 'no'),
-            'kategori_id' => $request->input('categories'),
-            'gambar' => 'gambar/' . $filename,
-            'thumbs' => 'photos/' . $thumbFilename,
-            'user_id' => Auth::id(),
-        ]);
-
-        $tags = json_decode($request->input('tag'), true);
-        if ($tags && is_array($tags)) {
-            $tagIds = [];
-            foreach ($tags as $tag) {
-                if (!empty($tag['value'])) {
-                    $slug = Str::slug($tag['value']);
-                    
-                    $tagModel = Tag::firstOrCreate(
-                        ['nama_tags' => $tag['value']],
-                        ['slug' => $slug] 
-                    );
-                    $tagIds[] = $tagModel->id;
+    
+            $post = Post::create([
+                'title' => $request->input('title'),
+                'slug' => $request->input('title', Str::slug($request->input('title'))),
+                'short_description' => $request->input('short_description'),
+                'image_caption' => $request->input('image_caption'),
+                'content' => $request->input('content'),
+                'keyword' => $request->input('seo_meta.seo_title'),
+                'description' => $request->input('seo_meta.seo_description'),
+                'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
+                'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
+                'status' => $request->input('status'),
+                'headline' => $request->input('headline', 'no'),
+                'kategori_id' => $request->input('categories'),
+                'gambar' => $request->input('banner_image'),
+                'user_id' => Auth::id(),
+            ]);
+            
+            $tags = json_decode($request->input('tag'), true);
+            if ($tags && is_array($tags)) {
+                $tagIds = [];
+                foreach ($tags as $tag) {
+                    if (!empty($tag['value'])) {
+                        $slug = Str::slug($tag['value']);
+                        
+                        $tagModel = Tag::firstOrCreate(
+                            ['nama_tags' => $tag['value']],
+                            ['slug' => $slug] 
+                        );
+                        $tagIds[] = $tagModel->id;
+                    }
                 }
+            
+                $post->tags()->sync($tagIds);
             }
-        
-            $post->tags()->sync($tagIds);
-        }
-
         Alert::success('Success', 'Post added successfully!!');
-        return redirect()->back()->with('success', 'Post added successfully.');
+        return redirect()->back()->with('success', 'post Added successfully.');
     }
+
+    // NEW
+    // public function PostAdd(Request $request)
+    // {
+    //     $request->validate([
+    //         'title' => 'required|string|max:255',
+    //         'slug' => 'nullable|string|max:255|unique:posts,slug',
+    //         'short_description' => 'nullable|string',
+    //         'content' => 'required|string',
+    //         'headline' => 'nullable|string|in:yes,no',
+    //         'categories' => 'required|integer|exists:categories,id',
+    //         'banner_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+    //         'tag' => 'required|json',
+    //     ]);
+
+    //     if ($request->hasFile('banner_image')) {
+    //         $image = $request->file('banner_image');
+    //         $filename = time() . '.' . $image->getClientOriginalExtension();
+    //         $thumbFilename = time() . '_thumb.' . $image->getClientOriginalExtension();
+            
+    //         $filePath = $image->getRealPath();
+    //         if (ImageResizeHelper::isDuplicateFile($filePath, 'public/gambar')) {
+    //             return redirect()->back()->with('error', 'File gambar sudah ada di sistem.');
+    //         }
+            
+    //         $imagePaths = ImageResizeHelper::resizeImage($image, $filename, $thumbFilename);
+            
+    //         if (isset($imagePaths['error'])) {
+    //             return redirect()->back()->with('error', $imagePaths['error']);
+    //         }
+    //     } else {
+    //         return redirect()->back()->with('error', 'Gambar wajib diunggah.');
+    //     }
+
+    //     $post = Post::create([
+    //         'title' => $request->input('title'),
+    //         'slug' => $request->input('slug', Str::slug($request->input('title'))),
+    //         'short_description' => $request->input('short_description'),
+    //         'image_caption' => $request->input('image_caption'),
+    //         'content' => $request->input('content'),
+    //         'keyword' => $request->input('seo_meta.seo_title'),
+    //         'description' => $request->input('seo_meta.seo_description'),
+    //         'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
+    //         'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
+    //         'status' => $request->input('status'),
+    //         'headline' => $request->input('headline', 'no'),
+    //         'kategori_id' => $request->input('categories'),
+    //         'gambar' => 'storage/gambar/' . $filename,
+    //         'thumbs' => 'storage/photos/shares' . $thumbFilename,
+    //         'user_id' => Auth::id(),
+    //     ]);
+
+    //     $tags = json_decode($request->input('tag'), true);
+    //     if ($tags && is_array($tags)) {
+    //         $tagIds = [];
+    //         foreach ($tags as $tag) {
+    //             if (!empty($tag['value'])) {
+    //                 $slug = Str::slug($tag['value']);
+                    
+    //                 $tagModel = Tag::firstOrCreate(
+    //                     ['nama_tags' => $tag['value']],
+    //                     ['slug' => $slug] 
+    //                 );
+    //                 $tagIds[] = $tagModel->id;
+    //             }
+    //         }
+        
+    //         $post->tags()->sync($tagIds);
+    //     }
+
+    //     Alert::success('Success', 'Post added successfully!!');
+    //     return redirect()->back()->with('success', 'Post added successfully.');
+    // }
 
 
     public function PostUpdate(Request $request, $id) {
