@@ -76,7 +76,6 @@ class BlogController extends Controller
     }
 
     public function PostAdd(Request $request) {
-        // dd($request);
         $validatedData = $request->validate([
             'slug' => 'nullable|string|max:255|unique:posts,slug',
             'short_description' => 'nullable|string',
