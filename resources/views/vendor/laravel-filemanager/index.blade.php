@@ -94,12 +94,11 @@
                     <li class="breadcrumb-item invisible">Home</li>
                 </ol>
             </nav>
-
+            <input type="text" id="search-input" class="form-control mb-3" placeholder="Cari file...">
             <div id="empty" class="d-none">
                 <i class="far fa-folder-open"></i>
                 {{ trans('laravel-filemanager::lfm.message-empty') }}
             </div>
-
             <div id="content"></div>
             <div id="pagination"></div>
 

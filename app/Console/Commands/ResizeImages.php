@@ -13,11 +13,11 @@ class ResizeImages extends Command
 
     public function handle()
     {
-        // Path folder sumber dan tujuan
+        ini_set('memory_limit', '-1');
+
         $sourceDir = public_path('storage/gambar');
         $destinationDir = public_path('storage/photos/shares');
 
-        // Verifikasi apakah folder sumber ada
         if (!File::exists($sourceDir)) {
             $this->error("❌ Folder sumber tidak ditemukan di: $sourceDir");
             return;
@@ -25,56 +25,65 @@ class ResizeImages extends Command
 
         $this->info("📂 Memeriksa folder sumber: $sourceDir");
 
-        // Verifikasi jika folder tujuan tidak ada, buat folder baru
         if (!File::exists($destinationDir)) {
             $this->info("📂 Folder tujuan tidak ada, membuat folder baru: $destinationDir");
             File::makeDirectory($destinationDir, 0777, true);
         }
 
-        // Gunakan glob untuk mengambil file gambar (jpg, jpeg, png)
-        $imagePaths = File::glob($sourceDir . '/*.{jpg,png,jpeg}', GLOB_BRACE);
+        $allFiles = array_diff(scandir($sourceDir), array('.', '..'));
+        $imagePaths = [];
+
+        foreach ($allFiles as $file) {
+            if (preg_match('/\.(jpg|jpeg|png)$/i', $file)) {
+                $imagePaths[] = $file;
+            }
+        }
 
         $this->info("🔍 Jumlah file ditemukan: " . count($imagePaths));
 
-        if (count($imagePaths) === 0) {
+        if (empty($imagePaths)) {
             $this->info("❌ Tidak ada file gambar di folder sumber.");
             return;
         }
 
-        // Proses setiap file gambar
-        foreach ($imagePaths as $imagePath) {
-            $filename = basename($imagePath);
-            $thumbFilename = $filename;
+        $batchSize = 500;
+        $chunks = array_chunk($imagePaths, $batchSize);
 
-            // Cek apakah file sudah ada di folder tujuan
-            if (File::exists($destinationDir . '/' . $thumbFilename)) {
-                $this->line("<fg=yellow>File sudah ada: $filename, melewati file ini.</>");
-                continue;
+        foreach ($chunks as $batch) {
+            foreach ($batch as $file) {
+                $imagePath = $sourceDir . '/' . $file;
+                $filename = basename($file);
+
+                if (preg_match('/-\d+x\d+\.(jpg|jpeg|png)$/i', $filename)) {
+                    $this->line("<fg=yellow>⏩ Melewati file duplikat: $filename</>");
+                    continue;
+                }
+
+                if (File::exists($destinationDir . '/' . $filename)) {
+                    $this->line("<fg=yellow>File sudah ada: $filename, melewati file ini.</>");
+                    continue;
+                }
+
+                $this->info("🔄 Memulai proses resize untuk: $filename");
+
+                $resizeResult = ImageResizeHelper::MigrasiResize($imagePath, $filename, $filename);
+
+                if (!isset($resizeResult['resized_path']) || isset($resizeResult['error'])) {
+                    $this->error("❌ Error resizing image: $filename");
+                    continue;
+                }
+
+                $destinationPath = $destinationDir . '/' . $filename;
+
+                if (File::move($resizeResult['resized_path'], $destinationPath)) {
+                    $this->info("✅ Berhasil memindahkan gambar ke folder tujuan: $destinationPath");
+                } else {
+                    $this->error("❌ Gagal memindahkan gambar ke folder tujuan: $destinationPath");
+                }
+
+                gc_collect_cycles();
+                sleep(1);
             }
-
-            $this->info("🔄 Memulai proses resize untuk: $filename");
-
-            // Resize gambar dan mendapatkan hasilnya
-            $resizeResult = ImageResizeHelper::MigrasiResize($imagePath, $filename, $thumbFilename);
-
-            // Cek hasil resize
-            if (!isset($resizeResult['error'])) {
-                $this->error("❌ Error resizing image: $filename");
-                continue;
-            }
-
-            // Pindahkan gambar yang sudah diresize ke folder tujuan
-            $destinationPath = $destinationDir . '/' . $thumbFilename;
-
-            // Pastikan gambar dipindahkan dengan benar
-            if (File::move($resizeResult['resized_path'], $destinationPath)) {
-                $this->info("✅ Berhasil memindahkan gambar ke folder tujuan: $destinationPath");
-            } else {
-                $this->error("❌ Gagal memindahkan gambar ke folder tujuan: $destinationPath");
-            }
-
-            // Menunggu sejenak sebelum melanjutkan untuk batch berikutnya
-            sleep(1);
         }
 
         $this->info('📦 Proses resize gambar selesai.');
