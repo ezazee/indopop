@@ -295,20 +295,20 @@
     {{-- <script src="{{ asset('vendor/laravel-filemanager/js/script.js') }}"></script> --}}
     <script>
         Dropzone.options.uploadForm = {
-            paramName: "upload[]", // The name that will be used to transfer the file
+            paramName: "upload[]",
             uploadMultiple: false,
             parallelUploads: 5,
             timeout: 0,
             clickable: '#upload-button',
             dictDefaultMessage: lang['message-drop'],
             init: function() {
-                var _this = this; // For the closure
+                var _this = this;
+
                 this.on('success', function(file, response) {
-                    if (response == 'OK') {
-                        loadFolders();
-                    } else {
-                        this.defaultOptions.error(file, response.join('\n'));
-                    }
+                     setTimeout(function() {
+                            console.log("Reloading halaman dalam 3 detik...");
+                            location.reload();
+                        }, 3000);
                 });
             },
             headers: {
@@ -317,6 +317,7 @@
             acceptedFiles: "{{ implode(',', $helper->availableMimeTypes()) }}",
             maxFilesize: ({{ $helper->maxUploadSize() }} / 1000)
         }
+
     </script>
 </body>
 

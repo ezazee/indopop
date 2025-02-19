@@ -361,6 +361,33 @@
                 height: 400
             });
         });
+
+        window.SetUrl = function(file) {
+            const fileData = Array.isArray(file) ? file[0] : file;
+
+            const fileUrl = fileData.url || fileData.thumb_url;
+
+            if (fileUrl) {
+                const newFileUrl = fileUrl.replace('storage/photos/shares/', 'storage/gambar/');
+
+                const inputField = document.querySelector('input[name="banner_image"]');
+                if (inputField) {
+                    inputField.value = newFileUrl;
+                }
+
+                const previewImage = document.querySelector('.preview-image');
+                if (previewImage) {
+                    previewImage.src = newFileUrl;
+                }
+
+                const removeButton = document.querySelector('.image-picker-remove-button');
+                if (removeButton) {
+                    removeButton.style.display = 'inline-block';
+                }
+            } else {
+                console.error('Invalid file object or missing URL property:', fileData);
+            }
+        };
     </script>
 
 <script>
