@@ -40,7 +40,7 @@
                                 <div class="tab-pane active show" id="tabs-detail">
                                     <div class="mb-3 position-relative">
                                         <label for="name" class="form-label required">Name</label>
-                                        <input class="form-control" data-counter="250" placeholder="Name"
+                                        <input required class="form-control" data-counter="250" placeholder="Name"
                                             required="required" name="title" type="text" value="{{ $post->title }}">
                                     </div>
                                     <div class="mb-3 ">
@@ -282,7 +282,7 @@
                                     @foreach ($category as $item)
                                     <li>
                                         <label class="form-check">
-                                            <input type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" {{ $post->kategori->id == $item->id ? 'checked' : '' }} onchange="toggleCategorySelection(this)">
+                                            <input required type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" {{ $post->kategori->id == $item->id ? 'checked' : '' }} onchange="toggleCategorySelection(this)">
                                             <span class="form-check-label">
                                                 {{ $item->nama_kategori }}
                                             </span>
@@ -291,7 +291,7 @@
                                             @foreach ($item->subCategories as $subItem)
                                             <li>
                                                 <label class="form-check">
-                                                    <input type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" value="{{ $subItem->id }}" onchange="toggleSubCategorySelection(this)">
+                                                    <input required type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" value="{{ $subItem->id }}" onchange="toggleSubCategorySelection(this)">
                                                     <span class="form-check-label">
                                                         {{ $subItem->nama_sub_kategori }}
                                                     </span>
@@ -342,7 +342,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
+                                <input required class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
                             <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
                                     Choose image
                                 </a>
@@ -356,7 +356,7 @@
                          </h4>
                      </div>
                      <div class="card-body">
-                         <input class="form-control tags" placeholder="Write some tags" name="tag" type="text"
+                         <input required class="form-control tags" placeholder="Write some tags" name="tag" type="text"
                              value="{{ implode(',', $post->tags->pluck('nama_tags')->toArray()) }}" id="tag">
                      </div>
                  </div>

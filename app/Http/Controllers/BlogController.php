@@ -21,42 +21,42 @@ class BlogController extends Controller
     public function blogPost(Request $request)
     {
         $query = Post::with('kategori', 'user');
-    
+
         if ($request->has('filter_columns')) {
             foreach ($request->filter_columns as $index => $column) {
                 $operator = $request->filter_operators[$index] ?? 'like';
                 $value = $request->filter_values[$index] ?? '';
-    
+
                 if (!empty($column) && !empty($value)) {
                     if ($column === 'categori') {
                         $query->whereHas('kategori', function ($q) use ($operator, $value) {
                             if ($operator === 'like') {
-                                $value = "%$value%"; 
+                                $value = "%$value%";
                             }
                             $q->where('nama_kategori', $operator, $value);
                         });
                     } elseif ($column === 'author') {
                         $query->whereHas('user', function ($q) use ($operator, $value) {
                             if ($operator === 'like') {
-                                $value = "%$value%"; 
+                                $value = "%$value%";
                             }
                             $q->where('name', $operator, $value);
                         });
                     }else {
                         if ($operator === 'like') {
-                            $value = "%$value%"; 
+                            $value = "%$value%";
                         }
                         $query->where($column, $operator, $value);
                     }
                 }
             }
         }
-    
+
         $post = $query->latest()->paginate(20);
-    
+
         return view('backend.pages.blog.posting.index', compact('post'));
     }
-    
+
     public function editPost($id){
         $post = Post::with('kategori')->findOrFail($id);
         $category = Categori::all();
@@ -78,17 +78,13 @@ class BlogController extends Controller
     public function PostAdd(Request $request) {
         // dd($request);
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:posts,slug',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
             'headline' => 'nullable|string|in:yes,no',
-            'categories' => 'required|integer|exists:categories,id',
-            'banner_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'banner_image' => 'required|url',
-            'tag' => 'required|json',
         ]);
-    
+
             $post = Post::create([
                 'title' => $request->input('title'),
                 'slug' => $request->input('title', Str::slug($request->input('title'))),
@@ -105,22 +101,22 @@ class BlogController extends Controller
                 'gambar' => $request->input('banner_image'),
                 'user_id' => Auth::id(),
             ]);
-            
+
             $tags = json_decode($request->input('tag'), true);
             if ($tags && is_array($tags)) {
                 $tagIds = [];
                 foreach ($tags as $tag) {
                     if (!empty($tag['value'])) {
                         $slug = Str::slug($tag['value']);
-                        
+
                         $tagModel = Tag::firstOrCreate(
                             ['nama_tags' => $tag['value']],
-                            ['slug' => $slug] 
+                            ['slug' => $slug]
                         );
                         $tagIds[] = $tagModel->id;
                     }
                 }
-            
+
                 $post->tags()->sync($tagIds);
             }
         Alert::success('Success', 'Post added successfully!!');
@@ -145,14 +141,14 @@ class BlogController extends Controller
     //         $image = $request->file('banner_image');
     //         $filename = time() . '.' . $image->getClientOriginalExtension();
     //         $thumbFilename = time() . '_thumb.' . $image->getClientOriginalExtension();
-            
+
     //         $filePath = $image->getRealPath();
     //         if (ImageResizeHelper::isDuplicateFile($filePath, 'public/gambar')) {
     //             return redirect()->back()->with('error', 'File gambar sudah ada di sistem.');
     //         }
-            
+
     //         $imagePaths = ImageResizeHelper::resizeImage($image, $filename, $thumbFilename);
-            
+
     //         if (isset($imagePaths['error'])) {
     //             return redirect()->back()->with('error', $imagePaths['error']);
     //         }
@@ -184,15 +180,15 @@ class BlogController extends Controller
     //         foreach ($tags as $tag) {
     //             if (!empty($tag['value'])) {
     //                 $slug = Str::slug($tag['value']);
-                    
+
     //                 $tagModel = Tag::firstOrCreate(
     //                     ['nama_tags' => $tag['value']],
-    //                     ['slug' => $slug] 
+    //                     ['slug' => $slug]
     //                 );
     //                 $tagIds[] = $tagModel->id;
     //             }
     //         }
-        
+
     //         $post->tags()->sync($tagIds);
     //     }
 
@@ -219,14 +215,14 @@ class BlogController extends Controller
             'kategori_id' => $request->input('categories'),
             'gambar' => $request->input('banner_image'),
         ]);
-    
+
         $tags = json_decode($request->input('tag'), true);
         if ($tags && is_array($tags)) {
             $tagIds = [];
             foreach ($tags as $tag) {
                 if (!empty($tag['value'])) {
                     $slug = Str::slug($tag['value']);
-                    
+
                     $tagModel = Tag::firstOrCreate(
                         ['nama_tags' => $tag['value']],
                         ['slug' => $slug]
@@ -234,14 +230,14 @@ class BlogController extends Controller
                     $tagIds[] = $tagModel->id;
                 }
             }
-    
+
             $post->tags()->sync($tagIds);
         }
-    
+
         Alert::success('Success', 'Post updated successfully!!');
         return redirect()->back()->with('success', 'post Added successfully.');
     }
-    
+
 
     public function deletePost($id)
     {
@@ -250,5 +246,5 @@ class BlogController extends Controller
         Alert::error('Delete', 'Post Deleted!!');
         return redirect()->route('blog.post')->with('success', 'Post deleted successfully.');
     }
-    
+
 }
