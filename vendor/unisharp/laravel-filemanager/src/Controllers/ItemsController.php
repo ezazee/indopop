@@ -48,7 +48,9 @@ class ItemsController extends LfmController
          $paginatedItems = array_slice($items, $offset, $perPage);
      
          return response()->json([
-             'items' => array_map(fn($item) => $item->fill()->attributes, $paginatedItems),
+             'items' => array_map(fn($item) => array_merge($item->fill()->attributes, [
+              'url' => str_replace('/storage/photos/shares/', '/storage/gambar/', $item->url),
+            ]), $paginatedItems),
              'paginator' => [
                  'current_page' => $currentPage,
                  'total' => $totalItems,
