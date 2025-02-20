@@ -42,7 +42,7 @@
                                 <div class="form-body">
                                     <div class="mb-3 position-relative">
                                         <label for="name" class="form-label">Name</label>
-                                        <input class="form-control" data-counter="250" placeholder="Name" name="title" type="text" id="name">
+                                        <input class="form-control" data-counter="250" required placeholder="Name" name="title" type="text" id="name">
                                         @if ($errors->has('title'))
                                             <small class="text-danger">{{ $errors->first('title') }}</small>
                                         @endif
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="mb-3 position-relative">
                                         <label for="content" class="form-label">Content</label>
-                                        <textarea class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
+                                        <textarea required class="form-control form-control editor-ckeditor ays-ignore" data-counter="100000" rows="4"
                                             placeholder="Write your content" with-short-code id="content" name="content" cols="50"></textarea>
                                         @if ($errors->has('content'))
                                             <small class="text-danger">{{ $errors->first('content') }}</small>
@@ -159,7 +159,7 @@
                                                         <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                                                         <path d="M14 4l0 4l-6 0l0 -4" />
                                                     </svg>
-                                                    Save
+                                                    Publish
                                                 </button>
                                                 <a href="{{ route('blog.post') }}" class="btn">
                                                     <svg class="icon icon-left svg-icon-ti-ti-transfer-in"
@@ -179,6 +179,55 @@
                                 </div>
                             </div>
                         </header>
+                        <div class="card meta-boxes">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    <label for="banner_image" class="form-label">Featured Image</label>
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="image-box image-box-banner_image" data-counter="250">
+                                    <input required class="image-data" name="banner_image" type="hidden" data-counter="250" />
+                                    <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
+                                        class="preview-image-wrapper mb-1">
+                                        <div class="preview-image-inner">
+                                            <a href="#" data-bb-toggle="image-picker-choose"
+                                                onclick="openFileManager(event)" class="image-box-actions"
+                                                data-result="banner_image" data-action="select-image"
+                                                data-allow-thumb="1">
+                                                <img class="preview-image default-image"
+                                                    data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
+                                                    src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
+                                                    alt="Preview image" style="max-width: 100%; max-height: 100%;" />
+                                                <span class="image-picker-backdrop"></span>
+                                            </a>
+                                            <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0"
+                                                style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
+                                                onclick="removeImage()" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Remove image">
+                                                <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M18 6l-12 12" />
+                                                    <path d="M6 6l12 12" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @if ($errors->has('banner_image'))
+                                        <small class="text-danger">{{ $errors->first('banner_image') }}</small>
+                                    @endif
+                                    <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text">
+
+                                    <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
+                                        class="btn btn-primary btn-sm">
+                                        Choose image
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
@@ -227,7 +276,7 @@
                                         @foreach ($category as $item)
                                         <li>
                                             <label class="form-check">
-                                                <input type="checkbox" id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" onchange="toggleCategorySelection(this)">
+                                                <input type="checkbox" required id="category-{{ $item->id }}" name="categories" class="form-check-input category-checkbox" value="{{ $item->id }}" onchange="toggleCategorySelection(this)">
                                                 <span class="form-check-label">
                                                     {{ $item->nama_kategori }}
                                                 </span>
@@ -236,7 +285,7 @@
                                                 @foreach ($item->subCategories as $subItem)
                                                 <li>
                                                     <label class="form-check">
-                                                        <input type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" onchange="toggleSubCategorySelection(this)">
+                                                        <input required type="checkbox" id="subcategory-{{ $subItem->id }}" name="subcategories[]" class="form-check-input subcategory-checkbox" onchange="toggleSubCategorySelection(this)">
                                                         <span class="form-check-label">
                                                             {{ $subItem->nama_sub_kategori }}
                                                         </span>
@@ -256,60 +305,11 @@
                         <div class="card meta-boxes">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    <label for="banner_image" class="form-label">Featured Image</label>
-                                </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="image-box image-box-banner_image" data-counter="250">
-                                    <input class="image-data" name="banner_image" type="hidden" data-counter="250" />
-                                    <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
-                                        class="preview-image-wrapper mb-1">
-                                        <div class="preview-image-inner">
-                                            <a href="#" data-bb-toggle="image-picker-choose"
-                                                onclick="openFileManager(event)" class="image-box-actions"
-                                                data-result="banner_image" data-action="select-image"
-                                                data-allow-thumb="1">
-                                                <img class="preview-image default-image"
-                                                    data-default="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                    src="https://cms.botble.com/vendor/core/core/base/images/placeholder.png"
-                                                    alt="Preview image" style="max-width: 100%; max-height: 100%;" />
-                                                <span class="image-picker-backdrop"></span>
-                                            </a>
-                                            <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0"
-                                                style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
-                                                onclick="removeImage()" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="Remove image">
-                                                <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M18 6l-12 12" />
-                                                    <path d="M6 6l12 12" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    @if ($errors->has('banner_image'))
-                                        <small class="text-danger">{{ $errors->first('banner_image') }}</small>
-                                    @endif
-                                    <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text">
-
-                                    <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)"
-                                        class="btn btn-primary btn-sm">
-                                        Choose image
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card meta-boxes">
-                            <div class="card-header">
-                                <h4 class="card-title">
                                     <label for="tag" class="form-label">Tags</label>
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <input class="form-control tags" placeholder="Write some tags" data-url=""
+                                <input required class="form-control tags" placeholder="Write some tags"
                                     name="tag" type="text" id="tag">
                                 @if ($errors->has('tag'))
                                     <small class="text-danger">{{ $errors->first('tag') }}</small>
