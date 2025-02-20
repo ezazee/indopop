@@ -227,9 +227,9 @@
                                     </th>
                                     <th title="Image" width="50" class=" column-key-1  column-key-1  column-key-1">Image
                                     </th>
-                                    <th title="Name"
+                                    <th title="Title"
                                         class="text-start  column-key-2 text-start  column-key-2  column-key-2">
-                                        Name</th>
+                                        Title</th>
                                     <th title="Categories" width="150"
                                         class=" column-key-3  column-key-3  column-key-3">Categories
                                     </th>
@@ -263,8 +263,8 @@
                                             src="{{ is_array($images) ? $images[0] : $images }}" width="50" alt="Image">
                                     </td>
                                     <td class="  text-start  column-key-2 text-start  column-key-2  column-key-2"><a
-                                            href="{{ route('blog.edit', ['id' => $item->id ]) }}"
-                                            title="{{ $item->title }}">{{ $item->title }}</a></td>
+                                            href="{{ route('detail.desktop', ['slug' => $item->slug ]) }}"
+                                            title="{{ $item->title }}" target="_blank">{{ $item->title }}</a></td>
                                     <td class="column-key-3  column-key-3  column-key-3">
                                         {{ $item->kategori->nama_kategori }} </td>
                                     <td class="column-key-4  column-key-4  column-key-4">{{ $item->user->name }}</td>

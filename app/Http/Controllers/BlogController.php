@@ -77,7 +77,6 @@ class BlogController extends Controller
 
     public function PostAdd(Request $request) {
         $validatedData = $request->validate([
-            'slug' => 'nullable|string|max:255|unique:posts,slug',
             'short_description' => 'nullable|string',
             'content' => 'required|string',
             'headline' => 'nullable|string|in:yes,no',
@@ -86,7 +85,7 @@ class BlogController extends Controller
 
             $post = Post::create([
                 'title' => $request->input('title'),
-                'slug' => $request->input('title', Str::slug($request->input('title'))),
+                'slug' => Str::slug($request->input('title')),
                 'short_description' => $request->input('short_description'),
                 'image_caption' => $request->input('image_caption'),
                 'content' => $request->input('content'),
