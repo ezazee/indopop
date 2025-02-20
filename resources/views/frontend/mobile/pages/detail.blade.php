@@ -43,22 +43,22 @@
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank">
                             <img src="{{ asset('frontend/icons/fb.svg') }}" alt="Facebook">
                         </a>
-                    
+
                         <!-- Twitter -->
                         <a href="https://twitter.com/intent/tweet?url={{ $url }}" target="_blank">
                             <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="Twitter">
                         </a>
-                    
+
                         <!-- Telegram -->
                         <a href="https://t.me/share/url?url={{ $url }}" target="_blank">
                             <img src="{{ asset('frontend/icons/tele.svg') }}" alt="Telegram">
                         </a>
-                    
+
                         <!-- WhatsApp -->
                         <a href="https://api.whatsapp.com/send?text={{ $url }}" target="_blank">
                             <img src="{{ asset('frontend/icons/wa.svg') }}" alt="WhatsApp">
                         </a>
-                    
+
                         <!-- Copy Link -->
                         <a href="javascript:void(0);" onclick="copyToClipboard()">
                             <img src="{{ asset('frontend/icons/link.svg') }}" alt="Copy Link">
@@ -71,7 +71,7 @@
         </figure>
         <a href="#!" rel="">
             <div class="banner-ads--big">
-                @include('frontend.mobile.components.ads-2')
+                @include('frontend.mobile.components.ads-7')
             </div>
         </a>
         <div class="t0-b20">
@@ -100,22 +100,22 @@
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank">
                     <img src="{{ asset('frontend/icons/fb.svg') }}" alt="Facebook">
                 </a>
-            
+
                 <!-- Twitter -->
                 <a href="https://twitter.com/intent/tweet?url={{ $url }}" target="_blank">
                     <img src="{{ asset('frontend/icons/twitter.svg') }}" alt="Twitter">
                 </a>
-            
+
                 <!-- Telegram -->
                 <a href="https://t.me/share/url?url={{ $url }}" target="_blank">
                     <img src="{{ asset('frontend/icons/tele.svg') }}" alt="Telegram">
                 </a>
-            
+
                 <!-- WhatsApp -->
                 <a href="https://api.whatsapp.com/send?text={{ $url }}" target="_blank">
                     <img src="{{ asset('frontend/icons/wa.svg') }}" alt="WhatsApp">
                 </a>
-            
+
                 <!-- Copy Link -->
                 <a href="javascript:void(0);" onclick="copyToClipboard()">
                     <img src="{{ asset('frontend/icons/link.svg') }}" alt="Copy Link">
@@ -226,6 +226,6 @@
                 document.body.removeChild(tempInput);
                 alert("Link copied to clipboard!");
             }
-        
+
             </script>
         @endsection
