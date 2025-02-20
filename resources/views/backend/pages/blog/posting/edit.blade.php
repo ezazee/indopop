@@ -39,19 +39,18 @@
                             <div class="tab-content">
                                 <div class="tab-pane active show" id="tabs-detail">
                                     <div class="mb-3 position-relative">
-                                        <label for="name" class="form-label required">Name</label>
-                                        <input class="form-control" data-counter="250" placeholder="Name"
-                                            required="required" name="title" type="text" value="{{ $post->title }}">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input class="form-control" data-counter="250" placeholder="Name" name="title" type="text" value="{{ $post->title }}">
                                     </div>
                                     <div class="mb-3 ">
                                         <div class="slug-field-wrapper" data-field-name="name">
                                             <div class="mb-3 position-relative">
-                                                <label class="form-label required" for="slug">
+                                                <label class="form-label" for="slug">
                                                     Permalink
                                                 </label>
                                                 <div class="input-group input-group-flat">
                                                     <span class="input-group-text">
-                                                        {{ config('app.url') }}/detail/
+                                                        {{ config('app.url') }}/
                                                     </span>
                                                     <input class="form-control ps-0" type="text"
                                                         value="{{ $post->slug }}" readonly />
@@ -229,11 +228,53 @@
                     <div class="card meta-boxes">
                         <div class="card-header">
                             <h4 class="card-title">
-                                <label for="status" class="form-label required">Status</label>
+                                <label for="banner_image" class="form-label ">Featured image</label>
                             </h4>
                         </div>
                         <div class="card-body">
-                            <label for="status">Status</label>
+                            <div class="image-box image-box-banner_image" data-counter="250">
+                                <input class="image-data" name="banner_image" type="hidden" value="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" data-counter="250" />
+                                <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
+                                    class="preview-image-wrapper mb-1">
+                                    <div class="preview-image-inner">
+                                        <a href="#" data-bb-toggle="image-picker-choose"
+                                            onclick="openFileManager(event)" class="image-box-actions"
+                                            data-result="banner_image" data-action="select-image" data-allow-thumb="1">
+                                            <img class="preview-image default-image"
+                                                data-default="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
+                                                src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
+                                                alt="Preview image" style="max-width: 100%; max-height: 100%;" />
+                                            <span class="image-picker-backdrop"></span>
+                                        </a>
+                                        <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0"
+                                            style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
+                                            onclick="removeImage()" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Remove image">
+                                            <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M18 6l-12 12" />
+                                                <path d="M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
+                            <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
+                                    Choose image
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card meta-boxes">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <label for="status" class="form-label">Status</label>
+                            </h4>
+                        </div>
+                        <div class="card-body">
                             <select class="form-control form-select" id="status" name="status">
                                 <option value="publish" {{ $post->status == 'publish' ? 'selected' : '' }}>Published
                                 </option>
@@ -273,7 +314,7 @@
                     <div class="card meta-boxes">
                         <div class="card-header">
                             <h4 class="card-title">
-                                <label for="categories" class="form-label required">Categories</label>
+                                <label for="categories" class="form-label">Categories</label>
                             </h4>
                         </div>
                         <div class="card-body">
@@ -302,50 +343,6 @@
                                     </li>
                                     @endforeach
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card meta-boxes">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <label for="banner_image" class="form-label required">Banner image</label>
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="image-box image-box-banner_image" data-counter="250">
-                                <input class="image-data" name="banner_image" type="hidden" value="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" data-counter="250"
-                                    required />
-                                <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
-                                    class="preview-image-wrapper mb-1">
-                                    <div class="preview-image-inner">
-                                        <a href="#" data-bb-toggle="image-picker-choose"
-                                            onclick="openFileManager(event)" class="image-box-actions"
-                                            data-result="banner_image" data-action="select-image" data-allow-thumb="1">
-                                            <img class="preview-image default-image"
-                                                data-default="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
-                                                src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
-                                                alt="Preview image" style="max-width: 100%; max-height: 100%;" />
-                                            <span class="image-picker-backdrop"></span>
-                                        </a>
-                                        <button class="btn btn-pill btn-icon btn-sm image-picker-remove-button p-0"
-                                            style="display: none; --bb-btn-font-size: 0.5rem;" type="button"
-                                            onclick="removeImage()" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Remove image">
-                                            <svg class="icon icon-sm icon-left svg-icon-ti-ti-x"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M18 6l-12 12" />
-                                                <path d="M6 6l12 12" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
-                            <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
-                                    Choose image
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -447,7 +444,7 @@
 
         const route_prefix = "/laravel-filemanager?type=image";
 
-        window.open(route_prefix, 'FileManager', 'width=900,height=600');
+        window.open(route_prefix, 'FileManager', 'width=1920,height=1080');
 
         window.SetUrl = function (file) {
             const fileData = Array.isArray(file) ? file[0] : file;

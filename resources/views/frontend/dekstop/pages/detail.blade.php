@@ -75,7 +75,7 @@
                         <img alt="image" width="660" height="497"
                             src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
                             class="card-headline-img" />
-
+                            <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
                         {!! preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content) !!}

@@ -166,7 +166,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/spring', [DashboardController::class, 'loginPage'])->name('login');
 Route::post('/authlogin', [LoginController::class, 'authlogin'])->name('authlogin');
 
-Route::get('/tags/{slug}', [HomeController::class, 'byTag'])->name('bytag');
+Route::get('/tag/{slug}', [HomeController::class, 'byTag'])->name('bytag');
 Route::get('/redaksi', [HomeController::class, 'redaksi'])->name('redaksi.desktop');
 Route::get('/kebijakan-privasi', [HomeController::class, 'kebijakanPrivasi'])->name('kebijakan.desktop');
 Route::get('/kode-etik', [HomeController::class, 'kodeEtik'])->name('kodeEtik.desktop');
