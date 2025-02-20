@@ -241,9 +241,9 @@
                                 </select>
                                 <div id="form-schedule" style="margin-top: 10px; display: none;">
                                     <label class="form-label">Date</label>
-                                    <input type="date" class="form-control" min="{{ date('Y-m-d') }}">
+                                    <input type="date" class="form-control" name="scheduled_date" min="{{ date('Y-m-d') }}">
                                     <label class="form-label">Time</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" name="scheduled_time" class="form-control">
                                 </div>
                             </div>
                         </div>
