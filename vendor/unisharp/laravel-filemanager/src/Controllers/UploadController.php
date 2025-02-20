@@ -33,7 +33,7 @@ class UploadController extends LfmController
     
         foreach (is_array($uploaded_files) ? $uploaded_files : [$uploaded_files] as $file) {
             try {
-                $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $originalName = preg_replace('/\s+/', '-', pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME));
                 $extension = $file->getClientOriginalExtension();
 
                 $filename = $originalName . '.' . $extension;

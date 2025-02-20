@@ -4,7 +4,6 @@
     .article-detail--body img {
         width: 100% !important;
         height: auto !important;
-        margin: 10px 0 !important;
         border-radius: 8px !important;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     }
@@ -16,6 +15,19 @@
         border-radius: 8px !important;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     }
+    
+    .article-detail--body i {
+        display: flex ;
+        justify-content: center;
+        padding: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--gray-color);
+        background: #f2f2f2;
+    }
+
 </style>
 @section('content')
     <div class="main-content">
@@ -75,18 +87,18 @@
                         <img alt="image" width="660" height="497"
                             src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}"
                             class="card-headline-img" />
-                            <figcaption>{{ $post->image_caption }}</figcaption>
+                    <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
-                        {!! preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content) !!}
-                        {{-- <p>{!! preg_replace_callback(
+                        <!--{!! nl2br(preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content)) !!}-->
+                        <p>{!! preg_replace_callback(
                             '/<img[^>]+alt="([^"]*)"[^>]*>/i',
                             function ($matches) {
-                                return $matches[0] . '<br><i>' . htmlspecialchars($matches[1]) . '</i>';
+                                return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
                             },
                             preg_replace('/\[caption[^\]]*\]/is', '', $post->content),
                         ) !!}
-                        </p> --}}
+                        </p>
                     </div>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>
