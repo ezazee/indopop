@@ -15,7 +15,7 @@
                             </li>
                             @foreach ($categories as $item)
                             <li class="menu-item dropdown">
-                                <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}" class="{{ Request::is('kanal/' . $item->slug) ? 'active' : '' }}">{{$item->nama_kategori}}</a>
+                                <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}" class="{{ Request::is('category/' . $item->slug) ? 'active' : '' }}">{{$item->nama_kategori}}</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li><a href="{{ url('/kanal/sub1') }}">Sub Kanal 1</a></li>
                                     <li><a href="{{ url('/kanal/sub2') }}">Sub Kanal 2</a></li>
