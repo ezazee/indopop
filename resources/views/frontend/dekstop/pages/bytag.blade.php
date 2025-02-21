@@ -1,8 +1,9 @@
 @extends('frontend.dekstop.master.master-app')
 @section('content')
-    <div class="mt-20">
-        <h3 class="card-headline-no-image-title">Tag : "{{ $tag->nama_tags }}"</h3>
-    </div>
+<div class="mt-20">
+    <h3 class="card-headline-no-image-title">Tag :
+        "{{ $tag->nama_tags }}"</h3>
+</div>
     <div class="content-home" id="content">
         <div class="content-article">
             <div class="mt-20">

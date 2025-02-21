@@ -83,21 +83,27 @@
         </a>
         <div class="t0-b20">
             <div class="article-detail--body">
-                <!--{!! preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content) !!}-->
-                                        <p>{!! preg_replace_callback(
-                            '/<img[^>]+alt="([^"]*)"[^>]*>/i',
-                            function ($matches) {
-                                return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
-                            },
-                            preg_replace('/\[caption[^\]]*\]/is', '', $post->content),
-                        ) !!}
-                        </p>
+                <p>{!! preg_replace_callback(
+                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
+                    function ($matches) {
+                        return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
+                    },
+                    preg_replace_callback(
+                        '/(?:<caption\b[^>]*>|\\[caption[^\]]*\\])(.*?)(?:<\\/caption>|\\[\\/caption\\])/is', 
+                        function ($matches) {
+                            preg_match_all('/<img[^>]+>/i', $matches[1], $images);
+                            return implode('', $images[0]); 
+                        },
+                        $post->content
+                    )
+                ) !!}
+                </p>                
             </div>
 
             <div class="article-detail-tag">
                 <span class="label card-headline-no-image-title">Tag</span>
                 @foreach ($tagsdetail as $index => $tags)
-                    <a href="" class="tag-item"> {{ $tags->nama_tags }}</a>
+                    <a href="{{ route('bytag', ['slug' => $tags->slug]) }}" class="tag-item"> {{ $tags->nama_tags }}</a>
                 @endforeach
             </div>
             <div class="share-baru-bottom mb-20">
@@ -211,7 +217,7 @@
                                         href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                                 </h4>
                                 <div class="category-and-time">
-                                    <a href="?page=detail">{{ $item->kategori->nama_kategori }}</a>
+                                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
                                     <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                                 </div>
                             </div>

@@ -88,15 +88,22 @@
                     <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
-                        <!--{!! nl2br(preg_replace('/\[caption[^\]]*\](.*?)\[\/caption\]/s', '$1', $post->content)) !!}-->
                         <p>{!! preg_replace_callback(
                             '/<img[^>]+alt="([^"]*)"[^>]*>/i',
                             function ($matches) {
                                 return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
                             },
-                            preg_replace('/\[caption[^\]]*\]/is', '', $post->content),
+                            preg_replace_callback(
+                                '/(?:<caption\b[^>]*>|\\[caption[^\]]*\\])(.*?)(?:<\\/caption>|\\[\\/caption\\])/is', 
+                                function ($matches) {
+                                    preg_match_all('/<img[^>]+>/i', $matches[1], $images);
+                                    return implode('', $images[0]); 
+                                },
+                                $post->content
+                            )
                         ) !!}
                         </p>
+                        
                     </div>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>

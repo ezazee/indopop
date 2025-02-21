@@ -27,7 +27,7 @@ class HomeController extends Controller
         ->where('headline', 'yes')
         ->where('status', 'publish')
         ->whereNotIn('id', $usedPostIds)
-        ->latest()
+        ->orderBy('id', 'desc')
         ->take(15)
         ->get();
 

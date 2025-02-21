@@ -62,7 +62,7 @@
                             <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                         </h4>
                         <div class="category-and-time">
-                            <a href="?page=detail">{{ $item->kategori->nama_kategori }}</a>
+                            <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
                             <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <article class="main-card">
                             <div class="main-card--infoml0">
                                 <h4 class="main-card--title">
-                                    <a href="?page=detail">{{ $item->title }}</a>
+                                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                                 </h4>
                                 <div class="category-and-time">
                                     <span>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</span>
@@ -166,7 +166,7 @@
                     <article class="main-card">
                         <div class="main-card--infomr10">
                             <h4 class="main-card--title">
-                                <a href="?page=detail">{{ $post->title }}</a>
+                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="category-and-time">
                                 <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
@@ -392,7 +392,7 @@
                                             href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                                     </h4>
                                     <div class="category-and-time">
-                                        <a href="?page=detail">{{ $post->kategori->nama_kategori }}</a>
+                                        <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $post->kategori->nama_kategori }}</a>
                                         <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
                                     </div>
                                 </div>
