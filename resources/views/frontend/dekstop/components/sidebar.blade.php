@@ -29,11 +29,15 @@
         <div>
             <h3 class="card-headline-no-image-title">Terpopuler</h3>
             @foreach ($postTerpopuler as $item)
+            @php
+                $images = is_string($item->gambar) ? explode('|', $item->gambar) : [];
+                $firstImage = !empty($images[0]) ? $images[0] : asset('default.jpg');
+            @endphp
                 <article class="card-four">
                     <div class="card-four-img-wrap">
                         <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">
                             <img alt="image" class="card-four-img"
-                                src="{{ is_array($item->gambar) ? $item->gambar[0] : $item->gambar }}" />
+                                src="{{ $firstImage }}" />
                         </a>
                     </div>
                     <div class="card-four--info">
