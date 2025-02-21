@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         @include('frontend.mobile.components.navbar')
-        <div class="main-content mt-20 mb-20">
+        <div class="main-content mt-60 mb-20">
             @yield('content')
         </div>
         @include('frontend.mobile.components.footer')

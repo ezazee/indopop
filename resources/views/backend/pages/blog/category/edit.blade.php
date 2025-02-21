@@ -54,8 +54,8 @@
                                         </label>
                                         <div class="input-group input-group-flat">
                                             <span class="input-group-text" >
-                                                {{ config('app.url') }}/kanal/
-                                            </span>                                            
+                                                {{ config('app.url') }}/category/
+                                            </span>
                                             <input id="slug" class="form-control ps-0" type="text" value="{{ $category->slug }}" readonly />
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                         <form action="{{ route('category.destroy', ['id' => $category->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            
+
                                             <button class="btn btn-danger" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                                                 <svg class="icon icon-sm icon-left svg-icon-ti-ti-trash"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
