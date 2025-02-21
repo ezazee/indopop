@@ -10,7 +10,6 @@
             </script>
         </div>
         <!-- Headline -->
-        @include('frontend.mobile.components.ads-2')
         <div>
             @if ($topPostheadline)
                 @php

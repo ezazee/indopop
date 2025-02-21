@@ -15,7 +15,7 @@
         border-radius: 8px !important;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .article-detail--body i {
         display: flex ;
         justify-content: center;
@@ -30,11 +30,6 @@
 
 </style>
 @section('content')
-    <a href="#!" rel="">
-        <div class="banner-ads--big">
-            @include('frontend.mobile.components.ads-2')
-        </div>
-    </a>
     <div class="kanal-wrap">
         <h3 class="base-title-desc">{{ $post->kategori->nama_kategori }}</h3>
         <div class="date">{{ \Carbon\Carbon::parse($post->created_at)->translatedFormat('l, d F Y | H:i') }} WIB </div>
