@@ -1873,7 +1873,7 @@ th {
     display: flex;
     align-items: center;
     position: relative;
-    width: 100%; /* Mengatur lebar menjadi 100% */
+    width: 970px; /* Mengatur lebar menjadi 100% */
     box-sizing: border-box; /* Memastikan padding dan border termasuk dalam lebar total */
 }
   .today-headline {
