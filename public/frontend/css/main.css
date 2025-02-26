@@ -1909,8 +1909,8 @@ th {
   .news-marquee-text a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: 400;
+    font-size: 12px;
   }
   @keyframes marquee {
     0% {
