@@ -20,12 +20,16 @@
                         <img alt="image" class="card-headline-img" src="{{ isset($images[0]) ? $images[0] : '' }}" />
                     </a>
                     <div class="card-headline-info">
+                        <div class="category-and-time">
+                            <a
+                                href="{{ route('kanal.desktop', ['slug' => $topPostheadline->slug]) }}">{{ $topPostheadline->kategori->nama_kategori }}</a>
+                            <span>{{ \Carbon\Carbon::parse($topPostheadline->created_at)->format('Y-m-d') }}</span>
+                        </div>
                         <h4 class="card-headline-title">
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostheadline->slug]) }}">{{ $topPostheadline->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostheadline->content), 150) !!}</p>
-                        <!-- <span class="card-headline-category">Seleb</span> -->
+                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostheadline->content), 60) !!}</p>
                     </div>
                 </article>
             @else
@@ -42,7 +46,7 @@
                             </h4>
                             <!-- <span class="card-headline-small-category">Seleb</span> -->
                             <div class="category-and-time-head">
-                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                     </article>
@@ -62,8 +66,9 @@
                             <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                         </h4>
                         <div class="category-and-time">
-                            <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
-                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                            <a
+                                href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
+                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
                         </div>
                     </div>
                 </article>
@@ -80,7 +85,8 @@
                         <article class="main-card">
                             <div class="main-card--infoml0">
                                 <h4 class="main-card--title">
-                                    <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
+                                    <a
+                                        href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                                 </h4>
                                 <div class="category-and-time">
                                     <span>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</span>
@@ -109,7 +115,10 @@
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostDangdut->slug]) }}">{{ $topPostDangdut->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostDangdut->content), 100) !!}</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostDangdut->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostDangdut->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -150,12 +159,16 @@
                 @endphp
                 <article class="card-headline">
                     <img alt="image" class="card-headline-img"
-                        src="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" />
+                        src="{{ is_array($topPostFlexing->gambar) ? $topPostFlexing->gambar[0] : $topPostFlexing->gambar }}" />
                     <div class="card-headline-info">
                         <h4 class="card-headline-title">
-                            <a href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
+                            <a
+                                href="{{ route('detail.desktop', ['slug' => $topPostFlexing->slug]) }}">{{ $topPostFlexing->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostFlexing->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostFlexing->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -166,10 +179,10 @@
                     <article class="main-card">
                         <div class="main-card--infomr10">
                             <h4 class="main-card--title">
-                                <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $post->title }}</a>
+                                <a href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                         <div class="main-card-img-wrap">
@@ -185,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <!-- end Flexing -->
+        <!-- end Flexing -->
 
         @include('frontend.mobile.components.ads-4')
 
@@ -203,7 +216,10 @@
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostGosip->slug]) }}">{{ $topPostGosip->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostGosip->content), 100) !!}</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostGosip->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostGosip->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -222,7 +238,7 @@
                                 </a>
                             </h4>
                             <div class="category-and-time">
-                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                     </article>
@@ -245,7 +261,10 @@
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostKPop->slug]) }}">{{ $topPostKPop->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostKPop->content), 100) !!}</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostKPop->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostKPop->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -259,7 +278,7 @@
                                 <a href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                                <span>11:15 WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                         <div class="main-card-img-wrap">
@@ -293,7 +312,10 @@
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostVibes->slug]) }}">{{ $topPostVibes->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostVibes->content), 100) !!}</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostVibes->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostVibes->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -311,7 +333,7 @@
                                 <a href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                     </article>
@@ -339,7 +361,10 @@
                             <a
                                 href="{{ route('detail.desktop', ['slug' => $topPostMeandmom->slug]) }}">{{ $topPostMeandmom->title }}</a>
                         </h4>
-                        <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostMeandmom->content), 100) !!}</p>
+                        <div class="category-and-time">
+                            <p class="card-headline-desc">{!! Str::limit(strip_tags($topPostMeandmom->content), 60) !!}</p>
+                            <span>{{ \Carbon\Carbon::parse($topPostMeandmom->created_at)->format('d-m-Y') }}</span>
+                        </div>
                     </div>
                 </article>
             @else
@@ -353,7 +378,7 @@
                                 <a href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
+                                <span>{{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}</span>
                             </div>
                         </div>
                         <div class="main-card-img-wrap">
@@ -392,8 +417,9 @@
                                             href="{{ route('detail.desktop', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                                     </h4>
                                     <div class="category-and-time">
-                                        <a href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $post->kategori->nama_kategori }}</a>
-                                        <span>{{ \Carbon\Carbon::parse($post->created_at)->format('H:i') }} WIB</span>
+                                        <a
+                                            href="{{ route('kanal.desktop', ['slug' => $item->slug]) }}">{{ $post->kategori->nama_kategori }}</a>
+                                        <span>{{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}</span>
                                     </div>
                                 </div>
                             </article>

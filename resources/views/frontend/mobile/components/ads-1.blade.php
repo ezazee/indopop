@@ -29,17 +29,18 @@
     </style>
 
 
-    <a href="#!">
-        <div class="anchor_banner" id="iklan_anchor">
-            <button class="btnclose" aria-label="Close anchor ads" onclick="closebottom()">
-                <img src="{{ asset('frontend/icons/close-icons.svg') }}" alt="icon close" width="20px" height="20px">
-            </button>
+    <div class="anchor_banner" id="iklan_anchor">
+        <button class="btnclose" aria-label="Close anchor ads" onclick="closebottom()">
+            <img src="{{ asset('frontend/icons/close-icons.svg') }}" alt="icon close" width="20px" height="20px">
+        </button>
+        <a href="#">
             <div id="div-Anchor"
                 style="position:fixed;bottom:0px;z-index:9999;text-align:center;height:100px;width:100%; background-color:#E1E1E1">
-                <img src="{{ asset('frontend/images/ads/320_x_100.jpg') }}" alt="" width="400px" height="100px">
+                <img src="{{ asset('frontend/images/ads/320_x_100.jpg') }}" alt="" width="400px"
+                    height="100px">
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 
 
 </div>

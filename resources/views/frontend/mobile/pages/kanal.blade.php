@@ -13,6 +13,10 @@
                     <h4 class="card-headline-title">
                         <a href="{{ route('detail.desktop', ['slug' => $latestPost->slug]) }}">{{ $latestPost->title }}</a>
                     </h4>
+                    <div class="category-and-time">
+                        <div class="card-one-headline--desc">{!! Str::limit(strip_tags($latestPost->content), 60) !!}</div>
+                        <span>{{ \Carbon\Carbon::parse($latestPost->created_at)->format('Y-m-d') }}</span>
+                    </div>
                 </div>
             </article>
         </div>
@@ -26,7 +30,7 @@
                             <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                         </h4>
                         <div class="category-and-time-head">
-                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
                         </div>
                     </div>
                 </article>
@@ -49,7 +53,7 @@
                         <a href="{{ route('kanal.desktop', ['slug' => $item->kategori->slug]) }}">
                             {{ $item->kategori->nama_kategori }}
                         </a>
-                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB</span>
+                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
                     </div>
                 </div>
             </article>
