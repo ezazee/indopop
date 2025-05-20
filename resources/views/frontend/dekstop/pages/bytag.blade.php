@@ -26,7 +26,8 @@
                                     <div class="category-and-time">
                                         <span>
                                             <span class="text-primary fw-bold">{{ $tag->nama_tags }}</span>
-                                            {{ \Carbon\Carbon::parse($item->created_at)->format('H:i') }} WIB
+                                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} |</span>
+                                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                                         </span>
                                     </div>
                                 </div>

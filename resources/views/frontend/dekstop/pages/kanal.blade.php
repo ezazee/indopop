@@ -17,7 +17,8 @@
                         </h4>
                         <div class="category-and-time">
                             <div class="card-one-headline--desc">{!! Str::limit(strip_tags($item->content), 150) !!}</div>
-                            <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
+                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} |</span>
+                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                         </div>
                     </div>
                 </article>
@@ -33,7 +34,8 @@
                                 <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                                <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
+                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} |</span>
+                            <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                             </div>
                         </div>
                     </article>
@@ -55,7 +57,8 @@
                                 </h4>
                                 <p class="main-card--desc">{!! Str::limit(strip_tags($item->content ), 150) !!} </p>
                                 <div class="category-and-time">
-                                    <span>{{ \Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</span>
+                                <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} |</span>
+                                <span>{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                                 </div>
                             </div>
                         </article>
