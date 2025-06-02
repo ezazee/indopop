@@ -158,7 +158,7 @@ class HomeController extends Controller
 
     public function detail($slug)
     {
-        $post = Post::with(['kategori', 'user'])->where('slug', $slug)->where('status', 'publish')->firstOrFail();
+        $post = Post::with(['kategori', 'user','tags'])->where('slug', $slug)->where('status', 'publish')->firstOrFail();
 
         $postTerkini = Post::with('kategori', 'user')
         ->where('status', 'publish')
@@ -181,6 +181,14 @@ class HomeController extends Controller
         ->take(5)
         ->get();
 
+
+        $bacaJuga = Post::whereHas('tags', function ($q) use ($post) {
+            $q->whereIn('tags.id', $post->tags->pluck('id'));
+        })
+        ->where('posts.id', '!=', $post->id)
+        ->select('posts.*')
+        ->take(2)
+        ->get();
 
         // $postTerpopuler = Post::with('kategori', 'user')
         // ->where('status', 'publish')
@@ -225,9 +233,9 @@ class HomeController extends Controller
         $tagsdetail = $post->tags;
 
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.detail',compact('relatedPosts','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.mobile.pages.detail',compact('relatedPosts','bacaJuga','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
         } else {
-            return view('frontend.dekstop.pages.detail',compact('relatedPosts','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.dekstop.pages.detail',compact('relatedPosts','bacaJuga','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
         }
     }
 
