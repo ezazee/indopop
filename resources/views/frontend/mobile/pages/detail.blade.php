@@ -131,6 +131,13 @@
                                     $pCount++;
                                     $paragraph = $matches[0];
 
+                                    $adsScripts = [
+                                        2 => '',
+                                        6 => '',
+                                    ];
+
+                                    $output = $paragraph;
+
                                     if (($pCount === 3 || $pCount === 6) && isset($bacaJuga[$bacaIndex])) {
                                         $related = $bacaJuga[$bacaIndex];
                                         $url = route('detail.desktop', ['slug' => $related->slug]);
@@ -142,12 +149,17 @@
                                                 <a href="' . $url . '">' . $title . '</a>
                                             </blockquote>';
 
+                                        $output .= $bacaJugaHtml;
                                         $bacaIndex++;
-                                        return $paragraph . $bacaJugaHtml;
                                     }
 
-                                    return $paragraph;
+                                    if (isset($adsScripts[$pCount])) {
+                                        $output .= $adsScripts[$pCount];
+                                    }
+
+                                    return $output;
                                 }, $content);
+
                             @endphp
 
                             {!! $finalContent !!}            
