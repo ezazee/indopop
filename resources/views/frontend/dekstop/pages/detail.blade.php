@@ -28,6 +28,23 @@
         background: #f2f2f2;
     }
 
+    .bacajuga {
+        margin: 0 0 1rem;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        border-left: 5px solid var(--red-primary);
+        font-style: italic;
+        color: #333;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .bacajuga a {
+        color: var(--red-primary) !important;
+        text-decoration: underline;
+    }
+
 </style>
 @section('content')
         {{-- Ads --}}
