@@ -32,7 +32,7 @@
 @section('content')
     <div class="kanal-wrap">
         <h3 class="base-title-desc">{{ $post->kategori->nama_kategori }}</h3>
-        <div class="date"><span style="font-size: 10px;">{{ $post->created_at ? \Carbon\Carbon::parse($post->created_at)->isoFormat('DD MMMM, YYYY') : '' }} | {{ $post->created_at ? \Carbon\Carbon::parse($post->created_at)->format('H:i:s') : '' }}</span>
+        <div class="date"><span style="font-size: 10px;">{{ $post->created_at ? \Carbon\Carbon::parse($post->created_at)->isoFormat('DD MMMM YYYY') : '' }} | {{ $post->created_at ? \Carbon\Carbon::parse($post->created_at)->format('H:i:s') : '' }}</span>
  </div>
     </div>
     <article class="article-detail">
@@ -90,15 +90,15 @@
                         return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
                     },
                     preg_replace_callback(
-                        '/(?:<caption\b[^>]*>|\\[caption[^\]]*\\])(.*?)(?:<\\/caption>|\\[\\/caption\\])/is', 
+                        '/(?:<caption\b[^>]*>|\\[caption[^\]]*\\])(.*?)(?:<\\/caption>|\\[\\/caption\\])/is',
                         function ($matches) {
                             preg_match_all('/<img[^>]+>/i', $matches[1], $images);
-                            return implode('', $images[0]); 
+                            return implode('', $images[0]);
                         },
                         $post->content
                     )
                 ) !!}
-                </p>                
+                </p>
             </div>
 
             <div class="article-detail-tag">
@@ -158,7 +158,7 @@ l,A,function(){for(var a;c.rcBuf&&(a=c.rcBuf.shift());)c.postMessage(a,x)})}catc
                                 <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                             </h4>
                             <div class="category-and-time">
-                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
+                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                             </div>
                         </div>
                     </article>
@@ -194,7 +194,7 @@ l,A,function(){for(var a;c.rcBuf&&(a=c.rcBuf.shift());)c.postMessage(a,x)})}catc
                             <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->title }}</a>
                         </h4>
                         <div class="category-and-time">
-                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
+                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                         </div>
                     </div>
                 </article>
@@ -224,7 +224,7 @@ l,A,function(){for(var a;c.rcBuf&&(a=c.rcBuf.shift());)c.postMessage(a,x)})}catc
                                 </h4>
                                 <div class="category-and-time">
                                     <a href="{{ route('detail.desktop', ['slug' => $item->slug]) }}">{{ $item->kategori->nama_kategori }}</a>
-                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM, YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
+                            <span style="font-size: 10px;">{{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMMM YYYY') : '' }} | {{ $item->created_at ? \Carbon\Carbon::parse($item->created_at)->format('H:i:s') : '' }}</span>
                                 </div>
                             </div>
                         </article>
