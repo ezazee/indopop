@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Exports\PostExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
+use App\Services\PlausibleService;
 
 class DashboardController extends Controller
 {
@@ -38,130 +40,120 @@ class DashboardController extends Controller
         return view('backend.index', compact('userCount','postCount','categoryCount','tagcount','recentPosts'));
     }
 
-    public function getTopPages(Request $request)
+    public function getTopPages(PlausibleService $plausible, Request $request)
     {
-        $settings = Settings::first();
-        $propertyId = $settings->analytics;
-
-        $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d'));
-
-        try {
-            $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-
-            $topPages = [];
-            if (!empty($analyticsData['topPages'])) {
-                foreach ($analyticsData['topPages'] as $page) {
-                    $topPages[] = [
-                        'page' => $page['page'],
-                        'sessions' => $page['sessions'],
-                    ];
-                }
+        $property = $request->query('property', 'event:page');
+        $period = $request->query('period', '7d');
+    
+        $stats = $plausible->getStats($period, $property);
+    
+        $topBrowsers = [];
+    
+        if (!empty($stats['results'])) {
+            $topPages = array_slice($stats['results'], 0, 10);
+    
+            foreach ($topPages as $item) {
+                $topBrowsers[] = [
+                    'page' => $item['page'] ?? 'N/A',
+                    'visitors' => $item['visitors'] ?? 0,
+                ];
             }
-            return response()->json([
-                'topPages' => $topPages,
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-            ]);
         }
+    
+        return response()->json([
+            'topBrowsers' => $topBrowsers,
+        ]);
     }
-
-    public function gettopBrowsers(Request $request){
-        $settings = Settings::first();
-        $propertyId = $settings->analytics;
-
-        $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d'));
-
-        try {
-            $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-
-            $topBrowsers = [];
-            if (!empty($analyticsData['topBrowsers'])) {
-                foreach ($analyticsData['topBrowsers'] as $page) {
-                    $topBrowsers[] = [
-                        'browser' => $page['browser'],
-                        'sessions' => $page['sessions'],
-                    ];
-                }
-            }
-            return response()->json([
-                'topBrowsers' => $topBrowsers,
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-            ]);
-        }
-    }
-
-    public function gettopReferrers(Request $request){
-        $settings = Settings::first();
-        $propertyId = $settings->analytics;
-
-        $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d'));
-
-        try {
-            $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-
-            $topReferrers = [];
-            if (!empty($analyticsData['topReferrers'])) {
-                foreach ($analyticsData['topReferrers'] as $page) {
-                    $topReferrers[] = [
-                        'referrer' => $page['referrer'],
-                        'sessions' => $page['sessions'],
-                    ];
-                }
-            }
-            return response()->json([
-                'topReferrers' => $topReferrers,
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-            ]);
-        }
-    }
-
-    public function getSiteAnalytics(Request $request)
+    
+    
+    public function gettopBrowsers(PlausibleService $plausible, Request $request)
     {
-        $settings = Settings::first();
-        $propertyId = $settings->analytics;
+        $period = $request->query('period', '7d');
+        $property = $request->query('property', 'visit:source');
+
+        $stats = $plausible->getStats($period, $property);  
+        $topBrowsers = [];
     
-        $startDate = $request->query('start_date', now()->subDays(7)->format('Y-m-d'));
-        $endDate = $request->query('end_date', now()->format('Y-m-d'));
+        if (!empty($stats['results'])) {
+            $topPages = array_slice($stats['results'], 0, 15);
     
-        try {
-            $analyticsData = $this->analyticsService->getReport($propertyId, $startDate, $endDate);
-            $siteAnalytics = [];
-            $trafficData = [];
+            foreach ($topPages as $item) {
+                $topBrowsers[] = [
+                    'page' => $item['source'] ?? 'N/A',
+                    'visitors' => $item['visitors'] ?? 0,
+                ];
+            }
+        }
     
-            if (!empty($analyticsData['siteAnalytics'])) {
-                foreach ($analyticsData['siteAnalytics'] as $page) {
-                    $siteAnalytics[] = [
-                        'sessions' => $page['sessions'],
-                        'bouncerate' => $page['bouncerate'],
-                        'pageviews' => $page['pageviews'],
-                        'activeusers' => $page['activeusers'],
+        return response()->json([
+            'topBrowsers' => $topBrowsers,
+        ]);
+    }
+    
+
+    public function gettopReferrers(PlausibleService $plausible, Request $request){
+
+        $period = $request->query('period', '7d');
+        $property = $request->query('property', 'visit:referrer');
+
+        $stats = $plausible->getStats($period, $property);  
+
+        $topReferrers = [];
+        if (!empty($stats['results'])) {
+            $topPages = array_slice($stats['results'], 0, 15);
+    
+            foreach ($topPages as $item) {
+                $topReferrers[] = [
+                    'page' => $item['referrer'] ?? 'N/A',
+                    'visitors' => $item['visitors'] ?? 0,
+                ];
+            }
+        }
+
+        return response()->json([
+            'topReferrers' => $topReferrers,
+        ]);
+    }
+    
+
+    public function getSiteAnalytics(PlausibleService $plausible, Request $request)
+    {
+        $metrics = $request->query('metrics', 'visitors,pageviews,visits,bounce_rate');
+        $period = $request->query('period', '7d');
+        $periods = $request->query('period', '30d');
+        $filters = $request->query('filters', 'visitors');
+
+        $traff = $plausible->getTimeSeries($periods, $filters);
+        $stats = $plausible->getMet($period, $metrics);
+    
+        $siteAnalytics = [];
+        $trafficData = [];
+    
+        if (!empty($stats['results'])) {
+            $siteAnalytics[] = [
+                'sessions' => $stats['results']['visits']['value'] ?? 0,
+                'bouncerate' => $stats['results']['bounce_rate']['value'] ?? 0,
+                'pageviews' => $stats['results']['pageviews']['value'] ?? 0,
+                'activeusers' => $stats['results']['visitors']['value'] ?? 0,
+            ];
+    
+            if (!empty($traff['results'])) {
+                foreach ($traff['results'] as $item) {
+                    $trafficData[] = [
+                        'date' => $item['date'],
+                        'visitors' => $item['visitors'] ?? 0,
                     ];
-    
-                    $trafficData[] = $page['pageviews'];
                 }
             }
-    
-            return response()->json([
-                'siteAnalytics' => $siteAnalytics,
-                'trafficData' => $trafficData,
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-            ]);
         }
+    
+        return response()->json([
+            'siteAnalytics' => $siteAnalytics,
+            'trafficData' => $trafficData,
+        ]);
     }
+    
+    
     
 
     public function exportDataPost()
@@ -215,12 +207,11 @@ class DashboardController extends Controller
 
     public function exportReport(Request $request)
     {
-        $startDate = $request->start_date;
-        $endDate = $request->end_date;
+        $startDate = $request->start_date ? Carbon::parse($request->start_date)->startOfDay()->addSecond() : null;
+        $endDate = $request->end_date ? Carbon::parse($request->end_date)->endOfDay() : null;
         $authorIds = $request->author_id;
 
         $users = User::query()
-            ->with('role')
             ->withCount(['posts' => function ($query) use ($startDate, $endDate) {
                 if ($startDate && $endDate) {
                     $query->whereBetween('created_at', [$startDate, $endDate]);
@@ -231,8 +222,8 @@ class DashboardController extends Controller
             $users->whereIn('id', $authorIds);
         }
 
-        $users = $users->get();
-            
+        $users = $users->orderBy('posts_count', 'desc')->get();
+
         return view('backend.pages.export.export-report.index', [
             'user' => $users,
             'start_date' => $request->start_date,
@@ -240,6 +231,7 @@ class DashboardController extends Controller
             'user_json' => json_encode($users),
         ]);
     }
+
 
 
     public function exportPdf(Request $request)

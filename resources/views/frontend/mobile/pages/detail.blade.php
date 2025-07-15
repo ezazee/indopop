@@ -101,21 +101,56 @@
         </a>
         <div class="t0-b20">
             <div class="article-detail--body">
-                <p>{!! preg_replace_callback(
-                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
-                    function ($matches) {
-                        return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
-                    },
-                    preg_replace_callback(
-                        '/(?:<caption\b[^>]*>|\\[caption[^\]]*\\])(.*?)(?:<\\/caption>|\\[\\/caption\\])/is',
-                        function ($matches) {
-                            preg_match_all('/<img[^>]+>/i', $matches[1], $images);
-                            return implode('', $images[0]);
-                        },
-                        $post->content
-                    )
-                ) !!}
-                </p>
+                         @php
+                                $pCount = 0;
+                                $bacaIndex = 0;
+
+                                $content = preg_replace_callback(
+                                    '/(?:<caption\b[^>]*>|\[caption[^\]]*\])(.*?)(?:<\/caption>|\[\/caption\])/is',
+                                    function ($matches) {
+                                        preg_match_all('/<img[^>]+>/i', $matches[1], $images);
+                                        return implode('', $images[0]);
+                                    },
+                                    $post->content
+                                );
+
+                                $content = preg_replace_callback(
+                                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
+                                    function ($matches) {
+                                        return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
+                                    },
+                                    $content
+                                );
+
+                                $content = preg_replace("/\r\n|\r|\n/", "\n", $content);
+                                $content = preg_replace("/\n{2,}/", "\n\n", $content);
+                                $content = preg_replace('/\n\n/', "</p>\n<p>", $content);
+                                $content = '<p>' . trim($content) . '</p>';
+
+                                $finalContent = preg_replace_callback('/<p\b[^>]*>(.*?)<\/p>/is', function ($matches) use (&$pCount, &$bacaIndex, $bacaJuga) {
+                                    $pCount++;
+                                    $paragraph = $matches[0];
+
+                                    if (($pCount === 3 || $pCount === 6) && isset($bacaJuga[$bacaIndex])) {
+                                        $related = $bacaJuga[$bacaIndex];
+                                        $url = route('detail.desktop', ['slug' => $related->slug]);
+                                        $title = htmlspecialchars($related->title);
+
+                                        $bacaJugaHtml = '
+                                            <blockquote class="bacajuga">
+                                                <strong>Baca Juga:</strong>
+                                                <a href="' . $url . '">' . $title . '</a>
+                                            </blockquote>';
+
+                                        $bacaIndex++;
+                                        return $paragraph . $bacaJugaHtml;
+                                    }
+
+                                    return $paragraph;
+                                }, $content);
+                            @endphp
+
+                            {!! $finalContent !!}
             </div>
 
             <div class="article-detail-tag">

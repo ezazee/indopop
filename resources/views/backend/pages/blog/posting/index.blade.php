@@ -238,6 +238,9 @@
                                     <th title="Created At" width="100"
                                         class=" column-key-5  column-key-5  column-key-5">Created At
                                     </th>
+                                    <th title="Views" width="100"
+                                        class=" column-key-5  column-key-5  column-key-5">Views
+                                    </th>
                                     <th title="Status" width="100"
                                         class="text-center  column-key-6 text-center  column-key-6  column-key-6">
                                         Status</th>
@@ -271,6 +274,9 @@
                                     <td
                                         class="text-center no-column-visibility column-key-5 column-key-5 column-key-5 ">
                                         {{ \Carbon\Carbon::parse($item->created_at)->format('d F Y H:i') }}</td>
+                                    <td
+                                        class="text-center no-column-visibility column-key-5 column-key-5 column-key-5 ">
+                                        {{ $item->view }}</td>
                                     <td class="  text-start  column-key-6 text-center  column-key-6  column-key-6">
                                         @if ($item->status == 'publish')
                                         <span
