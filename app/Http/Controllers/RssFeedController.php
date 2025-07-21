@@ -20,7 +20,7 @@ class RssFeedController extends Controller
             return response('Unauthorized RSS access.', 403);
         }
 
-        $posts = Post::where('status', 'publish')
+        $posts = Post::with('kategori')->where('status', 'publish')
             ->orderBy('created_at', 'desc')
             ->take(50)
             ->get()

@@ -11,8 +11,13 @@
 
 <channel>
     <title>Berita Gosip Artis Terkini Di Indonesia - Indopop</title>
-    <description>Feed Artikel {{ url('/') }} | Indopop - Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.</description>
     <link>{{ url('/') }}</link>
+    <atom:link href="{{ request()->fullUrl() }}" rel="self" type="application/rss+xml" />
+    <lastBuildDate>{{ now()->toRfc2822String() }}</lastBuildDate>
+    <language>id</language>
+    <description>Indopop - Berita terkini dari kalangan selebritis ternama Tanah Air maupun Internasional. Disajikan dengan cepat, tepat, ringan.</description>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
 
     <image>
         <url>{{ url('public/favicon.ico') }}</url>
@@ -20,27 +25,25 @@
         <link>{{ url('/') }}</link>
     </image>
 
-    <generator>{{ url('/') }}</generator>
-    <lastBuildDate>{{ now()->toRfc2822String() }}</lastBuildDate>
-    <atom:link href="{{ request()->fullUrl() }}" rel="self" type="application/rss+xml" />
-    <language>id</language>
-    <copyright>Copyright {{ now()->format('Y') }}, Indopop</copyright>
-
     @foreach($posts as $post)
         <item>
             <title><![CDATA[{{ $post->title }}]]></title>
             <link>{{ url($post->slug) }}</link>
+            <author>{{ $post->user->name }}</author>
+            <category>{{ $post->kategori->nama_kategori }}</category>
             <description><![CDATA[
-                {!! nl2br(e($post->two_paragraphs_text)) !!}
+                {{ $post->short_description }}
             ]]></description>
+            <content:encoded><![CDATA[
+                {!! $post->content !!}
+            ]]></content:encoded>
             <pubDate>{{ $post->created_at->toRfc2822String() }}</pubDate>
             <guid isPermaLink="true">{{ url($post->slug) }}</guid>
 
             @if (!empty($post->gambar))
                 <media:thumbnail 
-                    medium="image" 
-                    type="image/jpg" 
-                    url="{{ filter_var($post->gambar, FILTER_VALIDATE_URL) ? $post->gambar : url($post->gambar) }}" />
+                    url="{{ filter_var($post->gambar, FILTER_VALIDATE_URL) ? $post->gambar : url($post->gambar) }}" 
+                    type="image/jpeg" />
             @endif
         </item>
     @endforeach
