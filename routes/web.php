@@ -17,6 +17,9 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Models\Post;
 use App\Models\Categori;
+use App\Models\ImageMetadata;
+use Illuminate\Http\Request;
+use App\Http\Controllers\RssFeedController;
 
 use UniSharp\LaravelFilemanager\Controllers\ItemsController;
 /*
@@ -160,6 +163,12 @@ Route::middleware(['auth', 'role:Editor|Administrator'])->group(function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
 
+    Route::get('/get-caption', function (Request $request) {
+        $url = $request->query('url');
+        $metadata = ImageMetadata::where('url', $url)->first();
+        return response()->json(['caption' => $metadata->caption ?? null]);
+    });
+
     // Route::get('/laravel-filemanager/search', [DashboardController::class, 'searchLfm'])->name('unisharp.lfm.search');
 
 });
@@ -179,5 +188,5 @@ Route::get('/site-map', [HomeController::class, 'siteMap'])->name('siteMap.deskt
 Route::get('/category/{slug}', [HomeController::class, 'kanal'])->name('kanal.desktop');
 Route::get('/indeks', [HomeController::class, 'byIndex'])->name('byIndex.dekstop');
 Route::get('/search-result', [HomeController::class, 'searchResult'])->name('searchResult.dekstop');
-
+Route::get('/feed', [RssFeedController::class, 'index']);
 Route::get('/{slug}', [HomeController::class, 'detail'])->name('detail.desktop');

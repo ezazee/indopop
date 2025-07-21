@@ -33,11 +33,12 @@ class UploadController extends LfmController
     
         foreach (is_array($uploaded_files) ? $uploaded_files : [$uploaded_files] as $file) {
             try {
-                $originalName = preg_replace('/\s+/', '-', pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME));
+                $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
                 $extension = $file->getClientOriginalExtension();
-
-                $filename = $originalName . '.' . $extension;
-                $thumbFilename = $originalName . '.' . $extension;
+                $kodeUnik = now()->format('dmY');
+                $counter = rand(1, 9);
+                $filename = $originalName . ' ' . $kodeUnik . $counter . '.' . $extension;
+                $thumbFilename = $originalName . ' ' . $kodeUnik . $counter . '.' . $extension;
     
                 $resizeResult = ImageResizeHelper::resizeImage($file, $filename, $thumbFilename);
     

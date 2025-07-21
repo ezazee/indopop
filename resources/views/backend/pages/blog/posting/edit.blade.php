@@ -216,7 +216,7 @@
                         </div>
                         <div class="card-body">
                             <div class="image-box image-box-banner_image" data-counter="250">
-                                <input class="image-data" name="banner_image" type="hidden" value="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" data-counter="250" />
+                                <input class="image-data" name="banner_image" type="hidden" value="{{ is_array($post->gambar) ? $post->gambar[0] : $post->gambar }}" data-counter="250" id="banner_image_input"/>
                                 <div style="width: 8rem; height: 8rem; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center;"
                                     class="preview-image-wrapper mb-1">
                                     <div class="preview-image-inner">
@@ -244,7 +244,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}">
+                                <input class="form-control mb-3" placeholder="Image Caption" name="image_caption" type="text" value="{{ $post->image_caption }}" id="caption_input">
                             <a href="{{ url('/laravel-filemanager') }}" onclick="openFileManager(event)" class="btn btn-primary btn-sm">
                                     Choose image
                                 </a>
@@ -274,6 +274,23 @@
                                 <label class="form-label">Time</label>
                                 <input type="time" class="form-control" name="scheduled_time"
                                     value="{{ isset($post->start_time) ? \Carbon\Carbon::parse($post->start_time)->format('H:i') : '' }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card meta-boxes">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <label for="author_id" class="form-label">Adult</label>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="position-relative">
+                                <label class="form-check form-switch ">
+                                    <input name="adult" type="hidden" value="no" />
+                                        <input class="form-check-input" name="adult" type="checkbox" value="yes"
+                                            {{ $post->adult === 'yes' ? 'checked' : '' }}>
+                                        <span class="form-check-label">Is content adult?</span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -583,5 +600,43 @@
         document.execCommand("copy");
         alert("Embed URL copied to clipboard: " + embedUrlInput.value);
     }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const bannerInput = document.getElementById('banner_image_input');
+        const captionInput = document.getElementById('caption_input');
+
+        function fetchCaption(compUrl) {
+            if (!compUrl) {
+                captionInput.value = '';
+                return;
+            }
+
+            fetch(`/get-caption?url=${encodeURIComponent(compUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    captionInput.value = data.caption ?? '';
+                })
+                .catch(err => {
+                    console.error('Fetch error:', err);
+                    captionInput.value = '';
+                });
+        }
+
+        if (bannerInput.value) {
+            fetchCaption(bannerInput.value);
+        }
+
+        const observer = new MutationObserver(() => {
+            fetchCaption(bannerInput.value);
+        });
+
+        observer.observe(bannerInput, { attributes: true, attributeFilter: ['value'] });
+
+        bannerInput.addEventListener('change', () => {
+            fetchCaption(bannerInput.value);
+        });
+    });
 </script>
 @endsection

@@ -9,6 +9,9 @@ use UniSharp\LaravelFilemanager\Events\FolderIsMoving;
 use UniSharp\LaravelFilemanager\Events\FolderWasMoving;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
+use FilesystemIterator;
+use \App\Models\ImageMetadata;
+use Illuminate\Support\Collection;
 
 class ItemsController extends LfmController
 {
@@ -19,48 +22,80 @@ class ItemsController extends LfmController
      */
 
      public function getItems(Request $request)
-     {
+    {
          $currentPage = self::getCurrentPageFromRequest();
-         $perPage = 50;
-         
-         $items = array_merge($this->lfm->folders(), $this->lfm->files());
-     
+         $perPage = $this->helper->getPaginationPerPage();
          $search = $request->input('search_query');
-         if (!empty($search)) {
-             $items = array_filter($items, function ($item) use ($search) {
-                 return stripos($item->name, $search) !== false;
-             });
+ 
+         $workingDir = $this->lfm->path('public');
+        
+         if (!file_exists($workingDir)) {
+             return response()->json([
+                 'items' => [],
+                 'paginator' => [
+                     'current_page' => $currentPage,
+                     'total' => 0,
+                     'per_page' => $perPage,
+                     'last_page' => 0,
+                 ],
+                 'display' => $this->helper->getDisplayMode(),
+                 'working_dir' => $workingDir,
+             ]);
          }
-     
-        usort($items, function ($a, $b) {
-            return strcmp($a->name, $b->name);
-        });
-
-        usort($items, function ($a, $b) {
-            $timeA = filemtime($a->path);
-            $timeB = filemtime($b->path);
-
-            return $timeB <=> $timeA;
-        });
-     
-         $totalItems = count($items);
-         $offset = ($currentPage - 1) * $perPage;
-         $paginatedItems = array_slice($items, $offset, $perPage);
-     
+ 
+         $iterator = new FilesystemIterator($workingDir);
+         $matchingFiles = [];
+ 
+         foreach ($iterator as $fileInfo) {
+             $name = $fileInfo->getFilename();
+ 
+            if (!empty($search)) {
+                $searchLower = mb_strtolower(trim($search));
+                $nameLower = mb_strtolower($name);
+                if (mb_stripos($nameLower, $searchLower) === false) {
+                    continue;
+                }
+            }
+ 
+             $extension = strtolower($fileInfo->getExtension());
+             $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+ 
+             $isImage = in_array($extension, $imageExtensions);
+             $icon = $isImage ? 'fa-image' : 'fa-file';
+ 
+             $matchingFiles[] = (object)[
+                 'name' => $name,
+                 'path' => $fileInfo->getPathname(),
+                 'url' => str_replace('/storage/photos/shares/', '/storage/gambar/', $this->lfm->url($name)."/".$name),
+                 'time' => $fileInfo->getMTime(),
+                 'icon' => $icon,
+                 'is_file' => $fileInfo->isFile(),
+                 'is_image' => $isImage,
+                 'thumb_url' => $isImage ? asset($this->lfm->url($name)."/".$name) : null,
+             ];
+         }
+ 
+         usort($matchingFiles, fn($a, $b) => $b->time <=> $a->time);
+         if (!empty($search)) {
+            $matchingFiles = array_slice($matchingFiles, 0, 50);
+         }
+         
+         $totalFound = count($matchingFiles);
+         $sliced = array_slice($matchingFiles, ($currentPage - 1) * $perPage, $perPage);
+         $items = collect($sliced)->values();
+ 
          return response()->json([
-             'items' => array_map(fn($item) => array_merge($item->fill()->attributes, [
-              'url' => str_replace('/storage/photos/shares/', '/storage/gambar/', $item->url),
-            ]), $paginatedItems),
+             'items' => $items,
              'paginator' => [
                  'current_page' => $currentPage,
-                 'total' => $totalItems,
+                 'total' => $totalFound,
                  'per_page' => $perPage,
-                 'last_page' => ceil($totalItems / $perPage),
+                 'last_page' => ceil($totalFound / $perPage),
              ],
              'display' => $this->helper->getDisplayMode(),
-             'working_dir' => $this->lfm->path('working_dir'),
+             'working_dir' => '/shares',
          ]);
-     }
+    }
      
 
      
