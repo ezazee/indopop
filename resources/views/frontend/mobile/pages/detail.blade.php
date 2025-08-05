@@ -8,12 +8,52 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     }
 
-    .article-detail--body  iframe {
+    .article-detail--body iframe[src*="youtube.com"] {
         width: 100% !important;
-        height: 800px !important;
+        height: 300px !important;
         margin: 10px 0 !important;
         border-radius: 8px !important;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .article-detail--body iframe[src*="tiktok.com"] {
+        width: 100% !important;
+        height: 750px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .article-detail--body iframe[src*="instagram.com"] {
+        width: 100% !important;
+        height: 600px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com"] {
+        width: 100% !important;
+        height: 550px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com/plugins/video.php?href="][src*="%2Freel%2F"] {
+        height: 500px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com/plugins/video.php?href="][src*="%2Fvideos%2F"] {
+        height: 500px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com/plugins/post.php?href="][src*="%252Fshare%252Fv%252F"] {
+        height: 500px !important;
+    }
+
+    .article-detail--body iframe[src*="platform.twitter.com/embed/Tweet.html"] {
+        width: 100% !important;
+        height: 700px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
     }
 
     .article-detail--body i {
@@ -59,7 +99,11 @@
                 <div class="article-detail--desc">{{ $post->description }}</div>
             @endif
             <div class="article-detail--info">
-                <div class="author"> {{ $post->user->name }} </div>
+                <div class="author"> {{ $post->user->name }} 
+                @if ($post->reporter)
+                    | {{ $post->reporter->name }} 
+                @endif
+                </div>
             </div>
         </div>
         <div class="share-baru-header">
@@ -101,70 +145,18 @@
         </a>
         <div class="t0-b20">
             <div class="article-detail--body">
-                         @php
-                                $pCount = 0;
-                                $bacaIndex = 0;
-
-                                $content = preg_replace_callback(
-                                    '/(?:<caption\b[^>]*>|\[caption[^\]]*\])(.*?)(?:<\/caption>|\[\/caption\])/is',
-                                    function ($matches) {
-                                        preg_match_all('/<img[^>]+>/i', $matches[1], $images);
-                                        return implode('', $images[0]);
-                                    },
-                                    $post->content
-                                );
-
-                                $content = preg_replace_callback(
-                                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
-                                    function ($matches) {
-                                        return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
-                                    },
-                                    $content
-                                );
-
-                                $content = preg_replace("/\r\n|\r|\n/", "\n", $content);
-                                $content = preg_replace("/\n{2,}/", "\n\n", $content);
-                                $content = preg_replace('/\n\n/', "</p>\n<p>", $content);
-                                $content = '<p>' . trim($content) . '</p>';
-
-                                $finalContent = preg_replace_callback('/<p\b[^>]*>(.*?)<\/p>/is', function ($matches) use (&$pCount, &$bacaIndex, $bacaJuga) {
-                                    $pCount++;
-                                    $paragraph = $matches[0];
-
-                                    $adsScripts = [
-                                        2 => '',
-                                        6 => '',
-                                    ];
-
-                                    $output = $paragraph;
-
-                                    if (($pCount === 3 || $pCount === 6) && isset($bacaJuga[$bacaIndex])) {
-                                        $related = $bacaJuga[$bacaIndex];
-                                        $url = route('detail.desktop', ['slug' => $related->slug]);
-                                        $title = htmlspecialchars($related->title);
-
-                                        $bacaJugaHtml = '
-                                            <blockquote class="bacajuga">
-                                                <strong>Baca Juga:</strong>
-                                                <a href="' . $url . '">' . $title . '</a>
-                                            </blockquote>';
-
-                                        $output .= $bacaJugaHtml;
-                                        $bacaIndex++;
-                                    }
-
-                                    if (isset($adsScripts[$pCount])) {
-                                        $output .= $adsScripts[$pCount];
-                                    }
-
-                                    return $output;
-                                }, $content);
-
-                            @endphp
-
-                            {!! $finalContent !!}
+            <p> {!! $formatted_content !!} </p>
             </div>
-
+            @if($post->multipages === 'yes' && isset($totalPages) && $totalPages > 1)
+                <div class="article-detail-pagination">
+                    @for($i = 1; $i <= $totalPages; $i++)
+                        <a href="?page={{ $i }}" class="{{ $currentPage == $i ? 'active' : '' }}">{{ $i }}</a>
+                        @endfor
+                        <a href="?page=all" class="show-all {{ $currentPage == 'all' ? 'active' : '' }}">Tampilkan Semua</a>
+                    </div>
+            @endif
+            <div id="f5d90c77afffe78f475b3fdb079243ea"></div>
+            <script async src="https://click.advertnative.com/loading/?handle=20794"></script>
             <div class="article-detail-tag">
                 <span class="label card-headline-no-image-title">Tag</span>
                 @foreach ($tagsdetail as $index => $tags)
@@ -308,6 +300,24 @@ l,A,function(){for(var a;c.rcBuf&&(a=c.rcBuf.shift());)c.postMessage(a,x)})}catc
                 document.body.removeChild(tempInput);
                 alert("Link copied to clipboard!");
             }
-
             </script>
-        @endsection
+                @if ($post->adult === 'yes')
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const adSelectors = [
+                            '.adsbygoogle',
+                            '.ad-popup',
+                            '.popup-ad',
+                            '#ad_position_box',
+                            'adsbygoogle adsbygoogle-noablate',
+                        ];
+
+                        adSelectors.forEach(selector => {
+                            document.querySelectorAll(selector).forEach(el => {
+                                el.remove();
+                            });
+                        });
+                    });
+                </script>
+                @endif
+@endsection

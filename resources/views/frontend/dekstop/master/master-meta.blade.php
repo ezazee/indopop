@@ -10,6 +10,9 @@
 ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ request()->is('/') ? config('app.url') : (isset($post->slug) ? url($post->slug) : config('app.url')) }}" />
+
 <!-- Open Graph Meta Tags -->
 <meta property="og:title" content="
     {{ request()->is('/') ? 'Indopop.id' : ($post->title ?? 'Indopop.id') }}

@@ -240,7 +240,7 @@
                                         $images = explode('|', $item->gambar);
                                         @endphp
                                         <td class="   column-key-1  column-key-1  column-key-1"><img
-                                                src="{{ asset('storage/comp/' . (is_array($images) ? basename($images[0]) : basename($images))) }}" width="50" alt="Image">
+                                                src="{{ asset('storage/gambar/' . (is_array($images) ? basename($images[0]) : basename($images))) }}" width="50" alt="Image">
                                         </td>
                                         <td class="  text-start  column-key-2 text-start  column-key-2  column-key-2"><a
                                                 href="{{ route('blog.edit', ['id' => $item->id ]) }}"

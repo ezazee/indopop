@@ -69,7 +69,7 @@
                                      </div>
                                      <div class="mb-3 position-relative " id="embed-container">
                                         <label for="embed-url" >Generated Embed URL:</label>
-                                        <textarea class="form-control" data-counter="160" rows="3" id="embed-url" placeholder="URL Embed" ></textarea>
+                                        <textarea class="form-control" data-counter="1500" rows="3" id="embed-url" placeholder="URL Embed" ></textarea>
                                         <button type="button" class="btn btn-primary btn-sm mt-2" onclick="copyEmbedUrl()">
                                             Copy Embed URL
                                         </button>
@@ -77,6 +77,66 @@
                                 </div>
                             </div>
                         </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card meta-boxes">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <label for="reporter" class="form-label">Reporter</label>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <select class="form-control select2" name="reporter_id" id="reporter">
+                                        <option value="">-- Pilih Reporter --</option>
+                                        @foreach ($reporter as $item)
+                                        <option value="{{ $item->id }}"
+                                            {{ old('reporter_id', $post->reporter_id ?? '') == $item->id ? 'selected' : '' }}>
+                                            {{ $item->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card meta-boxes">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <label for="author_id" class="form-label">Adult</label>
+                                    </h4>
+                                </div>
+                                <div class="card-body mb-3">
+                                    <label class="form-check form-switch">
+                                        <input name="adult" type="hidden" value="no" />
+                                        <input class="form-check-input" name="adult" type="checkbox" value="yes"
+                                            {{ old('adult', $post->adult ?? '') === 'yes' ? 'checked' : '' }} />
+                                        <span class="form-check-label">Is content adult?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card meta-boxes">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <label for="pages_id" class="form-label">Multiple Page</label>
+                                    </h4>
+                                </div>
+                                <div class="card-body mb-3">
+                                    <label class="form-check form-switch">
+                                        <input name="multipages" type="hidden" value="no" />
+                                        <input class="form-check-input" name="multipages" type="checkbox" value="yes"
+                                            {{ old('multipages', $post->multipages ?? '') === 'yes' ? 'checked' : '' }} />
+                                        <span class="form-check-label">Is multiple pages?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                         <div class="meta-box-sortables">
                             <div class="card meta-boxes mb-3">
                                 <div class="card-header">
@@ -93,7 +153,7 @@
                                         <div class="mb-3 position-relative">
                                             <label for="seo_meta[seo_description]" class="form-label">SEO
                                                 description</label>
-                                            <textarea class="form-control" data-counter="160" rows="3" placeholder="SEO description" data-allow-over-limit
+                                            <textarea class="form-control" data-counter="500" rows="3" placeholder="SEO description" data-allow-over-limit
                                                 name="seo_meta[seo_description]" cols="50" id="seo_meta[seo_description]"></textarea>
                                         </div>
                                     </div>
@@ -244,23 +304,6 @@
                                     <input type="date" class="form-control" name="scheduled_date" min="{{ date('Y-m-d') }}">
                                     <label class="form-label">Time</label>
                                     <input type="time" name="scheduled_time" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card meta-boxes">
-                            <div class="card-header">
-                                <h4 class="card-title">
-                                    <label for="author_id" class="form-label">Adult</label>
-                                </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="position-relative">
-                                    <label class="form-check form-switch ">
-                                        <input name="adult" type="hidden" value="no" />
-                                        <input class="form-check-input" name="adult" type="checkbox"
-                                            value="yes" />
-                                        <span class="form-check-label">Is content adult?</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -541,62 +584,146 @@
         }
     </script>
 
-    <script>
-        function convertSocialMediaLink(url) {
-            let regex = /https:\/\/www\.instagram\.com\/(p|reel|tv)\/([^\/?]+)\//;
-            let match = url.match(regex);
-            if (match) {
-                const postId = match[2];
-                return `https://www.instagram.com/p/${postId}/embed`;
-            }
+<script>
+    async function convertSocialMediaLink(url) {
+        let regex, match;
 
-            regex = /https:\/\/www\.tiktok\.com\/@[^\/]+\/video\/([^\/?]+)/;
-            match = url.match(regex);
-            if (match) {
-                const videoId = match[1];
-                return `https://www.tiktok.com/embed/v2/${videoId}`;
-            }
-
-            regex = /https:\/\/x\.com\/[^\/]+\/status\/([^\/?]+)/;
-            match = url.match(regex);
-            if (match) {
-                const tweetId = match[1];
-                return `https://platform.twitter.com/embed/Tweet.html?id=${tweetId}`;
-            }
-
-            regex = /https:\/\/www\.youtube\.com\/watch\?v=([^\/&?]+)/;
-            match = url.match(regex);
-            if (match) {
-                const videoId = match[1];
-                return `https://www.youtube.com/embed/${videoId}`;
-            }
-
-            throw new Error('URL tidak valid atau tidak didukung.');
+        // Instagram
+        regex = /https:\/\/www\.instagram\.com\/(p|reel|tv)\/([^\/?]+)\//;
+        match = url.match(regex);
+        if (match) {
+            const postId = match[2];
+            return `https://www.instagram.com/p/${postId}/embed`;
         }
 
-        function insertVideo() {
-            const url = document.getElementById('video-url').value;
+        // TikTok
+        regex = /https:\/\/www\.tiktok\.com\/@[^\/]+\/video\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const videoId = match[1];
+            return `https://www.tiktok.com/embed/v2/${videoId}`;
+        }
 
-            try {
-                const embedUrl = convertSocialMediaLink(url);
+        // Twitter
+        regex = /https:\/\/x\.com\/[^\/]+\/status\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const tweetId = match[1];
+            return `https://platform.twitter.com/embed/Tweet.html?id=${tweetId}`;
+        }
 
-                document.getElementById('embed-url').value = embedUrl;
-                document.getElementById('embed-container').style.display = 'block';
-            } catch (error) {
-                alert(`Error: ${error.message}`);
+        // YouTube
+        regex = /https:\/\/(?:www\.)?youtube\.com\/watch\?v=([^&]+)/;
+        match = url.match(regex);
+        if (match) {
+            const videoId = match[1];
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        // YouTube
+        regex = /https:\/\/youtu\.be\/([^?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const videoId = match[1];
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        // Facebook
+        regex = /https:\/\/www\.facebook\.com\/share\/(p|v)\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const response = await fetch('/get-facebook-embed-url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                },
+                body: JSON.stringify({ url }),
+            });
+
+            const data = await response.json();
+            if (data.embed_url) {
+                return data.embed_url;
+            } else {
+                throw new Error('Gagal mendapatkan URL embed Facebook.');
             }
         }
 
-        function copyEmbedUrl() {
-            const embedUrlInput = document.getElementById('embed-url');
-
-            embedUrlInput.select();
-            embedUrlInput.setSelectionRange(0, 99999);
-
-            document.execCommand("copy");
-            alert("Embed URL copied to clipboard: " + embedUrlInput.value);
+        // Facebook
+        regex = /https:\/\/www\.facebook\.com\/[^\/]+\/posts\/([^\/?]+)/;
+        match = url.match(regex);
+        if (match) {
+            const encodedUrl = encodeURIComponent(url);
+            return `https://www.facebook.com/plugins/post.php?href=${encodedUrl}`;
         }
-    </script>
+
+        regex = /https:\/\/www\.facebook\.com\/[^\/]+\/(photos|videos)\/[^\/]+\/(\d+)/;
+        match = url.match(regex);
+        if (match) {
+            const encodedUrl = encodeURIComponent(url);
+            return `https://www.facebook.com/plugins/post.php?href=${encodedUrl}`;
+        }
+
+        regex = /https:\/\/www\.facebook\.com\/reel\/(\d+)/;
+        match = url.match(regex);
+        if (match) {
+            const encodedUrl = encodeURIComponent(url);
+            return `https://www.facebook.com/plugins/video.php?href=${encodedUrl}`;
+        }
+
+        regex = /https:\/\/www\.facebook\.com\/\d+\/videos\/\d+/;
+        match = url.match(regex);
+        if (match) {
+            const encodedUrl = encodeURIComponent(url);
+            return `https://www.facebook.com/plugins/video.php?href=${encodedUrl}`;
+        }
+
+        regex = /facebook\.com\/watch\/\?v=(\d+)/i;
+        match = url.match(regex);
+        if (match) {
+            const response = await fetch('/get-facebook-embed-url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                        'content'),
+                },
+                body: JSON.stringify({
+                    url
+                }),
+            });
+
+            const data = await response.json();
+            if (data.embed_url) {
+                return data.embed_url;
+            } else {
+                throw new Error('Gagal mendapatkan URL embed Facebook.');
+            }
+        }
+
+        throw new Error('URL tidak valid atau tidak didukung.');
+    }
+
+    async function insertVideo() {
+        const url = document.getElementById('video-url').value;
+
+        try {
+            const embedUrl = await convertSocialMediaLink(url);
+            document.getElementById('embed-url').value = embedUrl;
+            document.getElementById('embed-container').style.display = 'block';
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+    }
+
+    function copyEmbedUrl() {
+        const embedUrlInput = document.getElementById('embed-url');
+        embedUrlInput.select();
+        embedUrlInput.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Embed URL copied to clipboard: " + embedUrlInput.value);
+    }
+</script>
 
 
     <script>

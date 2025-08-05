@@ -8,12 +8,52 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     }
 
-    .article-detail--body  iframe {
+    .article-detail--body iframe[src*="youtube.com"] {
+        width: 100% !important;
+        height: 400px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .article-detail--body iframe[src*="tiktok.com"] {
+        width: 100% !important;
+        height: 750px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .article-detail--body iframe[src*="instagram.com"] {
         width: 100% !important;
         height: 800px !important;
         margin: 10px 0 !important;
         border-radius: 8px !important;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com"] {
+        width: 100% !important;
+        height: 620px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+    
+    .article-detail--body iframe[src*="facebook.com/plugins/video.php?href="][src*="%2Freel%2F"] {
+        height: 1000px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com/plugins/video.php?href="][src*="%2Fvideos%2F"] {
+        height: 1000px !important;
+    }
+
+    .article-detail--body iframe[src*="facebook.com/plugins/post.php?href="][src*="%252Fshare%252Fv%252F"] {
+        height: 1000px !important;
+    }
+    
+    .article-detail--body iframe[src*="platform.twitter.com/embed/Tweet.html"] {
+        width: 100% !important;
+        height: 700px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
     }
 
     .article-detail--body i {
@@ -27,8 +67,8 @@
         color: var(--gray-color);
         background: #f2f2f2;
     }
-
-    .bacajuga {
+    
+        .bacajuga {
         margin: 0 0 1rem;
         padding: 1rem;
         background-color: #f9f9f9;
@@ -64,6 +104,9 @@
                     <div class="article-detail--info">
                         <div class="author">
                             <strong>{{ $post->user->name }}</strong>
+                            @if ($post->reporter)
+                                | <strong> {{ $post->reporter->name }} </strong>
+                            @endif
                         </div>
                         <div class="date">
                             <span>{{ $post->created_at ? \Carbon\Carbon::parse($post->created_at)->isoFormat('DD MMMM, YYYY') : '' }} |</span>
@@ -106,57 +149,18 @@
                     <figcaption>{{ $post->image_caption }}</figcaption>
                     </figure>
                     <div class="article-detail--body">
-                            @php
-                                $pCount = 0;
-                                $bacaIndex = 0;
-
-                                $content = preg_replace_callback(
-                                    '/(?:<caption\b[^>]*>|\[caption[^\]]*\])(.*?)(?:<\/caption>|\[\/caption\])/is',
-                                    function ($matches) {
-                                        preg_match_all('/<img[^>]+>/i', $matches[1], $images);
-                                        return implode('', $images[0]);
-                                    },
-                                    $post->content
-                                );
-
-                                $content = preg_replace_callback(
-                                    '/<img[^>]+alt="([^"]*)"[^>]*>/i',
-                                    function ($matches) {
-                                        return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
-                                    },
-                                    $content
-                                );
-
-                                $content = preg_replace("/\r\n|\r|\n/", "\n", $content);
-                                $content = preg_replace("/\n{2,}/", "\n\n", $content);
-                                $content = preg_replace('/\n\n/', "</p>\n<p>", $content);
-                                $content = '<p>' . trim($content) . '</p>';
-
-                                $finalContent = preg_replace_callback('/<p\b[^>]*>(.*?)<\/p>/is', function ($matches) use (&$pCount, &$bacaIndex, $bacaJuga) {
-                                    $pCount++;
-                                    $paragraph = $matches[0];
-
-                                    if (($pCount === 3 || $pCount === 6) && isset($bacaJuga[$bacaIndex])) {
-                                        $related = $bacaJuga[$bacaIndex];
-                                        $url = route('detail.desktop', ['slug' => $related->slug]);
-                                        $title = htmlspecialchars($related->title);
-
-                                        $bacaJugaHtml = '
-                                            <blockquote class="bacajuga">
-                                                <strong>Baca Juga:</strong>
-                                                <a href="' . $url . '">' . $title . '</a>
-                                            </blockquote>';
-
-                                        $bacaIndex++;
-                                        return $paragraph . $bacaJugaHtml;
-                                    }
-
-                                    return $paragraph;
-                                }, $content);
-                            @endphp
-
-                            {!! $finalContent !!}
+                            <p> {!! $formatted_content !!} </p>
                     </div>
+                    @if($post->multipages === 'yes' && isset($totalPages) && $totalPages > 1)
+                        <div class="article-detail-pagination">
+                            @for($i = 1; $i <= $totalPages; $i++)
+                                <a href="?page={{ $i }}" class="{{ $currentPage == $i ? 'active' : '' }}">{{ $i }}</a>
+                            @endfor
+                            <a href="?page=all" class="show-all {{ $currentPage == 'all' ? 'active' : '' }}">Tampilkan Semua</a>
+                        </div>
+                    @endif
+                    <div class="gliaplayer-container" data-slot="indopop_desktop"></div>
+                    <script src="https://player.gliacloud.com/player/indopop_desktop" async></script>
                     <div class="article-detail-tag">
                         <span class="label card-headline-no-image-title-detail2">Tag</span>
                         @foreach ($tagsdetail as $index => $tags)
@@ -244,6 +248,24 @@ l,A,function(){for(var a;c.rcBuf&&(a=c.rcBuf.shift());)c.postMessage(a,x)})}catc
         document.body.removeChild(tempInput);
         alert("Link copied to clipboard!");
     }
-
     </script>
+        @if ($post->adult === 'yes')
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const adSelectors = [
+                    '.adsbygoogle',
+                    '.ad-popup',
+                    '.popup-ad',
+                    '#ad_position_box',
+                    'adsbygoogle adsbygoogle-noablate',
+                ];
+
+                adSelectors.forEach(selector => {
+                    document.querySelectorAll(selector).forEach(el => {
+                        el.remove();
+                    });
+                });
+            });
+        </script>
+    @endif
 @endsection

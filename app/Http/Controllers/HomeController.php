@@ -158,70 +158,193 @@ class HomeController extends Controller
 
     public function detail($slug)
     {
-        $post = Post::with(['kategori', 'user','tags'])->where('slug', $slug)->where('status', 'publish')->firstOrFail();
+        $post = Post::with(['kategori', 'user', 'reporter', 'tags'])->where('slug', $slug)->where('status', 'publish')->firstOrFail();
 
         $postTerkini = Post::with('kategori', 'user')
-        ->where('status', 'publish')
-        ->latest()
-        ->take(5)
-        ->get();
+            ->where('status', 'publish')
+            ->latest()
+            ->take(5)
+            ->get();
 
         $postTerkiniBottom = Post::with('kategori', 'user')
-        ->where('status', 'publish')
-        ->latest()
-        ->take(20)
-        ->get();
+            ->where('status', 'publish')
+            ->latest()
+            ->take(20)
+            ->get();
 
-        $kategoriId = $post->kategori_id;
+        $relatedPosts = Post::whereHas('tags', function ($q) use ($post) {
+                $q->whereIn('tags.id', $post->tags->pluck('id'));
+            })
+            ->where('posts.id', '!=', $post->id)
+            ->select('posts.*')
+            ->take(2)
+            ->get();
 
-        $relatedPosts = Post::with(['kategori', 'user'])
-        ->where('kategori_id', $kategoriId)
-        ->where('status', 'publish')
-        ->where('id', '!=', $post->id)
-        ->take(5)
-        ->get();
+        $firstRelated = $relatedPosts->get(0);
+        $secondRelated = $relatedPosts->get(1);
+
+        $bacaJuga = [
+            3 => $firstRelated,
+            6 => $secondRelated
+        ];
+
+        if ($this->agent->isMobile()) {
+            $adsScripts = [
+                1 => '<div>
+                        <p style="display:none;">rb-1</p>
+                    </div>',
+                3 => '<div>
+                        <p style="display:none;">rb-2</p>
+                    </div>',
+                4 => '<div data-type="_mgwidget" data-widget-id="1799012"> 
+                                                </div> 
+                                                <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq"); 
+                                                </script>',
+                6 => '<div class="gliaplayer-container mb-3" data-slot="indopop_mobile"></div>
+                <script src="https://player.gliacloud.com/player/indopop_mobile" async></script>',
+                8 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"			
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:inline-block;width:336px;height:280px"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="1614428017"
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script></div>',
+                9 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:inline-block;width:336px;height:280px"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="6378102865"
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script></div>',
+                10 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:inline-block;width:336px;height:280px"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="5120861512"
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script></div>',
+            ];
+        } else {
+            $adsScripts = [
+                1 => '<div>
+                        <p style="display:none;">rb-1</p>
+                    </div>',
+                3 => '<div>
+                        <p style="display:none;">rb-2</p>
+                        </div>',
+                4 => '<div data-type="_mgwidget" data-widget-id="1799012"> 
+                                                </div> 
+                                                <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq"); 
+                                                </script>',
+                7 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:block"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="2212429475"
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script></div>',
+                8 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"					
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:block"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="4647021127"								
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script></div>',
+                9 => '<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366174212541814"						
+                                                    crossorigin="anonymous"></script>
+                                                    <ins class="adsbygoogle"
+                                                    style="display:block"
+                                                    data-ad-client="ca-pub-7366174212541814"
+                                                    data-ad-slot="4044487523"
+                                                    data-ad-format="auto"
+                                                    data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});	
+                                                    </script></div>',
+            ];
+        }
 
 
-        $bacaJuga = Post::whereHas('tags', function ($q) use ($post) {
-            $q->whereIn('tags.id', $post->tags->pluck('id'));
-        })
-        ->where('posts.id', '!=', $post->id)
-        ->select('posts.*')
-        ->take(2)
-        ->get();
+        $content = $post->content;
 
-        // $postTerpopuler = Post::with('kategori', 'user')
-        // ->where('status', 'publish')
-        // ->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
-        // ->orderBy('view', 'desc')
-        // ->take(5)
-        // ->get();
+        $content = preg_replace_callback('/(?:<caption\b[^>]*>|\[caption[^\]]*\])(.*?)(?:<\/caption>|\[\/caption\])/is', function ($matches) {
+            preg_match_all('/<img[^>]+>/i', $matches[1], $images);
+            return implode('', $images[0]);
+        }, $content);
 
-                // if ($postTerpopuler->isEmpty()) {
-        //     $weekCounter = 1;
-        //     while ($postTerpopuler->isEmpty() && $weekCounter <= 4) {
-        //         $postTerpopuler = Post::with('kategori', 'user')
-        //             ->where('status', 'publish')
-        //             ->whereBetween('created_at', [
-        //                 Carbon::now()->subWeeks($weekCounter)->startOfWeek(),
-        //                 Carbon::now()->subWeeks($weekCounter)->endOfWeek()
-        //             ])
-        //             ->orderBy('view', 'desc')
-        //             ->take(5)
-        //             ->get();
+        $content = preg_replace_callback('/<img[^>]+alt="([^"]*)"[^>]*>/i', function ($matches) {
+            return $matches[0] . '<i>' . htmlspecialchars($matches[1]) . '</i><br>';
+        }, $content);
 
-        //         $weekCounter++;
-        //     }
-        // }
+        $content = preg_replace("/\r\n|\r|\n/", "\n", $content);
+        $content = preg_replace("/\n{2,}/", "\n\n", $content);
+        $content = preg_replace('/\n\n/', "</p>\n<p>", $content);
+        $content = '<p>' . trim($content) . '</p>';
+
+        $pCount = 0;
+        $formatted = preg_replace_callback('/<p\b[^>]*>(.*?)<\/p>/is', function ($matches) use (&$pCount, $bacaJuga, $adsScripts) {
+            $pCount++;
+            $output = $matches[0];
+
+            if (isset($bacaJuga[$pCount])) {
+                $related = $bacaJuga[$pCount];
+                if ($related) {
+                    $url = route('detail.desktop', ['slug' => $related->slug]);
+                    $title = htmlspecialchars($related->title);
+                    $output .= '<blockquote class="bacajuga"><strong>Baca Juga:</strong> <a href="' . $url . '">' . $title . '</a></blockquote>';
+                }
+            }
+
+            if (isset($adsScripts[$pCount])) {
+                $output .= $adsScripts[$pCount];
+            }
+
+            return $output;
+        }, $content);
+
+        $page = request()->get('page', 1);
+        $currentPage = $page === 'all' ? 'all' : (int) $page;
+        $totalPages = 1;
+        $formatted_content = $formatted;
+
+        if ($post->multipages === 'yes' && $currentPage !== 'all') {
+            $parts = preg_split('/(<\/p>)/i', $formatted, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $chunks = array_chunk($parts, ceil(count($parts) / 3));
+            $formatted_chunks = array_map(function ($chunk) {
+                return implode('', $chunk);
+            }, $chunks);
+
+            $formatted_content = $formatted_chunks[$currentPage - 1] ?? '';
+            $totalPages = count($formatted_chunks);
+        }
 
         $postTerpopuler = Post::with('kategori', 'user')
-        ->where('status', 'publish')
-        ->orderBy('view', 'desc')
-        ->take(5)
-        ->get();
+            ->where('status', 'publish')
+            ->orderBy('view', 'desc')
+            ->take(5)
+            ->get();
 
-
-        $allPosts = collect([$post, $postTerpopuler,$postTerkini,$relatedPosts,$postTerkiniBottom])->flatten();
+        $allPosts = collect([$post, $postTerpopuler, $postTerkini, $relatedPosts, $postTerkiniBottom])->flatten();
 
         foreach ($allPosts as $singlePost) {
             if ($singlePost && $singlePost->gambar) {
@@ -233,11 +356,20 @@ class HomeController extends Controller
         $tagsdetail = $post->tags;
 
         if ($this->agent->isMobile()) {
-            return view('frontend.mobile.pages.detail',compact('relatedPosts','bacaJuga','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.mobile.pages.detail', compact(
+                'relatedPosts', 'postTerkiniBottom', 'post', 'postTerkini',
+                'postTerpopuler', 'tagsdetail', 'formatted_content',
+                'totalPages', 'currentPage'
+            ));
         } else {
-            return view('frontend.dekstop.pages.detail',compact('relatedPosts','bacaJuga','postTerkiniBottom','post','postTerkini','postTerpopuler','tagsdetail'));
+            return view('frontend.dekstop.pages.detail', compact(
+                'relatedPosts', 'postTerkiniBottom', 'post', 'postTerkini',
+                'postTerpopuler', 'tagsdetail', 'formatted_content',
+                'totalPages', 'currentPage'
+            ));
         }
     }
+
 
     public function redaksi()
     {

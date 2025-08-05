@@ -3,6 +3,7 @@
 
 <head>
     @include('frontend.mobile.master.master-meta')
+    @include('frontend.dekstop.master.master-microdata')
     @include('frontend.mobile.master.master-css')
 </head>
 

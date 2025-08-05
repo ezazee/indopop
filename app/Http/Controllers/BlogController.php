@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categori;
+use App\Models\Reporter;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\ImageMetadata;
@@ -19,51 +20,62 @@ use App\Helpers\ImageResizeHelper;
 
 class BlogController extends Controller
 {
-    public function blogPost(Request $request)
-    {
-        $query = Post::with('kategori', 'user');
+        public function blogPost(Request $request)
+        {
+            $query = Post::with('kategori', 'user');
 
-        if ($request->has('filter_columns')) {
-            foreach ($request->filter_columns as $index => $column) {
-                $operator = $request->filter_operators[$index] ?? 'like';
-                $value = $request->filter_values[$index] ?? '';
+            if ($request->has('filter_columns')) {
+                foreach ($request->filter_columns as $index => $column) {
+                    $operator = $request->filter_operators[$index] ?? 'like';
+                    $value = $request->filter_values[$index] ?? '';
 
-                if (!empty($column) && !empty($value)) {
-                    $value = strtolower($value);
+                    if (!empty($column) && !empty($value)) {
+                        $value = strtolower($value);
 
-                    if ($column === 'categori') {
-                        $query->whereHas('kategori', function ($q) use ($operator, $value) {
+                        if ($column === 'categori') {
+                            $query->whereHas('kategori', function ($q) use ($operator, $value) {
+                                if ($operator === 'like') {
+                                    $value = "%$value%";
+                                }
+                                $q->whereRaw('LOWER(nama_kategori) ' . $operator . ' ?', [$value]);
+                            });
+                        } elseif ($column === 'author') {
+                            $query->whereHas('user', function ($q) use ($operator, $value) {
+                                if ($operator === 'like') {
+                                    $value = "%$value%";
+                                }
+                                $q->whereRaw('LOWER(name) ' . $operator . ' ?', [$value]);
+                            });
+                        } else {
                             if ($operator === 'like') {
                                 $value = "%$value%";
                             }
-                            $q->whereRaw('LOWER(nama_kategori) ' . $operator . ' ?', [$value]);
-                        });
-                    } elseif ($column === 'author') {
-                        $query->whereHas('user', function ($q) use ($operator, $value) {
-                            if ($operator === 'like') {
-                                $value = "%$value%";
-                            }
-                            $q->whereRaw('LOWER(name) ' . $operator . ' ?', [$value]);
-                        });
-                    } else {
-                        if ($operator === 'like') {
-                            $value = "%$value%";
+                            $query->whereRaw('LOWER(' . $column . ') ' . $operator . ' ?', [$value]);
                         }
-                        $query->whereRaw('LOWER(' . $column . ') ' . $operator . ' ?', [$value]);
                     }
                 }
             }
+
+            $filters = $request->all();
+
+            $post = $query->latest()->paginate(20)->appends($filters);
+
+            return view('backend.pages.blog.posting.index', compact('post', 'filters'));
         }
 
-        $post = $query->latest()->paginate(20);
-
-        return view('backend.pages.blog.posting.index', compact('post'));
-    }
 
     public function editPost($id){
         $post = Post::with('kategori')->findOrFail($id);
         $category = Categori::all();
         $allPosts = collect([$post])->flatten();
+        $reporter = Reporter::where(function ($query) use ($post) {
+            $query->where('is_deleted', 'no');
+            
+            if ($post->reporter_id) {
+                $query->orWhere('id', $post->reporter_id);
+            }
+        })->get();
+
 
         foreach ($allPosts as $singlePost) {
             if ($singlePost->gambar) {
@@ -71,11 +83,12 @@ class BlogController extends Controller
             }
         }
 
-        return view('backend.pages.blog.posting.edit',compact('post','category'));
+        return view('backend.pages.blog.posting.edit',compact('post','category','reporter'));
     }
     public function createPost() {
         $category = Categori::all();
-        return view('backend.pages.blog.posting.create',compact('category'));
+        $reporter = Reporter::where('is_deleted', 'no')->get();
+        return view('backend.pages.blog.posting.create',compact('category','reporter'));
     }
 
     public function PostAdd(Request $request) {
@@ -99,6 +112,8 @@ class BlogController extends Controller
                 'kategori_id' => $request->input('categories'),
                 'adult' => $request->input('adult', 'no'),
                 'gambar' => $request->input('banner_image'),
+                'reporter_id' => $request->input('reporter_id')[0] ?? null,
+                'multipages' => $request->input('multipages', 'no'),
                 'user_id' => Auth::id(),
             ]);
 
@@ -148,6 +163,8 @@ class BlogController extends Controller
             'headline' => $request->input('headline', 'no'),
             'kategori_id' => $request->input('categories'),
             'gambar' => $request->input('banner_image'),
+            'multipages' => $request->input('multipages', 'no'),
+            'reporter_id' => $request->input('reporter_id')[0] ?? null,
         ]);
 
         $tags = json_decode($request->input('tag'), true);
