@@ -26466,7 +26466,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
         d(
           "ImageButton",
           "imagebutton",
-          CKEDITOR.plugins.getPath("image") + "dialogs/image.js"
+          CKEDITOR.plugins.getPath("image") + "dialogs/imagev2.js"
         );
       d("HiddenField", "hiddenfield", e + "hiddenfield.js");
       b.addMenuItems &&
@@ -27427,7 +27427,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
       requires: "dialog",
       init: function (b) {
         if (!b.plugins.detectConflict("image", ["easyimage", "image2"])) {
-          CKEDITOR.dialog.add("image", this.path + "dialogs/image.js");
+          CKEDITOR.dialog.add("image", this.path + "dialogs/imagev2.js");
           var a =
             "img[alt,!src]{border-style,border-width,float,height,margin,margin-bottom,margin-left,margin-right,margin-top,width}";
           CKEDITOR.dialog.isTabEnabled(b, "image", "advanced") &&
@@ -31138,7 +31138,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
             priority: 100,
             filters: [
               CKEDITOR.getUrl(d + "filter/common.js"),
-              CKEDITOR.getUrl(d + "filter/image.js"),
+              CKEDITOR.getUrl(d + "filter/imagev2.js"),
               CKEDITOR.getUrl(f + "filter/default.js"),
             ],
             canHandle: function (a) {
@@ -31182,7 +31182,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
               : a.config.pasteFromWord_inlineImages,
           e = [
             CKEDITOR.getUrl(e + "filter/common.js"),
-            CKEDITOR.getUrl(e + "filter/image.js"),
+            CKEDITOR.getUrl(e + "filter/imagev2.js"),
             CKEDITOR.getUrl(h + "filter/default.js"),
           ];
         a.addCommand("pastefromword", {

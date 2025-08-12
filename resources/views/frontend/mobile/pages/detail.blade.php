@@ -85,6 +85,80 @@
         text-decoration: underline;
     }
 
+    .byline-box {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border-top: 1px solid #e5e7eb;
+        font-family: inherit;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .byline-title {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .byline-list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .byline-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .byline-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        user-select: none;
+        flex: 0 0 36px;
+    }
+
+    .byline-avatar--purple {
+        background: #7c4dff;
+    }
+
+    .byline-avatar--orange {
+        background: #ffa226;
+        color: #222;
+    }
+
+    .byline-info {
+        line-height: 1.2;
+    }
+
+    .byline-role {
+        display: block;
+        font-size: 12px;
+        color: #6b7280;
+    }
+
+    .byline-name {
+        display: block;
+        font-size: 14px;
+        color: #111827;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 320px;
+    }
+
 </style>
 @section('content')
     <div class="kanal-wrap">
@@ -155,6 +229,55 @@
                         <a href="?page=all" class="show-all {{ $currentPage == 'all' ? 'active' : '' }}">Tampilkan Semua</a>
                     </div>
             @endif
+            @php
+                    $editorName = $post->user->name ?? 'Editor';
+                    $reporterName = $post->reporter->name ?? 'Reporter';
+
+                    $getInitial = fn($name) => mb_strtoupper(mb_substr(trim($name), 0, 1, 'UTF-8'), 'UTF-8');
+
+                    $svgAvatar = function (string $initial, string $bg = '#7c4dff', string $fg = '#ffffff'): string {
+                    $svg = "
+                    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"72\" height=\"72\" viewBox=\"0 0 72 72\">
+                    <rect width=\"72\" height=\"72\" rx=\"36\" fill=\"$bg\"/>
+                    <text x=\"50%\" y=\"50%\" text-anchor=\"middle\" dominant-baseline=\"middle\"
+                            font-family=\"Inter, Arial, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"$fg\">$initial</text>
+                    </svg>";
+                    
+                    return 'data:image/svg+xml;utf8,' . rawurlencode($svg);
+                    };
+
+                    // Inisial + avatar
+                    $editorInitial = $getInitial($editorName);
+                    $reporterInitial = $getInitial($reporterName);
+                    $editorAvatarSrc = $svgAvatar($editorInitial, '#eb0080', '#ffffff');
+                    $reporterAvatarSrc = $svgAvatar($reporterInitial, '#672d90', '#ffffff');
+                @endphp
+
+
+            <!-- Bagian Penulis -->
+            <div class="byline-box">
+                <h4 class="byline-title">Artikel ini ditulis oleh</h4>
+
+                <div class="byline-list">
+                    <div class="byline-item">
+                        <img class="byline-avatar" src="{{ $editorAvatarSrc }}" alt="{{ $editorInitial }}">
+                        <div class="byline-info">
+                            <small class="byline-role">Editor</small>
+                            <strong class="byline-name">{{ $editorName }}</strong>
+                        </div>
+                    </div>
+
+                        @if (optional($post->reporter)->name)
+                            <div class="byline-item">
+                                <img class="byline-avatar" src="{{ $reporterAvatarSrc }}" alt="{{ $reporterInitial }}">
+                                <div class="byline-info">
+                                    <small class="byline-role">Reporter</small>
+                                    <strong class="byline-name">{{ $reporterName }}</strong>
+                                </div>
+                            </div>
+                        @endif
+                </div>
+            </div>
             <div id="f5d90c77afffe78f475b3fdb079243ea"></div>
             <script async src="https://click.advertnative.com/loading/?handle=20794"></script>
             <div class="article-detail-tag">

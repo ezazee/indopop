@@ -20,49 +20,69 @@ use App\Helpers\ImageResizeHelper;
 
 class BlogController extends Controller
 {
-        public function blogPost(Request $request)
-        {
-            $query = Post::with('kategori', 'user');
+    public function blogPost(Request $request)
+    {
+        $query = Post::with('kategori', 'user');
 
-            if ($request->has('filter_columns')) {
-                foreach ($request->filter_columns as $index => $column) {
-                    $operator = $request->filter_operators[$index] ?? 'like';
-                    $value = $request->filter_values[$index] ?? '';
+        if ($request->has('filter_columns')) {
+            foreach ($request->filter_columns as $index => $column) {
+                $operator = $request->filter_operators[$index] ?? 'like';
+                $value = $request->filter_values[$index] ?? '';
 
-                    if (!empty($column) && !empty($value)) {
-                        $value = strtolower($value);
+                if (!empty($column) && !empty($value)) {
+                    $value = strtolower($value);
 
-                        if ($column === 'categori') {
-                            $query->whereHas('kategori', function ($q) use ($operator, $value) {
-                                if ($operator === 'like') {
-                                    $value = "%$value%";
-                                }
-                                $q->whereRaw('LOWER(nama_kategori) ' . $operator . ' ?', [$value]);
-                            });
-                        } elseif ($column === 'author') {
-                            $query->whereHas('user', function ($q) use ($operator, $value) {
-                                if ($operator === 'like') {
-                                    $value = "%$value%";
-                                }
-                                $q->whereRaw('LOWER(name) ' . $operator . ' ?', [$value]);
-                            });
-                        } else {
+                    if ($column === 'categori') {
+                        $query->whereHas('kategori', function ($q) use ($operator, $value) {
                             if ($operator === 'like') {
                                 $value = "%$value%";
                             }
-                            $query->whereRaw('LOWER(' . $column . ') ' . $operator . ' ?', [$value]);
+                            $q->whereRaw('LOWER(nama_kategori) ' . $operator . ' ?', [$value]);
+                        });
+                    } elseif ($column === 'author') {
+                        $query->whereHas('user', function ($q) use ($operator, $value) {
+                            if ($operator === 'like') {
+                                $value = "%$value%";
+                            }
+                            $q->whereRaw('LOWER(name) ' . $operator . ' ?', [$value]);
+                        });
+                    }elseif ($column === 'created_at') {
+                        $input = str_replace('/', '-', $value);
+                        $parts = explode('-', $input);
+
+                        $searchPattern = '';
+
+                        if (count($parts) === 3) {
+                            [$d, $m, $y] = $parts;
+                            $searchPattern = "$y-$m-$d";
+                        } elseif (count($parts) === 2) {
+                            [$d, $m] = $parts;
+                            $searchPattern = "-$m-$d";
+                        } elseif (strlen($input) === 2 || strlen($input) === 1) {
+                            $searchPattern = "-$input";
+                        } elseif (strlen($input) === 4) {
+                            $searchPattern = "$input-";
+                        } else {
+                            $searchPattern = $value;
                         }
+
+                        $query->whereRaw("CAST(created_at AS TEXT) ILIKE ?", ["%$searchPattern%"]);
+                    }else {
+                        if ($operator === 'like') {
+                            $value = "%$value%";
+                        }
+                        $query->whereRaw('LOWER(' . $column . ') ' . $operator . ' ?', [$value]);
                     }
                 }
             }
+        }
 
             $filters = $request->all();
 
             $post = $query->latest()->paginate(20)->appends($filters);
 
-            return view('backend.pages.blog.posting.index', compact('post', 'filters'));
-        }
-
+        return view('backend.pages.blog.posting.index', compact('post'));
+    }
 
     public function editPost($id){
         $post = Post::with('kategori')->findOrFail($id);
@@ -75,7 +95,6 @@ class BlogController extends Controller
                 $query->orWhere('id', $post->reporter_id);
             }
         })->get();
-
 
         foreach ($allPosts as $singlePost) {
             if ($singlePost->gambar) {
@@ -96,12 +115,23 @@ class BlogController extends Controller
             $validatedData = $request->validate([
                 'banner_image' => 'required',
             ]);
+            
+            $bannerImageUrl = $request->input('banner_image');
+
+            $metadata = ImageMetadata::where('url', $bannerImageUrl)->first();
+
+            if ($metadata) {
+                if ($request->filled('image_caption')) {
+                    $metadata->caption = $request->input('image_caption');
+                    $metadata->save();
+                }
+            }
 
             $post = Post::create([
                 'title' => $request->input('title'),
                 'slug' => Str::slug($request->input('title')),
                 'short_description' => $request->input('short_description'),
-                'image_caption' => $request->input('image_caption'),
+                'image_caption' =>  $metadata->caption ?? null,
                 'content' => $request->input('content'),
                 'keyword' => $request->input('seo_meta.seo_title'),
                 'description' => $request->input('seo_meta.seo_description'),
@@ -149,17 +179,29 @@ class BlogController extends Controller
 
     public function PostUpdate(Request $request, $id) {
         $post = Post::findOrFail($id);
+
+            $bannerImageUrl = $request->input('banner_image');
+
+            $metadata = ImageMetadata::where('url', $bannerImageUrl)->first();
+
+            if ($metadata) {
+                if ($request->filled('image_caption')) {
+                    $metadata->caption = $request->input('image_caption');
+                    $metadata->save();
+                }
+            }
+
         $post->update([
             'title' => $request->input('title'),
             'short_description' => $request->input('short_description'),
             'content' => $request->input('content'),
-            'image_caption' => $request->input('image_caption'),
+            'image_caption' =>  $metadata->caption ?? null,
             'keyword' => $request->input('seo_meta.seo_title'),
             'description' => $request->input('seo_meta.seo_description'),
             'start_date' => \Carbon\Carbon::parse($request->input('scheduled_date'))->format('Y-m-d'),
             'start_time' => \Carbon\Carbon::parse($request->input('scheduled_time'))->format('H:i'),
             'status' => $request->input('status'),
-            'adult' => $request->input('adult', 'no'),
+            'adult' => $request->input('adult'),
             'headline' => $request->input('headline', 'no'),
             'kategori_id' => $request->input('categories'),
             'gambar' => $request->input('banner_image'),

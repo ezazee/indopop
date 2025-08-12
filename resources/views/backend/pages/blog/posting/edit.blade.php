@@ -707,11 +707,16 @@
 
         throw new Error('URL tidak valid atau tidak didukung.');
     }
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
         const bannerInput = document.getElementById('banner_image_input');
         const captionInput = document.getElementById('caption_input');
+
+        function extractNameFromUrl(url) {
+            let decoded = decodeURIComponent(url);
+            return decoded.replace(/^.*\/(.*?)\s\d+\.[a-zA-Z]+$/, "$1");
+        }
 
         function fetchCaption(compUrl) {
             if (!compUrl) {
@@ -722,11 +727,15 @@
             fetch(`/get-caption?url=${encodeURIComponent(compUrl)}`)
                 .then(response => response.json())
                 .then(data => {
-                    captionInput.value = data.caption ?? '';
+                    if (data.caption && data.caption.trim() !== '') {
+                        captionInput.value = data.caption;
+                    } else {
+                        captionInput.value = extractNameFromUrl(compUrl);
+                    }
                 })
                 .catch(err => {
                     console.error('Fetch error:', err);
-                    captionInput.value = '';
+                    captionInput.value = extractNameFromUrl(compUrl);
                 });
         }
 
@@ -738,7 +747,10 @@
             fetchCaption(bannerInput.value);
         });
 
-        observer.observe(bannerInput, { attributes: true, attributeFilter: ['value'] });
+        observer.observe(bannerInput, {
+            attributes: true,
+            attributeFilter: ['value']
+        });
 
         bannerInput.addEventListener('change', () => {
             fetchCaption(bannerInput.value);
