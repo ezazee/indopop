@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="col-md-3 mb-3 mb-md-0">
                             <div class="card meta-boxes">
                                 <div class="card-header">
                                     <h4 class="card-title">
@@ -114,7 +114,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="col-md-3 mb-3 mb-md-0">
                             <div class="card meta-boxes">
                                 <div class="card-header">
                                     <h4 class="card-title">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="col-md-3 mb-3 mb-md-0">
                             <div class="card meta-boxes">
                                 <div class="card-header">
                                     <h4 class="card-title">
@@ -146,6 +146,24 @@
                                             {{ old('multipages', $post->multipages ?? '') === 'yes' ? 'checked' : '' }} />
                                         <span class="form-check-label">Is multiple pages?</span>
                                     </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <div class="card meta-boxes">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        <label for="author_id" class="form-label">SEO</label>
+                                    </h4>
+                                </div>
+                                <div class="card-body mb-3">
+                                <label class="form-check form-switch ">
+                                    <input name="seo" type="hidden" value="no" />
+                                    <input class="form-check-input" name="seo" type="checkbox" value="yes"
+                                        {{ $post->seo === 'yes' ? 'checked' : '' }}>
+                                    <span class="form-check-label">Is content SEO?</span>
+                                </label>
                                 </div>
                             </div>
                         </div>
