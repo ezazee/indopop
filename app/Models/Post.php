@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-
+use App\Helpers\CacheHelper;
 
 class Post extends Model implements HasMedia
 {
@@ -45,4 +45,34 @@ class Post extends Model implements HasMedia
         return $this->belongsTo(Reporter::class, 'reporter_id');
     }
 
+    protected static function booted()
+    {
+        static::saved(function ($post) {
+            CacheHelper::forget('home_headline');
+            CacheHelper::forget('home_terkini');
+            CacheHelper::forget('home_terpopuler');
+
+            if ($post->kategori) {
+                CacheHelper::forget("kanal_{$post->kategori->slug}_posts");
+                CacheHelper::forget("kanal_{$post->kategori->slug}_terkini");
+                CacheHelper::forget("kanal_{$post->kategori->slug}_terpopuler");
+            }
+
+            CacheHelper::forget("article_{$post->id}");
+        });
+
+        static::deleted(function ($post) {
+            CacheHelper::forget('home_headline');
+            CacheHelper::forget('home_terkini');
+            CacheHelper::forget('home_terpopuler');
+
+            if ($post->kategori) {
+                CacheHelper::forget("kanal_{$post->kategori->slug}_posts");
+                CacheHelper::forget("kanal_{$post->kategori->slug}_terkini");
+                CacheHelper::forget("kanal_{$post->kategori->slug}_terpopuler");
+            }
+
+            CacheHelper::forget("article_{$post->id}");
+        });
+    }
 }
