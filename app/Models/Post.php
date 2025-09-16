@@ -108,6 +108,10 @@ class Post extends Model implements HasMedia
         });
 
         static::deleting(function ($post) use ($jakartaNow) {
+            if (method_exists($post, 'isForceDeleting') && $post->isForceDeleting()) {
+                return;
+            }
+            
             $user = Auth::user();
             $createdAtString = $post->getOriginal('created_at')
                 ? Carbon::parse($post->getOriginal('created_at'))->format('Y-m-d H:i:s')
